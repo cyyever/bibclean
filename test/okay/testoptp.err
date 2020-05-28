@@ -1,0 +1,8 @@
+%% testoptp.bib:18:Unexpected prefix in DOI value ``"http://link.springer.com/accesspage/chapter/10.1007/978-3-642-25704-9_1"''.
+%% testoptp.bib:22:Unexpected DOI in URL value ``"http://dx.doi.org/10.1007/978-3-642-25704-9_1"'': move to separate DOI = "..." key/value in this entry.
+%% testoptp.bib:26:Unexpected prefix in DOI value ``"http://www.springerlink.com/content/978-3-642-25704-9"''.
+%% testoptp.bib:30:Unexpected DOI in URL value ``"http://dx.doi.org/10.1007/978-3-642-25704-9"'': move to separate DOI = "..." key/value in this entry.
+%% testoptp.bib:34:Unexpected space or list separator in DOI value ``"http://dx.doi.org/10.1002/spe.2105; http://dx.doi.org/10.1002/spe.2106"''.
+%% testoptp.bib:38:Unexpected DOI in URL value ``"http://dx.doi.org/10.1002/spe.2105; http://dx.doi.org/10.1002/spe.2106"'': move to separate DOI = "..." key/value in this entry.
+%% testoptp.bib:42:Unexpected protocol://... in URL value ``"rss://rss.example.com/web-feed/rich-site-summary"'': normally ftp://... or http://... or https://....
+%% testoptp.bib:46:Expected protocol://... in URL value ``%v%''.

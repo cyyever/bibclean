@@ -1,0 +1,55 @@
+I was expecting a `{' or a `('---line 2 of file testscr1.bib
+ : 
+ : This file contains a sample set of bibliography data base entries in
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+""" immediately follows a field part---line 30 of file testscr1.bib
+ :   key =        <
+ :                 "Outer and inner " quotes">,
+I'm skipping whatever remains of this entry
+Warning--string name "ntg" is undefined
+--line 49 of file testscr1.bib
+I was expecting a `,' or a `)'---line 55 of file testscr1.bib
+ :    annote = [Contains 
+ :                       reviews of ``\LaTeX{} for Everyone''
+I'm skipping whatever remains of this entry
+Warning--string name "[book" is undefined
+--line 64 of file testscr1.bib
+I was expecting a `,' or a `)'---line 64 of file testscr1.bib
+ :    title = [book 
+ :                  reviews: {Jane Hahn, {\LaTeX} for Everyone};
+I'm skipping whatever remains of this entry
+Warning--string name "london" is undefined
+--line 221 of file testscr1.bib
+Warning--string name "<unknown>" is undefined
+--line 227 of file testscr1.bib
+Warning--string name "`singer-portion-chapter`" is undefined
+--line 275 of file testscr1.bib
+You're missing a field part---line 288 of file testscr1.bib
+ :       key = 
+ :             'singer-portion-volume',
+I'm skipping whatever remains of this entry
+Warning--string name "[unknown]" is undefined
+--line 371 of file testscr1.bib
+Warning--to sort, need author or key in Adomaitis79Computer
+Warning--to sort, need author or key in singer-portion-chapter
+Warning--to sort, need author or key in singer-portion-volume
+Warning--empty author in Adomaitis79Computer
+Warning--empty title in Adomaitis79Computer
+Warning--empty booktitle in Adomaitis79Computer
+Warning--empty year in Adomaitis79Computer
+Warning--empty author in singer-portion-volume
+Warning--empty booktitle in singer-portion-volume
+Warning--empty publisher in singer-portion-volume
+Warning--empty year in singer-portion-volume
+Warning--empty author in singer-portion-chapter
+Warning--empty publisher in BCM-59
+Warning--empty publisher in hanson-67
+Warning--can't use both volume and number fields in kendeigh-52
+Warning--empty title in tub:NPo92b
+Warning--empty journal in tub:NPo92b
+Warning--empty year in tub:NPo92b
+Warning--empty journal in ntg:PH92
+Warning--empty institution in winget-67
+Warning--can't use both author and editor fields in wright-63
+(There were 5 error messages)

@@ -1,0 +1,7 @@
+%% testoptm.bib:11:Invalid checksum for ISBN_13 978038709823X in ``ISBN-13 = "978-0-387-09823-X (bad check digit)"''.
+%% testoptm.bib:12:ISBN-13 must begin with either 978 or 979: ``"9770387098234 (bad prefix)"''.
+%% testoptm.bib:12:ISBN-13 must begin with either 978 or 979: ``"9-770-387098234-x (bad prefix)"''.
+%% testoptm.bib:12:Invalid checksum for ISBN_13 9770387098234 in ``ISBN-13 = "9-770-387098234-x (bad prefix)"''.
+%% testoptm.bib:12:ISBN-13 must begin with either 978 or 979: ``"9-770-387098234-x (bad prefix)"''.
+%% testoptm.bib:12:Invalid checksum for ISBN_13 9770387098234 in ``ISBN-13 = "9-770-387098234-x (bad prefix)"''.
+%% testoptm.bib:29:Unexpected value in ``pages = "various"''.

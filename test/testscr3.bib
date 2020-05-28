@@ -1,0 +1,26 @@
+@Comment "Old style comment"
+
+@Begin {CommENT}
+This is a block comment
+with two lines.
+@End <cOMMent>
+
+@Begin {CommENT}
+This is a block comment
+with nested environments.
+@Begin{foo}
+@Begin{bar}
+@End{bar}
+@End{foo}
+@End <cOMMent>
+
+@Begin {CommENT}
+This is a block comment with two lines and embedded braces: {one}
+{two} {three}
+@End <cOMMent>
+
+@Begin {CommENT}
+This is a block comment with two lines and embedded braces: {one}
+{two} {three}.  Here are some mismatched braces: { { { } } } } }
+@End <cOMMent>
+

@@ -1,0 +1,48 @@
+%% /u/sy/beebe/tex/bibclean/2-11/vms/vax/README, Thu May  2 18:22:53 1996
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+		   ================================
+		   bibclean for DEC VAX VMS systems
+		   ================================
+
+%% Author:
+%% 	Nelson H. F. Beebe
+%% 	Center for Scientific Computing
+%% 	Department of Mathematics
+%% 	University of Utah
+%% 	Salt Lake City, UT 84112
+%% 	USA
+%% 	Email: beebe@math.utah.edu (Internet)
+%% 	WWW URL: http://www.math.utah.edu/~beebe
+
+bibclean has been successfully built and tested on DEC VAX VMS 6.1
+with the DEC C V4.0-000 compiler.  The associated files are provided
+in the vms/vax subdirectory.  To install it on your system, copy the
+bibclean.exe and top-level bibclean.ini files to a suitable location,
+create a foreign command symbol to point to it, and then use it as
+documented in the UNIX manual pages.  UNIX/DOS style command-line
+redirection of standard input and standard output, and command-line
+file wild-carding, are supported.
+
+The executable program has been linked with static libraries, so that
+it should be usable on other versions of VMS as well as 6.1.  In the
+event that it is not, you can rebuild it from the *.obj files included
+in the distribution, even if you don't have a license for the C
+compiler, just by executing the LINK command at the end of the
+vmsbuild.com file.
+
+To recompile and link bibclean on your VAX VMS system:
+
+	$ @vmsmake
+
+To run the validation suite, edit the vmstest.com file to change the
+foreign command symbol definition near the beginning from
+
+$ bibclean :== $public$disk:[nbeebe.bibclean]bibclean.exe
+
+to something appropriate for your system, then execute the file:
+
+	$ @vmstest
+
+You will need all of the test*.* files, and the bibclean.ini file,
+from the top level directory in the bibclean distribution to do this.

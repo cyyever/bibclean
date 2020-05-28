@@ -1,0 +1,90 @@
+@Comment{
+This file contains some test Scribe bibliography entries with embedded
+paragraph breaks for testing the -no-parbreaks switch in bibclean.
+Without that switch, it should process correctly; with it, 3 sets of
+error messages should be displayed.
+}
+
+@TechReport{bs-1629-0,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-1,
+  author =       "BSI",
+  title =        "Bibliographic 
+?? Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=489 line=19 column= 1 output byte=474 line=17
+                 column= 0
+??  Value   input byte=547 line=21 column=14 output byte=538 line=19
+                 column=17
+??  Current input byte=564 line=23 column= 0 output byte=553 line=19
+                 column=32
+References",
+      INSTITUTION = "British Standards Institution",
+      YEAR = "1976",
+      TYPE = "BS",
+      NUMBER = "1629"
+      )
+
+
+
+@TechReport{bs-1629-2,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-3,
+  author =       "BSI",
+  title =        "Bibliographic 
+?? Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=919 line=43 column= 1 output byte=1309 line=46
+                 column= 0
+??  Value   input byte=977 line=45 column=14 output byte=1373 line=48
+                 column=17
+??  Current input byte=994 line=47 column= 0 output byte=1388 line=48
+                 column=32
+References",
+      INSTITUTION = "British Standards Institution",
+      YEAR = "1976",
+      TYPE = "BS",
+      NUMBER = "1629"
+      )
+
+
+@TechReport{bs-1629-4,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-5,
+  author =       "BSI",
+  title =        "Bibliographic 
+?? Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=1337 line=65 column= 1 output byte=2146 line=74
+                 column= 0
+??  Value   input byte=1393 line=67 column=14 output byte=2210 line=76
+                 column=17
+??  Current input byte=1410 line=69 column= 0 output byte=2225 line=76
+                 column=32
+References",
+      INSTITUTION = "British Standards Institution",
+      YEAR = 1976,
+      TYPE = BS,
+      NUMBER = 1629
+      )

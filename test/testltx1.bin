@@ -1,0 +1,1533 @@
+%                          REDUCE BIBLIOGRAPHY
+
+%                              Part 1:  A-F
+
+% Copyright (c) 1990 The RAND Corporation.  All Rights Reserved.
+
+% Additions and corrections are solicited.  Please send them, in the
+% same format as these entries if possible, to reduce at rand.org.
+
+
+@ARTICLE{Abbott:85,
+ AUTHOR = "J. A. Abbott and R. J. Bradford and J. H. Davenport",
+ TITLE = "A Remark on Factorisation",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1985, VOLUME = 19, NUMBER = 2, PAGES = "31-33", MONTH = "May"}
+
+@INPROCEEDINGS{Abbott:86,
+ AUTHOR = "J. A. Abbott and R. J. Bradford and J. H. Davenport",
+ TITLE = "The {Bath} Algebraic Number Package",
+ BOOKTITLE = "Proc. of {SYMSAC} '86",
+ YEAR = 1986, PAGES = "250-253"}
+
+@INPROCEEDINGS{Abbott:87,
+ AUTHOR = "J. A. Abbott and J. H. Davenport",
+ TITLE = "Polynomial Factorization: An Exploration of {Lenstra's}
+Algorithm",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "391-402",
+ PUBLISHER = "Springer-Verlag"}
+
+@INPROCEEDINGS{Abbott:87a,
+ AUTHOR = "J. A. Abbott",
+ TITLE = "Integration: Solving the {Risch} Differential Equation",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "465-467",
+ PUBLISHER = "Springer-Verlag"}
+
+@PHDTHESIS{Abbott:88,
+ AUTHOR = "J. A. Abbott",
+ TITLE = "Factorisation of Polynomials over Algebraic Number Fields",
+ SCHOOL = "Univ. of Bath, England",
+ YEAR = 1988}
+
+@ARTICLE{Abbott:88a,
+ AUTHOR = "J. A. Abbott and J. H. Davenport",
+ TITLE = "A Remark on a Paper by {Wang}: Another Surprising Property of 42",
+ JOURNAL = "Math. Comp.",
+ YEAR = 1988, VOLUME = 51, PAGES = "837-839"}
+
+@INPROCEEDINGS{Abbott:89,
+ AUTHOR = "J. A. Abbott",
+ TITLE = "Recovery of Algebraic Numbers from their p-Adic Approximations",
+ BOOKTITLE = "Proc. of {ISSAC} '89", PUBLISHER = "{ACM} Press, New York",
+ YEAR = 1989, PAGES = "112-120"}
+
+@TECHREPORT{Abbott:89a,
+ AUTHOR = "J. A. Abbott and R. J. Bradford and J. H. Davenport",
+ TITLE = "A Remark on the Multiplication of Sparse Polynomials",
+ NUMBER = "TR 89-21", YEAR = 1989,
+ INSTITUTION = "School of Mathematical Sciences, University of Bath"}
+
+@INPROCEEDINGS{Abdali:88,
+ AUTHOR = "S. K. Abdali and D. S. Wise",
+ TITLE = "Experiments with Quadtree Representation of Matrices",
+ BOOKTITLE = "Proc. of {ISSAC} '88", PUBLISHER = "Springer-Verlag",
+ YEAR = 1988, VOLUME = 358, PAGES = "96-108"}
+
+@ARTICLE{Abiezzi:83,
+ AUTHOR = "Salim S. {Abi-Ezzi}",
+ TITLE = "Clarification to the Symbolic Mode in {REDUCE}",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1983, VOLUME = 17, NUMBER = "3 and 4", PAGES = "43-47",
+ MONTH = "August and November"}
+
+@ARTICLE{Adams:83,
+ AUTHOR = "K. J. Adams",
+ TITLE = "Analytic Estimates for the Dynamic Aperture of Nonlinear Lattices",
+ JOURNAL = "IEEE Trans. Nucl. Sci.",
+ YEAR = 1983, VOLUME = "NS-30", PAGES = "2436-2438"}
+%"For an accelerator lattice..."  REDUCE was used to obtain low order
+%coefficients in the calculation of the amplitude.
+
+@ARTICLE{Adkins:83,
+ AUTHOR = "G. S. Adkins",
+ TITLE = "Analytic Evaluation of an {O}($\alpha$) Vertex Correction to the
+Rate of Orthopositronium",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1983, VOLUME = 27,  PAGES = "530-532",
+ ABSTRACT = {The order-$\alpha$ correction to the lowest order
+orthopositronium decay rate due to the two outer-vertex graphs obtained in
+analytic form.}}
+
+@ARTICLE{Adkins:83a,
+ AUTHOR = "G. S. Adkins and  F. R. Brown",
+ TITLE = "Rate for Positronium Decay to Five Photons",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1983, VOLUME = 28, PAGES = "1164-1165",
+ ABSTRACT = {{REDUCE} used to calculate trace of $\gamma$ matrices.  Large
+calculation.}}
+
+@ARTICLE{Adkins:85,
+ AUTHOR = "G. S. Adkins",
+ TITLE = "Inner-Vertex Contributions to the Decay Rate of Orthopositronium",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1985, VOLUME = 31, PAGES = "1250-1252",
+ ABSTRACT = {{REDUCE} trace calculations.  "In this paper the  order-$\alpha$
+contribution to the inner-vertex graphs to the decay rate of
+orthopositronium is obtained in analytic form."}}
+
+@ARTICLE{Aguilera-Navarro:87,
+ AUTHOR = "V. C. Aguilera-Navarro and  R. Guardiola and C. Keller and
+M. de Llano and M. Popovic and M. Fortes",
+ TITLE = "Van der {Waals} Perturbation Theory for Fermion and Boson
+Ground-State Matter",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1987, VOLUME = 35, PAGES = "563-584"}
+%Uses computer algebra to rearrange ideal-gas-based low-density
+%expansions; to them REDUCE or MACSYMA provide just the expertise they
+%require to substitute forms into equations, and so makes their
+%formulation possible.
+
+@ARTICLE{Aldins:69,
+ AUTHOR = "J. Aldins and S. J. Brodsky and A. J. Dufner and
+T. Kinoshita",
+ TITLE = "Photon-Photon Scattering Contribution to the Sixth
+Order Magnetic Moments of the Muon and Electron",
+ JOURNAL = "Phys. Rev. Lett.",
+ YEAR = 1969, VOLUME = 23, PAGES = "441-443"}
+
+@TECHREPORT{Alekseev:86,
+ AUTHOR = "A. I. Alekseev and V. F. Edneral",
+ TITLE = "Tensor Structure of Axial Gauge Polarization Operator in the
+Infrared Region",
+ INSTITUTION = "IHEP", YEAR = 1986, TYPE = "Preprint",
+ NUMBER = "86-46"}
+
+@ARTICLE{Alekseev:87,
+ AUTHOR = "A. I. Alekseev and V. F. Edneral",
+ TITLE = "Tensor Structure of Gluon Polarization Operator in the
+Axial Gauge for Infra-Red Region",
+ JOURNAL = "Journal of Nuclear Physics",
+ YEAR = 1987, PAGES = "1105-1114"}
+
+@TECHREPORT{Alekseev:87a,
+ AUTHOR = "A. I. Alekseev and V. F. Edneral",
+ TITLE = "On Evaluation of {Feynman} Integrals in Axial Gauge",
+ INSTITUTION = "IHEP", YEAR = 1987, TYPE = "Preprint",
+ NUMBER = "87-118"}
+%The recurrent algorithm for axial gauge calculations of
+%one-loop massless {Feynman} integrals in the n-dimensional
+%momentum space is described.  The algorithm we suggest is
+%realized on the basis of REDUCE system and presented as
+%a procedure.  It is rather effective for cumbersome
+%combinations of those integrals.
+
+@ARTICLE{Alfeld:82,
+ AUTHOR = "P. Alfeld",
+ TITLE = "Fixed Point Iteration with Inexact Function Values",
+ JOURNAL = "Math. Comp.",
+ YEAR = 1982, VOLUME = 38, PAGES = "87-98"}
+%Numerical analysis generating an improved iterative scheme.  "The
+%technical manipulations in this paper were carried out using the
+%symbol manipulation language REDUCE."
+
+@TECHREPORT{Amirkhanov:87,
+ AUTHOR = "I. V. Amirkhanov and E. P. Zhydkov and I. E. Zhydkova",
+ TITLE = "The Conditions of Bounding of the Oscillation Amplitudes of
+Charge Particle within the Resonance Vicinity Investigations",
+ INSTITUTION = "J.I.N.R., Dubna", YEAR = 1987, NUMBER = "P11-87-452"}
+
+@ARTICLE{Antweiler:89,
+ AUTHOR = "Werner Antweiler and Andreas Strotmann and Volker Winkelmann",
+ TITLE = "A {\TeX-{REDUCE}-Interface}",
+ JOURNAL = "SIGSAM Bulletin",
+ YEAR = 1989, VOLUME = 23,
+ MONTH = "February", PAGES = "26-33"}
+
+@ARTICLE{Appelquist:70,
+ AUTHOR = "T. W. Appelquist and S. J. Brodsky",
+ TITLE = "The Order $\alpha^{2}$ Electrodynamic Corrections to
+the {Lamb} Shift",
+ JOURNAL = "Phys. Rev. Letters",
+ YEAR = 1970, VOLUME = 24, PAGES = "562-565"}
+
+@TECHREPORT{Arbuzov:86,
+ AUTHOR = "B. A. Arbuzov and E. E. Boos and A. I. Davydychev",
+ TITLE = "Infrared Asymptotics of Gluonic {Green} Functions
+in Covariant Gauge",
+ INSTITUTION = "IHEP", YEAR = 1986, TYPE = "Preprint",
+ NUMBER = "86-123"}
+
+@ARTICLE{Aso:81,
+ AUTHOR = "T. Aso and T. Nonoyama and S. Kato",
+ TITLE = "Numerical Simulation of Semidiurnal Atmospheric Tides",
+ JOURNAL = "J. Geophysical R.",
+ YEAR = 1981, VOLUME = 86, NUMBER = 11, PAGES = "388-400"}
+%"Numerical modeling of the solar and lunar semidiurnal atmospheric
+%tides has been performed by invoking a comprehensive approach that
+%includes both algebraic manipluation and numerical solution of the
+%primitive equation system."  Used REDUCE to overcome difficulties of
+%complication and error.
+
+@ARTICLE{Atherton:73,
+ AUTHOR = "R. W. Atherton and G. M. Homsey",
+ TITLE = "Use of Symbolic Computation to Generate Evolution
+Equations and Asymptotic Solutions to Elliptic Equations",
+ JOURNAL = "Journ. Comp. Phys.",
+ YEAR = 1973, VOLUME = 1, PAGES = "45-59"}
+
+@ARTICLE{Aurenche:84,
+ AUTHOR = "P. Aurenche and A. Douir and R. Baier and M. Fontannaz and
+D. Schiff",
+ TITLE = "Photoproduction of Hadrons at Large Transverse Momentum in
+Second Order {QCD}",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1984, VOLUME = "135B", PAGES = "164-168"}
+% Uses REDUCE and SCHOONSCHIP in the extension of calculations to a
+%higher order to keep pace with experimental results.
+
+@ARTICLE{Aurenche:84a,
+ AUTHOR = "P. Aurenche and A. Douir and R. Baier and M. Fontannaz and
+D. Schiff",
+ TITLE = "Prompt Photon Production at Large $p_{\tau}$ in {GCD} Beyond the
+Leading Order",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1984, VOLUME = "140B", PAGES = "87-92"}
+%Uses REDUCE and SCHOONSCHIP.
+
+@ARTICLE{Autin:89,
+ AUTHOR = "B. Autin and J. Bengtsson",
+ TITLE = "Symbolic Evaluation of Integrals Occurring in Accelerator
+Orbit Theory",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1989, VOLUME = 7, NUMBER = 2, PAGES = "183-187", MONTH = "February"}
+
+@ARTICLE{Baekler:84,
+ AUTHOR = "P. Baekler and F. W. Hehl",
+ TITLE = "A Charged {Taub-NUT} Metric with Torsion:  A New Axially
+Symmetric Solution of the {Poincar\'{e}} Gauge Field Theory",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1984, VOLUME = "100A", PAGES = "277-316"}
+
+@TECHREPORT{Baekler:84a,
+ AUTHOR = "Peter Baekler and Friedrich W. Hehl",
+ TITLE = "On the Dynamics of the Torsion of Spacetime:
+Exact Solutions in a Gauge Theoretical Model of Gravity",
+ INSTITUTION = "Department of Physics, University of California,
+Los Angeles", YEAR = 1984,
+ NUMBER = "UCLA/84/TEP/19", PAGE = "18", MONTH = "December"}
+
+@INPROCEEDINGS{Baekler:86,
+ AUTHOR = "P. Baekler and F. W. Hehl and E. W. Mielke",
+ TITLE = "Nonmetricity and Torsion:  Facts and Fancies in Gauge
+Approaches to Gravity",
+ EDITOR = "R. Ruffini",
+ BOOKTITLE = "Proc. 4th Marcel Grossmann Meeting on
+General Relativity, ed.", PUBLISHER = "North-Holland, Amsterdam",
+ YEAR = 1986, PAGES = "277-316"}
+
+@ARTICLE{Baekler:87,
+ AUTHOR = "P. Baekler and R. Hecht and F. W. Hehl and T. Shirafuji",
+ TITLE = "Mass and Spin of Exact Solutions of the {Poincar\'{e}} Gauge
+Theory",
+ JOURNAL = "Prog. Theor. Phys.",
+ YEAR = 1987, VOLUME = 78, PAGES = "16-21"}
+
+@ARTICLE{Baekler:87a,
+ AUTHOR = "P. Baekler and M. Guerses",
+ TITLE = "Exact Solutions of the {Poincar\'{e}} Gauge Theory from Its
+Linearized Field Equations",
+ JOURNAL = "Lett. Math. Phys.",
+ YEAR = 1987, VOLUME = 14, PAGES = "185-191"}
+
+@ARTICLE{Baekler:87b,
+ AUTHOR = "P. Baekler and E. W. Mielke and F. W. Hehl",
+ TITLE = "Kinky Torsion in a {Poincar\'{e}} Gauge Model of Gravity Coupled
+to a Massless Scalar Field",
+ JOURNAL = "Nuclear Phys.",
+ YEAR = 1987, VOLUME = "B288", PAGES = "800-812"}
+
+@ARTICLE{Baekler:88,
+ AUTHOR = "P. Baekler and M. Seitz and V. Winkelmann",
+ TITLE = "Cyclindrically Symmetric Solutions of Self-Consistently
+Coupled {Dirac} Fields in Gauge Theories of Gravity",
+ JOURNAL = "Class. Quantum Grav.",
+ YEAR = 1988, VOLUME = 5, PAGES = "479-490"}
+
+@ARTICLE{Baekler:88a,
+ AUTHOR = "P. Baekler and M. Guerses and F. W. Hehl and J. D. McCrea",
+ TITLE = "The Exterior Gravitational Field of a Charged Spinning
+Source in the {Poincar\'{e}} Gauge Theory:  A {Kerr-Newman} Metric with
+Dynamic Torsion",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1988, VOLUME = "A128", PAGES = "245-250"}
+
+@ARTICLE{Baekler:88b,
+ AUTHOR = "P. Baekler and M. Guerses and F. W. Hehl",
+ TITLE = "A New Method to Solve the Field Equations of {Poincar\'{e}}
+Gauge Theories",
+ JOURNAL = "Class. Quantum Grav.",
+ YEAR = 1988}
+
+@TECHREPORT{Bajla:78,
+ AUTHOR = "I. Bajla and G. A. Ososkov and A. C. Hearn",
+ TITLE = "The Orthogonalization Program of Polynomials
+in Two Variables in {REDUCE}-2 Language",
+ INSTITUTION = "J.I.N.R., Dubna",
+ YEAR = 1978, TYPE = "Report", NUMBER = "P10-11944"}
+%The analytical algorithm for constructing orthogonal
+%polynomials in two variables, based on the Gram-Schmidt
+%orthogonalization method, is proposed.
+
+@INPROCEEDINGS{Balian:78,
+ AUTHOR = "R. Balian and G. Parisi and A. Voros",
+ TITLE = "Quartic Oscillator",
+ YEAR = 1978, MONTH = "May",
+ BOOKTITLE = "Proc. of the Colloq. on Mathematical Problems in {Feynman}
+Path Integrals, Marseille"}
+%On the example of the semi-classical expansion for the levels
+%of the quartic oscillator -(d**2/dq**2)+q**4, we show how the
+%complex WKB method provides information about the
+%singularities of the Borel transform of the semi-classical
+%series.
+
+@ARTICLE{Baker:81,
+ AUTHOR = "G. A. Baker and L. P. Benofy and M. Fortes and M. de Llano and
+S. M. Peltier and A. Plastino",
+ TITLE = "Hard-Core Square-Well Fermion",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1982, VOLUME = 26, PAGES = "3575-3588"}
+%The mixed use of FORTRAN and REDUCE, various derivative were calculated
+%algebraically, but the double series was evaluated numerically.
+
+@ARTICLE{Bark:78,
+ AUTHOR = "Fritz H. Bark and Herman Tinoco",
+ TITLE = "Stability of Plane {Poiseuille} Flow of a Dilute
+Suspension of Slender Fibres",
+ JOURNAL = "J. Fluid Mech.",
+ YEAR = 1978, VOLUME = 87, PAGES = "321-333"}
+%The linear hydrodynamic stability problem for plane Poiseuille
+%flow of a dilute suspension of rigid fibers is solved
+%numerically.  The constitutive equation given by Batchelor
+%is used to model the rheological properties of the suspension.
+%The resulting eigenvalue problem is shown to be singular.
+
+@ARTICLE{Barthes-Biesel:73,
+ AUTHOR = "D. Barthes-Biesel and A. Acrivos",
+ TITLE = "On Computer Generated Analytic Solutions to the
+Equations of Fluid Mechanics, The Case of Creeping Flows",
+ JOURNAL = "Journ. Comp. Phys.",
+ YEAR = 1973, VOLUME = 3, PAGES = "403-411"}
+
+@ARTICLE{Barton:72,
+ AUTHOR = "David Barton and Anthony C. Hearn",
+ TITLE = "Comment on Problem \#2 - The {Y(2n)} Functions",
+ JOURNAL = "SIGSAM Bulletin",
+ YEAR = 1972, VOLUME = 15}
+%A compact program for the solution of SIGSAM Problem \#2
+%is presented.
+
+@ARTICLE{Bateman:86,
+ AUTHOR = "G. Bateman and R. G. Storer",
+ TITLE = "Direct Determination of Axisymmetric Magnetohydrodynamic
+Equilibrium in {Hamada} Coordinates",
+ JOURNAL = "Journ. Comp. Phys.",
+ YEAR = 1986, VOLUME = 64, PAGES = "161-176"}
+%Plasma.  "REDUCE was used to analyse the general set of equations
+%for large numbers of Fourier harmonics ...."
+
+@TECHREPORT{Bennett,
+ AUTHOR = "J. P. Bennett and J. H. Davenport and H. M. Sauro",
+ TITLE = "Solution of Some Equations in Biochemistry",
+ INSTITUTION = "School of Mathematical Sciences, University of
+Bath, England", NUMBER = "88-12"}
+
+@ARTICLE{Berends:81,
+ AUTHOR = "A. Berends and R. Kleiss and P. de Causmaecher and T. T. Wu",
+ TITLE = "Single Bremsstrahlung Process in Gauge Theories",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1981, VOLUME = "103B", PAGES = "124-128"}
+%Used REDUCE to calculate 25 {Feynman} diagrams to produce theoretical
+%results which could be checked against experiment.
+
+@TECHREPORT{Berkovich:89,
+ AUTHOR = "L.M. Berkovich and V.P. Gerdt and Z.T. Kostova and
+M.L. Nechaevsky",
+ TITLE = "Second Order Reducible Linear Differential Equations",
+ INSTITUTION = "J.I.N.R., Dubna", YEAR = 1989, TYPE = "Preprint",
+ NUMBER = "E5-89-141"}
+
+@ARTICLE{Berman:63,
+ AUTHOR = "S. M. Berman and Y. S. Tsai",
+ TITLE = "Intermediate Boson Pair Production as a Means for
+Determining its Magnetic Moment",
+ JOURNAL = "Phys. Rev. Lett.",
+ YEAR = 1963, VOLUME = 11, PAGES = "483-487"}
+
+@ARTICLE{Bessis:85,
+ AUTHOR = "N. Bessis and G. Bessis and D. Roux",
+ TITLE = "Closed-Form Expressions for the {Dirac-Coulomb} Radial $r^{t}$
+Integrals",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1985, VOLUME = 32, PAGES = "2044-2050"}
+%No direct algebraic manipluation, but the formula is stated to be
+%well suited to evaluation by REDUCE or MACSYMA, and this is an
+%advantage of their formula.
+
+@TECHREPORT{Billoire:78,
+ AUTHOR = "A. Billoire and R. Lacaze and A. Morel and H. Navelet",
+ TITLE = "The {OZI} Rule Violating Radiative Decays of the Heavy
+Pseudoscalars",
+ INSTITUTION = "{CEN}-Saclay", YEAR = 1978, TYPE = "Report",
+ NUMBER = "DpH-T 43/78"}
+%Submitted to Phys. Letters B.
+%In lowest order QCD the rates for radiative transitions violating the OZI
+%rule of heavy pseudoscalars are found to be extremely small.
+
+@ARTICLE{Biro:86,
+ AUTHOR = "T. S. Biro and J. Zimanyi and M. Zimanyi",
+ TITLE = "Hadrochemistry in Relativistic Mean Fields",
+ JOURNAL = "Physics Letters",
+ YEAR = 1986, VOLUME = "167B", NUMBER = 3, PAGES = "271-276",
+ MONTH = "February"}
+
+@ARTICLE{Biro:87,
+ AUTHOR = "T. S. Biro and K. Niita and A. L. de Paoli and W. Bauer
+and W. Cassing and U. Mosel",
+ TITLE = "Microscopic Theory of Photon Production in Proton-Nucleus
+and Nucleus-Nucleus Collisions",
+ JOURNAL = "Nuclear Physics",
+ YEAR = 1987, VOLUME = "475A", PAGES = "579-597", MONTH = "December"}
+ MONTH = "December"}
+
+@TECHREPORT{Birrell:77,
+ AUTHOR = "N. D. Birrell",
+ TITLE = "The Application of Adiabatic Regularization
+to Calculations of Cosmological Interest",
+ INSTITUTION = "Dept. Math, King's College, London",
+ YEAR = 1977}
+
+@ARTICLE{Biswas:75,
+ AUTHOR = "S. N. Biswas and S. R. Chaudhuri and K. S. Taank
+and J. A. Campbell",
+ TITLE = "Neutrino Production in Stellar Matter by Photons
+in a Renormalizable Scalar-Boson-Exchange Model of Weak
+Interactions",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1975, VOLUME = 8, PAGES = "2523-2525"}
+
+@TECHREPORT{Bittencourt:90,
+ AUTHOR = "Guilherme Bittencourt and Jacques Calmet",
+ TITLE = "Integrating Computer Algebra and Knowledge Representation",
+ INSTITUTION = "{Universit\"{a}t} Karlsruhe Institut {f\"{u}r}
+Algorithmen und Kognitive Systeme", YEAR = 1990, TYPE = "Preprint"}
+
+@ARTICLE{Boege:86,
+ AUTHOR = "W. Boege and R. Gebauer and H. Kredel",
+ TITLE = "Some Examples for Solving Systems of Algebraic Equations
+by Calculating {Groebner} Bases",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1986, VOLUME = 2, NUMBER = 1, PAGES = "83-98", MONTH = "March"}
+
+@ARTICLE{Bogdanova:88,
+ AUTHOR = "N. Bogdanova and H. Hogreve",
+ TITLE = "A {REDUCE} Package for Exact {Coulomb} Interaction Matrix
+Elements",
+ JOURNAL = "Comp. Phys. Commun.",
+ YEAR = 1988, VOLUME = 48, NUMBER = 2, PAGES = "319-326", MONTH = "February"}
+
+@ARTICLE{Bordoni:81,
+ AUTHOR = "Luciana Bordoni and Attilio Colagrossi",
+ TITLE = "An Application of {REDUCE} to Industrial Mechanics",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1981, VOLUME = 15, NUMBER = 2, PAGES = "8-12", MONTH = "May"}
+
+@INPROCEEDINGS{Bowyer:87,
+ AUTHOR = "A. Bowyer and J. H. Davenport and P. S. Milne and J. A. Padget
+and A. F. Wallis",
+ TITLE = "Applications of Computer Algebra in Solid Modelling",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "244-245",
+ PUBLISHER = "Springer-Verlag"}
+
+@TECHREPORT{Boyd:78,
+ AUTHOR = "John P. Boyd",
+ TITLE = "The Effects of Latitudinal Shear on Equatorial
+Waves, Part {I}:  Theory and Methods",
+ INSTITUTION = "Dept. of Atmos. and Oceanic Science, Univ.
+of Michigan",
+ YEAR = 1978, TYPE = "Preprint", MONTH = "January"}
+%To be published in Journal of The Atmospheric Sciences.
+%By using the method of multiple scales in height and a
+%variety of methods in latitude, analytic solutions for
+%equatorial waves in combined vertical and horizontal shear
+%are derived.
+
+@INPROCEEDINGS{Brackx:87,
+ AUTHOR = "F. Brackx and H. Serras",
+ TITLE = "Boundary Value Problems for the {Laplacian} in {Euclidean} Space
+Solved by Symbolic Computation",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "208-215",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Brackx:87a,
+ AUTHOR = "F. Brackx and D. Constales and R. Delanghe and H. Serras",
+ TITLE = "{Clifford} Algebra with {REDUCE}",
+ JOURNAL = "Rend. Circ. Mat. Palermo, Ser. II",
+ YEAR = 1987, VOLUME = 16, PAGES = "11-19"}
+
+@ARTICLE{Brackx:89,
+ AUTHOR = "F. Brackx and D. Constales and A. Ronveaux and H. Serras",
+ TITLE = "On the Harmonic and Monogenic Decomposition of Polynomials",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1989, VOLUME = 8, NUMBER = 3, PAGES = "297-304", MONTH = "September"}
+
+@INPROCEEDINGS{Bradford:86,
+ AUTHOR = "R. J. Bradford and A. C. Hearn and J. A. Padget
+and E. {Schr\"{u}fer}",
+ TITLE = "Enlarging the {REDUCE} Domain of Computation",
+ BOOKTITLE = "Proc. of {SYMSAC} '86",
+ YEAR = 1986, PAGES = "100-106"}
+
+@INPROCEEDINGS{Bradford:88,
+ AUTHOR = "R. J. Bradford and J. H. Davenport",
+ TITLE = "Effective Tests for Cyclotomic Polynomials",
+ BOOKTITLE = "Proc. of {ISSAC} '88", PUBLISHER = "Springer-Verlag",
+ YEAR = 1988, VOLUME = 358, PAGES = "244-251"}
+
+@ARTICLE{Broadhurst:85,
+ AUTHOR = "D. J. Broadhurst",
+ TITLE = "Evaluation of a Class of {Feynman} Diagrams for all Numbers of
+Loops and Dimensions",
+ JOURNAL = "Phys. Lett. B",
+ YEAR = "1985", VOLUME = "164", PAGES = "356-360"}
+%Uses REDUCE to calculate explicitely the l-loop member of a class of
+%massless, dimensionally regularized {Feynman} diagrams, in order to verify
+%an explicit formula.
+
+@ARTICLE{Brodsky:62,
+ AUTHOR = "S. J. Brodsky and A. C. Hearn and R. G. Parsons",
+ TITLE = "Determination of the Real Part of the {Compton} Amplitude
+at a Nucleon Resonance",
+ JOURNAL = "Phys. Rev.",
+ YEAR = 1962, VOLUME = 187, PAGES = "1899-1904"}
+
+@ARTICLE{Brodsky:67,
+ AUTHOR = "S. J. Brodsky and J. D. Sullivan",
+ TITLE = "W-Boson Contribution to the Anomalous Magnetic Moment of the
+Muon",
+ JOURNAL = "Phys. Rev.",
+ YEAR = 1967, VOLUME = 156, PAGES = "1644-1647"}
+
+@INPROCEEDINGS{Brodsky:69,
+ AUTHOR = "S. J. Brodsky",
+ TITLE = "Status of Quantum Electrodynamics",
+ YEAR = 1969,
+ BOOKTITLE = "Proc. International Symposium on
+Electron and Photon Interactions at High Energies, Liverpool,
+England"}
+
+@TECHREPORT{Brodsky:70,
+ AUTHOR = "S. J. Brodsky",
+ TITLE = "Quantum Electrodynamic Theory:  Its Relation to Precision Low
+Energy Experiments",
+ INSTITUTION = "SLAC",
+ YEAR = 1970, TYPE = "Report", NUMBER = "SLAC-PUB-795",
+ MONTH = "August"}
+%Stanford Linear Accelerator Center Report.
+
+@INPROCEEDINGS{Brodsky:71,
+ AUTHOR = "S. J. Brodsky",
+ TITLE = "Algebraic Computation Techniques in Quantum Electrodynamics",
+ YEAR = 1971, VOLUME = "II", PAGES = "IV-1--IV-27",
+ BOOKTITLE = "Proc. {2nd} Computing Methods in Theoretical Physics,
+Marseilles"}
+
+@TECHREPORT{Brodsky:72,
+ AUTHOR = "S. J. Brodsky",
+ TITLE = "Atomic Physics and Quantum Electrodynamics in the Infinite
+Momentum Frame",
+ INSTITUTION = "SLAC", YEAR = 1972,
+ TYPE = "Report",
+ NUMBER = "SLAC-PUB-1118", MONTH = "August"}
+%Presented at the Third International Conference on Atomic Physics.
+
+@ARTICLE{Brodsky:72a,
+ AUTHOR = "S. J. Brodsky and J. F. Gunion and R. L. Jaffe",
+ TITLE = "Test for Fractionally Charged Partons from
+Deep-Inelastic Bremsstrahlung in the Scaling Region",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1972, VOLUME = 6, PAGES = "2487-2494"}
+
+@ARTICLE{Brodsky:72b,
+ AUTHOR = "S. J. Brodsky and R. Roskies",
+ TITLE = "Quantum Electrodynamics and Renormalization Theory
+in The Infinite Momentum Frame",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1972, VOLUME = "41B", PAGES = "517-520"}
+
+@ARTICLE{Brodsky:73,
+ AUTHOR = "S. J. Brodsky and R. Roskies and R. Suaya",
+ TITLE = "Quantum Electrodynamics and Renormalization Theory in the
+Infinite-Momentum Frame",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1973, VOLUME = 8, PAGES = "4574-4594"}
+
+@ARTICLE{Broughan:82,
+ AUTHOR = "K. A. Broughan",
+ TITLE = "{Grad-Fokker-Planck} Plasma Equations.  Part 1. {Collision}
+Moments",
+ JOURNAL = "J. Plasma Phys.",
+ YEAR = 1982, VOLUME = 27, PAGES = "437-452"}
+%REDUCE used in collaboration with hand calculation.  REDUCE did the
+%substitutions, with hand integrations.  "Thirteen moments are taken of the
+%collision term in Boltzmann-Fokker-Planck equation....plasma..."
+
+@ARTICLE{Brown:79,
+ AUTHOR = "W. S. Brown and A. C. Hearn",
+ TITLE = "Applications of Symbolic Algebraic Computation",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1979, VOLUME = 17, PAGES = "207-215"}
+%This paper is a survey of applications of systems for symbolic
+%algebraic computation.
+
+@ARTICLE{Bryan-Jones:87,
+ AUTHOR = "Jane Bryan-Jones",
+ TITLE = "A Tutorial in Computer Algebra for Statisticians",
+ JOURNAL = "The Professional Statistician",
+ YEAR = 1987, VOLUME = 6, NUMBER = 6, MONTH = "December",PAGES = "TBD"}
+
+@TECHREPORT{Calmet:72,
+ AUTHOR = "Jacques Calmet",
+ TITLE = "Further Evaluation of the Sixth Order Corrections to the
+Anomalous Magnetic Moment of the Electron",
+ INSTITUTION = "Department of Physics, University of Utah",
+ YEAR = 1972}
+%We report on the contributions to the $\alpha^{3}$
+%part of the anomalous magnetic moment of the electron from the
+%seven so-called cross and ladder diagrams.
+
+@ARTICLE{Calmet:72a,
+ AUTHOR = "Jacques Calmet",
+ TITLE = "A {REDUCE} Approach to the Calculation of {Feynman} Diagrams",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1972, VOLUME = 4, PAGES = "199-204"}
+%A brief survey of two existing REDUCE programs (by Campbell-Hearn
+%and by Calmet) dealing with algebraic computation of {Feynman} diagrams is
+%given.  Work in progress on a more general approach to this problem
+%is discussed.
+
+@ARTICLE{Calmet:74,
+ AUTHOR = "Jacques Calmet",
+ TITLE = "Computer Recognition of Divergences in {Feynman} Graphs",
+ JOURNAL = "SIGSAM Bulletin",
+ YEAR = 1974, VOLUME = 8, NUMBER = 3, PAGES = "74-75", MONTH = "August"}
+%A description of a program for the recognition of divergences
+%in {Feynman} graphs is given.
+
+@INCOLLECTION{Calmet:83,
+ AUTHOR = "J. Calmet and J. A. van Hulzen",
+ TITLE = "Computer Algebra Applications",
+ EDITOR = "B. Buchberger and G. E. Collins and R. Loos and R. Albrecht",
+ BOOKTITLE = "Computer Algebra Symbolic and Algebraic Computation",
+ EDITION = "2nd", PUBLISHER = "Springer-Verlag", YEAR = 1983}
+
+@ARTICLE{Campbell:67,
+ AUTHOR = "J. A. Campbell",
+ TITLE = "Algebraic Computation of Radiative Corrections for
+Electron-Positron Scattering",
+ JOURNAL = "Nucl. Phys.",
+ YEAR = 1967, VOLUME = "B1", PAGES = "283-300"}
+
+@ARTICLE{Campbell:68,
+ AUTHOR = "J. A. Campbell",
+ TITLE = "Astrophysical Consequences of the Existence of Charged
+Intermediate Vector Bosons",
+ JOURNAL = "Aust. Journ. of Phys.",
+ YEAR = 1968, VOLUME = 21, PAGES = "139-148"}
+
+@ARTICLE{Campbell:70,
+ AUTHOR = "J. A. Campbell and A. C. Hearn",
+ TITLE = "Symbolic Analysis of {Feynman} Diagrams by Computer",
+ JOURNAL = "Journ. of Comp. Phys.",
+ YEAR = 1970, VOLUME = 5, PAGES = "280-327"}
+
+@ARTICLE{Campbell:70a,
+ AUTHOR = "J. A. Campbell and R. B. Clark and D. Horn",
+ TITLE = "Low-T Theorems for Charged-Pion Photoproduction",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1970, VOLUME = 2, PAGES = "217-224"}
+
+@ARTICLE{Campbell:74,
+ AUTHOR = "J. A. Campbell",
+ TITLE = "Symbolic Computing and Its Relationship to Particle Physics",
+ JOURNAL = "Acta Physica Austriaca",
+ YEAR = 1974, VOLUME = "XIII", PAGES = "595-647"}
+
+@ARTICLE{Campbell:87,
+ AUTHOR = "J. A. Campbell and P. O. {Fr\"{o}man} and E. Walles",
+ TITLE = "Explicit series formulae for the evaluation of integrals by the
+method of steepest descents",
+ JOURNAL = "Studies in Applied Mathematics",
+ YEAR = 1987, VOLUME = 77, PAGES = "151-172"}
+
+@TECHREPORT{Caprasse:84,
+ AUTHOR = "H. Caprasse",
+ TITLE = "Description et Utilisation d'Une Extension du Programme {REDUCE}",
+ INSTITUTION = "Physique Th\'{e}orique et Math\'{e}matique,
+Universit\'{e} de Li\`{e}ge", YEAR = 1984, MONTH = "October"}
+
+@ARTICLE{Caprasse:85,
+ AUTHOR = "H. Caprasse and M. Hans",
+ TITLE = "A New Use of Operators in the Algebraic Mode of {REDUCE}",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1985, VOLUME = 19, NUMBER = 3, PAGES = "46-52", MONTH = "August"}
+
+@ARTICLE{Caprasse:86,
+ AUTHOR = "H. Caprasse",
+ TITLE = "Description of an Extension of the Matrix Package of {REDUCE}",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1986, VOLUME = 20, NUMBER = 4, PAGES = "7-10", MONTH = "December"}
+
+@ARTICLE{Caprasse:86a,
+ AUTHOR = "H. Caprasse",
+ TITLE = "A Complete Simplification Package for the Absolute Value
+Function in {REDUCE}",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1986, VOLUME = 20, NUMBER = "1 and 2", PAGES = "18-21",
+ MONTH = "February and May"}
+%Implementation for REDUCE 3.2 of the function "ABS".
+
+@INPROCEEDINGS{Caprasse:88,
+ AUTHOR = "H. Caprasse and J. Demaret and E. Schruefer",
+ TITLE = "Can {EXCALC} be Used to Investigate {High-dimensional}
+Cosmological Models with {Non-Linear Lagrangians}",
+ BOOKTITLE = "Proc. of {ISSAC} '88", PUBLISHER = "Springer-Verlag",
+ YEAR = 1988, PAGES = "116-124"}
+
+@ARTICLE{Caprasse:90,
+ AUTHOR = "H. Caprasse",
+ TITLE = "Renormalization Group, Function Iterations and Computer
+Algebra",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1990, VOLUME = 9, NUMBER = 1, PAGES = "61-72", MONTH = "January"}
+%Based on a renormalization group equation met in Quantum Field Theory,
+%Continuous Iterations of a large class of functions are computed using
+%REDUCE.
+
+@ARTICLE{Caprasse:89a,
+ AUTHOR = "H. Caprasse",
+ TITLE = "Les Th\'{e}ories des {Champs} dans le monde de {REDUCE}
+(in French)",
+ JOURNAL = "{CALSYF} (to appear)",
+ YEAR = 1989}
+
+@ARTICLE{Carlson:80,
+ AUTHOR = "P. Carlson",
+ TITLE = "Coordinate Free Relativity",
+ JOURNAL = "J. Math. Phys.",
+ YEAR = 1980, VOLUME = 21, PAGES = "1149-1154"}
+%REDUCE programs for tetrad formulation of GR.
+
+@PHDTHESIS{Carroll:73,
+ AUTHOR = "R. Carroll",
+ TITLE = "The Anomalous Magnetic Moment of the Electron in the
+Mass Operator Formalism",
+ SCHOOL = "University of Michigan",
+ YEAR = 1973}
+
+@ARTICLE{Carroll:75,
+ AUTHOR = "R. Carroll",
+ TITLE = "Mass-Operator Calculation of the Electron g-Factor",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1975, VOLUME = 8, PAGES = "2344-2354"}
+
+@TECHREPORT{Cejchan,
+ AUTHOR = "A. Cejchan and J. Nadrchal",
+ TITLE = "Application of {REDUCE}-2 and Analytic Integration
+Program in the Theoretical Solid State Physics",
+ INSTITUTION = "Institute of Physics, CSAV, Prague"}
+
+@INPROCEEDINGS{Chaffy:88,
+ AUTHOR = "C. Chaffy-Camus",
+ TITLE = "An Application of {REDUCE} to the Approximation of {f(x,y)}",
+ BOOKTITLE = "Proc. of {ISSAC} '88", PUBLISHER = "Springer-Verlag",
+ YEAR = 1988, VOLUME = 358, PAGES = "73-84"}
+
+@ARTICLE{Chinnick:86,
+ AUTHOR = "K. Chinnick and C. Gibson and J. F. Griffiths and W. Kordylewski",
+ TITLE = "Isothermal Interpretations of Oscillatory Ignition During
+Hydrogen Oxidation in an Open System.  {I}.  {Analytical} Predictions and
+Experimental Measurements of Periodicity",
+ JOURNAL = "Proc. Royal Soc. Lond.",
+ YEAR =  1986, VOLUME = "A405", PAGES = "117-128"}
+%Used REDUCE to solve Jacobian, but answer too complicated to be of any use.
+
+@ARTICLE{Cline:90,
+ AUTHOR = "Terry Cline and Harold Abelson and Warren Harris",
+ TITLE = "Symbolic Computing in Engineering Design",
+ JOURNAL = "AI EDAM", YEAR = 1990, MONTH = "February"}
+
+@TECHREPORT{Cohen:76,
+ AUTHOR = "H. I. Cohen and O. Leringe and Y. Sundblad",
+ TITLE = "The Use of Algebraic Computing in General Relativity",
+ INSTITUTION = "The Royal Institute of Technology Department of Mechanics",
+ YEAR = 1976, NUMBER = "TRITA-MEK-76-02"}
+
+@TECHREPORT{Cohen:76a,
+ AUTHOR = "I. Cohen and F. Bark",
+ TITLE = "Perturbation Calculations for the Spin Up Problem Using {REDUCE}",
+ INSTITUTION = "The Royal Institute of Technology, Department
+of Mechanics",
+ YEAR = 1976, NUMBER = "TRITA-MEK-76-03"}
+
+@TECHREPORT{Cohen:77,
+ AUTHOR = "I. Cohen and S. Yu. Slavyanov",
+ TITLE = "Smooth Perturbations of the {Schr\"{o}dinger} Equation with a
+Linear Potential Related to the Charmonium Models",
+ INSTITUTION = "University of Stockholm Institute of Physics",
+ YEAR = 1977, TYPE = "USIP Report", NUMBER = "77-17"}
+
+@ARTICLE{Cohen:79,
+ AUTHOR = "J. P. Fitch and H. I. Cohen",
+ TITLE = "Using {CAMAL} for Algebraic Calculations in General Relativity",
+ JOURNAL = "General Relativity and Gravitation", VOLUME = 11, YEAR = 1979,
+ PAGES = "411-418"}
+
+@ARTICLE{Cohen:84,
+ AUTHOR = "H. I. Cohen and I. B. Frick and J. E. {\AA}man",
+ TITLE = "Algebraic Computing in General Relativity",
+ JOURNAL = "General Relativity and Gravitation, ed.",
+ YEAR = 1984, PAGES = "139-162"}
+%General relativity review.
+
+@INPROCEEDINGS{Cohen:89,
+ AUTHOR = "Joel S. Cohen",
+ TITLE = "The Effective Use of Computer Algebra Systems",
+ YEAR = 1989, PAGES = "677-698",
+ BOOKTITLE = "Transactions of the Sixth Army Conference on Applied
+Mathematics and Computing"}
+% Review of author's experience with four computer algebra systems.
+
+@ARTICLE{Connor:84,
+ AUTHOR = "J. N. L. Connor and P. R. Curtis and D. Farrelly",
+ TITLE = "The Uniform Asymptotic Swallowtail Approximation:  Practical
+Methods for Oscillating Integrals with Four Coalescing Saddle Points",
+ JOURNAL = "J. Phys. A",
+ YEAR = 1984, VOLUME = 17, PAGES = "283-310"}
+%Used REDUCE and SCHOONSCHIP for some algebraic manipulations, and then
+%checked the results with MACSYMA; this is the most distrustful
+%reference we have found.
+
+@ARTICLE{Connor:84a,
+ AUTHOR = "J. N. L. Connor and P. R. Curtis and C. J. Edge and A. Lagan`{a}",
+ TITLE = "The Uniform Asymptotic Swallowtail Approximation:  Application
+to the Collinear $H+F_{2}$",
+ JOURNAL = "J. Chem. Phys.", YEAR = 1984, VOLUME = 80, NUMBER = 3,
+ PAGES = "1362-1363", MONTH = "February"}
+
+@ARTICLE{Conwell:84,
+ AUTHOR = "P. R. Conwell and P. W. Barber and C. K. Rushworth",
+ TITLE = "Resonant Spectra of Dielectric Sphere",
+ JOURNAL = "J. Opt. Soc. Am. A",
+ YEAR = 1984, VOLUME = 1, PAGES = "62-67"}
+%REDUCE used to confirm independently convergence and accuracy of
+%Numerical Bessel function routine, expanding series by REDUCE and
+%using bigfloats.  Described as slow but worthwhile.
+
+@INPROCEEDINGS{Cowan:79,
+ AUTHOR = "Richard M. Cowan and Martin L. Griss",
+ TITLE = "Hashing -- The Key to Rapid Pattern Matching",
+ BOOKTITLE = "Proc. {EUROSAM} 1979, Lecture Notes
+in Computer Science", YEAR = 1979, VOLUME = 72, PAGES = "266-278",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Cung:75,
+ AUTHOR = "V. K. Cung",
+ TITLE = "Differential Cross Section of e+ + e- to e+ + mu- +
+nubar(mu) + nubar(e)",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1975, VOLUME = "55B", PAGES = "67-70"}
+
+@TECHREPORT{Darbaidze:86,
+ AUTHOR = "Ya. Z. Darbaidze",
+ TITLE = "A Gluon Bremsstrahlung in Supersymmetry {QCD}",
+ INSTITUTION = "JINR", YEAR = 1986, TYPE = "Preprint",
+ NUMBER = "P2-86-825"}
+
+@ARTICLE{Darbaidze:86a,
+ AUTHOR = "J. Z. Darbaidze and V. A. Matveev and
+Z. V. Merebashvili and L. A. Slepchenko",
+ TITLE = "Gluon Bremsstrahlung in Supersymmetric {QCD}",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1986, VOLUME = "B177", PAGE = "188"}
+
+@TECHREPORT{Darbaidze:88,
+ AUTHOR = "Ya. Z. Darbaidze and Z.V. Merebashvili and V.A. Rostovtsev",
+ TITLE = "Some Computer Realizations of the {REDUCE-3} Calculations for
+Exclusive Processes",
+ INSTITUTION = "JINR", YEAR = 1988, TYPE = "Preprint",
+ NUMBER = "P2-88-769"}
+
+@TECHREPORT{Darbaidze:89,
+ AUTHOR = "Ya. Z. Darbaidze and V.A. Rostovtsev",
+ TITLE = "Analysis of the Differential Equations for the Exclusive Processes
+and Explanation for the {"Mystery"} of the {Gamma-Distribution}",
+ INSTITUTION = "JINR", YEAR = 1989, TYPE = "Preprint",
+ NUMBER = "E2-89-286"}
+
+@INPROCEEDINGS{Dautcourt:79,
+ AUTHOR = "G. Dautcourt",
+ TITLE = "Application of {REDUCE} to Algebraic Computations in General
+Relativity and Astrophysics",
+ YEAR = 1979, MONTH = "September",
+ BOOKTITLE = "Proc. of the Workshop in Symbolic Computation, Dubna,
+{U.S.S.R.}"}
+%Reports the use of the system REDUCE 2 for general relativistic
+%calculations.
+
+@TECHREPORT{Dautcourt:80,
+ AUTHOR = "G. Dautcourt and K. P. Jann",
+ TITLE = "A Program Package in {REDUCE} 2 for Algebraic Computations in
+General Relativity",
+ YEAR = 1980,
+ INSTITUTION = "Zentralinstitut fuer Astrophysik der
+Akademie der Wissenschaften"}
+
+@ARTICLE{Dautcourt:81,
+ AUTHOR = "G. Dautcourt and K. P. Jann and E. Riemer and M. Riemer",
+ TITLE = "User's Guide to {REDUCE} Subroutines For Algebraic
+Computations in General Relativity",
+ JOURNAL = "Astron. Nachr.",
+ YEAR = 1981, VOLUME = 302, PAGES = "1-13"}
+
+@ARTICLE{Dautcourt:83,
+ AUTHOR = "G. Dautcourt",
+ TITLE = "The Cosmological Problem as an Initial Value Problem on the
+Observer's Past Light Cone:  Geometry",
+ JOURNAL = "J. Phys. A",
+ YEAR = 1983, VOLUME = 16, PAGES = "3507-3528"}
+%Checked calculations with REDUCE, mainly Riemann tensor in null
+%coordinates.
+
+@ARTICLE{Davenport:81,
+ AUTHOR = "James Harold Davenport",
+ TITLE = "On the Integration of Algebraic Functions",
+ JOURNAL = "Lecture Notes in Computer Science",
+ YEAR = 1981, VOLUME = 102, PAGES = "1-197"}
+
+@ARTICLE{Davenport:82,
+ AUTHOR = "James H. Davenport",
+ TITLE = "Fast {REDUCE:}  The {trade-off} between efficiency and
+generality",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1982, VOLUME = 16, NUMBER = 1, PAGES = "8-11", MONTH = "February"}
+
+@ARTICLE{Davenport:82a,
+ AUTHOR = "James H. Davenport",
+ TITLE = "What do we want from a {high-level} language?",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1982, VOLUME = 16, NUMBER = 4, PAGES = "6-9", MONTH = "November"}
+
+@INPROCEEDINGS{Davenport:85,
+ AUTHOR = "James Davenport and Julian Padget",
+ TITLE = "{HEUGCD:}  How Elementary Upperbounds Generate Cheaper Data",
+ BOOKTITLE = "Proc. {EUROCAL} 1985, Lecture Notes
+in Computer Science", YEAR = 1985, VOLUME = 204, PAGES = "18-28",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Davenport:88,
+ AUTHOR = "J. H. Davenport",
+ TITLE = "The World of Computer Algebra",
+ JOURNAL = "New Scientist",
+ YEAR = 1988, MONTH = "September", VOLUME = 1629, PAGES = "71-72"}
+
+@BOOK{Davenport:88a,
+ AUTHOR = "J. H. Davenport and Y. Siret and E. Tournier",
+ TITLE = "Computer Algebra, Systems and Algorithms for Algebraic
+Computation",
+ PUBLISHER = "Academic Press", YEAR = 1988}
+
+@TECHREPORT{Della-Dora:81,
+ AUTHOR = "J. Della Dora and E. Tournier",
+ TITLE = "Solutions Formelles {D'Equations} Differentielles au Voisinage de
+Points Singuliers Reguliers",
+ INSTITUTION = "Centre National de la Recherche Scientifique",
+ YEAR = 1981, TYPE = "Report", NUMBER = 239}
+
+@INPROCEEDINGS{Della-Dora:84,
+ AUTHOR = "J. Della Dora and E. Tournier",
+ TITLE = "Homogeneous Linear Difference Equation {(Frobenius-Boole Method)}",
+ BOOKTITLE = "Proc. {EUROSAM} 1984, Lecture Notes
+in Computer Science", YEAR = 1984, VOLUME = 174, PAGES = "2-12",
+ PUBLISHER = "Springer-Verlag"}
+
+@TECHREPORT{Della-Dora:85,
+ AUTHOR = "Jean Della-Dora and Claire Dicrescenzo and Dominique Duval",
+ TITLE = "About a New Method for Computing in Algebraic Number Fields",
+ INSTITUTION = "Universit\'{e} de Grenoble, Institut Fourier,
+France", YEAR = 1985, MONTH = "November"}
+
+@ARTICLE{Demaret:89,
+ AUTHOR = "J. Demaret and H. Caprasse and A. Moussiaux and Ph. Tombal and
+D. Papadopoulos",
+ TITLE = "{Ten-dimensional Lovelock-type Space-Times}",
+ JOURNAL = "{To appear} Phys. Rev. D",
+ YEAR = 1989, MONTH = "July"}
+
+@ARTICLE{DeMenna:87,
+ AUTHOR = "L. De Menna and G. Miano and G. Rubinacci",
+ TITLE = "Volterra's Series Solutions of Free Boundary Plasma Equilibria",
+ JOURNAL = "Phys. Fluids",
+ YEAR = 1987, VOLUME = 30, PAGES = "409-416"}
+%Magnetohydrodynamics.  "We have carried out the computations up to
+%the fourth order, (the fourth order has been obtained by means of the
+%symbolic program REDUCE".
+
+@ARTICLE{Demichev:85,
+ AUTHOR = "A. P. Demichev and A. Ya. Rodionov",
+ TITLE = "A {REDUCE} Program for the Calculation of Geometrical
+Characteristics of Compactified Multidimensional {Riemannian} Space",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1985, VOLUME = 38, PAGES = "441-448"}
+%Covariant theories in N dimensional ($N \geq 4$) space-time.
+%REDUCE programs to calculate Ricci, Einstein and Yang-Mills curvature
+%and energy-momentum tensor.
+
+@TECHREPORT{Demichev:86,
+ AUTHOR = "A. P. Demichev and A. Ya. Rodionov",
+ TITLE = "Freund-{Rubin} Type Solutions for Different Compactifications of
+the Eleven-Dimensional Space",
+ INSTITUTION = "Institute for High Energy Physics", YEAR = 1986,
+ TYPE = "Preprint", NUMBER = "86-85"}
+%The results of calculating geometrical characteristics of
+%seven-dimensional quotient spaces are represented.  These
+%quantities are necessary for the construction of compactifying
+%solutions of the eleven-dimensional supergravity.
+
+@ARTICLE{deRop:88,
+ AUTHOR = "Y. de Rop and J. Demaret",
+ TITLE = "Using {EXCALC} to Study Nondiagonal Multidimensional
+Spatially Homogeneous Cosmologies",
+ JOURNAL = "Gen. Rel. Grav.",
+ YEAR = 1988, VOLUME = 20, PAGES = "1127-1139"}
+
+@TECHREPORT{DeVos:89,
+ AUTHOR = "Alexis De Vos",
+ TITLE = "The use of {Reduce} in solar energy conversion theory",
+ INSTITUTION = "State University of Gent, {CAGe} Computer Algebra
+Group", YEAR = 1989, TYPE = "Reports of the {CAGe} Project",
+NUMBER = 4, MONTH = "August"}
+
+@INPROCEEDINGS{Dewar:89,
+ AUTHOR = "M. C. Dewar",
+ TITLE = "{IRENA --} An Integrated Symbolic and Numerical Computation
+Environment",
+ BOOKTITLE = "Proc. of {ISSAC} '89", PUBLISHER = "{ACM} Press, New York",
+ YEAR = 1989, PAGES = "171-179"}
+
+@ARTICLE{Dhar:85,
+ AUTHOR = "D. Dhar and J-M. Maillard",
+ TITLE = "Susceptibility of the Checkerboard {Ising} Model",
+ JOURNAL = "J. Phys. A",
+ YEAR = 1985, VOLUME = 18, PAGES = "L383-L388"}
+%Used REDUCE for tedious algebra, and got a simple answer.  Statistical
+%mechanics(?). "At the disorder variety, the n-point correlation
+%functions of the checkerboard Potts model has a simple causal
+%structure.  An exact expression for the susceptibility in the Ising
+%case is obtained."
+
+@TECHREPORT{Dicrescenzo:85,
+ AUTHOR = "Claire Dicrescenzo",
+ TITLE = "Algebraic Computation on Algebraic Numbers",
+ INSTITUTION = "Institut Fourier, Laboratoire de
+Math\'{e}matiques, France", YEAR = 1985, MONTH = "December"}
+%Examples are given of a new method, implemented on REDUCE,
+%for computing algebraically on algebraic numbers.
+
+@TECHREPORT{Diver,
+ AUTHOR = "D. A. Diver and E. Q. Laing and C. C. Sellar",
+ TITLE = "Waves in a Cold Plasma with a Spatially Rotating Magnetic Field",
+ INSTITUTION = "Department of Physics and Astronomy, University of
+Glasgow, Plasma Physics Group", TYPE = "Report", NUMBER = "GU TPA 88/12-1"}
+%"...The algebraic manipulation system REDUCE was used in constructing the
+%following tensor definitions which allows us to make fewer
+%approximations than other authors."
+
+@INPROCEEDINGS{Diver:86,
+ AUTHOR = "D. A. Diver and E. W. Laing",
+ TITLE = "Proc. 8th {Europhysics} Conference on
+Computational Physics",
+ YEAR = 1986,
+ BOOKTITLE = "Computing in Plasma Physics"}
+
+@INPROCEEDINGS{Diver:88,
+ AUTHOR = "D. A. Diver and E. W. Laing",
+ TITLE = "Proc. {XV} {European} Conference on Controlled
+Fusion and Plasma Heating",
+ YEAR = 1988}
+
+@TECHREPORT{Diver:88a,
+ AUTHOR = "D. A. Diver and E. W. Laing",
+ TITLE = "Alfven Resonance Absorption in a Magnetofluid",
+ YEAR = 1988, TYPE = "Internal Report",
+ NUMBER = "GUTPA 88/04-01", MONTH = "July"}
+%Presented at 15th UK Plasma Physics Conference, UMIST.
+
+@TECHREPORT{Dorfi:85,
+ AUTHOR = "E. A. Dorfi and L. O'C. Drury",
+ TITLE = "Simple Adaptive Grids for {1D} Initial Value Problems",
+ INSTITUTION = "Max-Plack-Institut fuer Kernphysik, Heidelberg,
+West Germany", YEAR = 1985,
+ NUMBER = "MPI H-1985-V21"}
+
+@ARTICLE{Dorizzi:86,
+ AUTHOR = "B. Dorizzi and B. Grammaticos and J. Hietarinta and A. Ramani
+and F. Schwarz",
+ TITLE = "New integrable three dimensional quartic potentials",
+ JOURNAL = "Phys. Lett.",
+ YEAR = 1986, VOLUME = "116A", PAGES = "432-436"}
+%REDUCE is used to construct and verify constants of motion.
+
+@TECHREPORT{dosSantos:85,
+ AUTHOR = "R. P. dos Santos and P. P. Srivastava",
+ TITLE = "Two-loop Effective Potential for Wess-Zumino Model using
+Superfields",
+ INSTITUTION = "International Centre for Theoretical Physics",
+ YEAR = 1985, NUMBER = "IC/85/205", MONTH = "October"}
+%"For the case of several interacting chiral superfields the propagators
+%for the unconstrained superfield potentials in the 'shifted' theory,
+%where the supersymmetry is explicity broken, are derived in a compact
+%form. They are used to compute one-loop effective potential in the
+%general case, while a superfield calculation of renormalized effective
+%potential to two loops for the Wess-Zumino model is performed."
+
+@ARTICLE{dosSantos:87,
+ AUTHOR = "Renato P. dos Santos",
+ TITLE = "Using {REDUCE} in Supersymmetry",
+ JOURNAL = "J. Symb. Comp.",
+ YEAR = 1989, VOLUME = 7, PAGES = "523-525"}
+
+@PHDTHESIS{dosSantos:87a,
+ AUTHOR = "R. P. dos Santos",
+ TITLE = "O M\'{e}todo de Supercampos para o C\'{a}lculo de Potencial
+Efetivo em Modelos com Supercampos Quirais: Os Modelos de Wess e
+Zumino e de O'Raifeartaigh",
+ SCHOOL = "Centro Brasileiro de Pesquisas F\'{i}sicas",
+ YEAR = 1987}
+%(In Portuguese) Using the method of Superfields, the effective
+%potential for supersymmetric models of Wess-Zumino and of
+%O'Raifeartaigh is evaluated up to two-loop order. The spontaneous
+%supersymmetry breaking is discussed. REDUCE plays very important
+%role in evaluation of the Feynman superdiagrams and in
+%renormalization.
+
+@TECHREPORT{dosSantos:88a,
+ AUTHOR = "Renato P. dos Santos",
+ TITLE = "Introdu\c{c}\~{a}o ao Sistema {REDUCE} de C\'{a}lculo
+Alg\'{e}brico",
+ INSTITUTION = "CBPF, Rio de Janeiro, Brazil",
+ YEAR = 1988, NUMBER = "CBPF-NT-001/88"}
+%(In Portuguese) Lecture notes of a course on REDUCE.
+
+@ARTICLE{Dubowsky:75,
+ AUTHOR = "S. Dubowsky and J. L. Grant",
+ TITLE = "Application of Symbolic Manipulation to Time
+Domain Analysis of Nonlinear Dynamic Systems",
+ JOURNAL = "Journ. of Dynamic Systems, Measurement, and Control",
+ YEAR = 1975, NUMBER = "75-Aut-J"}
+
+@ARTICLE{Dudley:89,
+ AUTHOR = "M. L. Dudley and R. W. James",
+ TITLE = "{Computer-aided} Derivation of Spherical Harmonic Spectral Equations
+in Astrogeophyics",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1989, VOLUME = 8, NUMBER = 4, PAGES = "423-427", MONTH = "October"}
+
+@ARTICLE{Dufner:69,
+ AUTHOR = "A. M. Dufner and Y. S. Tsai",
+ TITLE = "Phenomenological Analysis of the $\gamma$NN* Form Factors",
+ JOURNAL = "Phys. Rev.",
+ YEAR = 1969, VOLUME = 168, PAGES = "1801-1809"}
+
+@INPROCEEDINGS{Dulyan:87,
+ AUTHOR = "L. S. Dulyan",
+ TITLE = "The Calculation of {QCD} Triangular {Feynman} Graphs in the
+External Gluonic Field Using {REDUCE}-2 System",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "172-173",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Duncan:86,
+ AUTHOR = "Anthony Duncan and Ralph Roskies",
+ TITLE = "Representations of Unusual Mathematical Structures in Scientific
+Applications of Symbolic Computation",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1986, VOLUME = 2, NUMBER = 2, PAGES = "201-206", MONTH = "June"}
+%We present examples of techniques we have used to apply REDUCE to problems
+%in particle physics which have mathematical structures unknown to REDUCE.
+
+@PHDTHESIS{Duval:87,
+ AUTHOR = "Dominique Duval",
+ TITLE = "Diverses questions relatives au Calcul Formel
+Avec des Nombres Alg\'{e}briques",
+ SCHOOL = "L'Universit\'{e} Scientifique, Technologique
+et M\'{e}dicale de Grenoble", YEAR = 1987}
+
+@ARTICLE{Earles:70,
+ AUTHOR = "D. Earles",
+ TITLE = "A Measurement of the Electron-Production of Muon Pairs",
+ JOURNAL = "Phys. Rev. Lett.",
+ YEAR = 1970, VOLUME = 25, PAGES = "129-133"}
+
+@ARTICLE{Eastwood:87,
+ AUTHOR = "James W. Eastwood",
+ TITLE = "Orthovec:  A {REDUCE} Program for {3-D} Vector Analysis
+in Orthogonal Curvilinear Coordinates",
+ JOURNAL = "Comp. Phys. Commun.",
+ YEAR = 1987, VOLUME = 47, NUMBER = 1, PAGES = "139-147", MONTH = "October"}
+
+@TECHREPORT{Edelen:81,
+ AUTHOR = "Dominic G. B. Edelen",
+ TITLE = "Programs for Calculation of Isovector Fields in the
+{REDUCE}-2 Environment",
+ INSTITUTION = "Center for the Application of Mathematics,
+Lehigh University", YEAR = 1981, NUMBER = "TBD", MONTH = "August"}
+
+@ARTICLE{Edelen:82,
+ AUTHOR = "D. G. B. Edelen",
+ TITLE = "Isovector Fields for Problems in the Mechanics of Solids and
+Fluids",
+ JOURNAL = "Int. Journ. Eng. Sci.",
+ YEAR = 1982, VOLUME = 20, PAGES = "803-815"}
+%Prolongation methods as a REDUCE package for this, available from
+%Center for Applications of Mathematics, Lehigh Univ., Bethlehem, PA
+%18015.  Applications to mechanics of solids and fluids.
+
+@BOOK{Edneral:89,
+ AUTHOR = "Viktor F. Edneral and Aleksandr P. Kryukov and
+Anatolii Ia. Rodionov",
+ TITLE = "The language of the analytic computer program {REDUCE}",
+ PUBLISHER = "Moscow, {Izd-vo}, Moskovskogo {un-ta}", YEAR = 1989}
+%This monograph -- first in The Soviet Union with a systematic treatment
+%of the analytical computer (program) REDUCE.
+
+@ARTICLE{Eisenberger:90,
+ AUTHOR = "Moshe Eisenberger",
+ TITLE = "Application of Symbolic Algebra to the Analysis of Plates
+on Variable Elastic Foundation",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1990, VOLUME = 9, NUMBER = 2, PAGES = "207-213", MONTH = "February"}
+
+@TECHREPORT{Eissfeller:86,
+ AUTHOR = "Bernd {Ei{\ss}feller} and {G\"{u}nter} W. Hein",
+ TITLE = "A Contribution to {3D-Operational} Geodesy",
+ INSTITUTION = "{Universit\"{a}rer} Studiengang Vermessungswesen
+and {Universit\"{a}t} der Bundeswehr {M\"{u}nchen}",
+ YEAR = 1986, NUMBER = "Heft 17", MONTH = "December"}
+
+@PHDTHESIS{Eitelbach:73,
+ AUTHOR = "D. L. Eitelbach",
+ TITLE = "Automatic Analysis of Problems in Elementary Mechanics",
+ SCHOOL = "University of Illinois",
+ YEAR = 1973}
+
+@ARTICLE{Eleuterio:82,
+ AUTHOR = "S. M. Eleut\'{e}rio and R. V. Mendes",
+ TITLE = "Note on Equivalence and Singularities:  An Application of
+Computer Algebra",
+ JOURNAL = "Journ. Comp. Phys.",
+ YEAR = 1982, VOLUME = 48, PAGES = "150-156"}
+%GR equivalence, commenting on \AAman & Karlhede.
+
+@ARTICLE{Eliseev:85,
+ AUTHOR = "V. P. Eliseev and R. N. Fedorova and V. V. Kornyak",
+ TITLE = "A {REDUCE} Program for Determining Point and Contact {Lie}
+Symmetries of Differential Equations",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1985, VOLUME = 36, PAGES = "383-389"}
+%"A universal REDUCE program for obtaining the systems of
+%determining equations of the Lie algebra of point and contact
+%symmetries is proposed".
+
+@ARTICLE{Elishakoff:87,
+ AUTHOR = "Isaac Elishakoff and Joseph Hollkamp",
+ TITLE = "Computerized Symbolic Solution for a Nonconservative
+System in Which Instability Occurs by Flutter in One Range
+of a Parameter and by Divergence in Another",
+ JOURNAL = "Comp. Methods in Applied Mechanics and Engineering",
+ YEAR = 1987, VOLUME = 62, PAGES = "27-46"}
+%"...the problem is solved by the Galerkin method in conjunction with
+%computerized symbolic algebra".  The system used is REDUCE.  "It
+%carries out algebraic operations irrespective of their complexity".
+%Includes snatches of code and algebraic answers.  Mainly
+%differentiation and substitution, plus a little integration.  The
+%coefficients get rather large (18 digits or so).
+
+@ARTICLE{Elishakoff:87a,
+ AUTHOR = "Isaac Elishakoff and Brian Couch",
+ TITLE = "Application of Symbolic Algebra to the Instability of a
+Nonconservative System",
+ JOURNAL = "J. Symbolic Computation",
+ YEAR = 1987, VOLUME = 4, NUMBER = 3, PAGES = "391-396", MONTH = "December"}
+
+@ARTICLE{Esteban:90,
+ AUTHOR = "E.P. Esteban and E. Ramos",
+ TITLE = "Algebraic computing and the {Newman-Penrose} formalism",
+ JOURNAL = "Computers in Physics",
+ YEAR = 1990, PAGES = "285-290", MONTH = "May/June"}
+
+@ARTICLE{Falck:89,
+ AUTHOR = "N. K. Falck and D. Graudenz and G. Kramer",
+ TITLE = "Cross section for {five-parton} production in $e^{+} e^{-}$
+annihilation",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1989, VOLUME = 56, PAGES = "181-198", NUMBER = 2, MONTH = "December"}
+
+@ARTICLE{Fazio:84,
+ AUTHOR = "P. M. Fazio and G. E. Copeland",
+ TITLE = "Cooper-Type Minima in Multipole Cross Sections of Atomic Hydrogen",
+ JOURNAL = "Phys. Rev. Lett.",
+ YEAR = 1984, VOLUME = 53, NUMBER = "2", MONTH = "July"}
+
+@INPROCEEDINGS{Fedorova:87,
+ AUTHOR = "R. N. Fedorova and V. P. Gerdt and N. N. Govorun
+and V. P. Shirikov",
+ TITLE = "Computer Algebra in Physical Research of {Joint Institute}
+for {Nuclear Research}",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "1-10",
+ PUBLISHER = "Springer-Verlag"}
+
+@INPROCEEDINGS{Fedorova:87a,
+ AUTHOR = "R. N. Fedorova and V. V. Kornyak",
+ TITLE = "Computer Algebra Application for Determining Local Symmetries
+of Differential Equations",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "174-175",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Feldmar:86,
+ AUTHOR = "E. Feldmar and K. S. {K\"{o}lbig}",
+ TITLE = "{REDUCE} Procedures for the Manipulation of Generalized
+Power Series",
+ JOURNAL = "Comp. Phys. Comm.",
+ YEAR = 1986, VOLUME = 39, PAGES = "267-284"}
+
+@ARTICLE{Feuillebois:84,
+ AUTHOR = "F. Feuillebois",
+ TITLE = "Sedimentation in a Dispersion with Vertical Inhomogenieties",
+ JOURNAL = "Journ. Fluid Mech.",
+ YEAR = 1984, VOLUME = 139, PAGES = "145-171"}
+%Uses REDUCE and INT to evaluate some integrals in the expansion of
+%1/s, a small quantity.
+
+@ARTICLE{Fitch:73,
+ AUTHOR = "John Fitch",
+ TITLE = "Problems \#3 and \#4 in {REDUCE} and {MACSYMA}",
+ JOURNAL = "SIGSAM Bulletin",
+ YEAR = 1973, PAGES = "10-11"}
+%The algebra systems REDUCE and MACSYMA are used to solve SIGSAM
+%Problem \#3, the Reversion of a Double Series, and SIGSAM Problem \#4,
+%the Lie Transform Solution of the Harmonic Oscillator.
+
+@INPROCEEDINGS{Fitch:81,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "User-based Integration Software",
+ BOOKTITLE = "Proc. 1981 {ACM} Symposium on Symbolic
+and Algebraic Computation",
+ YEAR = 1981, PAGES = "245-248"}
+
+@INPROCEEDINGS{Fitch:83,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "Implementing {REDUCE} on a Microprocessor",
+ BOOKTITLE = "Proc. {EUROCAL} 1983, Lecture Notes
+in Computer Science", YEAR = 1983, VOLUME = 162, PAGES = "128-136",
+ PUBLISHER = "Springer-Verlag"}
+
+@ARTICLE{Fitch:85,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "Solving Algebraic Problems with {REDUCE}",
+ JOURNAL = "J. of Symbolic Computation",
+ YEAR = 1985, VOLUME = 1, NUMBER = 2, PAGES = "211-227", MONTH = "June"}
+
+@INPROCEEDINGS{Fitch:85a,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "Applying Computer Algebra",
+ BOOKTITLE = "International Conference on Computer Algebra and its
+Application in Theory",
+ YEAR = 1985, PAGES = "262-275"}
+
+@INPROCEEDINGS{Fitch:87,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "Utilisation du Calcul Formel",
+ BOOKTITLE = "Calcul Formel et Automatique",
+ EDITOR = "P. Chenin", PUBLISHER = "Editions du {CNRS}",
+ YEAR = 1987, PAGES = "119-136"}
+
+@INPROCEEDINGS{Fitch:87a,
+ AUTHOR = "J. P. Fitch and R. G. Hall",
+ TITLE = "Symbolic Computation and the Finite Element Method",
+ BOOKTITLE = "Proc. {EUROCAL} '87, Lecture Notes
+in Computer Science", YEAR = 1987, VOLUME = 378, PAGES = "95-96",
+ PUBLISHER = "Springer-Verlag"}
+
+@INPROCEEDINGS{Fitch:89,
+ AUTHOR = "J. P. Fitch",
+ TITLE = "Can {REDUCE} be run in parallel?",
+ BOOKTITLE = "Proc. of {ISSAC} '89", PUBLISHER = "{ACM} Press, New York",
+ YEAR = 1989, PAGES = "155-162"}
+
+@ARTICLE{Fitch:89a,
+ AUTHOR = "J. Fitch",
+ TITLE = "Compiling for Parallelism",
+ JOURNAL = "Computer Algebra and Parallelism", EDITOR = "J. Della Dora
+and J. Fitch",
+ YEAR = 1989, PAGES = "19-31", PUBLISHER = "Academic Press, London"}
+
+@TECHREPORT{Flatau:86,
+ AUTHOR = "Piotr J. Flatau and John P. Boyd and William R. Cotton",
+ TITLE = "Symbolic Algebra in Applied Mathematics and Geophysical
+Fluid Dynamics - {REDUCE} Examples",
+ INSTITUTION = "Dept. of Atmospheric and Oceanic Science, University
+of Michigan, and Dept. of Atmospheric Science, Colorado State
+University", YEAR = 1986}
+
+@TECHREPORT{Flath:86,
+ AUTHOR = "Dan Flath",
+ TITLE = "Remarks on Tensor Operators",
+ INSTITUTION = "National University of Singapore, Department
+of Mathematics", TYPE = "Research Report",
+ YEAR = 1986, NUMBER = 266, MONTH = "July"}
+
+@ARTICLE{Fleischer:71,
+ AUTHOR = "J. Fleischer",
+ TITLE = "Partial Wave Analysis of Nucleon-Nucleon {Bethe}-{Salpeter}
+Equation on the Computer",
+ JOURNAL = "Journ. of Comp. Phys.",
+ YEAR = 1971, VOLUME = 12, PAGES = "112-123"}
+
+@ARTICLE{Fleischer:73,
+ AUTHOR = "J. Fleischer and J. L. Gammel and M. T. Menzel",
+ TITLE = "Matrix {Pad\'{e}} Approximants for the {1SO}- and
+{3PO}- Partial Waves in Nucleon-Nucleon Scattering",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1973, VOLUME = 8, PAGES = "1545-1552"}
+
+@ARTICLE{Fleischer:75,
+ AUTHOR = "J. Fleischer and J. A. Tjon",
+ TITLE = "Bethe-{Salpeter} Equation for {J}=0 Nucleon-Nucleon
+Scattering with One-Boson Exchange",
+ JOURNAL = "Nuclear Physics",
+ YEAR = 1975, VOLUME = "B84", PAGES = "375-396"}
+
+@ARTICLE{Fogelholm:82,
+ AUTHOR = "Rabbe Fogelholm and Inge B. Frick",
+ TITLE = "Standard {LISP} for the {VAX:}  A Provisional Implementation",
+ JOURNAL = "{SIGSAM} Bulletin",
+ YEAR = 1982, VOLUME = 16, NUMBER = 4, PAGES = "10-12", MONTH = "November"}
+
+@ARTICLE{Foster:89,
+ AUTHOR = "Kenneth R. Foster and Haim H. Bau",
+ TITLE = "Symbolic Manipulation Programs for the Personal Computer",
+ JOURNAL = "Science",
+ YEAR = 1989, VOLUME = 243, PAGES = "679-243", MONTH = "February"}
+%Reviews several algebra programs that run on small machines.  Doesn't
+%rate the PC version of REDUCE very highly because of the small workspace.
+
+@ARTICLE{Fox:71,
+ AUTHOR = "J. A. Fox",
+ TITLE = "Recalculation of the Crossed Graph Contribution
+to the 4th Order {Lamb} Shift",
+ JOURNAL = "Phys. Rev. D",
+ YEAR = 1971, VOLUME = 3, PAGES = "3228-3230"}
+
+@ARTICLE{Fox:74,
+ AUTHOR = "John A. Fox and Anthony C. Hearn",
+ TITLE = "Analytic Computation of Some Integrals in Fourth Order
+Quantum Electrodynamics",
+ JOURNAL = "Journ. Comp. Phys.",
+ YEAR = 1974, VOLUME = 14, PAGES = "301-317"}
+%A program for the analytic evaluation of some parametric integrals
+%which occur in fourth order QED calculations is described.
+
+@ARTICLE{Franceschetti:85,
+ AUTHOR = "G. Franceschetti and I. Pinto",
+ TITLE = "Nonlinear Propagation and Scattering:  Analytical Solution and
+Symbolic Code Implementation",
+ JOURNAL = "J. Opt. Soc. Am. A",
+ YEAR = 1985, VOLUME = 2, PAGES = "997-1006"}
+%Volterra series using REDUCE.  Perturbation expansions.
+
+@INPROCEEDINGS{Freire:88,
+ AUTHOR = "E. Freire and E. Gamero and E. Ponce and L. G. Franquelo",
+ TITLE = "An Algorithm for Symbolic Computation of Center Manifolds",
+ BOOKTITLE = "Proc. of {ISSAC} '88", PUBLISHER = "Springer-Verlag",
+ YEAR = 1988, VOLUME = 358, PAGES = "218-230"}
+
+@INPROCEEDINGS{Freire:89,
+ AUTHOR = "E. Freire and E. Gamero and E. Ponce",
+ TITLE = "An Algorithm for Symbolic Computation of {Hopf} Bifurcation",
+ BOOKTITLE = "Proc. Computers and Mathematics '89",
+ EDITOR = "E. Kaltofen and S. M. Watt",
+ YEAR = 1989, PAGES = "109-118", PUBLISHER = "Springer-Verlag, New York"}
+
+@TECHREPORT{Frick:82,
+ AUTHOR = "I. G. Frick and R. Fogelholm",
+ TITLE = "An Implementation of {Standard} {Lisp} Built on Top of {Franz Lisp}",
+ INSTITUTION = "University of Stockholm, Institute of
+Physics", YEAR = 1982, TYPE = "Report", MONTH = "April"}
+%A Standard LISP system has been built for the VAX-11
+%large-address-space computer by embedding the required
+%function definitions in the available Franz Lisp system
+%for VAX/UNIX.
+
+@ARTICLE{Fujimoto:84,
+ AUTHOR = "Y. Fujimoto and T. Garavaglia",
+ TITLE = "Phase Diagrams in {Scalar QED}",
+ JOURNAL = "Physics Letters",
+ YEAR = 1984, VOLUME = "148B", NUMBER = "1,2,3", PAGES = "220-224",
+ MONTH = "November"}
+
+@ARTICLE{Fuzio:85,
+ AUTHOR = "P. M. Fuzio and G. E. Copeland",
+ TITLE = "Partial Radiative-Recombination Cross Sections for Excited
+States of Hydrogen",
+ JOURNAL = "Phys. Rev. A",
+ YEAR = 1985, VOLUME = 31, NUMBER = 1, PAGES = "187-195"}
+%"The squares of the dipole and quadrupole matrix elements for the
+%free-to-bond transitions of hydrogen uptp high bound states are
+%derived in closed analytic form using a method suitable for computer
+%algebra".

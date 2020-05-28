@@ -1,0 +1,44 @@
+@Book{Kohonen:1980:CAM,
+  author =       "Teuvo Kohonen",
+  title =        "Content-addressable memories",
+  publisher =    pub-SV,
+  address =      pub-SV:adr,
+  pages =        "xi + 368",
+  year =         "1980",
+  ISBN =         "0-387-09823-2 (New York), 3-540-09823-2 (Berlin)",
+  ISBN-13 =      "978-0-387-09823-4 (New York), 978-3-540-09823-2
+                 (Berlin)",
+  ISBN-13 =      "978-0-387-09823-X (bad check digit)",
+  ISBN-13 =      "9-770-387098234-x (bad prefix)",
+  LCCN =         "TK7895.M4 K63",
+  bibdate =      "Mon Jul 18 20:44:15 1994",
+  bibsource =    "http://www.math.utah.edu/pub/tex/bib/hash.bib",
+  note =         "Hashing is covered in the discussion of software-based
+                 content-addressable memories in Chapter 2.",
+  price =        "US\$39.00",
+  acknowledgement = ack-nhfb,
+}
+
+@Book{Schlick:1979:PP,
+  author =       "Moritz Schlick and Henk L. Mulder and Barbara F. B.
+                 van de Velde-Schlick",
+  title =        "Philosophical papers",
+  volume =       "11",
+  publisher =    pub-REIDEL,
+  address =      pub-REIDEL:adr,
+  pages =        "various",
+  year =         "1979",
+  ISBN =         "90-277-0314-0 (vol. 1)",
+  ISBN-13 =      "978-90-277-0314-9 (vol. 1)",
+  LCCN =         "B3329.S4872 E5 1979",
+  bibdate =      "Tue Oct 10 07:23:24 MDT 2006",
+  bibsource =    "http://www.math.utah.edu/pub/tex/bib/einstein.bib;
+                 z3950.loc.gov:7090/Voyager",
+  note =         "English translation by Peter Heath of
+                 \cite{Schlick:1915:PBR}.",
+  series =       "Vienna circle collection",
+  acknowledgement = ack-nhfb,
+  author-dates = "1882--1936",
+  remark =       "v. 1. 1909--1922.",
+  subject =      "Philosophy",
+}

@@ -1,0 +1,847 @@
+@Comment< 
+This file contains a sample set of bibliography data base entries in
+Scribe format.  It is used for testing the -scribe option of bibclean.
+
+The first entry uses each of the 7 delimiters, each of the 3
+separators, undelimited values, and embedded quotes to illustrate the
+flexibility of Scribe syntax.  Note, however, that nested delimiters
+are NOT permitted by Scribe; BibTeX permits nested braces and braced
+quotes.  
+>
+
+@Comment{Old style comment}
+
+@Comment{
+This is a block comment
+with two lines.
+}
+
+@Comment{
+This is a block comment with two lines and embedded braces: {one}
+{two} {three}
+}
+
+@Comment{
+This is a block comment with two lines and embedded braces: {one}
+{two} {three}.  Here are some mismatched braces: { { { } } } {} {}
+}
+
+@inproceedings( Adomaitis79Computer,
+  key =        <"Outer and inner " quotes">,
+  author       {V. Adomaitis},
+  title  /       <A Computer Aided Video Illustrating System>,
+  year         1979,
+  booktitle =   [Proc. 6-th Man-Computer Communications Conference],
+  editor =      "M. Wein
+                and E. Swail",
+  publisher =   '
+Computer Graphics Section, National Research Council of Canada',
+  pages =       `161-167`,
+  address =     {Ottawa, Ontario, Canada, K1A 0R8},
+  keywords =    {Applications, video illustration system} )
+
+@STRING( HSchV    = {Universit\"atsdruckerei und Verlag Hermann Schmidt})
+@STRING( a.HSchV    = {Mainz})
+
+@article(ntg:PH92,
+   AUTHOR = {Nico Poppelier and Amy Hendrickson},
+   TITLE = {Book reviews},
+   journal = ntg,
+   YEAR = 1992,
+   MONTH = may,
+   volume = 92,
+   NUMBER = 1,
+   PAGES = {135-138},
+   annote = [Contains reviews of ``\LaTeX{} for Everyone''
+            \cite{PCTeX:JHa91}, ``Practical SGML''
+            \cite{Kluwer:EvHe90}, and ``\TeX{} by Topic, A
+            \TeX{}nician's Reference'' \cite{A-W:VEi91}.],
+   keywords = {Reviews},
+)
+
+@article(tub:NPo92b,
+   AUTHOR = {Nico Poppelier},
+   TITLE = [Book reviews: {Jane Hahn, {\LaTeX} for Everyone};
+            {Eric van Herwijnen, Practical {SGML}}],
+   JOURNAL = tub,
+   YEAR = 1992,
+   VOLUME = 13,
+   NUMBER = 2,
+   MONTH = jul,
+   PAGES = {182-184},
+   annote = <Contains reviews of ``\LaTeX{} for Everyone''
+            \cite{PCTeX:JHa91}, and ``Practical SGML''
+            \cite{Kluwer:EvHe90}.>,
+   keywords = {?},
+)
+
+
+@COMMENT(Some standard works describing conventions for citations
+      and bibliographies)
+ 
+@TECHREPORT(bs-1629,
+      AUTHOR = "BSI",
+      TITLE = "Bibliographic References",
+      INSTITUTION = "British Standards Institution",
+      YEAR = "1976",
+      TYPE = "BS",
+      NUMBER = "1629"
+      )
+ 
+@TECHREPORT(bs-5605,
+      AUTHOR = "BSI",
+      TITLE = "Citing Publications by Bibliographic References",
+      INSTITUTION = "British Standards Institution",
+      YEAR = "1978",
+      TYPE = "BS",
+      NUMBER = "5606"
+      )
+ 
+@TECHREPORT(bs-6371,
+      AUTHOR = "BSI",
+      TITLE = "Citation of unpublished documents",
+      INSTITUTION = "British Standards Institution",
+      YEAR = "1983",
+      TYPE = "BS",
+      NUMBER = "6371"
+      )
+ 
+@BOOK(butcher-81,
+      TITLE = "Copy-editing",
+      AUTHOR = "Judith Butcher",
+      PUBLISHER = "Cambridge University Press",
+      YEAR = "1981",
+      EDITION = "2nd"
+      )
+ 
+@BOOK(chicago-82,
+      TITLE = "The {C}hicago Manual of Style",
+      AUTHOR = "`Chicago'",
+      YEAR = "1982",
+      PUBLISHER = "University of Chicago Press",
+      EDITION = "13th"
+      )
+ 
+@COMMENT(Some examples taken from the document describing BS 5605)
+ 
+@ARTICLE(howells-51,
+      AUTHOR = "W. W. Howells",
+      TITLE = "Factors of Human Physique",
+      JOURNAL = "American Journal of Physical Anthropology",
+      VOLUME = "9",
+      PAGES = "159-192",
+      YEAR = "1951"
+      )
+ 
+@ARTICLE(howells-66-pop,
+      AUTHOR = "W. W. Howells",
+      TITLE = "Population Distances:  Biological, Linguistic, Geographical and
+               Environmental",
+      JOURNAL = "Current Anthropology",
+      VOLUME = "7",
+      PAGES = "531--540",
+      YEAR = "1966"
+      )
+ 
+@ARTICLE(howells-66-var,
+      AUTHOR = "W. W. Howells",
+      TITLE = "Variability in Family Lines vs. Population Variability",
+      JOURNAL = "Annals of the {New York Academy of Sciences}",
+      VOLUME = "134",
+      PAGES = "624--631",
+      YEAR = "1966"
+      )
+ 
+@ARTICLE(johnson-74,
+      AUTHOR = "G. B. Johnson",
+      TITLE = "Enzyme Polymorphism",
+      JOURNAL = "Science",
+      VOLUME = "184",
+      PAGES = "28--37",
+      YEAR = "1974"
+      )
+ 
+@ARTICLE(johnson-howells,
+      AUTHOR = "G. B. Johnson and W. W. Howells",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1974"
+      )
+ 
+@ARTICLE(johnson-etc,
+      AUTHOR = "G. B. Johnson and W. W. Howells and A. N. Other",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1976"
+      )
+ 
+@MANUAL(anon-67,
+      AUTHOR = "Anon.",
+      TITLE = "Title title title title title title title title title title",
+      ORGANIZATION = "Organization organization organization",
+      YEAR = "1967"
+      )
+ 
+@ARTICLE(aslin-49,
+      AUTHOR = "E. J. Aslin",
+      TITLE = "Photostat recording in library work",
+      JOURNAL = "Aslib Proceedings",
+      YEAR = "1949",
+      VOLUME = "1",
+      PAGES = "49--52"
+      )
+ 
+@ARTICLE(fletcher-hopkins,
+      AUTHOR = "W. M. Fletcher and F. G. Hopkins",
+      TITLE = "Lactic Acid in Amphibian Muscle",
+      JOURNAL = "J. Physiol.",
+      YEAR = "1907",
+      VOLUME = "35",
+      PAGES = "247--309"
+      )
+ 
+@INCOLLECTION(hanson-67,
+      AUTHOR = "C. W. Hanson",
+      TITLE = "Subject inquiries and literature searching",
+      BOOKTITLE = "Handbook of special librarianship and information work",
+      EDITOR = "W. Ashworth",
+      YEAR = "1967",
+      EDITION = "3rd",
+      PAGES = "414--452"
+      )
+ 
+@INBOOK(wright-63,
+      AUTHOR = "R. C. Wright",
+      TITLE = "Report Literature",
+      BOOKTITLE = "Special Materials in the Library",
+      EDITOR = "J. Burkett and T. S. Morgan",
+      YEAR = "1963",
+      PAGES = "46--59",
+      publisher = "The Library Association",
+      address = London,
+      )
+ 
+@BOOK(BCM-59,
+      AUTHOR = "{Association of British Chemical Manufacturers}",
+      TITLE = "British chemicals and their manufacturers",
+      PUBLISHER = <Unknown> ,
+      YEAR = "1959"
+      )
+ 
+@INBOOK(feigl-58,
+      AUTHOR = "F. Feigl",
+      TITLE = "Spot Tests in Organic Analysis",
+      YEAR = "1958",
+      PUBLISHER = "Publisher publisher",
+      EDITION = "5th",
+      CHAPTER = "6"
+      )
+ 
+@COMMENT(Some examples taken from document describing BS 1629)
+ 
+@BOOK(hoel-71-whole,
+      AUTHOR = "Paul Gerhard Hoel",
+      TITLE = "Elementary Statistics",
+      PUBLISHER = "Wiley",
+      YEAR = "1971",
+      SERIES = "Wiley series in probability and mathematical statistics",
+      ADDRESS = "New York, Chichester",
+      EDITION = "3rd",
+      NOTE = "ISBN 0~471~40300"
+      )
+ 
+@INBOOK(hoel-71-portion,
+      AUTHOR = "Paul Gerhard Hoel",
+      TITLE = "Elementary Statistics",
+      PUBLISHER = "Wiley",
+      YEAR = "1971",
+      SERIES = "Wiley series in probability and mathematical statistics",
+      ADDRESS = "New York, Chichester",
+      EDITION = "3rd",
+      NOTE = "ISBN 0~471~40300",
+      PAGES = "19--33"
+      )
+ 
+@BOOK(singer-whole,
+      YEAR = "1954--58",
+      EDITOR = "Charles Joseph Singer and E. J. Holmyard and A. R. Hall",
+      TITLE = "A history of technology",
+      ADDRESS = "London",
+      PUBLISHER = "Oxford University Press",
+      NOTE = "5 vol."
+      )
+ 
+@INCOLLECTION(singer-portion-chapter,
+      KEY = `singer-portion-chapter`,
+      TITLE = "The late nineteenth century",
+      YEAR = "1954--58",
+      EDITOR = "Charles Joseph Singer and E. J. Holmyard and A. R. Hall",
+      BOOKTITLE = "A history of technology",
+      ADDRESS = "London",
+      PUBLISHER = "Oxford University Press",
+      TYPE = "Vol.",
+      CHAPTER = "5"
+      )
+ 
+@INCOLLECTION(singer-portion-volume,
+      TITLE = "The late nineteenth century",
+      KEY = 'singer-portion-volume',
+      YEAR = "1954--58",
+      EDITOR = "Charles Joseph Singer and E. J. Holmyard and A. R. Hall",
+      BOOKTITLE = "A history of technology",
+      ADDRESS = "London",
+      PUBLISHER = "Oxford University Press",
+      VOLUME = "5"
+      )
+ 
+@MANUAL(bs-2570-manual,
+      AUTHOR = "BSI",
+      TITLE = "Natural Fibre Twines",
+      ORGANIZATION = "British Standards Institution",
+      ADDRESS = "London",
+      EDITION = "3rd",
+      YEAR = "1973",
+      NOTE = "BS 2570"
+      )
+ 
+@TECHREPORT(bs-2570-techreport,
+      AUTHOR = "BSI",
+      TITLE = "Natural Fibre Twines",
+      INSTITUTION = "British Standards Institution",
+      ADDRESS = "London",
+      YEAR = "1973",
+      TYPE = "BS",
+      NUMBER = "2570",
+      NOTE = "3rd. edn."
+      )
+ 
+@INBOOK(bs-2570-inbook,
+      AUTHOR = "BSI",
+      TITLE = "{BS} 2570: Natural Fibre Twines",
+      PUBLISHER = "British Standards Institution",
+      ADDRESS = "London",
+      YEAR = "1973",
+      EDITION = "3rd",
+      CHAPTER = "5",
+      TYPE = "{Table}"
+      )
+ 
+@TECHREPORT(ellis-walton,
+      AUTHOR = "B. Ellis and A. K. Walton",
+      TITLE = "A Bibliography on Optical Modulators",
+      INSTITUTION = "Royal Aircraft Establishment",
+      YEAR = "1971",
+      NUMBER = "RAE-TR-71009"
+      )
+ 
+@ARTICLE(godfrey-59,
+      AUTHOR = "G. Bernard Godfrey",
+      TITLE = "Joints in Tubular Structures",
+      JOURNAL = "Struct. Eng.",
+      YEAR = "1959",
+      VOLUME = "37",
+      NUMBER = "4",
+      PAGES = "126--135"
+      )
+ 
+@INCOLLECTION(ramsbottom-31,
+      AUTHOR = "John Ramsbottom",
+      TITLE = "Fungi Pathogenic to Man",
+      BOOKTITLE = "A System of Bacteriology in relation to Medicine",
+      PUBLISHER = "HMSO, for Medical Research Council",
+      YEAR = "1931",
+      VOLUME = "8",
+      PAGES = "11--70",
+      ADDRESS = "London"
+      )
+ 
+@ARTICLE(hanlon-72,
+      AUTHOR = "Joseph Hanlon",
+      TITLE = "Designing Buildings by Computer",
+      JOURNAL = "New Scientist",
+      YEAR = "1972",
+      MONTH = "31 Aug",
+      PAGES = "429--432"
+      )
+ 
+@TECHREPORT(winget-67,
+      AUTHOR = "{Winget Ltd.}",
+      TITLE = "Detachable Bulldozer Attachment for Dumper Vehicles",
+      YEAR = "1967",
+      institution = [unknown],
+      TYPE = "GB Patent Specification",
+      NUMBER = "1060631",
+      MONTH = "8 Mar",
+      )
+ 
+@ARTICLE(bry-afflerbach,
+      AUTHOR = "I. Bry and L. Afflerbach",
+      TITLE = "In search of an organizing principle for behavioural science
+            literature",
+      JOURNAL = "Community Mental Health",
+      YEAR = "1968",
+      VOLUME = "4",
+      NUMBER = "1",
+      PAGES = "75--84"
+      )
+ 
+@INCOLLECTION(ranganathan-51,
+      AUTHOR = "S. R. Ranganthan",
+      TITLE = "Colon classification and its approach to documentation",
+      BOOKTITLE = "Bibliographic Organization",
+      EDITOR = "Jesse H. Shera and Margaret E. Egan",
+      publisher = "University of Chicago Press",
+      YEAR = "1951",
+      PAGES = "94--105"
+      )
+ 
+@BOOK(mccolvin-nodate,
+      AUTHOR = "L. R. McColvin",
+      TITLE = "Libraries in {Britain}",
+      PUBLISHER = "{Longmans Green, for the British Council}",
+      ADDRESS = "London",
+      YEAR = 1961,
+      )
+ 
+@COMMENT(Some examples taken from document describing BS 6371)
+ 
+@UNPUBLISHED(exchequer-34-39,
+      AUTHOR = "Exchequer",
+      YEAR = "1634--1639",
+      TITLE = "Act books",
+      NOTE = "Edinburgh, Scottish Record Office, E.4/5"
+      )
+ 
+@UNPUBLISHED(traquair-38,
+      AUTHOR = "{Earl of} Traquair",
+      YEAR = "1638",
+      TITLE = "Letter to {Marquess of Hamilton, 28 Aug.}",
+      NOTE = "Lennoxlove (E.~Lothian),
+            Muniments of Duke of Hamilton and Brandon,
+            C.1, no. 963"
+      )
+ 
+@UNPUBLISHED(pym-24,
+      AUTHOR = "J. Pym",
+      YEAR = "1624",
+      TITLE = "Diary",
+      NOTE = "Northampton, Northamptonshire Record Office, Finch-Hatton 50"
+      )
+ 
+@PHDTHESIS(croft-78,
+      AUTHOR = "W. B. Croft",
+      YEAR = "1978",
+      TITLE = "Organizing and searching large files of document
+            descriptions",
+      SCHOOL = "Cambridge University"
+      )
+ 
+@COMMENT(Some examples taken from Chapter 10 of "Copy-editing"
+      by Judith Butcher)
+ 
+@BOOK(darcy-20-amaz,
+      AUTHOR = "Firstname D'Arcy",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1920"
+      )
+ 
+@BOOK(darcy-20-again,
+      AUTHOR = "Firstname D'Arcy",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1920"
+      )
+ 
+@ARTICLE(jones-n-h-r,
+      AUTHOR = "Firstname Jones and Firstname Norman and Firstname Hazel and
+                Firstname Robinson",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1962",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-s-r,
+      AUTHOR = "Firstname Jones and Firstname Smith and Firstname Robinson",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1962",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-65,
+      AUTHOR = "Firstname Jones",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1965",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-69,
+      AUTHOR = "Firstname Jones",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1969",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-abrams,
+      AUTHOR = "Firstname Jones and Firstname Abrams",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1968",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-smith,
+      AUTHOR = "Firstname Jones and Firstname Smith",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1965",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(jones-a-s,
+      AUTHOR = "Firstname Jones and Firstname Abrams and Firstname Smith",
+      TITLE = "Title title title title title title title title title title",
+      YEAR = "1966",
+      JOURNAL = "Journal journal journal"
+      )
+ 
+@ARTICLE(bloggs-60,
+      AUTHOR = "A. J. Bloggs",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1960"
+      )
+ 
+@ARTICLE(bloggs-61,
+      AUTHOR = "A. J. Bloggs",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1961"
+      )
+ 
+@ARTICLE(bloggs-jones,
+      AUTHOR = "A. J. Bloggs and X. Y. Jones",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1959"
+      )
+ 
+@ARTICLE(bloggs-s-j,
+      AUTHOR = "A. J. Bloggs and R. S. Smith and X. Y. Jones",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1955"
+      )
+ 
+@ARTICLE(brown-f-s,
+      AUTHOR = "H. W. Brown and A. S. Forbes and S. D. Smith",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1900"
+      )
+ 
+@INCOLLECTION(eckstein-zuckerman,
+      AUTHOR = "P. Eckstein and S. Zuckermann",
+      TITLE = "Morphology of the Reproductive Tract",
+      BOOKTITLE = "Marshall's Physiology of Reproduction",
+      PUBLISHER = "Longman",
+      YEAR = "1960",
+      EDITOR = "A. S. Parkes",
+      VOLUME = "1",
+      PAGES = "43--154",
+      ADDRESS = "London"
+      )
+ 
+@ARTICLE(heller-lederis,
+      AUTHOR = "H. Heller and K. Lederis",
+      TITLE = "Paper chromatography of small amounts of vasopressin
+               and oxytocin",
+      YEAR = "1958",
+      JOURNAL = "Nature",
+      ADDRESS = "London",
+      VOLUME = "182",
+      PAGES = "1231--2"
+      )
+ 
+@BOOK(wood-61,
+      AUTHOR = "R. H. Wood",
+      TITLE = "Plastic and Elastic Design of Slabs and Plates",
+      PUBLISHER = "Thames \& Hudson",
+      ADDRESS = "London",
+      YEAR = "1961"
+      )
+ 
+@COMMENT(Some examples taken from Chapter 15 of the Chicago Manual of Style)
+ 
+@BOOK(pratt-75,
+      AUTHOR = "Firstname Pratt",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1975"
+      )
+ 
+@ARTICLE(light-72,
+      AUTHOR = "Firstname Light",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1972"
+      )
+ 
+@ARTICLE(light-wong,
+      AUTHOR = "Firstname Light and Firstname Wong",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1975"
+      )
+ 
+@ARTICLE(kingston-76,
+      AUTHOR = "Firstname Kingston",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1976"
+      )
+ 
+@ARTICLE(kelley-96-spring,
+      AUTHOR = "Firstname Kelley",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1896"
+      )
+ 
+@ARTICLE(kelley-96-autumn,
+      AUTHOR = "Firstname Kelley",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1896"
+      )
+ 
+@ARTICLE(kelley-07,
+      AUTHOR = "Firstname Kelley",
+      TITLE = "Title title title title title title title title title title",
+      JOURNAL = "Journal journal journal",
+      YEAR = "1907"
+      )
+ 
+@BOOK(strong-01,
+      AUTHOR = "Firstname Strong",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1901"
+      )
+ 
+@BOOK(strong-02,
+      AUTHOR = "Firstname Strong",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1902"
+      )
+ 
+@BOOK(shotwell-01,
+      AUTHOR = "Firstname Shotwell",
+      TITLE = "Title title title title title title title title title title",
+      PUBLISHER = "Publisher publisher publisher",
+      YEAR = "1901"
+      )
+ 
+@COMMENT(Some examples taken from Chapter 16 of the Chicago Manual of Style)
+ 
+@TECHREPORT(brunswick-85,
+      AUTHOR = "`Brunswick'",
+      TITLE = "The piper and the rats:  A musical experiment",
+      INSTITUTION = "Rodent Activities Termination Section (RATS),
+            Pest Control Division,
+            Brunswick Public Welfare Department",
+      YEAR = "1985",
+      NUMBER = "1984",
+      ADDRESS = "Hamelin"
+      )
+ 
+@BOOK(kendeigh-52,
+      AUTHOR = "S. C. Kendeigh",
+      YEAR = "1952",
+      TITLE = "Prenatal care and its evolution in birds",
+      SERIES = "Illinois Biological Monographs",
+      VOLUME = "22",
+      NUMBER = "1--3",
+      ADDRESS = "Champaign",
+      PUBLISHER = "University of Illinois Press"
+      )
+ 
+@BOOK(chapman-75,
+      AUTHOR = "Jefferson Chapman",
+      YEAR = "1975",
+      TITLE = "The {Icehouse Bottom} Site---{40MR23}",
+      SERIES = "University of Tennessee Department of Anthropology Publication",
+      NUMBER = "23",
+      ADDRESS = "Knoxville",
+      PUBLISHER = "Univ. of Tennessee Press"
+      )
+ 
+@BOOK(hershkovitz-62,
+      AUTHOR = "P. Hershkovitz",
+      YEAR = "1962",
+      TITLE = "Evolution of {Neotropical} cricetine rodents ({Muridae}) with
+            special reference to the phyllotine group",
+      SERIES = "Fieldiana: Zoology",
+      VOLUME = "46",
+      ADDRESS = "Chicago",
+      PUBLISHER = "Field Museum of Natural History"
+      )
+ 
+@BOOK(wright-78-book,
+      TITLE = "Evolution and the genetics of populations",
+      AUTHOR = "Sewall Wright",
+      YEAR = "1978",
+      ADDRESS = "Chicago",
+      PUBLISHER = "Univ. of Chicago Press",
+      VOLUME = "4"
+      )
+ 
+@INCOLLECTION(wright-78-incollection,
+      TITLE = "Variability within and among natural populations",
+      AUTHOR = "Sewall Wright",
+      BOOKTITLE = "Evolution and the genetics of populations",
+      YEAR = "1978",
+      ADDRESS = "Chicago",
+      PUBLISHER = "Univ. of Chicago Press",
+      TYPE = "Vol.",
+      CHAPTER = "4"
+      )
+ 
+@INCOLLECTION(ogilvy-65,
+      AUTHOR = "David Ogilvy",
+      TITLE = "The Creative Chef",
+      BOOKTITLE = "The Creative Organization",
+      YEAR = "1965",
+      EDITOR = "Gary A. Steiner",
+      ADDRESS = "Chicago",
+      PUBLISHER = "University of Chicago Press",
+      PAGES = "199-213"
+      )
+ 
+@INCOLLECTION(mcneill-63,
+      AUTHOR = "William H. McNeill",
+      YEAR = "1963",
+      TITLE = "The Era of {Middle Eastern} Dominance to 500 {\sc b.c.}",
+      BOOKTITLE = "The Rise of the {West}",
+      PUBLISHER = "{University of Chicago Press}",
+      ADDRESS = "Chicago",
+      TYPE = "Part",
+      CHAPTER = "1"
+      )
+ 
+@INCOLLECTION(thomson-71,
+      AUTHOR = "Virgil Thomson",
+      TITLE = "Cage and the Collage of Noises",
+      BOOKTITLE = "American Music since 1910",
+      ADDRESS = "New York",
+      PUBLISHER = "Holt, Rinehart and Winston",
+      YEAR = "1971",
+      CHAPTER = "8"
+      )
+ 
+@INCOLLECTION(gordon-75,
+      TITLE = "The Tunes of {Chicken Little}",
+      AUTHOR = "Robert Gordon",
+      YEAR = "1975",
+      BOOKTITLE = "Playwrights for Tomorrow:  A Collection of Plays",
+      EDITOR = "Arthur H. Ballet",
+      VOLUME = "13",
+      ADDRESS = "Minneapolis",
+      PUBLISHER = "University of Minnesota Press",
+      NOTE = "One of four plays included in vol. 13"
+      )
+ 
+@INCOLLECTION(milton-24,
+      AUTHOR = "John Milton",
+      TITLE = "Paradise Lost",
+      BOOKTITLE = "The Complete Poetical Works of {John Milton}",
+      EDITION = "{Student's Cambridge}",
+      ADDRESS = "Boston",
+      PUBLISHER = "Houghton Mifflin",
+      YEAR = "1924",
+      EDITOR = "William Vaughn Moody"
+      )
+ 
+@INPROCEEDINGS(chomsky-73,
+      AUTHOR = "N. Chomsky",
+      YEAR = "1973",
+      TITLE = "Conditions on Transformations",
+      BOOKTITLE = "A festschrift for {Morris Halle}",
+      EDITOR = "S. R. Anderson and P. Kiparsky",
+      PUBLISHER = "Holt, Rinehart \& Winston",
+      ADDRESS = "New York"
+      )
+ 
+@INPROCEEDINGS(chave-64,
+      AUTHOR = "K. E. Chave",
+      YEAR = "1964",
+      TITLE = "Skeletal durability and preservation",
+      BOOKTITLE = "Approaches to paleoecology",
+      EDITOR = "J. Imbrie and N. Newel",
+      ADDRESS = "New York",
+      PUBLISHER = "Wiley",
+      PAGES = "377-87"
+      )
+ 
+@BOOK(smart-76,
+      AUTHOR = "Ninian Smart",
+      YEAR = "1976",
+      TITLE = "The religious experience of mankind",
+      PUBLISHER = "Schribner",
+      ADDRESS = "New York",
+      EDITION = "2nd"
+      )
+ 
+@ARTICLE(jackson-79,
+      AUTHOR = "Richard Jackson",
+      YEAR = "1979",
+      TITLE = "Running down the up-escalator:  Regional inequality
+            in {Papua New Guinea}",
+      JOURNAL = "Australian Geographer",
+      VOLUME = "14",
+      MONTH = "May",
+      PAGES = "175--84"
+      )
+ 
+@ARTICLE(prufer-64,
+      AUTHOR = "Olaf Prufer",
+      YEAR = 1964,
+      TITLE = "The {Hopewell} Cult",
+      JOURNAL = "Scientific {American}",
+      MONTH = dec,
+      PAGES = "90--102"
+      )
+ 
+@PHDTHESIS(mann-68,
+      AUTHOR = "A. E. Mann",
+      YEAR = "1968",
+      TITLE = "The palaeodemography of {Australopithecus}",
+      TYPE = "Ph.D. diss.",
+      SCHOOL = "University of California, Berkeley"
+      )
+ 
+@PHDTHESIS(maguire-76,
+      AUTHOR = "J. Maguire",
+      YEAR = "1976",
+      TITLE = "A taxonomic and ecological study of the living and fossil
+            {Hystricidae} with particular reference to southern {Africa}",
+      TYPE = "Ph.D. diss.",
+      SCHOOL = "Department of Geology, University of the Witwatersrand",
+      ADDRESS = "Johannesburg"
+      )
+ 
+@UNPUBLISHED(downes-74,
+      TITLE = "Systemic grammar and structural sentence relatedness",
+      AUTHOR = "W. J. Downes",
+      YEAR = "1974",
+      NOTE = "London School of Economics.  Mimeo."
+      )
+ 
+@MISC(hunt-76,
+      AUTHOR = "Hunt, Horace [pseud.]",
+      TITLE = "Interview",
+      YEAR = "1976",
+      HOWPUBLISHED = "Tape recording, Pennsylvania Historical and Museum
+            Commission, Harrisburg",
+      NOTE = "Interview by {Ronald Schatz, 16 May 1976}",
+      )
+

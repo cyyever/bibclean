@@ -1,0 +1,3 @@
+%% testoptw.bib:4:Unbackslashed math word in math mode in value ``"$O(n log n)$ vs $O(n \log n)$"''.
+%% testoptw.bib:11:Unbackslashed math word in math mode in value ``"$Pr(x > y)$ is wrong"''.
+%% testoptw.bib:25:Unusual compound assignment or equality-test operator in math mode value ``"The {K\=oriyama} theorem for $x >= 3$"'' (e.g., perhaps replace <= by \leq).

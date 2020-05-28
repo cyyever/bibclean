@@ -1,0 +1,540 @@
+WATCOM Linker Version 10.0
+Copyright by WATCOM International Corp. 1985, 1994. All rights reserved.
+Created on:       96/05/02 08:03:22
+Executable Image: BIBCLEAN.exe
+creating a DOS executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          186c:0000            0000efd0
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE                          0000:0000       00000007
+_TEXT                  CODE                          0000:0008       0000be85
+bibclean11_DATA        FAR_DATA                      0be9:0000       00008321
+chek11_DATA            FAR_DATA                      0be9:8330       00000000
+do11_DATA              FAR_DATA                      0be9:8330       00002800
+fix11_DATA             FAR_DATA                      0be9:ab30       00001000
+isbn11_DATA            FAR_DATA                      0be9:bb30       00000880
+option11_DATA          FAR_DATA                      0be9:c3b0       00000480
+FAR_DATA               FAR_DATA                      0be9:c830       00000000
+_NULL                  BEGDATA        DGROUP         186c:0000       00000020
+_AFTERNULL             BEGDATA        DGROUP         186e:0000       00000002
+CONST                  DATA           DGROUP         186e:0002       00005de4
+CONST2                 DATA           DGROUP         1e4c:0006       00000118
+_DATA                  DATA           DGROUP         1e5d:000e       00000cae
+STRINGS                DATA           DGROUP         1f28:000c       00000000
+XIB                    DATA           DGROUP         1f28:000c       00000000
+XI                     DATA           DGROUP         1f28:000c       00000012
+XIE                    DATA           DGROUP         1f29:000e       00000000
+YIB                    DATA           DGROUP         1f29:000e       00000000
+YI                     DATA           DGROUP         1f29:000e       00000006
+YIE                    DATA           DGROUP         1f2a:0004       00000000
+DATA                   DATA           DGROUP         1f2a:0004       00000000
+BCSD                   DATA           DGROUP         1f2a:0004       00000000
+_BSS                   BSS            DGROUP         1f2a:0004       000003e6
+STACK                  STACK          DGROUP         1f69:0000       00008000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: BIBCLEAN.OBJ(H:\PC\TEX\BIBCLEAN\bibclean.c)
+186c:6be4      _the_file
+186c:6c0c      _the_entry
+186c:6c34      _the_value
+186c:6c5c      _token_start
+0be9:0000      _shared_string
+0be9:1000      _current_key
+0be9:2000      _current_entry_name
+0be9:3000      _current_value
+0be9:4000      _current_field
+186c:5f5b      _field_indentation
+186c:5f5d      _value_indentation
+186c:5f5f+     _type_name
+186c:5faf      _align_equals
+186c:5fb0      _at_level
+186c:5fb2      _brace_level
+186c:5fb6      _check_values
+186c:5fb7      _close_char
+186c:5fb9      _delete_empty_values
+186c:5fba      _discard_next_comma
+186c:5fbb      _eofile
+186c:5fbe      _fix_initials
+186c:5fbf      _fix_names
+186c:5fc0      _fix_font_changes
+186c:5fc1      _in_preamble
+186c:5fc2      _in_string
+186c:5fc3      _in_value
+186c:5fc4      _is_parbreak
+186c:5fc5      _keep_linebreaks
+186c:5fc6      _keep_parbreaks
+186c:5fc7      _keep_preamble_spaces
+186c:5fc8      _keep_spaces
+186c:5fc9      _keep_string_spaces
+186c:5fca      _max_width
+186c:5fce      _non_white_chars
+186c:5fd0      _parbreaks
+186c:5fd1      _prettyprint
+186c:5fd2      _print_patterns
+0000:0008      apply_function_
+0000:0236      error_
+0000:0307      fatal_
+0000:0511      free_pattern_table_entries_
+0000:05bc      get_char_
+0000:071b      get_linebreak_
+0000:0771      get_next_non_blank_
+0000:089f      isidchar_
+0000:0909      main_
+0000:0a26      Memmove_
+0000:0a7b      Memset_
+0000:0a92      out_at_
+0000:0b86      out_flush_
+0000:0b8f      out_c_
+0000:0bf0      out_lines_
+0000:0d2a      out_newline_
+0000:0dd8      out_s_
+0000:0f59      out_string_
+0000:0fb2      out_token_
+0000:111a+     out_verbatim_
+0000:114d      out_with_error_
+0000:1168      out_with_parbreak_error_
+0000:1175      put_back_
+0000:1236      Strdup_
+0000:128d      stricmp_
+0000:1324      strnicmp_
+0000:13b7      tfopen_
+0000:1403      warning_
+0000:14d0      out_spaces_
+186c:5fd5      _read_initialization_files
+186c:5fd6      _remove_OPT_prefixes
+186c:5fd7      _rflag
+186c:5fd8      _screen_lines
+186c:5fda      _Scribe
+186c:5fdb      _show_file_position
+186c:5fdc      _stdlog_on_stdout
+186c:5fdd*     __stklen
+186c:5fdf      _trace_file_opening
+186c:5fe0      _warnings
+186c:5fe1      _wrapping
+186c:6cc0      _stdlog
+186c:6cc4      _fpin
+186c:6cc8      _initialization_file_name
+186c:6ccc      _program_name
+0be9:7001      _pattern_names
+Module: CHEK.OBJ(H:\PC\TEX\BIBCLEAN\chek.c)
+0000:16a3      check_chapter_
+0000:16c5      check_CODEN_
+0000:16da      check_inodes_
+0000:174c      check_ISBN_
+0000:177e      check_ISSN_
+0000:178a      check_junior_
+0000:185a      check_key_
+0000:18b6      check_length_
+0000:18ce      check_month_
+0000:193b      check_number_
+0000:1953      check_other_
+0000:19ac      check_pages_
+0000:19c4+     check_patterns_
+0000:1a4a      check_volume_
+0000:1a62      check_year_
+Module: DO.OBJ(H:\PC\TEX\BIBCLEAN\do.c)
+186c:616e      _month_pair
+186c:6296      _German_style
+0000:2e06      do_files_
+0000:3092      do_initfile_
+0000:3501      do_other_
+Module: FIX.OBJ(H:\PC\TEX\BIBCLEAN\fix.c)
+0000:516a+     fix_author_
+0000:5308      fix_month_
+0000:54ff      fix_namelist_
+0000:56d1      fix_pages_
+0000:57f0+     fix_periods_
+0000:5887      fix_title_
+Module: FNDFIL.OBJ(H:\PC\TEX\BIBCLEAN\fndfil.c)
+0000:5d5f      findfile_
+Module: ISBN.OBJ(H:\PC\TEX\BIBCLEAN\isbn.c)
+0000:61c4      ISBN_hyphenate_
+Module: KEYBRD.OBJ(H:\PC\TEX\BIBCLEAN\keybrd.c)
+0000:6452      do_more_
+0000:6839      get_screen_lines_
+0000:683c      kbclose_
+0000:6854+     kbcode_
+0000:68a3*     kbget_
+0000:68a6      kbopen_
+186c:6e9a+     _keymap
+Module: MATCH.OBJ(H:\PC\TEX\BIBCLEAN\match.c)
+0000:69b6      match_pattern_
+Module: OPTION.OBJ(H:\PC\TEX\BIBCLEAN\option.c)
+0000:6e0f      do_args_
+0000:6f09      do_preargs_
+0000:6f70      isoptionprefix_
+Module: ROMTOL.OBJ(H:\PC\TEX\BIBCLEAN\romtol.c)
+0000:71b2*     romtol_
+0000:726b      isroman_
+Module: STRIST.OBJ(H:\PC\TEX\BIBCLEAN\strist.c)
+0000:72c3      stristr_
+Module: WILDARGV.OBJ(H:\PC\TEX\BIBCLEAN\wildargv.c)
+0000:7602      __Init_Argv_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(iob)
+186c:6910      ___iob
+186c:6a78*     ___tmpfnext
+186c:6a79      __fmode
+186c:6fa4      ___ClosedStreams
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fputs)
+0000:7672      fputs_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fputc)
+0000:76fc      fputc_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fflush)
+0000:77a0      fflush_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fprintf)
+0000:77b1      fprintf_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(exit)
+0000:77de+     __null_int23_exit_
+0000:77df      exit_
+0000:77f8+     _exit_
+186c:6a80+     ___atexit
+186c:6a82+     ___int23_exit
+186c:6a84+     ___FPE_handler_exit
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strncpy)
+0000:780e      strncpy_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(ffree)
+0000:7844      _ffree_
+0000:7844      free_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fgetc)
+0000:7890      fgetc_
+0000:78fd+     __filbuf_
+0000:791e+     __fill_buffer_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(istable)
+186c:5e14      __IsTable
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fmalloc)
+0000:79c6      _fmalloc_
+0000:79c6      malloc_
+186c:6a86+     ___fheap
+186c:6a88      ___fheapRover
+186c:6a8a      ___LargestSizeB4Rover
+Module: s:\sys\watcom\lib286\dos\clibc.lib(getenv)
+0000:7ac7      getenv_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(sprintf)
+0000:7b7c      sprintf_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(toupper)
+0000:7bb9      toupper_
+0000:7bb9*     _toupper_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(tolower)
+0000:7bc7      tolower_
+0000:7bc7*     _tolower_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fopen)
+0000:7bd5+     __open_flags_
+0000:7d5f+     _fsopen_
+0000:7d94      fopen_
+0000:7e6d*     freopen_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(cstrt086)
+0000:0003*     ___begtext
+186c:0000*     __nullarea
+0000:7eae      _cstart_
+0000:7fa0      _Not_Enough_Memory_
+0000:80ac      __exit_
+0000:80cb      __do_exit_with_msg__
+0000:8104      __GETDS
+Module: s:\sys\watcom\lib286\dos\clibc.lib(cmodel)
+0000:810e      _small_code_
+0000:810e*     CodeModelMismatch
+Module: s:\sys\watcom\lib286\dos\clibc.lib(argcv086)
+186c:6a8c      __argc
+186c:6a8e      __argv
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fstat)
+0000:810e      fstat_
+0000:810e*     _fstat_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strcspn)
+0000:81f8      strcspn_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strtol)
+0000:83f7*     strtoul_
+0000:8409      strtol_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strrchr)
+0000:844d      strrchr_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strncmp)
+0000:8474      strncmp_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(perror)
+0000:84b2      perror_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fclose)
+0000:8502      fclose_
+0000:854e      __shutdown_stream_
+0000:8571+     __MkTmpFile_
+0000:85e8      __doclose_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(frealloc)
+0000:8679*     _frealloc_
+0000:8679      realloc_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fgets)
+0000:8749      fgets_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strspn)
+0000:87d1      strspn_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(accss)
+0000:881f      access_
+0000:881f*     _access_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strncat)
+0000:8844      strncat_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(getch)
+0000:887d      getch_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(nmalloc)
+0000:8898      _nmalloc_
+186c:6a92      ___nheapbeg
+186c:6a94      ___MiniHeapRover
+186c:6a96      ___LargestSizeB4MiniHeapRover
+Module: s:\sys\watcom\lib286\dos\clibc.lib(dir)
+0000:8996+     _opendir_
+0000:8a80      opendir_
+0000:8a89      readdir_
+0000:8acb      closedir_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(splitpat)
+0000:8b35      _splitpath_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(makepath)
+0000:8c20      _makepath_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(crwd086)
+186c:6a98      __curbrk
+186c:6aa0      __STACKLOW
+186c:6aa2      __STACKTOP
+186c:6aa4      __cbyte
+186c:6aa6      __child
+186c:6aa8      __no87
+186c:6ab6      __FPE_handler
+186c:6ab6      ___FPE_handler
+186c:6a9a      __psp
+186c:6aaa      __get_ovl_stack
+186c:6aae      __restore_ovl_stack
+186c:6ab2      __close_ovl_file
+186c:6aba      __LpCmdLine
+186c:6abe      __LpPgmName
+186c:6a9c      __osmajor
+186c:6a9d      __osminor
+186c:6a9e      __osmode
+186c:6a9f      __HShift
+Module: s:\sys\watcom\lib286\dos\clibc.lib(___argc)
+186c:6fa8      ____Argv
+186c:6fac      ____Argc
+Module: s:\sys\watcom\lib286\dos\clibc.lib(stinit)
+186c:6fae      ___OpenStreams
+Module: s:\sys\watcom\lib286\dos\clibc.lib(ioalloc)
+0000:8d40      __ioalloc_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(flush)
+0000:8db4      __flush_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(seterrno)
+0000:8e64*     __set_EDOM_
+0000:8e67      __set_errno_
+0000:8e7b*     __set_ERANGE_
+0000:8e80*     __set_EINVAL_
+0000:8e8a      __set_doserrno_
+0000:8e95*     __FPE_exception_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(flushall)
+0000:8ea3      flushall_
+0000:8ea6      __flushall_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fprtf)
+0000:8f19      __fprtf_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(nfree)
+0000:8f9a      _nfree_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(memalloc)
+0000:8ff4      __MemAllocator
+0000:9098      __MemFree
+Module: s:\sys\watcom\lib286\dos\clibc.lib(heapmod)
+186c:6fb2      ___fheap_clean
+186c:6fb3      ___nheap_clean
+Module: s:\sys\watcom\lib286\dos\clibc.lib(gtche)
+0000:91a1      getche_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(qread)
+0000:91bc      __qread_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(allocseg)
+0000:91e0      __AllocSeg_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(growseg)
+0000:9279      __GrowSeg_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fmemneed)
+0000:936f      __fmemneed_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(environ)
+186c:6ac2      _environ
+186c:6ac6      ___env_mask
+Module: s:\sys\watcom\lib286\dos\clibc.lib(prtf)
+0000:9372      __prtf_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(open)
+0000:9df6*     open_
+0000:9e2e      sopen_
+0000:9fca*     __set_binary_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(allocfp)
+0000:a021      __allocfp_
+0000:a12d      __freefp_
+0000:a1a5      __purgefp_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fseek)
+0000:a231      fseek_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(chktty)
+0000:a350      __chktty_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(cmain086)
+0000:a377      __CMain
+Module: s:\sys\watcom\lib286\dos\clibc.lib(inirt086)
+0000:a3f4      __InitRtns
+0000:a412      __FiniRtns
+0000:a42b*     __FInitRtns
+0000:a42f*     __FFiniRtns
+Module: s:\sys\watcom\lib286\dos\clibc.lib(xmsg)
+0000:a433*     __exit_with_msg_
+0000:a436      __fatal_runtime_error_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(seg086)
+0000:a44e      __DOSseg__
+Module: s:\sys\watcom\lib286\dos\clibc.lib(dosret)
+0000:a44f      _dosret0_
+0000:a456*     _dosretax_
+0000:a45b      __set_errno_dos_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(iomode)
+0000:a4b7      __IOMode_
+0000:a515      __SetIOMode_
+186c:6ade+     ___NFiles
+186c:6ae0+     ___init_mode
+186c:6b08+     __iomode
+Module: s:\sys\watcom\lib286\dos\clibc.lib(d2ttime)
+0000:a530      _d2ttime_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(filelen)
+0000:a595      filelength_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(bits)
+0000:a5ed      __setbits_
+186c:5f16      __Bits
+Module: s:\sys\watcom\lib286\dos\clibc.lib(i4m)
+0000:a648      __I4M
+0000:a648      __U4M
+Module: s:\sys\watcom\lib286\dos\clibc.lib(errno)
+0000:a660      __get_errno_ptr_
+0000:a667      __get_doserrno_ptr_
+186c:6fb4+     __doserrno
+186c:6fb6+     _errno
+Module: s:\sys\watcom\lib286\dos\clibc.lib(strerror)
+0000:a7ab      strerror_
+186c:6b0c*     _sys_nerr
+186c:6b0e+     _sys_errlist
+Module: s:\sys\watcom\lib286\dos\clibc.lib(gtpid)
+0000:a7d4      getpid_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(ftell)
+0000:a7df      ftell_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(lseek)
+0000:a833      lseek_
+0000:a833*     _lseek_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(_clse)
+0000:a873      __close_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(remove)
+0000:a89e      remove_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fmsize)
+0000:a8a1      _fmsize_
+0000:a8a1*     _msize_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(nexpand)
+0000:a8b2      __HeapManager_expand_
+0000:aa3e      _nexpand_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(fexpand)
+0000:aa8e      _fexpand_
+0000:aa8e*     _expand_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(grownear)
+0000:ab44      __LastFree_
+0000:ab70      __ExpandDGROUP_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(nmemneed)
+0000:acb6      __nmemneed_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(initfile)
+0000:ace9      __InitFiles_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(ioexit)
+0000:ad8c      __full_io_exit_
+0000:ad94*     fcloseall_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(qwrit)
+0000:ae18      __qwrite_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(heapen)
+0000:ae75*     _heapenable_
+186c:6b4e      ___heap_enabled
+Module: s:\sys\watcom\lib286\dos\clibc.lib(amblksiz)
+186c:6b50      __amblksiz
+Module: s:\sys\watcom\lib286\dos\clibc.lib(setenvp)
+0000:ae88      __setenvp_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(itoa)
+0000:afad+     utoa_
+0000:b006      itoa_
+0000:b006*     _itoa_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(noefgfmt)
+186c:6b52      ___EFG_printf
+186c:6b54*     ___EFG_scanf
+Module: s:\sys\watcom\lib286\dos\clibc.lib(ltoa)
+0000:b07e      ultoa_
+0000:b0e9      ltoa_
+0000:b115*     _ltoa_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(isatt)
+0000:b122      isatty_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(umaskval)
+186c:6b56      ___umaskval
+Module: s:\sys\watcom\lib286\dos\clibc.lib(tell)
+0000:b13e      tell_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(heapgrow)
+0000:b14d*     _heapgrow_
+0000:b14d*     _fheapgrow_
+0000:b14e      _nheapgrow_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(enterdb)
+0000:b1c2      __EnterWVIDEO_
+186c:6b58+     ___WD_Present
+Module: s:\sys\watcom\lib286\dos\clibc.lib(mktime)
+0000:b1e9      mktime_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(unlnk)
+0000:b3b3      unlink_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(bfree)
+0000:b3d2      _bfree_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(bexpand)
+0000:b3f0      _bexpand_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(sbrk)
+0000:b445*     sbrk_
+0000:b456      __brk_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(timeutil)
+0000:b4bd      ___diyr
+0000:b4d7      ___dilyr
+0000:b4f1      __leapyear_
+0000:b61e      __isindst_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(gmtime)
+0000:b8ae      __brktime_
+0000:ba33+     _gmtime_
+0000:ba5a*     gmtime_
+Module: s:\sys\watcom\lib286\dos\clibc.lib(tzset)
+186c:6b5a      ___start_dst
+186c:6b6c      ___end_dst
+186c:6b7e      _timezone
+186c:6b82      ___dst_adjust
+186c:6b84+     _daylight
+0000:ba6b*     tryOSTimeZone_
+0000:ba6c      tzset_
+0000:bd02+     __parse_tz_
+186c:6bc4*     _tzname
+Module: s:\sys\watcom\lib286\dos\clibc.lib(i4d)
+0000:bdb2*     __I4D
+0000:bdff      __U4D
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+s:\sys\watcom\lib286\dos\clibc.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  8000 (32768.)
+Memory size:  00027690 (161424.)
+Entry point address: 0000:7eae

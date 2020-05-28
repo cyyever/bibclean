@@ -1,0 +1,82 @@
+This is TeX, Version 3.1415 (C version 6.1) (format=lplain 94.6.21)  23 AUG 2003 17:28
+**bibclean.ltx
+(bibclean.ltx
+LaTeX Version 2.09 <14 January 1991>
+(ltugboat.sty
+Document Style `ltugboat' v1.19  <16 November 93>
+(/usr/local/lib/tex/latex/article.sty
+Document Style `article' <16 Mar 88>.
+(/usr/local/lib/tex/latex/art10.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+) (tugboat.cmn
+File `TUGBOAT.CMN' v1.13f  <15 Apr 1994>
+\normalparindent=\dimen99
+\T@stBox=\box25
+\TestBox=\box26
+\T@stCount=\count87
+\TestCount=\count88
+\T@stDimen=\dimen100
+\TestDimen=\dimen101
+\hours=\count89
+\minutes=\count90
+\PreTitleDrop=\dimen102
+\AboveTitleSkip=\skip41
+\BelowTitleSkip=\skip42
+\strulethickness=\dimen103
+\stbaselineskip=\dimen104
+\raggedskip=\dimen105
+\raggedstretch=\dimen106
+\raggedparfill=\skip43
+\issueseqno=\count91
+\TBremarkfile=\write3
+\@altfilenames=\read0
+\count@@=\count92
+\signaturewidth=\dimen107
+)
+\sectitlefam=\fam11
+\stfontheight=\dimen108
+\authornumber=\count93
+\pagewd=\dimen109
+\trimwd=\dimen110
+\trimlgt=\dimen111
+\headmargin=\dimen112
+)
+(/usr/local/lib/tex/latex/makeidx.sty) (path.sty
+path.sty version 3.04 <25 Jul 1992>
+\c@tcode=\count94
+\c@unter=\count95
+) (texnames.sty
+This is texnames.sty, Version 1.09 <16 March 1993>
+) (bibclean.sty)
+\@indexfile=\write4
+
+Writing index file bibclean.idx 
+(bibclean.aux) (bibclean.toc)
+\tf@toc=\write5
+ (bibclean.lot)
+\tf@lot=\write6
+ [395
+
+
+] [396] [397] [398] [399]
+[400] [401] [402] [403] [404] [405] [406] [407] [408] [409] [410] [411]
+key_name may no longer need to allow for abbrevs
+[412] [413] (bibclean.bbl [414]) (bibclean.ind [415] [416] [417] [418] [419]
+[420]) [421] (bibclean.aux) ) 
+Here is how much of TeX's memory you used:
+ 622 strings out of 11984
+ 5649 string characters out of 87273
+ 49595 words of memory out of 262141
+ 2515 multiletter control sequences out of 9500
+ 21538 words of font info for 81 fonts, out of 100000 for 255
+ 19 hyphenation exceptions out of 607
+ 16i,10n,17p,228b,521s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on bibclean.dvi (27 pages, 139968 bytes).

@@ -1,0 +1,3724 @@
+% -*-latex-*-
+% Document name: /u/sy/beebe/tex/bibclean/doc/bibclean.ltx
+% Creator: Nelson H.F. Beebe <beebe@math.utah.edu>
+% Creation Date: Tue Dec 15 22:38:15 1992
+
+%%% ====================================================================
+%%%  @LaTeX-file{
+%%%     author          = "Nelson H. F. Beebe",
+%%%     version         = "1.02",
+%%%     date            = "31 December 1993",
+%%%     time            = "12:46:45 MST",
+%%%     filename        = "bibclean.ltx",
+%%%     address         = "Center for Scientific Computing
+%%%                        Department of Mathematics
+%%%                        University of Utah
+%%%                        Salt Lake City, UT 84112
+%%%                        USA",
+%%%     telephone       = "+1 801 581 5254",
+%%%     FAX             = "+1 801 581 4148",
+%%%     checksum        = "13962 3724 13766 111894",
+%%%     email           = "beebe@math.utah.edu (Internet)",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "BibTeX, bibliography, prettyprint, syntax check",
+%%%     supported       = "yes",
+%%%     abstract        = "This document describes bibclean, a BibTeX
+%%%                        prettyprinter and syntax checker.  It
+%%%                        proposes a rigorous grammar for BibTeX, and
+%%%                        provides a sample implementation of a lexical
+%%%                        analyzer and parser to demonstrate the
+%%%                        correctness and feasibility of the grammar.",
+%%%     docstring       = "This document introduces bibclean, a BibTeX
+%%%                        prettyprinter and syntax checker.  It
+%%%                        describes the features provided by bibclean
+%%%                        for processing BibTeX files, and for
+%%%                        producing output that can be readily used by
+%%%                        other, simpler, programs.
+%%%
+%%%                        It argues that the current version of BibTeX
+%%%                        has an unsound grammatical foundation, and
+%%%                        that its user-friendliness could be improved
+%%%                        by better error checking, and by new
+%%%                        facilities.
+%%%
+%%%                        It then proposes a remedy in the form of a
+%%%                        rigorous grammar that can be used to generate
+%%%                        a lexical analyzer and parser for BibTeX
+%%%                        files, and provides a sample implementation
+%%%                        using the lex and yacc programs.
+%%%
+%%%                        The checksum field above contains a CRC-16
+%%%                        checksum as the first value, followed by the
+%%%                        equivalent of the standard UNIX wc (word
+%%%                        count) utility output of lines, words, and
+%%%                        characters.  This is produced by Robert
+%%%                        Solovay's checksum utility.",
+%%%  }
+%%% ====================================================================
+
+%%:=====================================================================
+%%: ** NOTE ** NOTE ** NOTE ** NOTE ** NOTE ** NOTE ** NOTE ** NOTE **
+%%: This paper is available with the bibclean distribution by the kind
+%%: permission of the Editor of TUGboat, The Communications of the TeX
+%%: User's Group.  The index in the published paper was set in 3-column
+%%: mode, but that style is not universally available in LaTeX
+%%: implementations; in this version, it is set in 2-column mode, giving
+%%: a few extra pages.  At the time of publication, the most
+%%: recently-available ltugboat.sty and tugboat.cmn files (included in
+%%: the bibclean distribution) differ somewhat from those used to
+%%: typeset the journal, so the page breaking in this version differs
+%%: from the published article.  This will be remedied as soon as
+%%: possible.
+%%:
+%%: Because the index requires some editing which can be automated under
+%%: the UNIX operating system, but not under some others, the bibclean
+%%: distribution includes all of the intermediate files, and the TeX DVI
+%%: file, so all that is needed to print the paper is a suitable DVI
+%%: driver program.  Only standard TeX fonts are required.
+%%:
+%%: The proper bibliographic reference to the published paper is
+%%:
+%%: @String{TUGboat = "TUGBoat"}
+%%:
+%%: @Article{Beebe:TB14-4-395-419,
+%%:   author =       "Nelson H. F. Beebe",
+%%:   title =        "Bibliography Prettyprinting and Syntax Checking",
+%%:   journal =      TUGboat,
+%%:   year =         "1993",
+%%:   volume =       "14",
+%%:   number =       "4",
+%%:   pages =        "395--419",
+%%:   note =         dec,
+%%:   bibdate =      "Fri Dec 31 12:15:07 1993",
+%%: }
+%%:=====================================================================
+
+\documentstyle[makeidx,path,texnames,bibclean]{ltugboat}
+
+\setcounter{page}{395}          % initial page number in TUGboat
+
+\PrelimDraftfalse
+
+\vol 14, 4.
+
+\issdate December, 1993.
+
+%=================================================
+
+\title{%
+        Bibliography Prettyprinting and Syntax
+        Checking
+}
+
+\author{%
+        Nelson H. F. Beebe
+}
+
+\address{%
+        Center for Scientific Computing\\
+        Department of Mathematics\\
+        University of Utah\\
+        Salt Lake City, UT 84112\\
+        USA\\
+        Tel: +1 801 581 5254\\
+        FAX: +1 801 581 4148
+}
+
+\netaddress[\network{Internet}]{beebe@math.utah.edu}
+
+\makeindex
+
+%=================================================
+
+\begin{document}
+
+\mbox{}\newpage % force empty first column to match TUGboat copy
+
+\maketitle
+
+\tableofcontents
+
+\listoftables
+
+\bibliographystyle{is-plain}
+
+\section{Introduction}%
+\label{sec:intro}
+
+\BibTeX{}
+\cite[Appendix~B]{Lamport:LDP85}%
+\index{Lamport, Leslie}
+is a convenient tool for solving the vexing issue
+of bibliography formatting.  The user identifies
+fields of bibliography entries via field\slash
+value pairs and provides a unique citation key%
+\index{citation!key}
+and a document type for each entry.  A simple
+string substitution%
+\index{string!substitution}
+facility makes it easy to reuse
+frequently-occurring strings.  A typical example
+looks like this:
+
+\begin{verbatim}
+@String{pub-AW =
+           "Ad{\-d}i{\-s}on-Wes{\-l}ey"}
+
+@Book{Lamport:LDP85,
+  author =    "Leslie Lamport",
+  title =     "{\LaTeX}---A Document
+              Preparation System---User's
+              Guide and Reference Manual",
+  publisher = pub-AW,
+  year =      "1985",
+  ISBN =      "0-201-15790-X",
+}
+\end{verbatim}
+
+The \TeX{} file contains citations of the form
+\verb=\cite{Lamport:LDP85}=,%
+\index{Lamport, Leslie}
+together with a
+\CS{bibliographystyle} command to choose a
+citation%
+\index{citation!style}
+and bibliography style,%
+\index{bibliography!style}
+and a \CS{bibliography} command to specify
+which \BibTeX{} files are to be used.  \TeX{}
+records this information in an auxiliary file.%
+\index{auxiliary file}
+
+A subsequent \BibTeX{} job step reads this
+auxiliary file, extracts the requested
+bibliographic entries from the specified \BibTeX{}
+files, and outputs the entries into a bibliography
+file%
+\index{bibliography!file}%
+\index{file!bibliography}
+formatted according to the specified style.
+Several dozen such styles%
+\index{bibliography!style}%
+\index{style!bibliography}
+are currently available to help cope with the
+bizarre variations in bibliography formats that
+publishers have invented.
+
+In a second \TeX{} step, the \CS{cite}
+commands are not correctly expandable until the
+\CS{bibliography} command is processed and the
+bibliography file output by \BibTeX{} is read.
+However, at that point, the desired form of the
+citations is finally known, and at the end of the
+job, an updated auxiliary file is written.
+
+A third \TeX{} step finally has the necessary
+information from the auxiliary file and the
+bibliography file to correctly typeset the
+\CS{cite} commands and the bibliography in
+the specified style.
+
+With the GNU Emacs text editor%
+\index{GNU!Emacs}%
+\index{Emacs}
+\cite{Cameron:LGE91,%
+      Schoonover:GEU92},%
+\index{Cameron, Debra}%
+\index{Rosenblatt, Bill}
+powerful \BibTeX{} editing support makes it simple
+to generate bibliography entry descriptions via
+templates%
+\index{template!editor}
+that can be inserted with a couple of
+keystrokes, or on workstations, selected from a
+pop-up menu.%
+\index{pop-up menu}%
+\index{menu!pop-up}
+This editor is freely available on
+\UNIX{}, \VAX{} \VMS{}, and the larger members of
+the IBM PC family under \PCDOS{}.
+
+The major benefits of using \BibTeX{} are the
+potential for data reuse, the separation of form
+and content (like the descriptive markup of
+\LaTeX{} and \SGML{}%
+\cite{Bryan:SAG88,%
+      vanHerwijnen:PS90}),%
+\index{Bryan, Martin}%
+\index{van Herwijnen, Eric}%
+\index{Herwijnen, Eric van}
+and the many stylistic variants of the typeset
+bibliography.  During the preparation of this
+article, a scan of our Mathematics Department
+workstation file system located about 14~000
+\TeX{} files, and 445 \BibTeX{} files.  The latter
+contained about 870~000 lines and almost 94~000
+bibliography entries.  These files form a valuable
+resource that authors and researchers can use to
+track and properly cite literature in their
+publications.
+
+During my term as TUG President, I initiated a
+project to collect%
+\index{TUG bibliography collection}
+\BibTeX{} styles and
+bibliography data base files of material related
+to \TeX{} and its uses, and electronic document
+production and typography in general.  This
+dynamic collection also covers a few journals,
+including more than 1000 entries for \TUB{}.%
+\index{TUGboat@{\protect\TUB{}}}
+A snapshot of part of the collection was published
+in the 1991 TUG Resource Directory%
+\index{TUG Resource Directory}
+\cite{Beebe:TB12S-2-176,%
+      Beebe:TB12S-2-183}.%
+\index{Beebe, Nelson H. F.}
+
+One drawback of \BibTeX{} is that errors in a
+bibliography file, such as unmatched quotation
+marks around a value string, can sometimes be hard
+to locate, because the current version of the
+program raises an error at the end of a scan when
+internal tables overflow after gobbling several
+thousand characters of input.  The result is that
+the error location is completely bogus, and
+actually lies much earlier in the file.  We can
+hope that this serious deficiency will be remedied
+in the final version of \BibTeX{}, 1.0, which is
+expected to appear when the \LaTeX{} 3.0
+development is completed.
+
+Another drawback is that such bibliography files
+are normally prepared by human typists, and
+consequently there are formatting variations that
+reduce readability, and inconsistencies that
+persist into the final typeset bibliography.  Some
+examples of such inconsistencies are variations in
+naming of publishers and journals, spacing around
+author and editor initials, and variations in
+letter case in titles. In addition, there are
+usually numerous typographical errors of omission,
+doubling, spelling, transcription, translation,
+and transposition.
+
+In the fall of 1990, faced with a growing
+collection of \BibTeX{} files, I set out to write
+a software tool to deal with these problems.  This
+program is called \BIBCLEAN{}.  It is a syntax
+checker, portability verifier, and prettyprinter,
+and was made freely available in 1991.  In the
+fall of 1992, after considerable experience with
+the first version, I embarked on a set of
+enhancements that produced major version 2.0, and
+the purpose of this paper is to describe the new
+version, and to widely advertise its existence to
+the \TeX{} community.
+
+\section{\protect\BibTeX{} needs improvement}
+
+\BibTeX{}, like \TeX{}, assumes that its input is
+prepared correctly, and works best when that is
+the case.  Both programs attempt to recover from
+errors, but that recovery may be unsuccessful, and
+errors may be detected only after lengthy
+processing.  In neither case is the output of
+these programs suitable for input to them.  That
+is, their knowledge of how their input streams are
+to be parsed is available only to them, and cannot
+be applied independently and used by other
+software.  Both programs have a hazily-defined
+input syntax, and \TeX{}'s is extensible, making
+it even harder to give a precise description to
+the user.
+
+The trend of compiler technology development of
+the last two decades, largely on \UNIX{} systems,
+has been to separate the compilation task into
+several steps.
+
+The first is generally called {\em lexical
+analysis},%
+\index{lexical analysis}
+or lexing. It breaks the input stream up into
+identifiable tokens%
+\index{token}
+that can be represented by small integer constants
+and constant strings.
+
+The second step is called {\em parsing},%
+\index{parsing}
+which involves the verification that the tokens
+streaming from the lexer conform to the
+grammatical requirements of the language, that is,
+that they make sense.
+
+As parsing proceeds, an intermediate
+representation is prepared that is suitable for
+the third step, namely, {\em code generation\/}%
+\index{code generation}
+or
+{\em interpretation}.%
+\index{interpretation of code}
+
+This division into subtasks diminishes the
+complexity of writing a compiler, reduces its
+memory requirements, and importantly, partitions
+the job into two parts: a language-dependent, but
+{\em architecture-independent}, part consisting of
+lexing and parsing, and a language-independent,
+but {\em architecture-dependent}, part where code
+is generated or interpreted.
+
+This makes it possible to write a front end%
+\index{front end}
+for
+each language, and a back end%
+\index{back end}
+for each
+architecture, and by combining them, obtain
+compilers for all languages and all architectures.
+The most successful example of this approach at
+present is almost certainly the Free Software
+Foundation's%
+\index{Free Software Foundation}
+GNU Project compilers, which support
+all common computer architectures with the back
+ends, and C, C++,%
+\index{C++}
+and Objective C%
+\index{Objective C}
+with the front
+ends.  Additional front ends for several other
+popular languages are in preparation.
+
+When a lexer is available as a separate program,
+its output can be conveniently used by other
+programs for tasks such as database lookup,
+floating-point precision conversion, language
+translation, linguistic analysis, portability
+verification, prettyprinting, and checking of
+grammar, syntax, and spelling.
+
+In response to a command-line request, \BIBCLEAN{}
+will function as a lexer%
+\index{lexical analyzer}
+instead of as a
+prettyprinter.%
+\index{prettyprinter}
+An example is given later in
+Section~\ref{sec:lexer}.
+
+\section{Run-time options}
+
+On several operating systems, \BIBCLEAN{} is run
+by a command of the form
+%
+\begin{verbatim}
+bibclean [options] bibfile(s) >newfile
+\end{verbatim}
+%
+One or more bibliography files%
+\index{bibliography!file}%
+\index{file!bibliography}
+can be specified; if none are given, input is
+taken from the standard input stream.  A specific
+example is:
+%
+\begin{verbatim}
+bibclean -no-fix-name mybib.bib >mybib.new
+\end{verbatim}
+%
+
+Command-line switches may be abbreviated to a
+unique leading prefix, and letter case is not
+significant.  All options are parsed before any
+input bibliography files are read, no matter what
+their order on the command line.  Options that
+correspond to a {\em yes\slash no\/} setting of a
+flag have a form with a prefix \verb=no-= to set
+the flag to {\em no}.  For such options, the last
+setting determines the flag value used.  This is
+significant when options are also specified in
+initialization files (see Section~\ref{sec:init}).
+
+On \VAX{} \VMS{} and IBM \PCDOS{}, the leading
+hyphen on option names may be replaced by a slash;
+however, the hyphen option prefix is always
+recognized.
+
+\begin{description}
+\OPTIONITEM{author}
+     Display an author credit on the standard
+     error unit,%
+     \index{standard error unit}
+     \path=stderr=.%
+     \PATHINDEX{stderr}
+     Sometimes an executable program is separated
+     from its documentation and source code; this
+     option provides a way to recover from that.
+
+\OPTIONITEM{error-log filename}
+     Redirect \path=stderr=%
+     \PATHINDEX{stderr}
+     to the indicated file,
+     which will then contain all of the error and
+     warning messages.%
+     \index{message!redirecting}%
+     \index{error!message!redirecting}%
+     \index{warning message!redirecting}
+     This option is provided
+     for those systems that have difficulty
+     redirecting \path=stderr=.%
+     \PATHINDEX{stderr}
+
+\OPTIONITEM{help {\rm or} -?}
+     Display a help message%
+     \index{message!help}
+     on \path=stderr=,%
+     \PATHINDEX{stderr}
+     giving a sample command usage, and option
+     descriptions similar to the ones here.
+
+\OPTIONITEM{init-file filename}
+     Provide an explicit value pattern
+     initialization file.%
+     \index{initialization file}%
+     \index{file!initialization}
+     It will be processed
+     after any system-wide and job-wide
+     initialization files found on the
+     \path=PATH=%
+     \PATHINDEX{PATH}
+     (for \VAX{} \VMS{}, \path=SYS$SYSTEM=)%
+     \PATHINDEX{SYS\$SYSTEM} and
+     \path=BIBINPUTS=%
+     \PATHINDEX{BIBINPUTS}
+     search paths, respectively,
+     and may override them.  It in turn may be
+     overridden by a subsequent file-specific
+     initialization file.  The initialization file
+     name can be changed at compile time, or at
+     run time through a setting of the environment
+     variable%
+     \index{environment variable}
+     \path=BIBCLEANINI=,%
+     \PATHINDEX{BIBCLEANINI}
+     but defaults to \path=.bibcleanrc=%
+     \PATHINDEX{.bibcleanrc}
+     on \UNIX{}, and to \path=bibclean.ini=%
+     \PATHINDEX{bibclean.ini}
+     elsewhere.  For further details, see
+     Section~\ref{sec:init}.
+
+\OPTIONITEM{max-width nnn}
+     Normally, \BIBCLEAN{} limits output line
+     widths%
+     \index{line!width limit}
+     to 72 characters, and in the interests
+     of consistency, that value should not be
+     changed.  Occasionally, special-purpose
+     applications may require different maximum
+     line widths, so this option provides that
+     capability.  The number following the option
+     name can be specified in decimal,%
+     \index{decimal}
+     octal%
+     \index{octal}
+     (starting with 0), or hexadecimal%
+     \index{hexadecimal}
+     (starting with 0x).  A zero or negative value
+     is interpreted to mean unlimited, so
+     \OPTION{max-width 0} can be used to ensure
+     that each field/value pair appears on a
+     single line.
+
+     When \OPTION{no-prettyprint} requests
+     \BIBCLEAN{} to act as a lexical analyzer, the
+     default line width is unlimited, unless
+     overridden by this option.
+
+     When \BIBCLEAN{} is prettyprinting, line
+     wrapping%
+     \index{wrapping!of long lines}%
+     \index{line!wrapping}
+     will be done only at a space.  Consequently,
+     an extremely long non-blank character
+     sequence may result in the output exceeding
+     the requested line width.  Such sequences are
+     extremely unlikely to occur, at least in
+     English-language text, since even the
+     45-letter giant
+     \cite[p.~451]{Knuth:ct-a}%
+     \index{Knuth, Donald E.}
+     {\it pneu\-monoul\-tra\-mi\-cro\-scop\-ic%
+     \-sil\-i\-co\-vol\-canoco\-nio\-sis}
+     will fit in \BIBCLEAN{}'s standard
+     72-character output line, and so will
+     58-letter Welsh city names.
+
+     When \BIBCLEAN{} is lexing, line wrapping is
+     done by inserting a backslash-newline%
+     \index{backslash-newline}
+     pair
+     when the specified maximum is reached, so no
+     line length will ever exceed the maximum.
+
+\OPTIONITEM{[no-]check-values}
+     With the positive form, apply heuristic
+     pattern matching to field values in order to
+     detect possible errors
+     (e.g.\ \path|year = "192"| instead of
+     \path|year = "1992"|), and issue warnings
+     when unexpected patterns are found.
+
+     This checking is usually beneficial, but if
+     it produces too many bogus warnings for a
+     particular bibliography file, you can disable
+     it with the negative form of this option.%
+     \index{warning message!disabling}
+     Default: {\em yes}.
+
+\OPTIONITEM{[no-]delete-empty-values}
+     With the positive form, remove all
+     field\slash value pairs for which the value
+     is an empty string.%
+     \index{empty!values!deleting}
+     This is helpful in
+     cleaning up bibliographies generated from
+     text editor templates. Compare this option
+     with \OPTION{[no-]remove-OPT-prefixes}
+     described below.
+     Default: {\em no}.
+
+\OPTIONITEM{[no-]file-position}
+     With the positive form, give detailed file
+     position information in warning and error
+     messages.  Default: {\em no}.
+
+\OPTIONITEM{[no-]fix-font-changes}
+     With the positive form, supply an additional
+     brace level around font changes%
+     \index{font changes!fixing}
+     in titles to
+     protect against downcasing by some \BibTeX{}
+     styles.  Font changes that already have more
+     than one level of braces are not modified.
+
+     For example, if a title contains the
+     Latin phrase
+     {\tt \verb={\em= Dictyostelium
+     Discoideum\verb=}=} or
+     {\tt \verb={\em= \verb={D}=ictyostelium
+     \verb={D}=iscoideum\verb=}=}, then
+     downcasing will incorrectly convert the
+     phrase to lower-case letters.  Most \BibTeX{}
+     users are surprised that bracing the initial
+     letters does not prevent the downcase action.
+     The correct coding is
+     {\tt \verb={{\em= Dictyostelium Discoideum\verb=}}=}.
+     However, there are also legitimate cases
+     where an extra level of bracing wrongly
+     protects from downcasing.  Consequently,
+     \BIBCLEAN{} will normally not supply an extra
+     level of braces, but if you have a
+     bibliography where the extra braces are
+     routinely missing, you can use this option to
+     supply them.
+
+     If you think that you need this option, it is
+     strongly recommended that you apply
+     \BIBCLEAN{} to your bibliography file with
+     and without \OPTION{fix-font-changes}, then
+     compare the two output files to ensure that
+     extra braces are not being supplied in titles
+     where they should not be present.  You will
+     have to decide which of the two output files
+     is the better choice, then repair the
+     incorrect title bracing by hand.
+
+     Since font changes in titles are uncommon,
+     except for cases of the type which this
+     option is designed to correct, it should do
+     more good than harm.  Default: {\em no}.
+
+\OPTIONITEM{[no-]fix-initials}
+     With the positive form, insert a space after
+     a period following author initials.%
+     \index{author name!period after initials}%
+     \index{editor name!period after initials}
+     Default:
+     {\em yes}.
+
+\OPTIONITEM{[no-]fix-names}
+     With the positive form, reorder author and
+     editor name lists%
+     \index{author name!reordering}%
+     \index{editor name!reordering}
+     to remove commas at brace
+     level zero, placing first names or initials
+     before last names.  Default: {\em yes}.
+
+\OPTIONITEM{[no-]par-breaks}
+     With the negative form, a paragraph break
+     (either a formfeed, or a line containing only
+     spaces) is not permitted in value strings, or
+     between field\slash value pairs.  This may be
+     useful to quickly trap runaway strings%
+     \index{runaway string argument}%
+     \index{string!runaway}
+     arising from mismatched delimiters.%
+     \index{mismatched delimiters}%
+     \index{delimiters!mismatched}
+     Default:
+     {\em yes}.
+
+\OPTIONITEM{[no-]prettyprint}
+     Normally, \BIBCLEAN{} functions as a
+     prettyprinter.%
+     \index{prettyprinter}
+     However, with the negative
+     form of this option, it acts as a lexical
+     analyzer%
+     \index{lexical analyzer}
+     instead, producing a stream of
+     lexical tokens.  See Section~\ref{sec:lexer}
+     for further details.  Default: {\em yes}.
+
+\OPTIONITEM{[no-]print-patterns}
+     With the positive form, print the value
+     patterns read from initialization files%
+     \index{initialization file!patterns in}%
+     \index{file!initialization!patterns in}
+     as
+     they are added to internal tables.  Use this
+     option to check newly-added patterns, or to
+     see what patterns are being used.
+
+     When \BIBCLEAN{} is compiled with native
+     pattern-matching code (the default), these
+     patterns are the ones that will be used in
+     checking value strings for valid syntax, and
+     all of them are specified in initialization
+     files, rather than hard-coded into the
+     program.  For further details, see
+     Section~\ref{sec:init}.  Default: {\em no}.
+
+\OPTIONITEM{[no-]read-init-files}
+     With the negative form, suppress loading of
+     system-, user-, and file-specific
+     initialization files.%
+     \index{initialization file}%
+     \index{file!initialization}
+     Initializations will
+     come only from those files explicitly given
+     by \OPTION{init-file filename} options.
+     Default: {\em yes}.
+
+\OPTIONITEM{[no-]remove-OPT-prefixes}
+     With the positive form, remove the \verb=OPT=
+     prefix from each field name where the
+     corresponding value is not an empty string.%
+     \index{OPT- prefix@{\tt OPT-} prefix!removing}
+     The prefix \verb=OPT= must be entirely in
+     upper-case to be recognized.
+
+     This option is for bibliographies generated
+     with the help of the GNU Emacs%
+     \index{GNU!Emacs}%
+     \index{Emacs}
+     \BibTeX{}
+     editing support, which generates templates
+     with optional fields identified by the
+     \verb=OPT= prefix.  Although the function
+     \path=M-x bibtex-remove-OPT= normally bound
+     to the keystrokes {\tt C-c C-o} does the job,
+     users often forget, with the result that
+     \BibTeX{} does not recognize the field name,
+     and ignores the value string.  Compare this
+     option with \OPTION{[no-]delete-empty-values}
+     described above.  Default: {\em no}.
+
+\OPTIONITEM{[no-]scribe}
+     With the positive form, accept input syntax
+     conforming to the \SCRIBE{} document system.
+     The output will be converted to conform to
+     \BibTeX{} syntax.  See
+     Section~\ref{sec:scribe} for further details.
+     Default: {\em no}.
+
+\OPTIONITEM{[no-]trace-file-opening}
+     With the positive form, record in the error
+     log file%
+     \index{error!log file}%
+     \index{file!error log}
+     the names of all files which
+     \BIBCLEAN{} attempts to open.  Use this
+     option to identify where initialization
+     files%
+     \index{initialization file!locating}%
+     \index{file!initialization!locating}
+     are located.  Default: {\em no}.
+
+\OPTIONITEM{[no-]warnings}
+     With the positive form, allow all warning
+     messages.%
+     \index{warning message!disabling}%
+     \index{message!disabling warning}
+     The negative form is not
+     recommended since it may mask problems that
+     should be repaired.  Default: {\em yes}.
+
+\OPTIONITEM{version}
+     Display the program version%
+     \index{program!version}
+     \index{version!of program}
+     number on
+     \path=stderr=.%
+     \PATHINDEX{stderr}
+     This will also include an
+     indication of who compiled the program, the
+     host name on which it was compiled, the time
+     of compilation, and the type of string-value
+     matching code selected, when that information
+     is available to the compiler.
+\end{description}
+
+\section{Prettyprinting}
+
+\index{prettyprinting}%
+A prettyprinter for any language must be able to
+deal with more than just those files that strictly
+conform to the language grammar.  For programming
+languages, most compilers implement language
+extensions that prettyprinters must recognize and
+try to deal with gracefully.  \BIBCLEAN{}
+recognizes two such input languages: \BibTeX{} and
+\SCRIBE{}.
+
+Ideally, a prettyprinter should be able to produce
+output even in the presence of input errors,
+displaying it in such a way as to make the
+location of the errors more evident.  \BIBCLEAN{}
+provides detailed error and warning messages to
+help pinpoint errors.  With the
+\OPTION{file-position} command-line option, it
+will flag the byte, column, and line, positions of
+the start and end of the current token in both
+input and output files.
+
+Here is a summary of the actions taken by
+\BIBCLEAN{} on its input stream.
+\begin{itemize}
+  \item
+        Space between entries is discarded, and
+        replaced by a single blank line.
+
+  \item
+        Space around string concatenation
+        operators is standardized.
+
+  \item
+        Leading and trailing space in value
+        strings is discarded, and embedded
+        multiple spaces are collapsed to a single
+        space.
+
+  \item
+        String lengths are tested against the
+        limit in standard \BibTeX{}, and warnings
+        issued when the limit is exceeded.  The
+        standard limit has proven to be too small
+        in practice, and many sites install
+        enlarged versions of \BibTeX{}.  Perhaps
+        \BibTeX{} version 1.0 will use more
+        realistic values, or eliminate string
+        length limits altogether.
+
+  \item
+        Outer parentheses in entries are
+        standardized to braces.
+
+  \item
+        Braced value strings are standardized to
+        quoted value strings.
+
+  \item
+        Field\slash value pairs are output on
+        separate lines, wrapping long lines to not
+        exceed a user-definable standard width
+        whenever possible.
+
+  \item
+        A trailing comma is supplied after the
+        last field\slash value assignment.  This
+        is convenient if assignments are later
+        reordered during editing.
+
+  \item
+        \OPTION{fix-font-changes} provides for
+        protecting value string text inside font
+        changes from downcasing.
+
+  \item
+        Brace-level zero upper-case acronyms in
+        titles are braced to protect from
+        downcasing.
+
+  \item
+        \OPTION{no-par-breaks} provides a way to
+        check for blank lines in string values,
+        which may be indicative of unclosed
+        delimiter errors.
+
+  \item
+        Umlaut accents, \verb=\"x=, inside value
+        strings at brace-level zero are converted
+        to \verb={\"x}=.  This has been found to
+        be a common user error. \BibTeX{} requires
+        embedded quotes to be nested inside
+        braces.
+
+  \item
+        Letter-case usage in entry and field names
+        is standardized, so for example,
+        \verb=mastersthesis= and
+        \verb=MASTERSTHESIS= become
+        \verb=MastersThesis=.
+
+  \item
+        ISBN%
+        \index{ISBN (International Standard Book Number)}%
+        and ISSN
+        \index{ISSN (International Standard Serial Number)}%
+        checksums are validated.  \BibTeX{} style
+        files that recognize field names for them
+        are available in the TUG bibliography
+        collection,%
+        \index{TUG bibliography collection}
+        and the bibliography for this document
+        uses them.
+
+  \item
+        Name modifiers like Jr, Sr, etc.\ are
+        recognized and handled by
+        \OPTION{fix-names}, and names are put into
+        a standard order, so that {\tt Bach,
+        P.~D.~Q.} becomes {\tt P.~D.~Q.~Bach}.%
+        \index{Bach, P. D. Q.}%
+        \index{Schickele, Peter}
+
+  \item
+        With \OPTION{fix-initials}, uniform
+        spacing is supplied after brace-level zero
+        initials in personal names.
+
+  \item
+        With \OPTION{check-values}, citation key
+        and field values are matched against
+        patterns to catch irregularities and
+        possible errors.
+
+  \item
+        Dates of the month, like {\tt "July 14"},
+        are converted to use month abbreviations,
+        {\tt jul \# "~14"}.
+
+  \item
+        Page number ranges are converted to use
+        en-dashes, instead of hyphens or
+        em-dashes.
+
+  \item
+        With \OPTION{check-values}, year numbers
+        are checked against patterns, then if no
+        match is found, the year values are
+        checked against reasonable limits.
+
+  \item
+        With \OPTION{trace-file-opening}, file
+        open attempts are logged.  This helps in
+        the diagnosis of problems such as missing
+        files, or incorrect file permissions.
+
+  \item
+        On lexing or parsing errors, \BIBCLEAN{}
+        attempts to resynchronize by flushing the
+        input until it finds the next line
+        containing an initial \TT{@} character
+        preceded by nothing other than optional
+        white space.
+
+  \item
+        When an \TT{@} character begins a line, a
+        new bibliography entry is assumed to have
+        started.  The current brace balance is
+        then tested to make sure it is zero.  A
+        non-zero brace level is strongly
+        suggestive of an error, so \BIBCLEAN{}
+        issues an error message, and zeros the
+        brace level.
+
+  \item
+        At end-of-file, the brace level is tested.
+        A non-zero brace level is very likely an
+        error, and occasions an error message.
+
+\end{itemize}
+
+
+\section{Pattern matching and initialization files}%
+\label{sec:init}
+
+\BIBCLEAN{} can be compiled with one of three
+different types of pattern matching;%
+\index{pattern matching}
+the choice is
+made by the installer at compile time:
+
+  \begin{itemize}
+    \item
+        The original version uses explicit
+        hand-coded tests of value-string syntax.
+
+    \item
+        The second version uses regular-expression
+        pattern-matching%
+        \index{regular expression!pattern matching}%
+        \index{pattern matching!regular expression}
+        host library routines
+        together with regular-expression patterns
+        that come entirely from initialization
+        files.
+
+    \item
+        The third version uses special patterns
+        that come entirely from initialization
+        files.
+  \end{itemize}
+
+The second and third versions are the ones of most
+interest here, because they allow the user to
+control what values are considered acceptable.
+However, command-line options can also be
+specified in initialization files,%
+\index{initialization file}%
+\index{file!initialization}
+no matter which pattern-matching choice was
+selected.
+
+When \BIBCLEAN{} starts, it searches for
+initialization files,%
+\index{initialization file}%
+\index{file!initialization}
+finding the first one in the
+system executable program search path%
+\index{program!search path}%
+\index{search path}
+(on \UNIX{}
+and IBM \PCDOS{}, \path=PATH=)%
+\PATHINDEX{PATH}
+and the first one
+in the \path=BIBINPUTS=%
+\PATHINDEX{BIBINPUTS}
+search path, and processes
+them in turn.  Then, when command-line arguments%
+\index{options}
+are processed, any additional files specified by
+\OPTION{init-file filename} options are also
+processed.  Finally, immediately before each named
+bibliography file is processed, an attempt is made
+to process an initialization file with the same
+name, but with the extension changed to
+\verb=.ini=.%
+\PATHINDEX{.ini}
+The default extension can be changed by a setting
+of the environment variable \path=BIBCLEANEXT=.%
+\PATHINDEX{BIBCLEANEXT}
+This scheme permits system-wide,
+user-wide, session-wide, and file-specific
+initialization files to be supported.
+
+When input is taken from \path=stdin=,%
+\PATHINDEX{stdin}
+there is no file-specific initialization.
+
+For precise control, the \OPTION{no-init-files}
+option suppresses all initialization files except
+those explicitly named by
+\OPTION{init-file filename} options, either on the
+command line, or in requested initialization
+files.
+
+Recursive execution of initialization files%
+\index{initialization file!nested}%
+\index{file!initialization!nested}
+with nested \OPTION{init-file filename} options is
+permitted; if the recursion is circular,
+\BIBCLEAN{} will finally get a non-fatal
+initialization file open failure after opening too
+many files.  This terminates further
+initialization file processing.  As the recursion%
+\index{recursion}
+unwinds, the files are all
+closed, then execution proceeds normally.
+
+An initialization file may contain empty lines,
+comments from percent to end of line (just like
+\TeX{}), option switches, and field\slash pattern
+or field\slash pattern\slash message assignments.
+Leading and trailing spaces are ignored.  This is
+best illustrated by the short example in
+Table~\ref{tab:initfile}.
+%
+  \begin{table}[tbh]
+\hrule
+\caption{Sample \protect\BIBCLEAN{} initialization file.}%
+\label{tab:initfile}%
+\index{initialization file!sample}%
+\index{file!sample initialization}
+\begin{verbatim}
+%% Start with our departmental patterns
+-init-file /u/math/bib/.bibcleanrc
+
+%% Make some small additions
+chapter = "\"D\""           %% 23
+
+pages   = "\"D--D\""        %% 23--27
+
+volume  = "\"D \\an\\d D\"" %% 11 and 12
+
+year    = \
+   "\"dddd, dddd, dddd\"" \
+   "Multiple years specified."
+                     %% 1989, 1990, 1991
+
+-no-fix-names %% do not modify
+              %% author/editor lists
+\end{verbatim}
+\hrule
+  \end{table}
+%
+Long logical lines can be split into multiple
+physical lines by breaking at a backslash-newline%
+\index{backslash-newline}
+pair; the backslash-newline pair is discarded.
+This processing happens while characters are being
+read, before any further interpretation of the
+input stream.
+
+Each logical line must contain a complete option
+(and its value, if any), or a complete field\slash
+pattern pair, or a field\slash pattern\slash
+message triple.
+
+Comments are stripped during the parsing of the
+field, pattern, and message values.  The comment
+start symbol is not recognized inside quoted
+strings, so it can be freely used in such strings.
+
+Comments on logical lines that were input as
+multiple physical lines via the backslash-newline%
+\index{backslash-newline}
+convention must appear on the last physical line;
+otherwise, the remaining physical lines will
+become part of the comment.
+
+Pattern strings must be enclosed in quotation
+marks; within such strings, a backslash starts an
+escape mechanism that is commonly used in \UNIX{}
+software.  The recognized escape sequences%
+\index{escape sequence}
+are
+given in Table~\ref{tab:escape}.
+Backslash followed by any other character produces
+just that character.  Thus, \ESCAPE{\char34}
+produces a quotation mark, and \ESCAPE{\char92}
+produces a single backslash.
+
+\begin{table}[tbh]
+\hrule
+\caption{Escape sequences in quoted strings.}%
+\index{escape sequence!table}%
+\label{tab:escape}
+\begin{center}
+\begin{tabular}{lp{2in}}
+     \ESCAPE{a}   & alarm bell (octal 007)\\
+%
+     \ESCAPE{b}   & backspace (octal 010)\\
+%
+     \ESCAPE{f}   & formfeed (octal 014)\\
+%
+     \ESCAPE{n}   & newline (octal 012)\\
+%
+     \ESCAPE{r}   & carriage return (octal 015)\\
+%
+     \ESCAPE{t}   & horizontal tab (octal 011)\\
+%
+     \ESCAPE{v}   & vertical tab (octal 013)\\
+%
+     \ESCAPE{ooo} & character number octal
+                   \verb=ooo= (e.g.\  \ESCAPE{012} is
+                   linefeed).  Up to 3 octal
+                   digits may be used.\\
+%
+     \ESCAPE{0xhh}
+                 & character number hexadecimal
+                   \verb=hh= (e.g.\  \ESCAPE{0x0a}
+                   is linefeed).  \verb=xhh= may
+                   be in either letter case.
+                   Any number of hexadecimal
+                   digits may be used.
+\end{tabular}
+\end{center}
+\hrule
+\end{table}
+
+An ASCII NUL%
+\index{NUL (0)!in string}
+(\ESCAPE{0}) in a string will
+terminate it; this is a feature of the C
+programming language in which \BIBCLEAN{} is
+implemented.
+
+Field\slash pattern pairs can be separated by
+arbitrary space, and optionally, either an equals
+sign or colon functioning as an assignment
+operator.  Thus, the following are equivalent:
+%
+\begin{verbatim}
+pages="\"D--D\""
+pages:"\"D--D\""
+pages "\"D--D\""
+  pages = "\"D--D\""
+  pages : "\"D--D\""
+pages   "\"D--D\""
+\end{verbatim}
+%
+Each field name can have an arbitrary number of
+patterns associated with it; however, they must be
+specified in separate field\slash pattern
+assignments.
+
+An empty pattern string causes previously-loaded
+patterns for that field name to be forgotten.
+This feature permits an initialization file to
+completely discard patterns from earlier
+initialization files.
+
+Patterns for value strings are represented in a
+tiny special-purpose language that is both
+convenient and suitable for bibliography
+value-string syntax checking.  While not as
+powerful as the language of regular-expression
+patterns, its parsing can be portably implemented
+in less than 3\% of the code in a widely-used
+regular-expression parser (the GNU%
+\index{GNU!regexp package@{\tt regexp} package}
+\path=regexp=%
+\PATHINDEX{regexp}
+package).
+
+The patterns are represented by the special
+characters given in Table~\ref{tab:patterns}.
+
+\begin{table}[tbh]
+\hrule
+\caption{Initialization file pattern characters.}%
+\index{initialization file!pattern characters}%
+\index{file!initialization!pattern characters}%
+\label{tab:patterns}
+\begin{center}
+\begin{tabular}{lp{2in}}
+     \verb*= = &       one or more spaces\\
+%
+     \TT{a} &        exactly one letter\\
+%
+     \TT{A} &        one or more letters\\
+%
+     \TT{d} &        exactly one digit\\
+%
+     \TT{D} &        one or more digits\\
+%
+     \TT{r} &        exactly one Roman numeral\\
+%
+     \TT{R} &        one or  more  Roman
+                     numerals (i.e.  a Roman
+                     number)\\
+%
+     \TT{w} &        exactly one word  (one  or
+                     more letters and digits)\\
+%
+     \TT{W} &        one or more words, separated
+                     by space, beginning and ending
+                     with a word\\
+%
+     \TT{.} &        one `special' character,
+                       one of the characters
+                       \verb*= !#()*+,-./:;?[]~=,
+                       a subset of punctuation
+                       characters that are
+                       typically used in string
+                       values\\
+%
+     \TT{:} &        one or more `special'
+                       characters\\
+%
+     \TT{X} &        one or more
+                       `special'-separated words,
+                       beginning and ending with a
+                       word\\
+%
+     \ESCAPE{x} &      exactly one \TT{x}
+                       (\TT{x} is any
+                       character), possibly with
+                       an escape sequence
+                       interpretation given
+                       earlier\\
+%
+     \TT{x} &        exactly the character
+                       \TT{x} (\TT{x} is
+                       anything but one of these
+                       pattern characters:
+                       \verb*=aAdDrRwW.: \=)
+\end{tabular}
+\end{center}
+\hrule
+\end{table}
+
+The \TT{X} pattern character is very powerful,
+but generally inadvisable, since it will match
+almost anything likely to be found in a \BibTeX{}
+value string.  The reason for providing pattern
+matching on the value strings is to uncover
+possible errors, not mask them.
+
+There is no provision for specifying ranges or
+repetitions of characters, but this can usually be
+done with separate patterns.  It is a good idea to
+accompany the pattern with a comment showing the
+kind of thing it is expected to match.  Here is a
+portion of an initialization file giving a few of
+the patterns used to match \TT{number} value
+strings:
+%
+\begin{verbatim}
+number = "\"D\""         %% 23
+number = "\"A AD\""      %% PN LPS5001
+number = "\"A D(D)\""    %% RJ 34(49)
+number = "\"A D\""       %% XNSS 288811
+number = "\"A D\\.D\""   %% Version 3.20
+number = "\"A-A-D-D\""   %% UMIAC-TR-89-11
+number = "\"A-A-D\""     %% CS-TR-2189
+number = "\"A-A-D\\.D\"" %% CS-TR-21.7
+\end{verbatim}
+%
+For a bibliography that contains only
+\verb=Article= entries, this list should probably
+be reduced to just the first pattern, so that
+anything other than a digit string fails the
+pattern-match test.  This is easily done by
+keeping bibliography-specific patterns%
+\index{bibliography-specific pattern}%
+\index{pattern!bibliography-specific}
+in a
+corresponding file with extension \verb=.ini=,%
+\PATHINDEX{.ini}
+since that file is read automatically.
+You should be sure to use empty pattern%
+\index{empty!pattern}%
+\index{pattern!empty}
+strings in
+this pattern file to discard patterns from earlier
+initialization files.
+
+The value strings passed to the pattern matcher
+contain surrounding quotes, so the patterns should
+also.%
+\index{quote!in pattern}%
+\index{pattern!quotes in}
+However, you could use a pattern
+specification like \verb="\"D"= to match an
+initial digit string followed by anything else;
+the omission of the final quotation mark
+\ESCAPE{\char34} in the pattern allows the match
+to succeed without checking that the next
+character in the value string is a quotation mark.
+
+Because the value strings are intended to be
+processed by \TeX, the pattern matching ignores
+braces,%
+\index{pattern matching!brace ignored in}%
+\index{brace!ignored in pattern matching}
+and \TeX{} control sequences, together
+with any space following those control sequences.
+Spaces around braces are preserved.%
+\index{brace!space around}
+This
+convention allows the pattern fragment
+\verb=A-AD-D= to match the value string
+\path=TN-K\slash 27-70=, because the value is
+implicitly collapsed to \path=TN-K27-70= during
+the matching operation.
+
+\BIBCLEAN{}'s normal action when a string value
+fails to match any of the corresponding patterns
+is to issue a warning message similar to this:
+{\tt Unexpected value in ``year = "192"''}.  In
+most cases, that is sufficient to alert the user
+to a problem.  In some cases, however, it may be
+desirable to associate a different message with a
+particular pattern.%
+\index{pattern!changing warning message}%
+\index{warning message!changing}
+This can be done by supplying
+a message string following the pattern string.
+Format items%
+\index{format!item}
+\FORMAT{\%} (single percent), \FORMAT{e}
+(entry name), \FORMAT{f} (field name), \FORMAT{k}
+(citation key), and \FORMAT{v} (string value) are
+available to get current values expanded in the
+messages.  Here is an example:
+%
+\begin{verbatim}
+chapter = "\"D:D\"" \
+     "Colon found in ``%f = %v''" %% 23:2
+\end{verbatim}
+%
+
+To be consistent with other messages output by
+\BIBCLEAN{}, the message string should not end
+with punctuation.
+
+If you wish to make the message an error, rather
+than just a warning, begin it with a query%
+\index{query (?)!in messages}
+(?),%
+\index{?}
+like this:
+%
+\begin{verbatim}
+chapter = "\"D:D\"" \
+    "?Colon found in ``%f = %v''" %% 23:2
+\end{verbatim}
+%
+The query will {\em not\/} be included in the
+output message.
+
+Escape sequences%
+\index{escape sequence!in message text}
+are supported in message strings,
+just as they are in pattern strings.  You can use
+this to advantage for fancy things, such as
+terminal display mode control.  If you rewrite the
+previous example as
+%
+\begin{verbatim}
+chapter = "\"D:D\"" \
+          "?\033[7mColon found \
+in ``%f = %v''\033[0m" %% 23:2
+\end{verbatim}
+%
+the error message will appear in inverse video on
+display screens that support ANSI terminal control
+sequences.  Such practice is not normally
+recommended, since it may have undesirable effects
+on some output devices.  Nevertheless, you may
+find it useful for restricted applications.
+
+For some types of bibliography fields, \BIBCLEAN{}
+contains special-purpose code to supplement or
+replace the pattern matching:
+\begin{itemize}
+     \item
+        \TT{ISBN} and \TT{ISSN} field values
+        are handled this way because their
+        validation requires evaluation of
+        checksums%
+        \index{checksum!in ISBN and ISSN@in {\tt ISBN} and {\tt ISSN}}
+        that cannot be expressed by
+        simple patterns; no patterns are even used
+        in these two cases.
+
+     \item
+        When \BIBCLEAN{} is compiled with
+        pattern-matching code support,
+        \TT{chapter}, \TT{number},
+        \TT{pages}, and \TT{volume} values are
+        checked only by pattern matching.
+
+     \item
+        \TT{month} values are first checked
+        against the standard \BibTeX{}
+        month name abbreviations, and only if no
+        match is found are patterns then used.
+
+     \item
+        \TT{year} values are first checked
+        against patterns, then if no match is
+        found, the year numbers are found and
+        converted to integer values for testing
+        against reasonable bounds.
+\end{itemize}
+
+Values for other fields are checked only against
+patterns.  You can provide patterns for any field
+you like, even ones \BIBCLEAN{} does not already
+know about.  New ones are simply added to an
+internal table that is searched for each string to
+be validated.
+
+The special field, \TT{key}, represents the
+bibliographic citation key.%
+\index{citation!key}
+It can be given
+patterns, like any other field.  Here is an
+initialization file pattern assignment that will
+match an author name, a colon, an alphabetic
+string, and a two-digit year:
+%
+\begin{verbatim}
+key = "A:Add"   %% Knuth:TB86
+\end{verbatim}
+%
+Notice that no quotation marks are included in the
+pattern, because the citation keys are not quoted.
+You can use such patterns to help enforce uniform
+naming conventions for citation keys, which is
+increasingly important as your bibliography data
+base grows.
+
+\section{Lexical analysis}\label{sec:lexer}
+
+The command-line option \OPTION{no-prettyprint}
+requests \BIBCLEAN{} to function as a lexical
+analyzer%
+\index{lexical analyzer}
+instead of as a prettyprinter.%
+\index{prettyprinter}
+Its output is then a stream of lines, each of
+which contains one token.  For the bibliography
+entries shown in Section~\ref{sec:intro}, here is
+what the output looks like; the long lines have
+been wrapped by a backslash-newline%
+\index{backslash-newline}
+to fit in these narrow journal columns:
+%
+\begin{verbatim}
+# line 1 "stdin"
+2       AT      "@"
+18      STRING  "String"
+11      LBRACE  "{"
+1       ABBREV  "pub-AW"
+6       EQUALS  "="
+# line 2 "stdin"
+19      VALUE   "\"Ad{\\-d}i{\\-s}on-Wes{\
+\\-l}ey\""
+15      RBRACE  "}"
+# line 4 "stdin"
+13      NEWLINE "\n"
+13      NEWLINE "\n"
+2       AT      "@"
+5       ENTRY   "Book"
+11      LBRACE  "{"
+10      KEY     "Lamport:LDP85"
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 5 "stdin"
+7       FIELD   "author"
+6       EQUALS  "="
+19      VALUE   "\"Leslie Lamport\""
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 6 "stdin"
+7       FIELD   "title"
+6       EQUALS  "="
+# line 8 "stdin"
+19      VALUE   "\"{\\LaTeX}---{A} Docume\
+nt Preparation System---User's Guide and \
+Reference Manual\""
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 9 "stdin"
+7       FIELD   "publisher"
+6       EQUALS  "="
+1       ABBREV  "pub-AW"
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 10 "stdin"
+7       FIELD   "year"
+6       EQUALS  "="
+19      VALUE   "\"1985\""
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 11 "stdin"
+7       FIELD   "ISBN"
+6       EQUALS  "="
+19      VALUE   "\"0-201-15790-X\""
+3       COMMA   ","
+13      NEWLINE "\n"
+# line 12 "stdin"
+15      RBRACE  "}"
+# line 13 "stdin"
+13      NEWLINE "\n"
+\end{verbatim}
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_AT}%
+\TOKENINDEX{TOKEN_COMMA}%
+\TOKENINDEX{TOKEN_ENTRY}%
+\TOKENINDEX{TOKEN_EQUALS}%
+\TOKENINDEX{TOKEN_FIELD}%
+\TOKENINDEX{TOKEN_KEY}%
+\TOKENINDEX{TOKEN_LBRACE}%
+\TOKENINDEX{TOKEN_NEWLINE}%
+\TOKENINDEX{TOKEN_RBRACE}%
+\TOKENINDEX{TOKEN_STRING}%
+\TOKENINDEX{TOKEN_VALUE}%
+\index{Lamport, Leslie}%
+%
+Each line begins with a small integer token type%
+\index{token!type}
+number for the convenience of computer programs,
+then a token type name for human readers, followed
+by a quoted token string.%
+\index{token!string}
+
+Lines beginning with a sharp,%
+\index{sharp@sharp ({\tt\char35})}
+\verb=#=, are
+ANSI\slash ISO Standard C preprocessor%
+\index{preprocessor}
+line-number directives%
+\index{line!number directive}
+\cite[Section~3.8.4]{ANSI:c89}%
+\index{ANSI/ISO Standard C@ANSI\slash ISO Standard C}
+to record the input line number and file name.
+
+There are currently 19 token types%
+\index{token!type}
+defined
+in the documentation that accompanies \BIBCLEAN{}.
+Because \BibTeX{} styles can define new field
+names, there is little point in the lexical
+analyzer of attempting to classify field names
+more precisely; that job is left for other
+software.
+
+Inside quoted strings, the ANSI\slash ISO Standard
+C
+\cite[Section~3.1.3.4]{ANSI:c89}%
+\index{ANSI/ISO Standard C@ANSI\slash ISO Standard C}
+backslash escape sequences%
+\index{escape sequence}
+shown in
+Table~\ref{tab:escape} on
+page~\pageref{tab:escape} are used to encode
+non-printable characters.  In this way, a
+multi-line string value can be represented on a
+single line.  This is convenient for
+string-searching applications.  If the long output
+lines prove a problem on some systems, the
+\OPTION{max-width nnn} command-line option can be
+used to wrap lines%
+\index{wrapping!of long lines}%
+\index{line!wrapping}
+at a specified column number by the
+insertion of a backslash-newline%
+\index{backslash-newline}
+pair.
+
+As a simple example of how this token stream might
+be processed, the \UNIX{} command pipeline%
+\index{pipeline}
+%
+\begin{verbatim}
+bibclean -no-prettyprint mylib.bib | \
+    awk '$2 == "KEY" {print $3}' | \
+    sed -e 's/"//g' | \
+    sort
+\end{verbatim}
+will extract a sorted list of all citation keys in
+the file \path=mylib.bib=.
+
+As a more complex example, consider locating
+duplicate abbreviations and citation keys in a
+large collection of bibliography files.  This is a
+daunting task if it must be done by visual
+scanning of the files.  It took me less than 10
+minutes to write and debug a 35-line
+\PROGRAM{nawk}
+\cite{Aho:APL87}%
+\index{Aho, Alfred V.}%
+\index{Kernighan, Brian W.}%
+\index{Weinberger, Peter J.}
+program (15 lines of comments, 20 of code) that
+processed the token stream from \BIBCLEAN{} and
+printed warnings about such duplicates.
+
+The processing steps can be represented by the
+simple \UNIX{} pipeline
+%
+\begin{verbatim}
+bibclean -no-prettyprint bibfiles | \
+    tr '[A-Z]' '[a-z]' | \
+    nawk -f bibdup.awk
+\end{verbatim}
+\PATHINDEX{tr}%
+\PATHINDEX{bibclean}%
+\PATHINDEX{bibdup.awk}%
+\PATHINDEX{nawk}%
+\PATHINDEX{tr}%
+%
+\noindent
+which is most conveniently encapsulated in a
+command script so that it can be invoked more
+simply as
+%
+\begin{verbatim}
+bibdup *.bib
+\end{verbatim}
+%
+\PATHINDEX{bibdup}%
+\noindent
+to produce output like this:
+%
+\begin{verbatim}
+Duplicate string abbreviation ["pub-aw"]:
+        # line 1 "ll.bib"
+        # line 141 "master.bib"
+Duplicate key ["lamport:ldp85"]:
+        # line 4 "ll.bib"
+        # line 4172 "master.bib"
+...
+\end{verbatim}
+
+\BibTeX{}'s grammar is somewhat hazy, so it is not
+easy to perform a lexical analysis without some
+context sensitivity.  \BIBCLEAN{} therefore
+produces the lexical token stream merely as an
+alternate output format.  In particular, this
+means that any requested run-time formatting
+options will have been applied to the tokens {\em
+before\/} they are output to the lexical token
+stream.  For example, a \SCRIBE{} bibliography
+file can be converted to a \BibTeX{} token stream
+so that software that processes \BIBCLEAN{}'s
+output need not be \SCRIBE{}-aware.
+
+\section{Portability}
+
+\index{portability}%
+\index{testing}%
+\BIBCLEAN{} is written in ANSI\slash ISO Standard
+C
+\cite{ANSI:c89}%
+\index{ANSI/ISO Standard C@ANSI\slash ISO Standard C}
+with great care taken to produce
+maximum portability.  It has been successfully
+tested with more than 30 different compilers on
+all major workstation, and one mainframe, \UNIX{}
+systems, plus \VAX{} \VMS{}, \PCDOS{}, \OSTWO{},
+and Atari%
+\index{Atari}
+\TOS{}.
+
+The C programming language has become the language
+of choice today for most personal computer and
+\UNIX{} software development, and the increasing
+availability of C implementations conforming to
+the 1989 Standard
+\cite{ANSI:c89}%
+\index{ANSI/ISO Standard C@ANSI\slash ISO Standard C}
+makes it easier to write code that will compile
+and run without modification on a wide variety of
+systems.
+
+C does not have Pascal's%
+\index{Pascal}
+problems with character
+strings and dynamic memory allocation that forced
+Don Knuth%
+\index{Knuth, Donald E.}
+to implement the \WEB{} string pool%
+\index{string!pool}
+feature and to use compile-time array allocation
+in the \TeX{} software development.  C's rich
+operator syntax, its powerful run-time library,
+and generally excellent operating-system
+interfaces have made it widely popular.  More than
+a million copies of the first edition of {\em The
+C Programming Language\/} book
+\cite{Kernighan:CPL78}%
+\index{Kernighan, Brian W.}%
+\index{Ritchie, Dennis M.}
+have been sold, and the
+second edition
+\cite{Kernighan:CPL88}
+may do even better.
+
+Nevertheless, C has some serious problems.
+Philippe Kahn,%
+\index{Kahn, Philippe}
+the founder of Borland
+International,%
+\index{Borland International}
+has called C a {\em write-only\/}
+language.  Two books have been written about its
+syntactical peculiarities
+\cite{Feuer:CPB89,%
+      Koenig:CTP89},%
+\index{Feuer, Alan~R.}%
+\index{Koenig, Andrew}
+and one of them has already appeared in a second
+edition.
+
+The only way to overcome these problems is
+meticulous care in programming, and experience
+with as many compilers and computer architectures
+as possible.  Several books offer valuable advice
+on C portability
+\cite{Harbison:CAR91,%
+      Jaeschke:PCL89,%
+      Lapin:PCU87,%
+      Plauger:SCL92,%
+      Rabinowitz:PC90,%
+      Rochkind:AUP85,%
+      Stevens:UNP90}.
+\index{Harbison, Samuel P.}%
+\index{Steele Jr., Guy L.}%
+\index{Jaeschke, Rex}%
+\index{Lapin, J. E.}%
+\index{Plauger, P. J.}%
+\index{Rabinowitz, Henry}%
+\index{Schaap, Chaim}%
+\index{Rochkind, Marc J.}%
+\index{Stevens, W. Richard}
+
+C++%
+\index{C++}
+\cite{Ellis:ACR90,%
+      Stroustrup:CPL91}%
+\index{Ellis, Margaret A.}%
+\index{Stroustrup, Bjarne}
+is an extension of C to support object-oriented
+programming,%
+\index{object-oriented programming}
+and has an enthusiastic following.
+ANSI\slash ISO standardization efforts are in
+progress, sadly while the language is still
+evolving.
+
+From the point of view of a C programmer, the
+advantage of C++ over C is its much stricter
+checking of type conversions and intermodule
+interfaces.  \BIBCLEAN{} has been carefully
+written to be compilable under C++ as well as C,
+and to date, has been tested with more than a
+dozen C++ and Objective C%
+\index{Objective C}
+(another C superset) compilers.
+% DEC Alpha AXP OSF/1
+% g++ (DECstation ULTRIX, NeXT, SGI, Sun)
+% HP BSD 4.3
+% HP UX
+% IBM 3090
+% IBM PS/2
+% IBM RS/6000
+% SGI
+% Sun
+% Turbo C++
+
+All of the extra features of the C++ language are
+strictly avoided, because using them would
+seriously limit \BIBCLEAN{}'s portability.  Not
+only is the syntax of the C++ language under
+evolution, but the C++ class libraries%
+\index{class library}
+are for the
+most part {\em completely dependent\/} on the
+particular implementation.  Microsoft's 1020-page
+documentation of its C++ class library is 10\%
+larger than that of its C run-time library.
+
+Nevertheless, I {\em strongly recommend\/} use of
+C++ compilers in preference to C compilers, so as
+to catch bugs at compile time that would otherwise
+not be found until post-mortem dump%
+\index{dump!post-mortem}%
+\index{post-mortem dump}%
+\index{core dump}
+time, or when
+the code is ported to a new architecture.
+
+\section{\protect\SCRIBE{} bibliography format}%
+\label{sec:scribe}
+
+The \SCRIBE{} document formatting system
+\cite{Reid:SUM80}%
+\index{Reid, Brian}
+greatly influenced \LaTeX{} and
+\BibTeX{}, as well as the GNU Emacs%
+\index{GNU!Emacs}%
+\index{Emacs}
+\TeX{}info system.%
+\index{GNU!texinfo@\protect\TeX{}info}%
+\index{texinfo@\protect\TeX{}info}
+
+With care, it is possible to share bibliography
+files between \SCRIBE{} and \BibTeX{}.
+Nevertheless, there are some differences, so here
+is a summary of features of the \SCRIBE{}
+bibliography file format.  We record them because
+they are difficult to determine from the published
+manual, and because readers may sometimes acquire
+files in this format without having prior exposure
+to \SCRIBE{}.
+
+\begin{enumerate}
+\item
+      Letter case is not significant in field
+      names and entry names, but case is preserved
+      in value strings.
+
+\item
+      In field\slash value pairs, the field and
+      value may be separated by one of three
+      characters: \verb|=|, \verb=/=, or
+      \verb*= = (space).  Space may optionally
+      surround these separators.
+
+\item
+      Value delimiters%
+      \index{delimiters!in scribe@in \protect\SCRIBE{}}
+      are any of these seven
+      pairs:
+      \verb={ }=,   \verb=[ ]=,   \verb=( )=,
+      \verb=< >=,   \verb=' '=,   \verb=" "=, and
+      \verb=` `=.
+
+\item\label{item:4}
+      Value delimiters may not be nested, even
+      though with the first four delimiter pairs,
+      nested balanced delimiters would be
+      unambiguous.
+
+\item
+      Delimiters can be omitted around values that
+      contain only letters, digits, sharp
+      (\verb=#=), ampersand (\verb=&=), period
+      (\verb=.=), and percent (\verb=%=).
+
+\item
+      Outside of delimited values, a literal
+      at-sign%
+      \index{at-sign}
+      (\TT{\char64}) is represented by doubled
+      at-signs (\TT{\char64\char64}).
+
+\item
+      Bibliography entries begin with
+      \TT{\char64name}, as for \BibTeX{}, but any
+      of the seven \SCRIBE{} value delimiter pairs
+      may be used to surround the values in
+      field\slash value pairs.  As in
+      (\ref{item:4}), nested delimiters are
+      forbidden.
+
+\item
+      Arbitrary space may separate entry names
+      from the following delimiters.
+
+\item
+      \TT{\char64Comment} is a special command
+      whose delimited value is discarded.  As in
+      (\ref{item:4}), nested delimiters are
+      forbidden.
+
+\item
+      The special form
+%
+\begin{verbatim}
+@Begin{comment}
+...
+@End{comment}
+\end{verbatim}
+%
+      permits encapsulating arbitrary text
+      containing any characters or delimiters,
+      other than
+      \TT{\char64End\optbreak\protect\{comment\protect\}}.
+      Any of the seven delimiter pairs may be used
+      around the word \TT{comment} following the
+      \TT{\char64Begin} or \TT{\char64End}; the
+      delimiters in the two cases need not be the
+      same, and consequently,
+      \TT{\char64Begin\optbreak\protect\{comment\protect\}}\slash
+      \TT{\char64End\optbreak\protect\{comment\protect\}}
+      pairs may not be nested.
+
+\item
+      The \TT{key} field is required in each
+      bibliography entry.
+
+\item
+      A backslashed quote%
+      \index{backslash-quote}%
+      \index{escape sequence}
+      in a string will be
+      assumed to be a \TeX{} accent, and braced
+      appropriately.  While such accents do not
+      conform to \SCRIBE{} syntax,
+      \SCRIBE{}-format bibliographies have been
+      found that appear to be intended for \TeX{}
+      processing.
+\end{enumerate}
+
+Because of this loose syntax, \BIBCLEAN{}'s normal
+error detection heuristics are less effective, and
+consequently, \SCRIBE{} mode input is not the
+default; it must be explicitly requested.
+
+\section{Recommendations for \protect\BibTeX{} design}%
+\label{sec:recommendations}
+
+The documentation available for \BibTeX{} leaves
+several points about the input syntax unclear, and
+I had to obtain answers to the following questions
+by experiment:
+\begin{itemize}
+  \item Can an at-sign occur inside a
+        \TT{\char64Comment\optbreak\protect\{...\protect\}}?
+        {\em No}.
+
+  \item Can string abbreviation names be used on
+        the right-hand side of string definitions?
+        {\em Yes}.
+
+  \item Can the argument of \TT{\char64String} be
+        empty?  {\em No}.
+
+  \item Can a citation key be omitted in an entry?
+        {\em No}.
+
+  \item Can the list of assignments in an entry be
+        empty?  {\em Yes}.
+
+  \item Can a
+        \TT{\char64Comment\optbreak\protect\{...\protect\}}
+        occur between arbitrary tokens?  {\em No}.
+
+  \item Are newlines preserved in the argument of
+        a \TT{\char64Preamble\optbreak\protect\{...\protect\}}?
+        The answer is relevant if the user
+        includes \TeX{} comments in the preamble material.
+        {\em No}.
+\end{itemize}
+I view the experimental answers to these questions
+as pure happenstance, and could reasonably argue
+for the opposite answers to the ones obtained.
+
+\subsection*{Grammar}
+
+\index{grammar}%
+The most important recommendation that I can make
+for the next version of \BibTeX{} is that it {\em
+must\/} have a rigorous grammar, including a
+well-defined comment syntax.
+
+The grammar can almost be of the simple class
+LL(0)%
+\index{LL(0) grammar}%
+\index{grammar!LL(0)}
+\cite{Aho:CPT86},%
+\index{Aho, Alfred V.}%
+\index{Sethi, Ravi}%
+\index{Ullman, Jeffrey D.}
+requiring no lookahead during parsing, and
+one-character lookahead during lexical analysis.
+However, the presence of the string concatenation
+operator complicates things sufficiently to
+require at least an LL(1) grammar.%
+\index{LL(1)!grammar}%
+\index{grammar!LL(1)}
+
+Such grammars are straightforward to handle with
+either hand-coded parsers, or with parsers
+automatically generated from grammar files by
+compiler development tools like the \UNIX{}
+\PROGRAM{lex} \cite{Lesk:lex}%
+\index{Lesk, Michael E.}%
+\index{Schmidt, Eric}
+and \PROGRAM{yacc}
+\cite{Johnson:yacc,%
+      Levine:LY92,%
+      Mason:LY90,%
+      Schreiner:ICC85}%
+\index{Johnson, Steven C.}%
+\index{Levine, John R.}%
+\index{Mason, Tony}%
+\index{Brown, Doug}%
+\index{Schreiner, Axel T.}%
+\index{Friedman, Jr., H. George}
+programs, or the Free Software Foundation%
+\index{Free Software Foundation}
+equivalents, \PROGRAM{flex} and \PROGRAM{bison}.%
+
+\PROGRAM{yacc} and \PROGRAM{bison} implement
+LALR(1) parsers;%
+\index{LALR(1)!parser}%
+\index{parser!LALR(1)}
+the acronym stands for ``Look-Ahead at
+most 1 token with a Left-to-Right derivation''.
+These are simpler than the LR($k$) grammars%
+\index{LR($k$) grammar}%
+\index{grammar!LR($k$)}
+introduced by none other than the author of \TeX{}
+in the fundamental paper on the theory of parsing
+\cite{Knuth:j-IC-8-6-607}.%
+\index{Knuth, Donald E.}
+Nevertheless, they are sufficient for a broad
+class of language grammars, including most major
+programming languages, and importantly, they
+produce compact, efficient, fast, and reliable
+parsers. LL(1) grammars%
+\index{LL(1)!grammar}%
+\index{grammar!LL(1)}
+are a special case of
+LALR(1) grammars,%
+\index{LALR(1)!grammar}%
+\index{grammar!LALR(1)}
+and we will later define a
+\BibTeX{} grammar in LALR(1) form in
+Section~\ref{sec:yacc-grammar}.
+
+\subsection*{Comment syntax}
+
+The comment syntax%
+\index{comment!syntax}
+should preferably be identical
+to that of \TeX{}, so that a comment runs from
+percent to end-of-line, and then {\em additionally
+gobbles all leading horizontal space on the next
+line, up to, but not including, its end-of-line}.
+This permits breaking of long lines without having
+to destroy indentation that is so necessary for
+readability.  Percent-initiated comments are
+already supported in \BibTeX{} style files, though
+such comments end after the first following
+newline.
+
+For \SCRIBE{} compatibility, \BibTeX{} should also
+support a
+\TT{\char64Comment\optbreak\protect\{...\protect\}}
+entry type.  This will require additions to {\em
+all\/} \BibTeX{} style files, since the entry
+types are known there, and not in the \BibTeX{}
+code itself.  \BibTeX{} 0.99c already knows about
+\TT{\char64Comment\optbreak\protect\{...\protect\}},
+but the \WEB{} code section ``Process a
+\verb=comment= command'' will have to be extended
+to deal with the grammar changes.
+
+It is important that \BibTeX{} not discard
+\TT{\char64Comment\optbreak\protect\{...\protect\}}
+entries, because it would then not be possible to
+write a \BibTeX{} style file that converted a
+bibliography file to another format without loss
+of information.  One such style already exists to
+convert \BibTeX{} files to \UNIX{}
+\PROGRAM{bib}\slash \PROGRAM{refer} format.
+
+\subsection*{Characters in names}
+
+The characters that can appear in key, entry, and
+field names {\em must\/} be defined by
+enumeration, rather than by exclusion, as is
+currently done
+\cite[Section~B.1.3]{Lamport:LDP85}.%
+\index{Lamport, Leslie}
+The reason is that character sets vary between
+computers, and the new, and very much larger,
+ISO10646M character set%
+\index{ISO10646M character set}
+may be widely available in
+this decade.  These variations make the set of
+admissible name characters vary between systems,
+compromising portability.  I strongly recommend
+following the conventions for identifiers in
+widely-used programming languages to define the
+grammar of key, entry, and field names.  It seems
+to me that letters, digits, colon, hyphen, and
+possibly plus and slash, should be adequate, and
+names should be required to begin with a letter.
+`Letter' here should include {\em only\/} the 26
+Roman letters `A' through `Z', because allowing
+letters from other alphabets opens a horrid can of
+worms that will seriously impact portability of
+bibliography files until the computer world has a
+single uniform character set.
+
+I tested this set of characters against 92~500
+entries in local bibliography files, and found
+only a few keys that used other characters: the
+new ones were period%
+\index{period!in citation key}
+and apostrophe%
+\index{apostrophe!in citation key}
+(e.g.\
+O'Malley:TB92).  They might therefore be permitted
+as well, though I would prefer to omit them, and
+retrofit changes in a few citation keys.
+
+The characters permitted in citation keys should
+be the same as those in entry and field names, so
+as to avoid user confusion.
+
+\subsection*{Error reporting}
+
+\index{error!reporting}%
+When \BibTeX{} begins to collect a token, it
+should record the current line number.%
+\index{line!number}
+When
+an unclosed string%
+\index{runaway string argument}%
+\index{string!runaway}
+later causes internal buffer
+overflow,%
+\index{buffer overflow}%
+\index{overflow of string buffer}
+it could report something like {\tt
+String buffer overflow on input lines 24--82}
+that would better help locate the offending string
+by giving its starting and ending line numbers.
+
+To simplify error recovery in such cases,
+\BibTeX{} could additionally require that the
+\TT{\char64} character that starts a new entry
+must be the first non-space character on a line.
+
+\subsection*{File inclusion}
+
+\BibTeX{} sorely needs a file inclusion%
+\index{file!inclusion}
+facility.
+With \BibTeX{} 0.99c, this feature is available in
+a crude fashion by listing several files in the
+\CS{bibliography} command.  However, this is
+not sufficiently general, and requires unnecessary
+knowledge on the part of the user of the
+bibliography.
+
+The author of a \BibTeX{} file should be free to
+restructure it into subfiles without requiring
+modifications to all documents that use it.  File
+inclusion is important to allow sharing of common
+material, such as
+\TT{\char64String\optbreak\protect\{...\protect\}}
+definitions.
+
+\SCRIBE{} uses the form
+%
+\begin{verbatim}
+@Include{filename}
+\end{verbatim}
+%
+and \BibTeX{} should too.  It must be possible to
+nest file inclusions to a reasonable depth, at
+least five levels.
+
+\section{A lexical grammar for \protect \BibTeX{}}%
+\label{sec:lex-grammar}
+
+\index{grammar!lexical}%
+\index{lexical grammar}%
+To test the recommendations of
+Section~\ref{sec:recommendations}, I wrote and
+tested a \PROGRAM{lex} grammar for \BibTeX{}.  It
+took just 22 rules to identify the 19 basic token
+types.  The complete \PROGRAM{lex} file was about
+510 lines long, with about 340 lines of C code
+mostly concerned with the input and output of
+strings, and 120 lines of function and variable
+declarations.  After \PROGRAM{lex} processing, the
+complete C program was about 1130 lines long; with
+\PROGRAM{flex}, it is 1700 lines long.%
+\index{grammar!size of}
+This program is named \PROGRAM{biblex}, and its
+output is compatible with that of \BIBCLEAN{} with
+the \OPTION{no-prettyprint} option.  However, it
+offers none of \BIBCLEAN{}'s other services.
+
+The \PROGRAM{lex} grammar is presented in this
+section in the style of literate programming,%
+\index{literate programming}
+with
+grammar rules interspersed with descriptive text.
+The index at the end of this document provides an
+essential feature of a literate program.  To my
+knowledge, no \WEB{} facility yet exists for
+\PROGRAM{lex} and \PROGRAM{yacc}, so this literate
+program must be handcrafted.
+
+\subsection*{File structure}
+
+A \PROGRAM{lex} file has this general structure:
+
+\begin{verbatim}
+definitions
+%%
+rules
+%%
+user functions
+\end{verbatim}
+\index{\%\%@{\protect\tt \%\%}}
+
+C declarations and definitions can be included in
+the declarations part if they are enclosed in
+\verb=%{=%
+\index{\%(@{\protect\tt \%\{\iffalse "}\fi}}
+and \verb=%}=.%
+\index{\%)@{\protect\tt \iffalse "{\fi \%\}}}
+Such text is copied verbatim to the output code
+file, together with additional
+\PROGRAM{lex}-supplied header code.
+
+Running \PROGRAM{lex} on this file produces a C
+file that can be compiled and linked with a main
+program from the \PROGRAM{lex} library to produce
+a working lexical analyzer.  Alternatively, the
+user can write a customized main program which is
+linked with the \PROGRAM{lex}-generated code to
+make a functional lexer.
+
+In the following subsections, we describe the
+contents of the definitions and rules parts, but
+omit the user functions, since they are not
+relevant to understanding the grammar.
+
+\subsection*{Macro definitions}
+
+The \PROGRAM{lex} grammar begins with macro
+definitions.%
+\index{macro definition!lex@{\tt lex}}
+\PROGRAM{lex} macros are single letters
+followed by a regular expression that defines
+them.
+
+In regular expressions,%
+\index{regular expression!syntax of}
+square brackets delimit
+sets of characters, hyphen is used for character
+ranges inside sets, asterisk means zero or more of
+the preceding pattern, and plus means one or more.
+A period%
+\index{period!in regular expression}
+represents any character other than a
+newline.
+
+\PROGRAM{lex} macro names are braced%
+\index{macro use!lex@{\tt lex}}
+to request
+expansion when they are used in grammar rules.
+
+The first macro, \MACRO{N}, represents the set of
+characters permitted in \BibTeX{} names of
+abbreviations, citation keys, entries, and fields.
+If this set is ever modified, this is the {\em
+only\/} place where that job has to be done.
+
+\begin{verbatim}
+N    [A-Za-z][---A-Za-z0-9:.+/']*
+\end{verbatim}
+\noindent
+
+It is not reasonable to make this set differ for
+these four different uses, because the differences
+are insufficient to distinguish between them
+lexically.  We'll see later that we have to
+examine surrounding context to tell them apart.
+
+Macro \MACRO{O} represents the set of open
+delimiters that start a \BibTeX{} entry argument.
+We could extend this grammar for \SCRIBE{} by
+adding additional characters to the set.
+
+\begin{verbatim}
+O    [({]
+\end{verbatim}
+
+Macro \MACRO{W} represents a single horizontal
+space character.%
+\index{horizontal space character}
+
+\begin{verbatim}
+W    [ \f\r\t\013]
+\end{verbatim}
+
+\noindent
+Notice that we include formfeed,%
+\index{formfeed}
+\ESCAPE{f}, and
+vertical tab,%
+\index{vertical!tab}
+\ESCAPE{v}, in the set of horizontal space
+characters, even though they produce vertical
+motion on an output device.  The reason is that we
+want to treat them just like blanks, and
+distinguish them from newlines, which are handled
+separately.  \PROGRAM{lex} does not recognize the
+escape sequence \ESCAPE{v}, so we have to reencode
+it in octal as \ESCAPE{013}.
+
+Carriage return,%
+\index{carriage return}
+\ESCAPE{r}, is not normally used
+in \UNIX{} text files, but is common in some other
+operating systems.  On the Apple Macintosh,%
+\index{Apple Macintosh}%
+\index{Macintosh!Apple}
+carriage return is used instead of newline as an
+end-of-line marker.  Fortunately, this will be
+transparent to us, because the C language requires
+\cite[Section~2.2.2]{ANSI:c89}%
+\index{ANSI/ISO Standard C@ANSI\slash ISO Standard C}
+that the implementation map host line
+terminators to newline on input, and newline back
+to host line terminators on output, so we will
+never see carriage returns on that system.
+
+The last macro, \MACRO{S}, represents optional
+horizontal space.
+
+\begin{verbatim}
+S    {W}*
+\end{verbatim}
+
+\subsection*{Format of grammar rules}
+
+\index{format!of grammar rules}%
+\index{grammar!format of rules}%
+The remainder of the grammar consists of pairs of
+regular expression patterns and C code to execute
+when the pattern is matched.  \PROGRAM{lex} uses a
+``maximal munch'' strategy in matching the longest
+possible sequence to handle the case where two
+rules have common leading patterns.
+
+In the grammar file, the pairs are each written on
+a single line, but we wrap lines%
+\index{wrapping!of long lines}%
+\index{line!wrapping}
+here to fit in
+the narrow journal columns, with the
+backslash-newline%
+\index{backslash-newline}
+convention used earlier.
+
+\subsection*{{\tt @} token}
+
+The first grammar rule says that an \TT{\char64}
+character should be recognized as the token named
+\TOKEN{TOKEN_AT}.
+
+\begin{verbatim}
+[@]    RETURN (out_token(TOKEN_AT));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_AT}%
+
+On a successful match, the output function
+optionally emits the token, then returns its
+argument as a function value which the lexer in
+turn returns to the parser.
+
+The C \TT{return} statement is hidden inside the
+\MACRO{RETURN} macro, because for \PROGRAM{yacc}
+and \PROGRAM{bison}, we need to bias \BIBCLEAN{}'s
+small integer token values to move them beyond the
+range of character ordinals.
+
+\subsection*{{\tt Comment}, {\tt Include},
+{\tt Preamble}, and {\tt String} tokens}
+
+The next four rules ignore letter case in matching
+the words \TT{Comment}, \TT{Include},
+\TT{Preamble}, or \TT{String}.  If they follow an
+\verb=@= character, they are identified as special
+tokens; otherwise, they are regarded as string
+abbreviation names.
+
+\begin{verbatim}
+[Cc][Oo][Mm][Mm][Ee][Nn][Tt] \
+    RETURN ((last_token == TOKEN_AT) ?
+             out_token(TOKEN_COMMENT) :
+             out_token(TOKEN_ABBREV));
+
+[Ii][Nn][Cc][Ll][Uu][Dd][Ee]/{S}{O} \
+    RETURN ((last_token == TOKEN_AT) ?
+        out_token(TOKEN_INCLUDE) :
+        out_token(TOKEN_ABBREV));
+
+[Pp][Rr][Ee][Aa][Mm][Bb][Ll][Ee]/{S}{O} \
+    RETURN ((last_token == TOKEN_AT) ?
+        out_token(TOKEN_PREAMBLE) :
+        out_token(TOKEN_ABBREV));
+
+[Ss][Tt][Rr][Ii][Nn][Gg]/{S}{O} \
+    RETURN ((last_token == TOKEN_AT) ?
+        out_token(TOKEN_STRING) :
+        out_token(TOKEN_ABBREV));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\VARIABLEINDEX{last_token}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_AT}%
+\TOKENINDEX{TOKEN_COMMENT}%
+\TOKENINDEX{TOKEN_INCLUDE}%
+\TOKENINDEX{TOKEN_PREAMBLE}%
+\TOKENINDEX{TOKEN_STRING}%
+
+Although \PROGRAM{lex} supports examination of
+trailing context in order to identify tokens more
+precisely, the presence of arbitrary whitespace
+and in-line comments in this grammar makes it
+impossible to use this feature.  The output
+routines remember the last non-space, non-comment
+token seen in order to make use of leading context
+to assist in token identification.
+
+\subsection*{Abbreviation, entry, field, and key tokens}
+
+Several token types are recognized by a match with
+the name macro, \MACRO{N}.  Since the same set of
+characters can occur in abbreviations,%
+\index{abbreviation}
+entry names,%
+\index{entry!name}
+field names,%
+\index{field name}
+and key names,
+\index{key name}
+we have to use the record of leading context to
+distinguish between the various possibilities.
+
+\begin{verbatim}
+{N} {
+       if (last_object == TOKEN_STRING)
+           RETURN(out_token(TOKEN_ABBREV));
+       switch (last_token)
+       {
+       case TOKEN_COMMA:
+           RETURN(out_token(TOKEN_FIELD));
+       case TOKEN_LBRACE:
+           RETURN(out_token(TOKEN_KEY));
+       case TOKEN_AT:
+           RETURN(out_token(TOKEN_ENTRY));
+       default:
+           RETURN(out_token(TOKEN_ABBREV));
+       }
+    }
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\VARIABLEINDEX{last_object}%
+\VARIABLEINDEX{last_token}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_COMMA}%
+\TOKENINDEX{TOKEN_ENTRY}%
+\TOKENINDEX{TOKEN_FIELD}%
+\TOKENINDEX{TOKEN_KEY}%
+\TOKENINDEX{TOKEN_STRING}%
+
+In the event of errors in the input stream, this
+identification of token types may be unreliable;
+such errors will be detected later in the parsing
+program.
+
+\subsection*{Digit string}
+
+A {\em digit string\/}%
+\index{digit string}
+is an undelimited value
+string.  The output function will supply the
+missing quotation mark delimiters, so that all
+strings take a standard form.
+
+\begin{verbatim}
+[0-9]+    RETURN (out_protected_string( \
+    TOKEN_VALUE));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_protected_string}%
+\TOKENINDEX{TOKEN_VALUE}%
+
+\subsection*{In-line comment token}
+
+A percent initiates an {\em in-line comment\/}%
+\index{in-line comment}%
+\index{comment!in-line}
+that continues to the end of line and then over
+all leading horizontal space on the next line.
+
+\begin{verbatim}
+[%].*[\n]{S} \
+    RETURN (out_token(TOKEN_INLINE));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_INLINE}%
+
+Because this pattern marks the start of a new
+token, the previous token has already been
+terminated.  Thus, an line-line comment {\em
+cannot\/} split a token.  The same is true for
+\TeX{} macros, though not for ordinary \TeX{}
+text.
+
+\subsection*{String concatenation token}
+
+A sharp%
+\index{sharp@sharp ({\tt\char35})}
+sign is the \BibTeX{} {\em string concatenation
+operator}.%
+\index{string!concatenation operator}%
+\index{operator!string concatenation}
+
+\begin{verbatim}
+[#]    RETURN (out_token(TOKEN_SHARP));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_SHARP}%
+
+\subsection*{Delimited string token}
+
+A quotation mark initiates a {\em delimited
+string}.%
+\index{delimited string}
+
+\begin{verbatim}
+["]    RETURN (out_string());
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_string}%
+
+The complete string must be collected by the C
+function \FUNCTION{out_string} because regular
+expressions cannot count balanced delimiters.
+
+\BibTeX{}'s quoted string syntax is a little
+unusual, in that an embedded quote%
+\index{embedded quote}%
+\index{quote!embedded}
+is not
+represented by double quotes, as in Fortran, or by
+an escape sequence,%
+\index{escape sequence}
+as in C, but rather by putting
+the quote character in braces.
+
+\subsection*{Brace tokens}
+
+Left and right {\em braces\/}%
+\index{brace}
+are recognized as single tokens.
+
+\begin{verbatim}
+[{]    RETURN (out_lbrace());
+
+[}]    RETURN (out_rbrace());
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_rbrace}%
+\FUNCTIONINDEX{out_lbrace}%
+
+The output functions keep track of the current
+brace level to distinguish between outer braces
+delimiting a \BibTeX{} entry, and inner braces
+delimiting a string value, and return
+\TOKEN{TOKEN_LBRACE}, \TOKEN{TOKEN_LITERAL},
+\TOKEN{TOKEN_RBRACE}, or \TOKEN{TOKEN_STRING},
+depending on preceding context.
+
+\TOKEN{TOKEN_LITERAL} is used for the argument of
+a \TT{Comment} and \TT{Include} entries, and
+contains the delimiting braces.
+
+\subsection*{Parenthesis tokens}
+
+In order to simplify the parser grammar, we remap
+outer {\em parentheses\/}%
+\index{parenthesis}
+delimiting arguments of
+\BibTeX{} entries to {\em braces}.%
+\index{brace}
+However, if the
+parentheses are not preceded by a valid entry
+name, they are output instead as single-character
+tokens of type \TOKEN{TOKEN_LITERAL}.  They cannot
+legally occur in this context, but that error will
+be detected during the parsing stage.  During
+lexical analysis, we do not want to have any error
+conditions.
+
+\begin{verbatim}
+[(]    RETURN (out_lparen());
+
+[)]    RETURN (out_rparen());
+\end{verbatim}
+\FUNCTIONINDEX{out_rparen}%
+\FUNCTIONINDEX{out_lparen}%
+
+To support \SCRIBE{}, we would need to add
+patterns for other delimiters here.
+
+\subsection*{Assignment and separator tokens}
+
+The {\em assignment operator\/}%
+\index{assignment!operator}
+\index{operator!assignment}
+and {\em assignment separator\/}%
+\index{assignment!separator}%
+\index{separator!assignment}
+are returned as single tokens.
+
+\begin{verbatim}
+[=]    RETURN (out_token(TOKEN_EQUALS));
+
+[,]    RETURN (out_token(TOKEN_COMMA));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_COMMA}%
+\TOKENINDEX{TOKEN_EQUALS}%
+
+\subsection*{Newline token}
+
+A {\em newline\/}%
+\index{newline}
+is returned as a separate token
+because we want to be able to preserve line
+boundaries so that filter tools that make minimal
+perturbations on the input stream can be
+constructed.
+
+\begin{verbatim}
+[\n]    RETURN (out_token(TOKEN_NEWLINE));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_NEWLINE}%
+
+\subsection*{Horizontal space token}
+
+Consecutive horizontal space characters%
+\index{horizontal space character}
+are returned as a single space token, for the same
+reason that newlines%
+\index{newline}
+are recognized as distinct tokens by the preceding
+rule.
+
+\begin{verbatim}
+{W}+    RETURN (out_token(TOKEN_SPACE));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_SPACE}%
+
+\subsection*{Unclassifiable tokens}
+
+\index{unclassifiable token}%
+\index{token!unclassifiable}%
+Finally, we have a catch-all rule: any character
+not recognized by one of the preceding rules is
+returned as a literal single-character token, and
+will cause an error during the parsing.  The
+regular-expression character period
+\index{period!in regular expression}
+matches anything but a newline,%
+\index{newline}
+and we already have a rule for newline.
+
+\begin{verbatim}
+.    RETURN (out_token(TOKEN_LITERAL));
+\end{verbatim}
+\MACROINDEX{RETURN}%
+\FUNCTIONINDEX{out_token}%
+\TOKENINDEX{TOKEN_LITERAL}%
+
+\subsection*{Lexical grammar summary}
+
+We now have a complete lexical grammar suitable
+for \PROGRAM{lex} that can complete tokenize an
+arbitrary input stream containing any character
+values whatever.
+
+The associated C code functions normalize entries
+by changing outer parentheses to braces, brace
+string delimiters to quotes, and undelimited digit
+strings to quoted strings.
+
+All string tokens of type \TOKEN{TOKEN_VALUE}
+output by the lexer will contain surrounding
+quotes, and any nested quotes will be braced, with
+proper care taken to handle \ESCAPE{\char34}
+accent control sequences%
+\index{accent control sequence}
+properly.
+
+All special characters inside the quoted strings
+will be represented by the escape sequences given
+in Table~\ref{tab:escape} on
+page~\pageref{tab:escape}.  Thus, even with a
+binary input stream, the output of the lexer will
+contain only printable characters.
+
+It must be observed that \PROGRAM{lex} is not
+capable of handling all 256 8-bit characters. In
+particular, it treats an ASCII NUL%
+\index{NUL (0)!in string}
+(\ESCAPE{0}) in a string as an end-of-file
+condition.  Older versions of \PROGRAM{lex} are
+not {\em 8-bit clean};%
+\index{8-bit clean}
+they will not reliably handle characters 128--255.
+This latter deficiency is being remedied by the
+X/Open Consortium%
+\index{X/Open Consortium}
+activities to internationalize and standard
+\UNIX{} applications
+\cite{xopen:XPG89-1}.
+
+\section{A parsing grammar for \protect\BibTeX{}}%
+\label{sec:yacc-grammar}
+
+\index{grammar!parsing}%
+\index{parsing grammar}%
+To complete the job, I wrote a \PROGRAM{yacc}
+grammar for \BibTeX{}.  This was considerably more
+work than the \PROGRAM{lex} grammar, mostly due to
+my relative inexperience with writing LALR(1)
+grammars, and it took several days to understand
+the process well enough to eliminate the
+grammatical ambiguities that initially plagued me.
+
+The final complete \PROGRAM{yacc} program is about
+270 lines long, and produces a parser of 760
+(\PROGRAM{yacc}) to 1000 (\PROGRAM{bison}) lines,
+excluding the lexer.  The grammar contains just 35
+rules.%
+\index{grammar!size of}
+Ten of these rules could be eliminated if
+we arranged for the lexer to discard space%
+\index{space}
+and
+in-line comments,%
+\index{in-line comment}%
+\index{comment!in-line}
+but for a prettyprinter and
+other \BibTeX{} tools, they must be preserved.
+This parsing program is called \PROGRAM{bibparse};
+it can be used with the output of either
+\BIBCLEAN{} \OPTION{no-prettyprint}, or
+\PROGRAM{biblex}.
+
+The complete \BibTeX{} grammar is given below,
+expressed as \PROGRAM{yacc} rules, again in
+literate programming%
+\index{literate programming}
+style.  It must be augmented by about
+180 lines of C code to provide a working parser.
+
+\subsection*{File structure}
+
+A \PROGRAM{yacc} file has this general structure:
+
+\begin{verbatim}
+declarations
+%%
+rules
+%%
+user functions
+\end{verbatim}
+\index{\%\%@{\protect\tt \%\%}}
+
+C declarations and definitions can be included in
+the declarations part if they are enclosed in
+\verb=%{=%
+\index{\%(@{\protect\tt \%\{\iffalse "}\fi}}
+and \verb=%}=.%
+\index{\%)@{\protect\tt \iffalse "{\fi \%\}}}
+Such text is copied verbatim to the output code
+file, together with additional
+\PROGRAM{yacc}-supplied header code.
+
+Running \PROGRAM{yacc} on this file produces a C
+file that can be compiled and linked with the
+lexical analyzer code to produce a working parser.
+
+In the following subsections, we describe the
+contents of the declarations and rules parts, but
+omit the declaration C code and the user
+functions, since they are not relevant to
+understanding the grammar.
+
+\subsection*{Format of grammar rules}
+
+\index{format!of grammar rules}%
+\index{grammar!format of rules}%
+The grammar rules will be presented in top-down
+order, from most general, to most particular,
+since this seems to be the best way to understand
+the overall structure of the grammar, and to
+ensure that it describes current \BibTeX{} usage,
+plus our suggested extensions and clarifications.
+
+The colon%
+\index{colon}
+in a grammar rule should be read ``is''
+or ``produces'', because the rule is also known as
+a {\em production}.  A vertical bar%
+\index{vertical!bar}
+separates
+alternatives, and can be read ``or''.  A
+semicolon%
+\index{semicolon}
+terminates the rule.
+
+Lower-case letters are used for {\em
+non-terminals},%
+\index{non-terminal}
+which are names of rules in the parser grammar.
+Upper-case letters are used for {\em terminals},%
+\index{terminal}
+which are names of tokens recognized by the lexer.
+
+The spacing shown is arbitrary, but conventional
+for \PROGRAM{yacc} grammars:%
+\index{grammar!formatting conventions}
+each rule starts a new line, with the right-hand
+side indented from the margin, and the semicolon%
+\index{semicolon}
+occupies a separate line.
+
+\subsection*{Token declarations}
+
+The \TT{\%token} declarations merely provide
+symbolic names for the integer token types
+returned by the lexer.  The values are arbitrary,
+except that they must exceed 257, and must agree
+with the definitions in the lexer code.  We simply
+increment the token types output from \BIBCLEAN{}
+by 1000, matching the offset added in the
+\MACRO{RETURN} macro in the lexer.
+
+\begin{verbatim}
+%token TOKEN_ABBREV     1001
+%token TOKEN_AT         1002
+%token TOKEN_COMMA      1003
+%token TOKEN_COMMENT    1004
+%token TOKEN_ENTRY      1005
+%token TOKEN_EQUALS     1006
+%token TOKEN_FIELD      1007
+%token TOKEN_INCLUDE    1008
+%token TOKEN_INLINE     1009
+%token TOKEN_KEY        1010
+%token TOKEN_LBRACE     1011
+%token TOKEN_LITERAL    1012
+%token TOKEN_NEWLINE    1013
+%token TOKEN_PREAMBLE   1014
+%token TOKEN_RBRACE     1015
+%token TOKEN_SHARP      1016
+%token TOKEN_SPACE      1017
+%token TOKEN_STRING     1018
+%token TOKEN_VALUE      1019
+\end{verbatim}
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_AT}%
+\TOKENINDEX{TOKEN_COMMA}%
+\TOKENINDEX{TOKEN_COMMENT}%
+\TOKENINDEX{TOKEN_ENTRY}%
+\TOKENINDEX{TOKEN_EQUALS}%
+\TOKENINDEX{TOKEN_FIELD}%
+\TOKENINDEX{TOKEN_INCLUDE}%
+\TOKENINDEX{TOKEN_INLINE}%
+\TOKENINDEX{TOKEN_KEY}%
+\TOKENINDEX{TOKEN_LBRACE}%
+\TOKENINDEX{TOKEN_LITERAL}%
+\TOKENINDEX{TOKEN_NEWLINE}%
+\TOKENINDEX{TOKEN_PREAMBLE}%
+\TOKENINDEX{TOKEN_RBRACE}%
+\TOKENINDEX{TOKEN_SHARP}%
+\TOKENINDEX{TOKEN_SPACE}%
+\TOKENINDEX{TOKEN_STRING}%
+\TOKENINDEX{TOKEN_VALUE}%
+
+\subsection*{Precedence declarations}
+
+\index{precedence declaration}%
+The \TT{\%nonassoc}%
+\index{nonassoc@{\tt \%nonassoc}}
+declaration makes the
+assignment operator%
+\index{assignment!operator!associativity of}%
+\index{associativity}
+non-associative, so input of
+the form {\tt a = b = c} is illegal.
+
+\begin{verbatim}
+%nonassoc TOKEN_EQUALS
+\end{verbatim}
+\TOKENINDEX{TOKEN_EQUALS}%
+
+The first \TT{\%left}%
+\index{left@{\tt \%left}}
+declaration makes space,%
+\index{space!associativity of}
+in-line comment,%
+\index{in-line comment!associativity of}%
+\index{comment!in-line!associativity of}
+and newline%
+\index{newline!associativity of}
+tokens left associative, and of equal precedence.
+
+\begin{verbatim}
+%left TOKEN_SPACE TOKEN_INLINE \
+      TOKEN_NEWLINE
+\end{verbatim}
+\TOKENINDEX{TOKEN_INLINE}%
+\TOKENINDEX{TOKEN_NEWLINE}%
+\TOKENINDEX{TOKEN_SPACE}%
+
+The second \TT{\%left}%
+\index{left@{\tt \%left}}
+declaration makes the
+\BibTeX{} string concatenation character,%
+\index{string!concatenation operator}%
+\index{operator!string concatenation}
+\verb=#=, left associative, and of higher
+precedence than space,%
+\index{space!precedence of}
+in-line comment,%
+\index{in-line comment!precedence of}%
+\index{comment!in-line!precedence of}
+and newline.
+
+\begin{verbatim}
+%left TOKEN_SHARP
+\end{verbatim}
+\TOKENINDEX{TOKEN_SHARP}%
+
+These precedence settings are crucial for
+resolving conflicts in this grammar which arise
+in assignments when the parser has seen an
+assignment operator and a value.  Without the
+operator precedences, it cannot decide whether to
+complete the assignment, or to read ahead looking
+for a concatenation operator.
+
+\subsection*{\protect \BibTeX{} file}
+
+The beginning of the grammar rules is indicated by
+a pair of percent characters.
+
+\begin{verbatim}
+%%
+\end{verbatim}
+
+The first rule defines what we are going to parse,
+namely, a {\em \BibTeX{} file}.  The left-hand
+side of the first rule is known as the grammar's
+{\em start symbol}.
+
+\begin{verbatim}
+bibtex_file:
+        opt_space
+      | opt_space object_list opt_space
+      ;
+\end{verbatim}
+\RULEINDEX{bibtex_file}%
+\RULEINDEX{object_list}%
+\RULEINDEX{opt_space}%
+
+This rule says that a \BibTeX{} file contains
+either optional space, or optional space followed
+by a list of objects followed by optional space.
+This definition permits a file to be empty, or
+contain only space tokens, or have leading and
+trailing space.
+
+\subsection*{Object lists}
+
+A {\em list of objects\/}%
+\index{list!of objects}%
+\index{object!list}
+is either a single
+object, or a list of such objects, separated by
+optional space from another object.
+
+\begin{verbatim}
+object_list:
+        object
+      | object_list opt_space object
+      ;
+\end{verbatim}
+\RULEINDEX{opt_space}%
+\RULEINDEX{object}%
+\RULEINDEX{object_list}%
+
+For LL(1)%
+\index{LL(1)!parser}%
+\index{parser!LL(1)}
+parsers, usually implemented by
+hand-coded recursive descent programs, this kind
+of left-recursive rule%
+\index{left-recursive rule}
+must be rewritten by
+standard methods
+\cite[pp.~47--48, 176--178]{Aho:CPT86}%
+\index{Aho, Alfred V.}%
+\index{Sethi, Ravi}%
+\index{Ullman, Jeffrey D.}
+to avoid an infinite loop in the parser.  In this
+rule, we would instead define a list as an object,
+separated by optional space from another list.
+However, for LALR(1) parsers, left-recursive
+definitions are preferable, because they avoid
+parser stack overflow with long lists.
+
+\subsection*{Objects}
+
+An {\em object\/}%
+\index{object}
+is one of the \BibTeX{}
+\TT{\char64name\protect\{...\protect\}}
+constructs.  Notice that we allow optional space
+between the \TT{\char64} and the \TT{name}.
+
+\begin{verbatim}
+object:
+        TOKEN_AT opt_space at_object
+      ;
+\end{verbatim}
+\RULEINDEX{at_object}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_AT}%
+\RULEINDEX{object}%
+
+In this grammar, we will consistently allow
+optional space%
+\index{space!between tokens}
+between {\em any\/} pair of
+\BibTeX{} tokens; space is described more
+precisely below.  This convention is easy to
+remember, and easy to implement in the grammar
+rules.
+
+While it would be possible to include the
+\TT{\char64} as part of the \TT{name}, making
+\TT{\char64name} a single lexical token, both
+\BibTeX{} and \SCRIBE{} permit intervening space,
+so we cannot collapse the two into a single token.
+
+\subsection*{Entry types and error recovery}
+
+Here are the possibilities for the \TT{name}
+following an \TT{\char64}, which we call an
+\RULE{at_object}.
+
+\begin{verbatim}
+at_object:
+        comment
+      | entry
+      | include
+      | preamble
+      | string
+      | error TOKEN_RBRACE
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_RBRACE}%
+\RULEINDEX{error}%
+\RULEINDEX{string}%
+\RULEINDEX{preamble}%
+\RULEINDEX{include}%
+\RULEINDEX{entry}%
+\RULEINDEX{comment}%
+\RULEINDEX{at_object}%
+
+\TT{Comment}, \TT{Include}, \TT{Preamble},
+and \TT{String} must be handled separately from
+other types of entries, like \TT{Article} and
+\TT{Book}, because their braced arguments have a
+different syntax.
+
+The rule with \RULE{error} is a special one
+supported by \PROGRAM{yacc} and \PROGRAM{bison}.
+It says that if an \RULE{at_object} cannot be
+recognized at the current state of the parse, then
+the input should be discarded until a right brace
+is found.  An error message%
+\index{error!message}%
+\index{message!error}
+will be issued when
+this happens, but recovery%
+\index{error!recovery}%
+\index{recovery!from error}
+will be attempted
+following that right brace.  Without this error
+handling, any input error will immediately
+terminate the parser, hardly a user-friendly thing
+to do.
+
+This is the only place where we will attempt error
+repair, although we could certainly do so in other
+rules, such as in the assignment rule%
+\index{assignment!rule!error recovery in}
+below.  The
+goal here is to present a rigorous complete
+grammar, without additional embellishments that
+would complicate understanding.
+
+\subsection*{Comment entry}
+
+\index{comment!entry}%
+A \BibTeX{}
+\TT{\char64Comment\optbreak\protect\{...\protect\}}
+is special in that the only requirement on the
+argument is that delimiters be balanced.  The
+lexer returns the delimited argument as a single
+literal string, including the delimiters, and
+standardizes the delimiters to braces.
+
+\begin{verbatim}
+comment:
+        TOKEN_COMMENT opt_space
+            TOKEN_LITERAL
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_LITERAL}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_COMMENT}%
+\RULEINDEX{comment}%
+
+\subsection*{Bibliography entry}
+
+A \BibTeX{} {\em bibliography entry}%
+\index{bibliography!entry}
+is braced
+text containing a citation key,%
+\index{citation!key}
+a comma,%
+\index{comma}
+and a
+list of assignments.%
+\index{list!of assignments}%
+\index{assignment!list}
+The rules provide for an
+optional assignment list, and for an optional
+trailing comma.%
+\index{trailing context}
+To shorten the rules, we
+introduce a subsidiary rule, \RULE{entry_head}, to
+represent their common prefix.
+
+\begin{verbatim}
+entry:  entry_head
+              assignment_list
+              TOKEN_RBRACE
+      | entry_head
+              assignment_list
+              TOKEN_COMMA opt_space
+              TOKEN_RBRACE
+      | entry_head TOKEN_RBRACE
+      ;
+
+entry_head:
+        TOKEN_ENTRY opt_space
+              TOKEN_LBRACE opt_space
+              key_name opt_space
+              TOKEN_COMMA opt_space
+      ;
+\end{verbatim}
+\RULEINDEX{key_name}%
+\TOKENINDEX{TOKEN_LBRACE}%
+\TOKENINDEX{TOKEN_ENTRY}%
+\TOKENINDEX{TOKEN_COMMA}%
+\TOKENINDEX{TOKEN_RBRACE}%
+\RULEINDEX{opt_space}%
+\RULEINDEX{assignment_list}%
+\RULEINDEX{entry_head}%
+\RULEINDEX{entry}%
+
+There is no \TT{opt_space} item following
+\TT{assignment_list} because it is included in the
+definition of the latter.  This infelicity seems
+to be necessary to obtain a grammar that conforms
+to the LALR(1)%
+\index{LALR(1)!grammar}%
+\index{grammar!LALR(1)}
+requirements of \PROGRAM{yacc} and \PROGRAM{bison}.
+
+\subsection*{Key name}
+
+\index{key name}%
+Because of intervening newlines%
+\index{newline}
+and in-line comments,%
+\index{in-line comment}%
+\index{comment!in-line}
+the lexical analyzer cannot always
+correctly recognize a {\em citation key\/}%
+\index{citation!key!problems in recognizing}
+from trailing context.%
+\index{trailing context}
+It might instead erroneously identify the token as
+an abbreviation.  We therefore need to account for
+both possibilities:
+\typeout{key_name may no longer need to allow for abbrevs}%
+
+\begin{verbatim}
+key_name:
+        TOKEN_KEY
+      | TOKEN_ABBREV
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_KEY}%
+\RULEINDEX{key_name}%
+
+\subsection*{{\protect\tt Include} entry}
+
+\index{file!inclusion}%
+The \TT{Include} entry is followed by a file
+name enclosed in balanced braces.
+
+\begin{verbatim}
+include:
+        TOKEN_INCLUDE opt_space
+            TOKEN_LITERAL
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_LITERAL}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_INCLUDE}%
+\RULEINDEX{include}%
+
+Because file names%
+\index{file!name!syntax of}
+are operating-system dependent,
+the only restrictions that are placed on the file
+name are that it cannot contain unbalanced braces,
+and that it cannot contain leading or trailing
+space.  However, the file name can have embedded
+space%
+\index{file!name!space in}
+if the operating system permits.
+
+\BibTeX{} should discard the delimiting braces and
+surrounding space in the \path=TOKEN_LITERAL= to
+isolate the file name.  It should search for this
+file in its standard input path, so that the file
+name need not contain an absolute directory path.
+This feature is not supported in \BibTeX{} 0.99c,
+but \BIBCLEAN{} and the lexer and parser recognize
+it in anticipation of its eventual incorporation.
+
+\subsection*{{\protect\tt Preamble} entry}
+
+The \TT{Preamble} entry argument is a braced
+\BibTeX{} string value.  \BibTeX{} outputs the
+argument verbatim, minus the outer delimiters, to
+the \verb=.bbl=%
+\PATHINDEX{.bbl}
+file for \TeX{} to process.
+
+\begin{verbatim}
+preamble:
+        TOKEN_PREAMBLE opt_space
+            TOKEN_LBRACE opt_space
+            value opt_space
+            TOKEN_RBRACE
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_RBRACE}%
+\TOKENINDEX{TOKEN_LBRACE}%
+\RULEINDEX{value}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_PREAMBLE}%
+\RULEINDEX{preamble}%
+
+\subsection*{{\protect\tt String} entry}
+
+The \TT{String} entry argument is a braced
+single assignment.
+
+\begin{verbatim}
+string:
+        TOKEN_STRING opt_space
+            TOKEN_LBRACE opt_space
+            assignment opt_space
+            TOKEN_RBRACE
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_RBRACE}%
+\RULEINDEX{assignment}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_LBRACE}%
+\RULEINDEX{opt_space}%
+\TOKENINDEX{TOKEN_STRING}%
+\RULEINDEX{string}%
+
+\subsection*{Value string}
+
+A \BibTeX{} {\em value\/}%
+\index{value}
+is a string, which may
+be a simple value, or a list of strings separated
+by the string concatenation operator.%
+\index{string!concatenation operator}%
+\index{operator!string concatenation}
+
+\begin{verbatim}
+value:  simple_value
+      | value opt_space
+            TOKEN_SHARP opt_space
+            simple_value
+      ;
+\end{verbatim}
+\RULEINDEX{simple_value}%
+\TOKENINDEX{TOKEN_SHARP}%
+\RULEINDEX{opt_space}%
+\RULEINDEX{simple_value}%
+\RULEINDEX{value}%
+
+\subsection*{Simple values}
+
+A {\em simple value\/}%
+\index{simple value}
+is either a delimited
+string,%
+\index{delimited string}
+returned by the lexer as a
+\TOKEN{TOKEN_VALUE}, or a string abbreviation,%
+\index{abbreviation}
+returned as a \TOKEN{TOKEN_ABBREV}.
+
+\begin{verbatim}
+simple_value:
+        TOKEN_VALUE
+      | TOKEN_ABBREV
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_VALUE}%
+\RULEINDEX{simple_value}%
+
+The lexer can distinguish between these two
+because of the string delimiters.  It is up to the
+parser support code to verify that an abbreviation
+is actually defined before it is used.
+
+\subsection*{Assignment list}
+
+The body of most \BibTeX{} entries consists of a
+list of one or more assignments, separated by
+commas.  Notice that this definition does not
+provide for an optional trailing comma%
+\index{comma!optional after assignment}
+after the last assignment.  We handled that above
+in the rules for \RULE{entry}.
+
+\begin{verbatim}
+assignment_list:
+        assignment
+      | assignment_list
+            TOKEN_COMMA opt_space
+            assignment
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_COMMA}%
+\RULEINDEX{opt_space}%
+\RULEINDEX{assignment_list}%
+\RULEINDEX{assignment}%
+\RULEINDEX{assignment_list}%
+
+\subsection*{Assignment}
+
+An {\em assignment\/}%
+\index{assignment}
+has a left-hand side separated from a value by the
+assignment operator,%
+\index{assignment!operator}
+\index{operator!assignment}
+\verb|=|.
+
+\begin{verbatim}
+assignment:
+        assignment_lhs opt_space
+            TOKEN_EQUALS opt_space value
+            opt_space
+      ;
+\end{verbatim}
+\RULEINDEX{value}%
+\TOKENINDEX{TOKEN_EQUALS}%
+\RULEINDEX{opt_space}%
+\RULEINDEX{assignment_lhs}%
+\RULEINDEX{assignment}%
+
+Trailing optional space is included here, and
+omitted before the comma in \TT{assignment_list},
+in order to allow the LALR(1) parser to
+successfully distinguish between space between a
+value and a comma, and space between a value and a
+string concatenation operator.
+
+My initial version of this grammar did not have
+this optional space item, and the resulting parser
+proved unable to recognize input in which a space
+separated a value from a comma or closing brace;
+it took quite a bit of experimentation to
+determine how to rewrite the grammar to remove
+this problem.
+
+The left-hand side of an assignment is either a
+field name,%
+\index{field name}
+like \TT{author} or \TT{title}, or
+a string abbreviation%
+\index{abbreviation}
+name.  The lexer must
+distinguish between the two by remembering the
+last entry type seen, because they are made up of
+exactly the same set of possible characters.
+
+\begin{verbatim}
+assignment_lhs:
+        TOKEN_FIELD
+      | TOKEN_ABBREV
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_ABBREV}%
+\TOKENINDEX{TOKEN_FIELD}%
+\RULEINDEX{assignment_lhs}%
+
+\subsection*{Optional space}
+
+Optional space is either an empty string,%
+\index{empty!string}
+here
+indicated by the \TT{/*...*/} comment, or space.
+
+\begin{verbatim}
+opt_space:
+        /* empty */
+      | space
+      ;
+\end{verbatim}
+\RULEINDEX{space}%
+\RULEINDEX{/* empty */}%
+\RULEINDEX{opt_space}%
+
+\subsection*{Space}
+
+{\em Space\/}%
+\index{space}
+is an important part of the grammar.  It is one or
+more single spaces.
+
+\begin{verbatim}
+space:  single_space
+      | space single_space
+      ;
+\end{verbatim}
+\RULEINDEX{single_space}%
+\RULEINDEX{space}%
+
+We include space handling to support tools that
+process \BibTeX{} files and wish to preserve the
+input form.  In normal compiler design, space is
+recognized by the lexer, and discarded, so the
+parser never has to deal with it, and the grammar
+can be considerably simpler.
+
+\subsection*{Single space}
+
+The final rule of the grammar defines a {\em
+single space\/}%
+\index{single space}
+as a literal space%
+\index{space}
+character, or
+an in-line comment,%
+\index{in-line comment}%
+\index{comment!in-line}
+or a literal newline%
+\index{newline}
+character.
+
+\begin{verbatim}
+single_space:
+        TOKEN_SPACE
+      | TOKEN_INLINE
+      | TOKEN_NEWLINE
+      ;
+\end{verbatim}
+\TOKENINDEX{TOKEN_NEWLINE}%
+\TOKENINDEX{TOKEN_INLINE}%
+\TOKENINDEX{TOKEN_SPACE}%
+\RULEINDEX{single_space}%
+
+Although we could arrange for the lexer to merge
+\TOKEN{TOKEN_SPACE} and \TOKEN{TOKEN_NEWLINE} into
+a single token, this would interfere with
+heuristics used by a prettyprinter to detect empty
+lines inside string values, which are possibly
+indicative of missing delimiters.%
+\index{mismatched delimiters}%
+\index{delimiters!mismatched}
+
+\subsection*{Parsing grammar summary}
+
+We have now completed a \PROGRAM{yacc} grammar for
+\BibTeX{} that provides a rigorous grammatical
+analysis of a stream of tokens recognized by the
+lexers in Sections~\ref{sec:lexer}
+and~\ref{sec:lex-grammar}.
+
+Notice that there is no character-string
+processing whatever in the parser, because it has
+all been done in the lexer.  Parsing operations
+just manipulate small integer values.
+
+In this version, no actions have been supplied as
+C code fragments in the \PROGRAM{yacc} grammar.
+The only output of the parser will be the token
+stream from the lexer, interspersed by error
+messages when the input fails to match a grammar
+rule.
+
+Error recovery has been kept simple: input is
+flushed to the next closing brace, which is
+presumably the end of an entry.  Braces of type
+\path=TOKEN_LBRACE=%
+\TOKENINDEX{TOKEN_LBRACE}
+and \path=TOKEN_RBRACE=%
+\TOKENINDEX{TOKEN_RBRACE}
+do not
+occur except around apparent entries in the lexer
+output; other braces are returned as tokens of
+type \path=TOKEN_LITERAL=.%
+\TOKENINDEX{TOKEN_LITERAL}
+
+No more than one token of lookahead is required by
+this grammar, although the lexer often looked
+several characters ahead to examine trailing
+context%
+\index{trailing context}
+in order to distinguish between otherwise
+similar tokens.
+
+\BibTeX{} users should be able to read this
+grammar and decide whether a questionable
+\BibTeX{} construct is legal or not, without
+having to resort to software experiments as I did
+to clarify fuzzy grammatical points.
+
+\section{Software availability}
+
+The source code%
+\index{source code}
+and documentation%
+\index{documentation}
+for \BIBCLEAN{}
+are in the {\em public domain}, in the interests
+of the widest availability and greatest benefit to
+the \TeX{} community.  Commercial vendors of
+\TeX{}ware are encouraged to include \BIBCLEAN{}
+with their distributions.
+
+The distribution also includes the separate
+complete lexer and parser grammar and code, which
+can be processed by \PROGRAM{lex} or
+\PROGRAM{flex}, and \PROGRAM{yacc} or
+\PROGRAM{bison}, respectively.  The output C code
+from these tools is included so that recipients
+need not have them installed to actually compile
+and run the lexer and parser.
+
+If you have Internet anonymous%
+\index{anonymous ftp@anonymous {\tt ftp}}
+\PROGRAM{ftp} access,
+you can retrieve the distribution in a variety of
+archive formats from the machine
+\path=ftp.math.utah.edu=%
+\PATHINDEX{ftp.math.utah.edu}
+in the directory
+\path=pub/tex/bib=.%
+\PATHINDEX{pub/tex/bib}
+Major \TeX{} Internet archive hosts%
+\index{Internet archive hosts}%
+\index{archive hosts!Internet}
+around the world will also have \BIBCLEAN{},
+but the author's site will always have the most
+up-to-date version.  If you lack \PROGRAM{ftp}
+capability but have electronic mail%
+\index{electronic mail server}
+access, a
+message to \path=tuglib@math.utah.edu=%
+\PATHINDEX{tuglib\char64math.utah.edu}
+with the text
+%
+\begin{verbatim}
+help
+send index from tex/bib
+\end{verbatim}
+\TTINDEX{send}%
+\TTINDEX{help}%
+%
+will get you started.
+
+The \BIBCLEAN{} distribution includes a
+substantial collection of torture tests%
+\index{testing}
+that
+should be run at installation time to verify
+correctness.  As with the \TeX{} \PROGRAM{trip}
+and \MF{} \PROGRAM{trap} tests, this testing
+has proved valuable in uncovering problems
+before the code is installed for general
+use.
+
+\bibliography{bibclean}
+
+\index{command-line options|see{options}}%
+\index{concatenation|see{string}}%
+\index{editor|see{Emacs}}%
+\index{lexer|see{lexical analyzer}}%
+\index{macro|seealso{control sequence}}
+\index{run-time options|see{options}}%
+\index{text editor|see{Emacs}}%
+\index{token|see{terminal}}%
+
+\printindex
+
+\makesignature
+
+\end{document}
+
+%%% This is for GNU Emacs file-specific customization:
+%%% Local Variables:
+%%% fill-column: 50
+%%% abbrev-mode: t
+%%% eval: (define-abbrev LaTeX-mode-abbrev-table "bc" "\\BIBCLEAN{}" nil)
+%%% eval: (define-abbrev LaTeX-mode-abbrev-table "unix" "\\UNIX{}" nil)
+%%% eval: (define-abbrev LaTeX-mode-abbrev-table "scribe" "\\SCRIBE{}" nil)
+%%% eval: (local-set-key "_" (quote self-insert-command))
+%%% eval: (modify-syntax-entry ?\_ "w")
+%%% eval: (setq LaTeX-index-start-with-newline t)
+%%% eval: (setq LaTeX-index-end-with-newline t)
+%%% eval: (setq LaTeX-index-macro nil)
+%%% End:

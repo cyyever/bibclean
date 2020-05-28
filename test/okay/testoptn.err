@@ -1,0 +1,6 @@
+%% testoptn.bib:11:Invalid checksum for ISSN 0302-9744 in ``ISSN = "0302-9744 (bad check digit), 1611-334X (bad check digit)"''.
+%% testoptn.bib:11:Invalid checksum for ISSN 1611-334X in ``ISSN = "0302-9744 (bad check digit), 1611-334X (bad check digit)"''.
+%% testoptn.bib:13:Invalid checksum for ISSN 0302-9742 in ``ISSN-L = "0302-9742 (bad check digit)"''.
+%% testoptn.bib:13:Unexpected ISSN-L field length in ``"0302-9742 (bad check digit)"''.
+%% testoptn.bib:15:Invalid checksum for ISSN 0302-9742 in ``ISSN-L = "03029742"''.
+%% testoptn.bib:15:Unexpected ISSN-L field length in ``"03029742"''.

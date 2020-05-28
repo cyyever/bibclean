@@ -1,0 +1,9 @@
+%% testopto.bib:5:Unbalanced math-mode dollar(s) in value ``"Unbalanced dollar sign: $ 100 a n d u p"''.
+%% testopto.bib:5:Unclosed math mode in value ``"Unbalanced dollar sign: $ 100 a n d u p"''.
+%% testopto.bib:7:Unusual compound assignment or equality-test operator in math mode value ``"The equation $x:=F [ y+z/d ] $"'' (e.g., perhaps replace <= by \leq).
+%% testopto.bib:8:Unusual compound assignment or equality-test operator in math mode value ``"The displayed equation $$x:=F [ y+z/d ]$$"'' (e.g., perhaps replace <= by \leq).
+%% testopto.bib:13:Unexpected TeX tie[s] (tilde[s]) in math mode ``"Math ties: $ a~ = ~b~ + ~c $"''.
+%% testopto.bib:25:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"The matrix {$H$} is called the {Hamiltonian}."''.
+%% testopto.bib:31:Subscript operator outside math mode in value ``"The crystal Cr_2O_3"''.
+%% testopto.bib:31:Subscript operator outside math mode in value ``"The crystal Cr_2O_3"''.
+%% testopto.bib:45:Unexpected value in ``pages = "21:1--21:13"''.

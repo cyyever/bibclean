@@ -1,0 +1,744 @@
+\begin{theindex}
+
+  \item {\tt .}, 402
+  \item {\tt .bbl}, 412
+  \item {\tt .bibcleanrc}, 397
+  \item {\tt .ini}, 400, 402
+  \item {\tt /* empty */} rule, 413
+  \item {\tt /*...*/}, 413
+  \item {\tt :}, 402
+  \item ?, 402
+  \item {\tt @}, 400
+  \item {\protect\tt \%\{\iffalse }\fi}, 407, 410
+  \item {\protect\tt \iffalse {\fi \%\}}, 407, 410
+  \item {\protect\tt \%\%}, 402, 407, 410
+  \item {\tt \%e}, 402
+  \item {\tt \%f}, 402
+  \item {\tt \%k}, 402
+  \item {\tt \%left}, 410, 411
+  \item {\tt \%nonassoc}, 410
+  \item {\tt \%token}, 410
+  \item {\tt \%v}, 402
+  \item {\tt \char 92\relax \char 34}, 401, 402, 409
+  \item {\tt \char 64}, 405, 406, 408, 411
+  \item {\tt \char 64Begin}, 405
+  \item {\tt \char 64Begin\penalty 0\{comment\}}, 405
+  \item {\tt \char 64Comment}, 405
+  \item {\tt \char 64Comment\penalty 0\{...\}}, 405, 406, 411
+  \item {\tt \char 64End}, 405
+  \item {\tt \char 64End\penalty 0\{comment\}}, 405
+  \item {\tt \char 64Preamble\penalty 0\{...\}}, 405
+  \item {\tt \char 64String}, 405
+  \item {\tt \char 64String\penalty 0\{...\}}, 406
+  \item {\tt \char 64\char 64}, 405
+  \item {\tt \char 64name}, 405, 411
+  \item {\tt \char 64name\{...\}}, 411
+  \item {\tt \char 92\relax \char 92}, 401
+  \item {\tt \char 92\relax 0x0a}, 401
+  \item {\tt \char 92\relax 0xhh}, 401
+  \item 8-bit clean, 409
+
+  \indexspace
+
+  \item {\tt \char 92\relax 0}, 401, 409
+  \item {\tt \char 92\relax 012}, 401
+  \item {\tt \char 92\relax 013}, 407
+
+  \indexspace
+
+  \item {\tt A}, 402
+  \item {\tt \char 92\relax a}, 401
+  \item {\tt a}, 402
+  \item abbreviation, 408, 413
+  \item accent control sequence, 409
+  \item Aho, Alfred V., 404, 405, 411
+  \item anonymous {\tt ftp}, 414
+  \item ANSI\slash ISO Standard C, 403, 404, 407
+  \item apostrophe
+    \subitem in citation key, 406
+  \item Apple Macintosh, 407
+  \item archive hosts
+    \subitem Internet, 414
+  \item {\tt Article}, 411
+  \item assignment, 413
+    \subitem list, 412
+    \subitem operator, 409, 413
+      \subsubitem associativity of, 410
+    \subitem rule
+      \subsubitem error recovery in, 411
+    \subitem separator, 409
+  \item {\tt assignment} rule, 412, 413
+  \item {\tt assignment_lhs} rule, 413
+  \item {\tt assignment_list}, 412, 413
+  \item {\tt assignment_list} rule, 412, 413
+  \item associativity, 410
+  \item at-sign, 405
+  \item {\tt at_object} rule, 411
+  \item Atari, 404
+  \item {\tt -author}, 397
+  \item {\tt author}, 413
+  \item author name
+    \subitem period after initials, 398
+    \subitem reordering, 398
+  \item auxiliary file, 396
+
+  \indexspace
+
+  \item {\tt \char 92\relax b}, 401
+  \item Bach, P. D. Q., 400
+  \item back end, 397
+  \item backslash-newline, 398, 400, 403, 404, 408
+  \item backslash-quote, 405
+  \item Beebe, Nelson H. F., 396
+  \item {\tt bib}, 406
+  \item {\tt bibclean}, 395--405, 407, 408, 410, 412, 414
+  \item {\tt bibclean.ini}, 397
+  \item {\tt BIBCLEANEXT}, 400
+  \item {\tt BIBCLEANINI}, 397
+  \item {\tt bibdup}, 404
+  \item {\tt bibdup.awk}, 404
+  \item {\tt BIBINPUTS}, 397, 400
+  \item {\tt biblex}, 407, 410
+  \item bibliography
+    \subitem entry, 412
+    \subitem file, 396, 397
+    \subitem style, 396
+  \item {\tt \char 92\relax bibliography}, 396, 406
+  \item bibliography-specific pattern, 402
+  \item {\tt \char 92\relax bibliographystyle}, 396
+  \item {\tt bibparse}, 410
+  \item {\tt bibtex_file} rule, 411
+  \item {\tt bison}, 406, 408, 410--412, 414
+  \item {\tt Book}, 411
+  \item Borland International, 404
+  \item brace, 409
+    \subitem ignored in pattern matching, 402
+    \subitem space around, 402
+  \item Brown, Doug, 406
+  \item Bryan, Martin, 396
+  \item buffer overflow, 406
+
+  \indexspace
+
+  \item C++, 397, 404
+  \item Cameron, Debra, 396
+  \item carriage return, 407
+  \item {\tt chapter}, 402
+  \item {\tt -check-values}, 398, 400
+  \item checksum
+    \subitem in {\tt ISBN} and {\tt ISSN}, 402
+  \item citation
+    \subitem key, 395, 403, 412
+      \subsubitem problems in recognizing, 412
+    \subitem style, 396
+  \item {\tt \char 92\relax cite}, 396
+  \item class library, 404
+  \item code generation, 397
+  \item colon, 410
+  \item comma, 412
+    \subitem optional after assignment, 413
+  \item command-line options, \see{options}{415}
+  \item {\tt Comment}, 408, 409, 411
+  \item comment
+    \subitem entry, 411
+    \subitem in-line, 408, 410, 412, 413
+      \subsubitem associativity of, 410
+      \subsubitem precedence of, 411
+    \subitem syntax, 406
+  \item {\tt comment}, 405
+  \item {\tt comment} rule, 411, 412
+  \item concatenation, \see{string}{415}
+  \item control sequence
+    \subitem {\tt \char 92\relax bibliography}, 396, 406
+    \subitem {\tt \char 92\relax bibliographystyle}, 396
+    \subitem {\tt \char 92\relax cite}, 396
+  \item core dump, 405
+
+  \indexspace
+
+  \item {\tt D}, 402
+  \item {\tt d}, 402
+  \item decimal, 397
+  \item {\tt -delete-empty-values}, 398, 399
+  \item delimited string, 409, 413
+  \item delimiters
+    \subitem in \protect\SCRIBE{}, 405
+    \subitem mismatched, 398, 413
+  \item digit string, 408
+  \item documentation, 414
+  \item dump
+    \subitem post-mortem, 405
+
+  \indexspace
+
+  \item editor, \see{Emacs}{415}
+  \item editor name
+    \subitem period after initials, 398
+    \subitem reordering, 398
+  \item electronic mail server, 414
+  \item Ellis, Margaret A., 404
+  \item Emacs, 396, 399, 405
+  \item embedded quote, 409
+  \item empty
+    \subitem pattern, 402
+    \subitem string, 413
+    \subitem values
+      \subsubitem deleting, 398
+  \item entry
+    \subitem name, 408
+  \item {\tt entry} rule, 411--413
+  \item {\tt entry_head} rule, 412
+  \item environment variable, 397
+  \item error
+    \subitem log file, 399
+    \subitem message, 411
+      \subsubitem redirecting, 397
+    \subitem recovery, 411
+    \subitem reporting, 406
+  \item {\tt error} rule, 411
+  \item {\tt -error-log filename}, 397
+  \item escape sequence, 401, 403, 405, 409
+    \subitem in message text, 402
+    \subitem table, 401
+
+  \indexspace
+
+  \item {\tt \char 92\relax f}, 401, 407
+  \item Feuer, Alan~R., 404
+  \item field name, 408, 413
+  \item file
+    \subitem {\tt .bbl}, 412
+    \subitem {\tt .bibcleanrc}, 397
+    \subitem {\tt .ini}, 400, 402
+    \subitem {\tt bibclean}, 404
+    \subitem {\tt bibclean.ini}, 397
+    \subitem {\tt BIBCLEANEXT}, 400
+    \subitem {\tt BIBCLEANINI}, 397
+    \subitem {\tt bibdup}, 404
+    \subitem {\tt bibdup.awk}, 404
+    \subitem {\tt BIBINPUTS}, 397, 400
+    \subitem bibliography, 396, 397
+    \subitem error log, 399
+    \subitem {\tt ftp.math.utah.edu}, 414
+    \subitem inclusion, 406, 412
+    \subitem initialization, 397, 398, 400
+      \subsubitem locating, 399
+      \subsubitem nested, 400
+      \subsubitem pattern characters, 402
+      \subsubitem patterns in, 398
+    \subitem name
+      \subsubitem space in, 412
+      \subsubitem syntax of, 412
+    \subitem {\tt nawk}, 404
+    \subitem {\tt PATH}, 397, 400
+    \subitem {\tt pub/tex/bib}, 414
+    \subitem {\tt regexp}, 401
+    \subitem sample initialization, 401
+    \subitem {\tt stderr}, 397, 399
+    \subitem {\tt stdin}, 400
+    \subitem {\tt SYS\pdollar SYSTEM}, 397
+    \subitem {\tt tr}, 404
+    \subitem {\tt tuglib\char 64math.utah.edu}, 414
+  \item {\tt -file-position}, 398, 399
+  \item {\tt -fix-font-changes}, 398, 399
+  \item {\tt -fix-initials}, 398, 400
+  \item {\tt -fix-names}, 398, 400
+  \item {\tt flex}, 406, 407, 414
+  \item font changes
+    \subitem fixing, 398
+  \item format
+    \subitem item, 402
+      \subsubitem {\tt \%\%}, 402
+      \subsubitem {\tt \%e}, 402
+      \subsubitem {\tt \%f}, 402
+      \subsubitem {\tt \%k}, 402
+      \subsubitem {\tt \%v}, 402
+    \subitem of grammar rules, 407, 410
+  \item formfeed, 407
+  \item Free Software Foundation, 397, 406
+  \item Friedman, Jr., H. George, 406
+  \item front end, 397
+  \item {\tt ftp}, 414
+  \item {\tt ftp.math.utah.edu}, 414
+  \item function
+    \subitem {\tt out_lbrace()}, 409
+    \subitem {\tt out_lparen()}, 409
+    \subitem {\tt out_protected_string()}, 408
+    \subitem {\tt out_rbrace()}, 409
+    \subitem {\tt out_rparen()}, 409
+    \subitem {\tt out_string()}, 409
+    \subitem {\tt out_token()}, 408, 409
+
+  \indexspace
+
+  \item GNU
+    \subitem Emacs, 396, 399, 405
+    \subitem {\tt regexp} package, 401
+    \subitem \protect\TeX{}info, 405
+  \item grammar, 405
+    \subitem format of rules, 407, 410
+    \subitem formatting conventions, 410
+    \subitem LALR(1), 406, 412
+    \subitem lexical, 407
+    \subitem LL(0), 405
+    \subitem LL(1), 405, 406
+    \subitem LR($k$), 406
+    \subitem parsing, 410
+    \subitem size of, 407, 410
+
+  \indexspace
+
+  \item Harbison, Samuel P., 404
+  \item {\tt help}, 414
+  \item {\tt -help {\prm or} -?}, 397
+  \item Herwijnen, Eric van, 396
+  \item hexadecimal, 397
+  \item horizontal space character, 407, 409
+
+  \indexspace
+
+  \item in-line comment, 408, 410, 412, 413
+    \subitem associativity of, 410
+    \subitem precedence of, 411
+  \item {\tt Include}, 408, 409, 411, 412
+  \item {\tt include} rule, 411, 412
+  \item {\tt -init-file filename}, 397, 398, 400
+  \item initialization file, 397, 398, 400
+    \subitem locating, 399
+    \subitem nested, 400
+    \subitem pattern characters, 402
+    \subitem patterns in, 398
+    \subitem sample, 401
+  \item Internet archive hosts, 414
+  \item interpretation of code, 397
+  \item {\tt ISBN}, 402
+  \item ISBN (International Standard Book Number), 399
+  \item ISO10646M character set, 406
+  \item {\tt ISSN}, 402
+  \item ISSN (International Standard Serial Number), 399
+
+  \indexspace
+
+  \item Jaeschke, Rex, 404
+  \item Johnson, Steven C., 406
+
+  \indexspace
+
+  \item Kahn, Philippe, 404
+  \item Kernighan, Brian W., 404
+  \item {\tt key}, 403, 405
+  \item key name, 408, 412
+  \item {\tt key_name} rule, 412
+  \item Knuth, Donald E., 398, 404, 406
+  \item Koenig, Andrew, 404
+
+  \indexspace
+
+  \item LALR(1)
+    \subitem grammar, 406, 412
+    \subitem parser, 406
+  \item Lamport, Leslie, 395, 396, 403, 406
+  \item Lapin, J. E., 404
+  \item {\tt last_object}, 408
+  \item {\tt last_token}, 408
+  \item {\tt \%left}, 410, 411
+  \item left-recursive rule, 411
+  \item Lesk, Michael E., 406
+  \item Levine, John R., 406
+  \item {\tt lex}, 406--410, 414
+  \item lexer, \see{lexical analyzer}{415}
+  \item lexical analysis, 397
+  \item lexical analyzer, 397, 398, 403
+  \item lexical grammar, 407
+  \item line
+    \subitem number, 406
+    \subitem number directive, 403
+    \subitem width limit, 397
+    \subitem wrapping, 398, 404, 408
+  \item list
+    \subitem of assignments, 412
+    \subitem of objects, 411
+  \item literate programming, 407, 410
+  \item LL(0) grammar, 405
+  \item LL(1)
+    \subitem grammar, 405, 406
+    \subitem parser, 411
+  \item LR($k$) grammar, 406
+
+  \indexspace
+
+  \item Macintosh
+    \subitem Apple, 407
+  \item macro, \seealso{control sequence}{415}
+    \subitem {\tt N}, 407, 408
+    \subitem {\tt O}, 407
+    \subitem {\tt RETURN}, 408--410
+    \subitem {\tt S}, 407
+    \subitem {\tt W}, 407
+  \item macro definition
+    \subitem {\tt lex}, 407
+  \item macro use
+    \subitem {\tt lex}, 407
+  \item Mason, Tony, 406
+  \item {\tt -max-width 0}, 397
+  \item {\tt -max-width nnn}, 397, 404
+  \item menu
+    \subitem pop-up, 396
+  \item message
+    \subitem disabling warning, 399
+    \subitem error, 411
+    \subitem help, 397
+    \subitem redirecting, 397
+  \item mismatched delimiters, 398, 413
+  \item {\tt month}, 402
+
+  \indexspace
+
+  \item {\tt N}, 407, 408
+  \item {\tt \char 92\relax n}, 401
+  \item {\tt name}, 411
+  \item {\tt nawk}, 404
+  \item newline, 409, 412, 413
+    \subitem associativity of, 410
+  \item {\tt -no-check-values}, 398
+  \item {\tt -no-delete-empty-values}, 398, 399
+  \item {\tt -no-file-position}, 398
+  \item {\tt -no-fix-font-changes}, 398
+  \item {\tt -no-fix-initials}, 398
+  \item {\tt -no-fix-names}, 398
+  \item {\tt -no-init-files}, 400
+  \item {\tt -no-par-breaks}, 398, 399
+  \item {\tt -no-prettyprint}, 397, 398, 403, 407, 410
+  \item {\tt -no-print-patterns}, 398
+  \item {\tt -no-read-init-files}, 398
+  \item {\tt -no-remove-OPT-prefixes}, 398, 399
+  \item {\tt -no-scribe}, 399
+  \item {\tt -no-trace-file-opening}, 399
+  \item {\tt -no-warnings}, 399
+  \item non-terminal, 410
+    \subitem {\tt /* empty */}, 413
+    \subitem {\tt assignment}, 412, 413
+    \subitem {\tt assignment_lhs}, 413
+    \subitem {\tt assignment_list}, 412, 413
+    \subitem {\tt at_object}, 411
+    \subitem {\tt bibtex_file}, 411
+    \subitem {\tt comment}, 411, 412
+    \subitem {\tt entry}, 411--413
+    \subitem {\tt entry_head}, 412
+    \subitem {\tt error}, 411
+    \subitem {\tt include}, 411, 412
+    \subitem {\tt key_name}, 412
+    \subitem {\tt object}, 411
+    \subitem {\tt object_list}, 411
+    \subitem {\tt opt_space}, 411--413
+    \subitem {\tt preamble}, 411, 412
+    \subitem {\tt simple_value}, 412, 413
+    \subitem {\tt single_space}, 413
+    \subitem {\tt space}, 413
+    \subitem {\tt string}, 411, 412
+    \subitem {\tt value}, 412, 413
+  \item {\tt \%nonassoc}, 410
+  \item NUL (0)
+    \subitem in string, 401, 409
+  \item {\tt number}, 401, 402
+
+  \indexspace
+
+  \item {\tt O}, 407
+  \item object, 411
+    \subitem list, 411
+  \item {\tt object} rule, 411
+  \item object-oriented programming, 404
+  \item {\tt object_list} rule, 411
+  \item Objective C, 397, 404
+  \item octal, 397
+  \item {\tt \char 92\relax ooo}, 401
+  \item operator
+    \subitem assignment, 409, 413
+    \subitem string concatenation, 408, 411, 412
+  \item {\tt OPT-} prefix
+    \subitem removing, 399
+  \item {\tt opt_space}, 412
+  \item {\tt opt_space} rule, 411--413
+  \item option
+    \subitem {\tt -author}, 397
+    \subitem {\tt -check-values}, 398, 400
+    \subitem {\tt -delete-empty-values}, 398, 399
+    \subitem {\tt -error-log filename}, 397
+    \subitem {\tt -file-position}, 398, 399
+    \subitem {\tt -fix-font-changes}, 398, 399
+    \subitem {\tt -fix-initials}, 398, 400
+    \subitem {\tt -fix-names}, 398, 400
+    \subitem {\tt -help {\prm or} -?}, 397
+    \subitem {\tt -init-file filename}, 397, 398, 400
+    \subitem {\tt -max-width 0}, 397
+    \subitem {\tt -max-width nnn}, 397, 404
+    \subitem {\tt -no-check-values}, 398
+    \subitem {\tt -no-delete-empty-values}, 398, 399
+    \subitem {\tt -no-file-position}, 398
+    \subitem {\tt -no-fix-font-changes}, 398
+    \subitem {\tt -no-fix-initials}, 398
+    \subitem {\tt -no-fix-names}, 398
+    \subitem {\tt -no-init-files}, 400
+    \subitem {\tt -no-par-breaks}, 398, 399
+    \subitem {\tt -no-prettyprint}, 397, 398, 403, 407, 410
+    \subitem {\tt -no-print-patterns}, 398
+    \subitem {\tt -no-read-init-files}, 398
+    \subitem {\tt -no-remove-OPT-prefixes}, 398, 399
+    \subitem {\tt -no-scribe}, 399
+    \subitem {\tt -no-trace-file-opening}, 399
+    \subitem {\tt -no-warnings}, 399
+    \subitem {\tt -par-breaks}, 398
+    \subitem {\tt -prettyprint}, 398
+    \subitem {\tt -print-patterns}, 398
+    \subitem {\tt -read-init-files}, 398
+    \subitem {\tt -remove-OPT-prefixes}, 398, 399
+    \subitem {\tt -scribe}, 399
+    \subitem {\tt -trace-file-opening}, 399, 400
+    \subitem {\tt -version}, 399
+    \subitem {\tt -warnings}, 399
+  \item options, 400
+  \item {\sc OS/2}, 404
+  \item {\tt out_lbrace()}, 409
+  \item {\tt out_lparen()}, 409
+  \item {\tt out_protected_string()}, 408
+  \item {\tt out_rbrace()}, 409
+  \item {\tt out_rparen()}, 409
+  \item {\tt out_string()}, 409
+  \item {\tt out_token()}, 408, 409
+  \item overflow of string buffer, 406
+
+  \indexspace
+
+  \item {\tt pages}, 402
+  \item {\tt -par-breaks}, 398
+  \item parenthesis, 409
+  \item parser
+    \subitem LALR(1), 406
+    \subitem LL(1), 411
+  \item parsing, 397
+  \item parsing grammar, 410
+  \item Pascal, 404
+  \item {\tt PATH}, 397, 400
+  \item pattern
+    \subitem bibliography-specific, 402
+    \subitem changing warning message, 402
+    \subitem empty, 402
+    \subitem quotes in, 402
+  \item pattern matching, 400
+    \subitem brace ignored in, 402
+    \subitem regular expression, 400
+  \item {\sc PC-DOS}, 396, 397, 400, 404
+  \item period
+    \subitem in citation key, 406
+    \subitem in regular expression, 407, 409
+  \item pipeline, 404
+  \item Plauger, P. J., 404
+  \item pop-up menu, 396
+  \item portability, 404
+  \item post-mortem dump, 405
+  \item {\tt Preamble}, 408, 411, 412
+  \item {\tt preamble} rule, 411, 412
+  \item precedence declaration, 410
+  \item preprocessor, 403
+  \item {\tt -prettyprint}, 398
+  \item prettyprinter, 397, 398, 403
+  \item prettyprinting, 399
+  \item {\tt -print-patterns}, 398
+  \item program
+    \subitem search path, 400
+    \subitem version, 399
+  \item {\tt pub/tex/bib}, 414
+
+  \indexspace
+
+  \item query (?)
+    \subitem in messages, 402
+  \item quote
+    \subitem embedded, 409
+    \subitem in pattern, 402
+
+  \indexspace
+
+  \item {\tt R}, 402
+  \item {\tt \char 92\relax r}, 401, 407
+  \item {\tt r}, 402
+  \item Rabinowitz, Henry, 404
+  \item {\tt -read-init-files}, 398
+  \item recovery
+    \subitem from error, 411
+  \item recursion, 400
+  \item {\tt refer}, 406
+  \item {\tt regexp}, 401
+  \item regular expression
+    \subitem pattern matching, 400
+    \subitem syntax of, 407
+  \item Reid, Brian, 405
+  \item {\tt -remove-OPT-prefixes}, 398, 399
+  \item {\tt RETURN}, 408--410
+  \item {\tt return}, 408
+  \item Ritchie, Dennis M., 404
+  \item Rochkind, Marc J., 404
+  \item Rosenblatt, Bill, 396
+  \item run-time options, \see{options}{415}
+  \item runaway string argument, 398, 406
+
+  \indexspace
+
+  \item {\tt S}, 407
+  \item Schaap, Chaim, 404
+  \item Schickele, Peter, 400
+  \item Schmidt, Eric, 406
+  \item Schreiner, Axel T., 406
+  \item {\sc Scribe}, 395, 399, 404--407, 409, 411, 417
+  \item {\tt -scribe}, 399
+  \item search path, 400
+  \item semicolon, 410
+  \item {\tt send}, 414
+  \item separator
+    \subitem assignment, 409
+  \item Sethi, Ravi, 405, 411
+  \item {\sc SGML}, 396
+  \item sharp ({\tt\char35}), 403, 408
+  \item simple value, 413
+  \item {\tt simple_value} rule, 412, 413
+  \item single space, 413
+  \item {\tt single_space} rule, 413
+  \item source code, 414
+  \item space, 410, 413
+    \subitem associativity of, 410
+    \subitem between tokens, 411
+    \subitem precedence of, 411
+  \item {\tt space} rule, 413
+  \item standard error unit, 397
+  \item {\tt stderr}, 397, 399
+  \item {\tt stdin}, 400
+  \item Steele Jr., Guy L., 404
+  \item Stevens, W. Richard, 404
+  \item {\tt String}, 408, 411, 412
+  \item string
+    \subitem concatenation operator, 408, 411, 412
+    \subitem pool, 404
+    \subitem runaway, 398, 406
+    \subitem substitution, 395
+  \item {\tt string} rule, 411, 412
+  \item Stroustrup, Bjarne, 404
+  \item style
+    \subitem bibliography, 396
+  \item {\tt SYS\pdollar SYSTEM}, 397
+
+  \indexspace
+
+  \item {\tt \char 92\relax t}, 401
+  \item template
+    \subitem editor, 396
+  \item terminal, 410
+    \subitem {\tt TOKEN_ABBREV}, 403, 408, 410, 412, 413
+    \subitem {\tt TOKEN_AT}, 403, 408, 410, 411
+    \subitem {\tt TOKEN_COMMA}, 403, 408--410, 412, 413
+    \subitem {\tt TOKEN_COMMENT}, 408, 410, 412
+    \subitem {\tt TOKEN_ENTRY}, 403, 408, 410, 412
+    \subitem {\tt TOKEN_EQUALS}, 403, 409, 410, 413
+    \subitem {\tt TOKEN_FIELD}, 403, 408, 410, 413
+    \subitem {\tt TOKEN_INCLUDE}, 408, 410, 412
+    \subitem {\tt TOKEN_INLINE}, 408, 410, 413
+    \subitem {\tt TOKEN_KEY}, 403, 408, 410, 412
+    \subitem {\tt TOKEN_LBRACE}, 403, 409, 410, 412, 414
+    \subitem {\tt TOKEN_LITERAL}, 409, 410, 412, 414
+    \subitem {\tt TOKEN_NEWLINE}, 403, 409, 410, 413
+    \subitem {\tt TOKEN_PREAMBLE}, 408, 410, 412
+    \subitem {\tt TOKEN_RBRACE}, 403, 409--412, 414
+    \subitem {\tt TOKEN_SHARP}, 409--412
+    \subitem {\tt TOKEN_SPACE}, 409, 410, 413
+    \subitem {\tt TOKEN_STRING}, 403, 408--410, 412
+    \subitem {\tt TOKEN_VALUE}, 403, 408--410, 413
+  \item testing, 404, 414
+  \item \protect\TeX{}info, 405
+  \item text editor, \see{Emacs}{415}
+  \item {\tt title}, 413
+  \item token, 397, \see{terminal}{415}
+    \subitem string, 403
+    \subitem type, 403
+    \subitem unclassifiable, 409
+  \item {\tt TOKEN_ABBREV}, 403, 408, 410, 412, 413
+  \item {\tt TOKEN_AT}, 403, 408, 410, 411
+  \item {\tt TOKEN_COMMA}, 403, 408--410, 412, 413
+  \item {\tt TOKEN_COMMENT}, 408, 410, 412
+  \item {\tt TOKEN_ENTRY}, 403, 408, 410, 412
+  \item {\tt TOKEN_EQUALS}, 403, 409, 410, 413
+  \item {\tt TOKEN_FIELD}, 403, 408, 410, 413
+  \item {\tt TOKEN_INCLUDE}, 408, 410, 412
+  \item {\tt TOKEN_INLINE}, 408, 410, 413
+  \item {\tt TOKEN_KEY}, 403, 408, 410, 412
+  \item {\tt TOKEN_LBRACE}, 403, 409, 410, 412, 414
+  \item {\tt TOKEN_LITERAL}, 409, 410, 412, 414
+  \item {\tt TOKEN_NEWLINE}, 403, 409, 410, 413
+  \item {\tt TOKEN_PREAMBLE}, 408, 410, 412
+  \item {\tt TOKEN_RBRACE}, 403, 409--412, 414
+  \item {\tt TOKEN_SHARP}, 409--412
+  \item {\tt TOKEN_SPACE}, 409, 410, 413
+  \item {\tt TOKEN_STRING}, 403, 408--410, 412
+  \item {\tt TOKEN_VALUE}, 403, 408--410, 413
+  \item {\sc TOS}, 404
+  \item {\tt tr}, 404
+  \item {\tt -trace-file-opening}, 399, 400
+  \item trailing context, 412, 414
+  \item {\tt trap}, 414
+  \item {\tt trip}, 414
+  \item TUG bibliography collection, 396, 399
+  \item TUG Resource Directory, 396
+  \item {\protect\TUB{}}, 396
+  \item {\tt tuglib\char 64math.utah.edu}, 414
+
+  \indexspace
+
+  \item Ullman, Jeffrey D., 405, 411
+  \item unclassifiable token, 409
+  \item {\sc UNIX}, 396, 397, 400, 401, 404, 406, 407, 409
+
+  \indexspace
+
+  \item {\tt \char 92\relax v}, 401, 407
+  \item value, 412
+  \item {\tt value} rule, 412, 413
+  \item van Herwijnen, Eric, 396
+  \item variable
+    \subitem {\tt last_object}, 408
+    \subitem {\tt last_token}, 408
+  \item {\sc VAX}, 396, 397, 404
+  \item version
+    \subitem of program, 399
+  \item {\tt -version}, 399
+  \item vertical
+    \subitem bar, 410
+    \subitem tab, 407
+  \item {\sc VMS}, 396, 397, 404
+  \item {\tt volume}, 402
+
+  \indexspace
+
+  \item {\tt W}, 402, 407
+  \item {\tt w}, 402
+  \item warning message
+    \subitem changing, 402
+    \subitem disabling, 398, 399
+    \subitem redirecting, 397
+  \item {\tt -warnings}, 399
+  \item {\tt WEB}, 404, 406, 407
+  \item Weinberger, Peter J., 404
+  \item wrapping
+    \subitem of long lines, 398, 404, 408
+
+  \indexspace
+
+  \item {\tt X}, 401, 402
+  \item {\tt \char 92\relax x}, 402
+  \item {\tt x}, 402
+  \item X/Open Consortium, 409
+
+  \indexspace
+
+  \item {\tt yacc}, 406--408, 410--414
+  \item {\tt year}, 403
+
+\end{theindex}

@@ -1,0 +1,213 @@
+\begin{thebibliography}{10}
+
+\bibitem{Aho:APL87}
+Alfred~V. Aho, Brian~W. Kernighan, and Peter~J. Weinberger.
+\newblock {\em The {AWK} Programming Language}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1988.
+\newblock ISBN 0-201-07981-X.
+
+\bibitem{Aho:CPT86}
+Alfred~V. Aho, Ravi Sethi, and Jeffrey~D. Ullman.
+\newblock {\em Compilers\emdash Prin\-ci\-ples, Techniques, and Tools}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1986.
+\newblock ISBN 0-201-10088-6.
+
+\bibitem{ANSI:c89}
+American National Standards Institute, 1430 Broadway, New York, NY 10018, USA.
+\newblock {\em American National Standard Programming Language C, {ANSI}
+  X3.159-1989}, December 14 1989.
+
+\bibitem{Beebe:TB12S-2-176}
+Nelson H.~F. Beebe.
+\newblock Publications about {\TeX} and typography.
+\newblock {\em TUGBoat}, Supplement to 12\penalty0 (2):\penalty0 176--183, May
+  1991.
+
+\bibitem{Beebe:TB12S-2-183}
+Nelson H.~F. Beebe.
+\newblock Publications prepared with {\TeX}.
+\newblock {\em TUGBoat}, Supplement to 12\penalty0 (2):\penalty0 183--194, May
+  1991.
+
+\bibitem{Bryan:SAG88}
+Martin Bryan.
+\newblock {\em {SGML}\emdash An Author's Guide to the Standard Generalized
+  Markup Language}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1988.
+\newblock ISBN 0-201-17535-5.
+
+\bibitem{Cameron:LGE91}
+Debra Cameron and Bill Rosenblatt.
+\newblock {\em Learning {GNU} Emacs}.
+\newblock O'Reilly \& {Associates, Inc.}, 981 Chestnut Street, Newton, MA
+  02164, USA, 1991.
+\newblock ISBN 0-937175-84-6.
+
+\bibitem{Ellis:ACR90}
+Margaret~A. Ellis and Bjarne Stroustrup.
+\newblock {\em The Annotated {C++} Reference Manual}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1990.
+\newblock ISBN 0-201-51459-1.
+
+\bibitem{Feuer:CPB89}
+Alan~R. Feuer.
+\newblock {\em The {C} Puzzle Book}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, second edition,
+  1989.
+\newblock ISBN 0-13-115502-4.
+
+\bibitem{Harbison:CAR91}
+Samuel~P. Harbison and Guy~L. {Steele Jr.}
+\newblock {\em C\emdash A Reference Manual}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, third edition,
+  1991.
+\newblock ISBN 0-13-110933-2.
+
+\bibitem{Jaeschke:PCL89}
+Rex Jaeschke.
+\newblock {\em Portability and the {C} Language}.
+\newblock Hayden Books, 4300 West 62nd Street, Indianapolis, IN 46268, USA,
+  1989.
+\newblock ISBN 0-672-48428-5.
+
+\bibitem{Johnson:yacc}
+Steven~C. Johnson.
+\newblock Yacc: Yet another compiler compiler.
+\newblock In {\em {UNIX} Programmer's Manual}, volume~2, pages 353--387. Holt,
+  Reinhart, and Winston, New York, NY, USA, 1979.
+\newblock AT\&T Bell Laboratories Technical Report, July 31, 1978.
+
+\bibitem{Kernighan:CPL78}
+Brian~W. Kernighan and Dennis~M. Ritchie.
+\newblock {\em The C Programming Language}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1978.
+\newblock ISBN 0-13-110163-3.
+
+\bibitem{Kernighan:CPL88}
+Brian~W. Kernighan and Dennis~M. Ritchie.
+\newblock {\em The C Programming Language}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, second edition,
+  1988.
+\newblock ISBN 0-13-110362-8.
+
+\bibitem{Knuth:j-IC-8-6-607}
+Donald~E. Knuth.
+\newblock On the translation of languages from left to right.
+\newblock {\em Information and Control}, 8\penalty0 (6):\penalty0 607--639,
+  1965.
+\newblock This is the original paper on the theory of LR(k) parsing.
+
+\bibitem{Knuth:ct-a}
+Donald~E. Knuth.
+\newblock {\em The {\TeX}book}, volume~A of {\em Computers and Typesetting}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1986.
+\newblock ISBN 0-201-13447-0.
+
+\bibitem{Koenig:CTP89}
+Andrew Koenig.
+\newblock {\em {C} Traps and Pitfalls}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1989.
+\newblock ISBN 0-201-17928-8.
+
+\bibitem{Lamport:LDP85}
+Leslie Lamport.
+\newblock {\em {\LaTeX}\emdash A Document Preparation System\emdash User's
+  Guide and Reference Manual}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1985.
+\newblock ISBN 0-201-15790-X.
+
+\bibitem{Lapin:PCU87}
+J.~E. Lapin.
+\newblock {\em Portable C and {UNIX} Programming}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1987.
+\newblock ISBN 0-13-686494-5.
+
+\bibitem{Lesk:lex}
+Michael~E. Lesk and Eric Schmidt.
+\newblock Lex\emdash a lexical analyzer generator.
+\newblock In {\em {UNIX} Programmer's Manual}, volume~2, pages 388--400. Holt,
+  Reinhart, and Winston, New York, NY, USA, 1979.
+\newblock AT\&T Bell Laboratories Technical Report in 1975.
+
+\bibitem{Levine:LY92}
+John~R. Levine, Tony Mason, and Doug Brown.
+\newblock {\em {\tt lex} \& {\tt yacc}}.
+\newblock O'Reilly \& {Associates, Inc.}, 981 Chestnut Street, Newton, MA
+  02164, USA, second edition, 1992.
+\newblock ISBN 1-56592-000-7.
+\newblock 400 pp.
+\newblock US\$29.95.
+
+\bibitem{Mason:LY90}
+Tony Mason and Doug Brown.
+\newblock {\em {\tt lex} \& {\tt yacc}}.
+\newblock O'Reilly \& {Associates, Inc.}, 981 Chestnut Street, Newton, MA
+  02164, USA, 1990.
+\newblock ISBN 0-937175-49-8.
+
+\bibitem{Plauger:SCL92}
+P.~J. Plauger.
+\newblock {\em The {Standard C} Library}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1992.
+\newblock ISBN 0-13-838012-0.
+
+\bibitem{Rabinowitz:PC90}
+Henry Rabinowitz and Chaim Schaap.
+\newblock {\em Portable C}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1990.
+\newblock ISBN 0-13-685967-4.
+
+\bibitem{Reid:SUM80}
+Brian Reid.
+\newblock {\em Scribe User's Manual}.
+\newblock Carnegie-Mellon University, Pittsburgh, PA, USA, third edition, 1980.
+
+\bibitem{Rochkind:AUP85}
+Marc~J. Rochkind.
+\newblock {\em Advanced {UNIX} Programming}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1985.
+\newblock ISBN 0-13-011818-4 (hardback), 0-13-011800-1 (paperback).
+
+\bibitem{Schoonover:GEU92}
+Michael~A. Schoonover, John~S. Bowie, and William~R. Arnold.
+\newblock {\em {GNU} Emacs: {UNIX} Text Editing and Programming}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, 1992.
+\newblock ISBN 0-201-56345-2.
+\newblock 610 pp.
+\newblock LCCN QA76.76.T49S36.
+
+\bibitem{Schreiner:ICC85}
+Axel~T. Schreiner and H.~George {Friedman, Jr.}
+\newblock {\em Introduction to Compiler Construction Under {UNIX}}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1985.
+\newblock ISBN 0-13-474396-2.
+\newblock 224 pp.
+
+\bibitem{Stevens:UNP90}
+W.~Richard Stevens.
+\newblock {\em {UNIX} Network Programming}.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1990.
+\newblock ISBN 0-13-949876-1.
+
+\bibitem{Stroustrup:CPL91}
+Bjarne Stroustrup.
+\newblock {\em The {C++} Programming Language}.
+\newblock Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, second edition, 1991.
+\newblock ISBN 0-201-53992-6.
+
+\bibitem{vanHerwijnen:PS90}
+Eric van Herwijnen.
+\newblock {\em Practical {SGML}}.
+\newblock Kluwer Academic Publishers Group, Norwell, MA, USA, 1990.
+\newblock ISBN 0-7923-0635-X.
+\newblock xviii + 307 pp.
+\newblock \pounds24.90 (1990).
+
+\bibitem{xopen:XPG89-1}
+{X/Open Company, Ltd.}
+\newblock {\em X\slash Open Portability Guide, {XSI} Commands and Utilities},
+  volume~1.
+\newblock Pren{\-}tice-Hall, Englewood Cliffs, NJ 07632, USA, 1989.
+\newblock ISBN 0-13-685835-X.
+
+\end{thebibliography}

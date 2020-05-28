@@ -1,0 +1,132 @@
+@Article{x,
+  title =        "The equation $ x = f (y + z / d) $",
+  title =        "The displayed equation $$ x = f (y + z / d) $$",
+  title =        "Literal dollar sign, \$, and more: \$\$\$\$",
+  title =        "Unbalanced dollar sign: $ 100 a n d u p",
+  title =        "The relation $ a : b : c $",
+  title =        "The equation {$ x := F [y + z / d] $}",
+  title =        "The displayed equation {$$ x := F [y + z / d] $$}",
+  title =        "Subs and sups: $ x_n = y^k + z^k $",
+  title =        "Display subs and sups: $$ x_n = y^k + z^k $$",
+  title =        "Tricky math: {$ \{ A, B, C \} $}",
+  title =        "Display tricky math: {$$ \{ A, B, C \} $$}",
+  title =        "Math ties: $ a~ = ~b~ + ~c $",
+  title =        "Tight math: $ r = f(a, b, c; x, y, z) $",
+  title =        "Tight tricky math: {$ \{ A, B, C \} $}",
+}
+
+@Article{x,
+  title =        "Display lc subs and sups: $$ x_n = y^k + z^k $$",
+  title =        "Display uc subs and sups: {$$ x_N = y^K + z^K $$}",
+  title =        "Display uc subs and sups: {$$ x_N = y^K + z^K $$}",
+  title =        "Display uc subs and sups: $$ x_{\rm left} = y^{\rm
+                 middle} + z^{\rm right} $$",
+  title =        "Display uc subs and sups: {$$ x_{\Gamma } = y^{\Delta
+                 } + z^{\Theta } $$}",
+  title =        "Display uc subs and sups: {$$ x_\Gamma = y^\Delta +
+                 z^\Theta $$}",
+  title =        "The matrix {$H$} is called the {Hamiltonian}.",
+  title =        "Modeling of $ \sup {13} $C NMR and $ \sup {11} $C{$
+                 \sup {2+} $} ions",
+  title =        "Modeling of $^{13}$C NMR and $^{11}$C{$^{2+}$} ions",
+  title =        "Modeling of $ \sup {13} $C NMR and $ \sup {11} $C{$
+                 \sup {+ + +} $} ions",
+  title =        "Modeling of $^{13}$C NMR and $^{11}$C{$^{+ + +}$}
+                 ions",
+  title =        "The crystal Cr$_2$O{$_3$}",
+  title =        "The crystal Cr_2O_3",
+  title =        "The crystal {Cr$_2$O$_3$}",
+  title =        "The crystal {Cr}$_2${O}$_3$",
+  title =        "Two lowercase equations: $ a = b $ and $ c = d $",
+  title =        "Two uppercase equations: {$ A = B $} and {$ C = D $}",
+}
+
+@Article{Sadkane:2012:ASM,
+  author =       "Miloud Sadkane and Ahmed Touhami",
+  title =        "Algorithm 918: {{\tt specdicho}}: a MATLAB Program for
+                 the Spectral Dichotomy of Regular Matrix Pencils",
+  journal =      j-TOMS,
+  volume =       "38",
+  number =       "3",
+  pages =        "21:1--21:13",
+  month =        apr,
+  year =         "2012",
+  CODEN =        "ACMSCU",
+  DOI =          "http://dx.doi.org/10.1145/2168773.2168780",
+  ISSN =         "0098-3500 (print), 1557-7295 (electronic)",
+  ISSN-L =       "0098-3500",
+  bibdate =      "Thu May 3 16:27:26 MDT 2012",
+  bibsource =    "http://www.acm.org/pubs/contents/journals/toms/;
+                 http://www.math.utah.edu/pub/tex/bib/toms.bib",
+  abstract =     "Given a regular matrix pencil $ \lambda B - A $ and a
+                 positively oriented contour $ \gamma $ in the complex
+                 plane, the spectral dichotomy methods applied to $
+                 \lambda B - A $ and $ \gamma $ consist in determining
+                 whether $ \lambda B - A $ possesses eigenvalues on or
+                 in a neighborhood of $ \gamma $. When no such
+                 eigenvalues exist, these methods compute iteratively
+                 the spectral projector $P$ onto the right deflating
+                 subspace of $ \lambda B - A$ associated with the
+                 eigenvalues inside/outside $ \gamma $. The computation
+                 of the projector is accompanied by the spectral norm $
+                 ||H||$ of a Hermitian positive definite matrix $H$
+                 called the dichotomy condition number, which indicates
+                 the numerical quality of the spectral projector $P$.
+                 The smaller $ ||H||$ is, the better this quality. This
+                 article presents a MATLAB program ({\tt specdicho})
+                 implementing the main types of spectral dichotomy where
+                 $ \gamma $ is a circle, an ellipse, the imaginary axis
+                 or a parabola.",
+  acknowledgement = ack-nhfb,
+  articleno =    "21",
+  fjournal =     "ACM Transactions on Mathematical Software (TOMS)",
+}
+
+@Article{Ragazzi:2002:IMM,
+  author =       "Massimo Ragazzi and Paola Carbone and Dino R. Ferro",
+  title =        "Ab initio molecular modeling of {$^{13}$C NMR}
+                 chemical shifts of polymers. 1. {Ethylene--norbornene}
+                 copolymers",
+  journal =      j-IJQC,
+  volume =       "88",
+  number =       "5",
+  pages =        "663--669",
+  day =          "20",
+  month =        jun,
+  year =         "2002",
+  CODEN =        "IJQCB2",
+  DOI =          "http://dx.doi.org/10.1002/qua.10055",
+  ISSN =         "0020-7608 (print), 1097-461X (electronic)",
+  ISSN-L =       "0020-7608",
+  bibdate =      "Thu Sep 29 18:45:09 MDT 2011",
+  bibsource =    "http://www.math.utah.edu/pub/tex/bib/ijqc2000.bib",
+  acknowledgement = ack-nhfb,
+  ajournal =     "Int. J. Quantum Chem.",
+  fjournal =     "International Journal of Quantum Chemistry",
+  onlinedate =   "17 Apr 2002",
+}
+
+@Article{Nikiforov:2002:CPS,
+  author =       "I. S. Nikiforov and D. A. Filippov",
+  title =        "Calculation of a power spectrum and definition of wave
+                 functions of an ion {Cr$^{3+}$} in antiferromagnetic
+                 crystal {Cr$_2$O$_3$} in the model of a crystalline
+                 field",
+  journal =      j-IJQC,
+  volume =       "88",
+  number =       "5",
+  pages =        "676--680",
+  day =          "20",
+  month =        jun,
+  year =         "2002",
+  CODEN =        "IJQCB2",
+  DOI =          "http://dx.doi.org/10.1002/qua.10219",
+  ISSN =         "0020-7608 (print), 1097-461X (electronic)",
+  ISSN-L =       "0020-7608",
+  bibdate =      "Thu Sep 29 18:45:09 MDT 2011",
+  bibsource =    "http://www.math.utah.edu/pub/tex/bib/ijqc2000.bib",
+  acknowledgement = ack-nhfb,
+  ajournal =     "Int. J. Quantum Chem.",
+  fjournal =     "International Journal of Quantum Chemistry",
+  onlinedate =   "14 May 2002",
+}

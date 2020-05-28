@@ -1,0 +1,222 @@
+% /u/sy/beebe/tex/bibclean/testbib4.org, Mon Jan 18 09:52:55 1993
+% Edit by Nelson H. F. Beebe <beebe@math.utah.edu>
+
+% This file stress-tests bibclean and biblex by
+% presenting them with input that has spaces
+% liberally sprinkled throughout, especially
+% between tokens.  It is designed as a useful test
+% of a proposed grammar for BibTeX.
+
+%=================================================
+% Test 1: simple case without extra spaces
+
+@Preamble{"anythinggoes"}
+
+@Include{a-file-name-goes-here}
+
+@String{abb =    "abbreviation"}
+
+@Article{the-key,
+  author =       "A. U. Thor",
+  title =        "The Title",
+  journal =      "The Journal",
+  year =         "1993",
+  volume =       "23",
+  number =       "1",
+  pages =        "17--21",
+  month =        jan,
+  bibdate =      "Mon Jan 18 09:59:44 1993",
+}
+
+%=================================================
+% Test 2: simple one-line cases with intervening
+% spaces
+
+@Preamble{"anything goes"}
+
+@Include{ a-file-name-goes-here}
+
+@String{abb =    "abbreviation"}
+
+@Article{the-key,
+  author =       "A. U. Thor",
+  title =        "The Title",
+  journal =      "The Journal",
+  year =         "1993",
+  volume =       "23",
+  number =       "1",
+  pages =        "17--21",
+  month =        jan,
+  bibdate =      "Mon Jan 18 09:59:44 1993",
+}
+
+%=================================================
+% Test 3: change blanks to newlines in previous
+% test
+
+@Preamble{"anything goes"}
+
+@Include{
+ a-file-name-goes-here}
+
+@String{abb =           "abbreviation"}
+
+@Article{the-key,
+  author =       "A. U. Thor",
+  title =        "The Title",
+  journal =      "The Journal",
+  year =         "1993",
+  volume =       "23",
+  number =       "1",
+  pages =        "17--21",
+  month =        jan,
+  bibdate =      "Mon Jan 18 09:59:44 1993",
+}
+
+%=================================================
+% Test 4: change newlines to doubled newlines in
+% previous test
+
+@Preamble{"anything goes"}
+
+@Include{
+
+ a-file-name-goes-here}
+
+@String{abb =           "abbreviation"}
+
+@Article{the-key,
+  author =       "A. U. Thor",
+  title =        "The Title",
+  journal =      "The Journal",
+  year =         "1993",
+  volume =       "23",
+  number =       "1",
+  pages =        "17--21",
+  month =        jan,
+  bibdate =      "Mon Jan 18 09:59:44 1993",
+}
+
+%=================================================
+% Test 5: Change newline to
+% newline-comment-newline in previous test.
+
+@
+% this is a comment
+Preamble
+% this is a comment
+{% this is a comment
+ "anything" # % this is a comment
+ "goes"% this is a comment
+ }
+
+% this is a comment
+
+% this is a comment
+ @
+% this is a comment
+Include
+% this is a comment
+{
+% this is a comment
+ a-file-name-goes-here
+% this is a comment
+}
+
+% this is a comment
+
+
+% this is a comment
+@
+% this is a comment
+String
+% this is a comment
+{% this is a comment
+abb% this is a comment
+ =               % this is a comment
+"abbreviation"% this is a comment
+}
+
+% this is a comment
+
+% this is a comment
+
+% this is a comment
+@
+% this is a comment
+Article
+% this is a comment
+{the-key% this is a comment
+,
+% this is a comment
+  author% this is a comment
+ =               % this is a comment
+       "A. U. Thor"% this is a comment
+,
+% this is a comment
+    title% this is a comment
+ =               % this is a comment
+        "The Title"% this is a comment
+,
+% this is a comment
+    journal% this is a comment
+ =               % this is a comment
+      "The Journal"% this is a comment
+,
+% this is a comment
+    year% this is a comment
+ =               % this is a comment
+         "1993"% this is a comment
+,
+% this is a comment
+    volume% this is a comment
+ =               % this is a comment
+       "23"% this is a comment
+,
+% this is a comment
+    number% this is a comment
+ =               % this is a comment
+       "1"% this is a comment
+,
+% this is a comment
+    pages% this is a comment
+ =               % this is a comment
+        "17--21"% this is a comment
+,
+% this is a comment
+    month% this is a comment
+ =               % this is a comment
+        jan% this is a comment
+,
+% this is a comment
+    bibdate% this is a comment
+ =               % this is a comment
+      "Mon Jan 18 09:59:44 1993"% this is a comment
+,
+% this is a comment
+ }
+
+% this is a comment
+
+%=================================================
+% Test 7: other kinds of embedded space characters
+% We add CR before LF, and insert FF VT before
+% each entry.
+
+@Preamble{"anythinggoes"}
+
+@Include{a-file-name-goes-here}
+
+@String{abb =    "abbreviation"}
+
+@Article{the-key,
+  author =       "A. U. Thor",
+  title =        "The Title",
+  journal =      "The Journal",
+  year =         "1993",
+  volume =       "23",
+  number =       "1",
+  pages =        "17--21",
+  month =        jan,
+  bibdate =      "Mon Jan 18 09:59:44 1993",
+}

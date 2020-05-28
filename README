@@ -1,0 +1,786 @@
+%% /u/sy/beebe/tex/bibclean/bibclean-2.16/README, Tue Jan  1 08:59:06 2013
+%% Edit by Nelson H. F. Beebe <beebe@math.utah.edu>
+%% /u/sy/beebe/tex/bibclean/2-11/README, Mon Oct  2 10:01:31 1995
+%% Edit by Nelson H. F. Beebe <beebe@sunrise>
+
+========================================================================
+
+==========
+Jump start
+==========
+
+As with most GNUware, you can build, test, and install this program on
+most UNIX systems by these simple steps
+
+csh et amici:
+	setenv CC ...your favorite C or C++ compiler...
+	./configure && make all check install
+
+sh et amici:
+	CC=...your favorite C or C++ compiler...
+	export CC
+	./configure && make all check install
+
+If you don't set the CC environment variable, then gcc (or cc, if gcc
+is not available) will be assumed.
+
+If you wish to undo a "make install", just do "make uninstall"; this
+will remove any files in system directories put there by "make
+install".
+
+See below for further details, and for instructions for non-UNIX systems.
+	
+This program normally records the username and hostname of the builder;
+software distributions may wish to suppress that information by
+undefining HOST and USER at in the make command:
+
+	./configure && env HOST= USER= make all check install
+
+
+============
+Introduction
+============
+
+This directory contains bibclean, a BibTeX prettyprinter, portability
+verifier, and syntax checker.  It can be used to find errors in .bib
+files, as well as to standardize their format for readability and
+editing convenience.  It can also be used to convert Scribe-format
+bibliographies to BibTeX form.
+
+Binary executables for IBM PC DOS, DEC Alpha OpenVMS, DEC VAX VMS, and
+Intel x86 Linux may be included in the distribution.
+
+If you do not require either the IBM PC DOS or LINUX, or the DEC VMS
+(Alpha and VAX) versions, then you can save about 2.5MB of disk space
+by deleting the ibmpc and vms subdirectories.
+
+The default pattern matching in bibclean.c is selected by
+HAVE_PATTERNS; with it, no regular-expression library support is
+needed.  Should you wish to compile with regular-expression support
+instead of the HAVE_PATTERNS code, and your system does not have
+compile()/step (HAVE_REGEXP), or re_comp()/re_exec() (HAVE_RECOMP),
+you may be able to use the regex-?-??.tar.Z distribution from the Free
+Software Foundation, available on prep.ai.mit.edu in /pub/gnu.
+
+In most cases, the HAVE_PATTERNS code is recommended, since it will
+give identical results across all machines.  I was prompted to write
+it after discovering that there was considerable variety in the
+regular expression library codes that resulted in different matching
+on different machines, a most unsatisfactory situation.
+
+Please report all problems, suggestions, and comments to the author:
+
+	Nelson H. F. Beebe
+	University of Utah
+	Department of Mathematics, 110 LCB
+	155 S 1400 E RM 233
+	Salt Lake City, UT 84112-0090
+	USA
+	Tel: +1 801 581 5254
+	FAX: +1 801 581 4148
+	Email: beebe@math.utah.edu, beebe@acm.org, beebe@computer.org (Internet)
+	WWW URL: http://www.math.utah.edu/~beebe/
+
+
+============
+Installation
+============
+
+Starting with version 2.10.1, bibclean has been adapted to use the GNU
+autoconf automatic configuration system for UNIX installations.
+
+GNU autoconf is run at the author's site to produce the configure
+script from configure.ac.
+
+The configure script is run at each installer's UNIX site to produce
+Makefile from Makefile.in, and config.h from config.hin.  The
+configure script is a large (1800+ lines) Bourne shell program that
+investigates various aspects of the local C implementation, and
+records its conclusions in config.h.  Interestingly, its probes
+uncovered a bug in one compiler: lcc 3.4b on Sun Solaris 2.x has an
+incorrect definition of toupper() in its ctype.h!
+
+autoconf, at least at the current 2.4 version, is not as C++-aware as
+it should be.  The Makefile must carry out minor edits of the
+configure script to get it to even work with C++ compilers.  The small
+test programs run by configure to determine the existence of assorted
+Standard C library functions all lead to incorrect conclusions for
+config.h, because they intentionally contain function prototypes with
+different argument types.  Since C++ functions are compiled into
+external names that encode the function and argument types, along with
+the function name, these prototypes produce references to non-existent
+functions, causing program linking to fail.  Fortunately, I've been
+able to fix this problem too with additional automatic edits, all
+carried out by "make configure".  
+
+Should you do a "make maintainer-clean" [NOT recommended, except at the
+author's site], the configure script will be deleted, and you will
+need recent versions of both GNU m4 and autoconf correctly installed
+to reconstruct things, which can be done this way:
+
+	autoconf	# Regenerate unedited configure
+	./configure	# Regenerate config.h and Makefile
+	rm configure	# delete configure
+	make configure	# Regenerate edited configure
+
+For convenience and safety, the distribution includes a subdirectory
+named save that contains read-only copies of the files Makefile,
+config.h, and configure created by autoconf and "make configure".
+This will allow recovery from a lost or damaged configure file.
+
+Suitable hand-crafted config.h files are provided for non-UNIX
+systems, and in the unlikely event of a failure of the configure
+script on a UNIX system, config.h can be manually produced from a copy
+of config.hin with a few minutes' editing work. If you do this,
+remember to save a copy of your config.h under a different name,
+because running configure will destroy it.  If you have GNU autoconf
+installed (the installation is very simple and source code is
+available from prep.ai.mit.edu:/pub/gnu/autoconf-x.y.tar.gz), you
+might try augmenting config.hin instead, then run autoconf and
+configure.
+
+Thus, on UNIX, installation normally consists of just two steps
+(assuming a csh-compatible shell):
+
+	setenv CC ...your favorite C or C++ compiler...
+	./configure && make all check install
+
+If you like, add OPT='your favorite optimization flags' to the make
+command; by default, only -g (debug) is assumed.  If your compiler
+won't accept -g with other optimization levels, then set CFLAGS
+instead of OPT on the command line; be sure NOT to override any
+non-optimizing flags in the CFLAGS set in the Makefile.
+
+The GNU standard installation directories /usr/local/bin for binaries,
+and /usr/local/man/man1 for manual pages are assumed.  The prefix
+/usr/local can be overridden by providing an alternate definition on
+the command line:
+
+	make prefix=/some/other/path install
+
+After installation, you can do
+	make distclean
+to restore the directories to their distribution state.  You should
+also do this between builds for different architectures from the same
+source tree; neglecting to do to will almost certainly lead to
+failure, because the config.cache file created by configure will lead
+to an incorrect config.h for the next build.
+
+
+============
+UNIX Systems
+============
+
+The code can be compiled with either C (K&R or ISO/ANSI Standard C) or
+C++ compilers.  With some C++ compilers, it may be necessary to supply
+additional switches for force the compiler to stay in C++ mode, rather
+than reverting to C mode (e.g. on DEC Alpha OSF/1, you must do 
+setenv CC "cxx -x cxx").
+
+On UNIX systems, the only changes that you are likely to need in the
+Makefile are the settings of CC and CFLAGS, and possibly, DEFINES, and
+if you wish to do "make install", the settings of bindir, MANDIR, and
+MANEXT.
+
+If you are installing bibclean on a new system, you should definitely
+run "make check" before installing it on your system.  For the target
+test-bibtex-2, latex is needed.  For test-bibtex-2 and test-scribe-1,
+bibtex is needed.  Sample output of "make check" from a UNIX system
+is given below.
+
+The code has been tested under more than 55 different C and C++
+compilers, and is in regular use to maintain the TeX User Group
+bibliography collection stored on ftp.math.utah.edu:/pub/tex/bib, as
+well as several other local bibliographies.  These files total more
+than 1.08M lines and 62K bibliography entries.  Some of these
+bibliographies are mirrored to the Comprehensive TeX Archive Network
+(CTAN) hosts.  Do "finger ctan@pip.shsu.edu" to find a CTAN site on
+the Internet near you.
+
+bibclean is also used for the BibNet Project, which collects
+bibliographies in numerical analysis.  The master collection is
+available on ftp.math.utah.edu:/pub/bibnet, and is mirrored from there
+to netlib servers at AT&T and Oak Ridge National Laboratory.
+
+If you port bibclean to a new system, please select maximal error and
+warning messages in your compiler, to better uncover problems.  If you
+find massive numbers of errors complaining about function and argument
+type mismatches, it is likely that this can be remedied by suitable
+modifications of config.h.  As C implementations move towards
+conformance with the December 1989 ISO/ANSI C Language Standard, the C
+language is a moving target that must be tracked by config.h, which is
+why that file is normally automatically generated on UNIX systems by
+the configure script.  With C compilers, you can safely ignore
+complaints about implicit declaration of library functions; they are
+caused by deficiencies in the vendor-provided header files.
+
+If you have a C++ compiler, please try that as well.  This code has
+been successfully compiled under at least 19 C++ compilers, and the
+stricter type checking has uncovered problems that slipped past other
+compilers.
+
+These programs have been successfully built with C and C++ compilers
+and tested on these systems for the 2.10.1 release:
+
+	DECstation 5000		ULTRIX 4.2	cc, gcc, g++, lcc
+	DEC Alpha		OSF/1 3.0, 3.2c	cc, c89, cxx, gcc, g++
+	HP 9000/375		BSD 4.3		cc, CC
+	HP 9000/735		HP-UX 9.0	cc, c89, CC, gcc, g++
+	IBM RS/6000		AIX 3.2		cc, c89, xlC, gcc, g++
+	Intel 486		Linux 1.3.15	gcc, g++
+	MIPS RC6280		RISCos 2.1.1AC	cc
+	NeXT 68040		Mach 3.0	cc, cc -ObjC, gcc, g++
+	SGI 4D/210		IRIX 4.0.5c	cc, gcc, lcc
+	SGI Indigo/2		IRIX 5.3	cc, CC, gcc, g++, lcc
+	SGI Power Challenge	IRIX 6.0.1	cc, CC
+	Sun SPARCstation	Solaris 2.3,2.4	cc, CC, gcc, g++, lcc
+	Sun SPARCstation	SunOS 4.1.3	acc, cc, CC, gcc
+
+Further details are given below.  Where builds have failed, it is
+usually because of conflicts between system header files.
+
+The author uses the build-all.sh script for these tests; it tries
+builds with every known compiler on the development systems.  If your
+UNIX system has other compilers that can be tested, please send their
+full path names to the author.
+
+
+==========
+IBM PC DOS
+==========
+
+The ibmpc/dos/README file contains details of the builds and tests
+of bibclean under 8 IBM PC DOS C and C++ compilers, and instructions
+for building and testing bibclean with other compilers.
+
+Since bibclean uses no floating-point arithmetic, and PC DOS has no
+shared libraries, I expect that the executables will run on any
+version of DOS greater than 4.0.  They may also run on earlier
+versions.  At the time of writing, MS-DOS 6.22 is current, and the
+bibclean executables work fine on it.
+
+
+=================
+DEC Alpha OpenVMS
+=================
+
+The vms/alpha subdirectory contains these files for DEC Alpha OpenVMS:
+
+	bibclean.exe		bibclean executable program
+	config.h		hand-coded configuration file
+	recomp.com		do @recomp foo to recompile foo.c
+	vmsclean.com		do @vmsclean to cleanup after a build
+	vmsmake.com		do @vmsmake to build bibclean
+	vmstest.com		do @vmstest to test bibclean
+
+You will have to change one line in vmstest.com to define the disk
+location of bibclean.exe in the foreign command symbol for bibclean.
+
+Unlike the UNIX "make check", execution of vmstest.com does not
+require that latex or bibtex be installed on your system.  [I didn't
+have either on the Alpha OpenVMS system that I built bibclean on.]
+
+
+===========
+DEC VAX VMS
+===========
+
+The vms/vax/README file contains details of the building and testing
+of bibclean on VAX VMS 6.1
+
+Unlike the UNIX "make check", execution of vmstest.com does not require
+that latex or bibtex be installed on your system.  [I didn't have
+either on the VAX VMS system that I built bibclean on.]
+
+On versions of VMS before 6.1, you may find differences in the vmstest
+output between testbib1.bok (correct Sun) and testbib1.bib (VAX VMS);
+characters with octal values 211--215 and 240 disappear from the VAX
+VMS output.  The reason is that on VAX VMS 5.4 (and likely other
+versions of VAX VMS) isspace() from <ctype.h> classifies those
+characters as spaces.  This problem does NOT exist on DEC Alpha
+OpenVMS 1.5, or in VMS 6.1.  As long as your .bib files do not use
+those six characters, execution should be correct; for portability,
+.bib files should restrict themselves to ASCII/ISO-8859 characters in
+the range 32--127, plus newline and tab.
+
+
+===================================
+Sample "make check" Output for UNIX
+===================================
+
+Here is a log of "make check" on Sun Solaris 2.5 using the native C++
+compiler, CC:
+
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  romtol.c
+	/bin/rm -f match.O
+	if [ -f match.o ] ; then /bin/mv match.o match.O ; fi
+	/bin/rm -f match.o
+	CC -I. -I. -DHAVE_CONFIG_H  -g  -DTEST -o match \
+		match.c romtol.o
+	/bin/rm -f match.o
+	if [ -f match.O ] ; then /bin/mv match.O match.o ; fi
+	
+	===================== begin match test =======================
+	
+	./match <match.dat >match.lst
+	There should be no differences found:
+	diff match.lok match.lst
+	
+	====================== end match test ========================
+	
+	/bin/rm -f romtol.O
+	if [ -f romtol.o ] ; then /bin/mv romtol.o romtol.O ; fi
+	/bin/rm -f romtol.o
+	CC -I. -I. -DHAVE_CONFIG_H  -g  -DTEST -o romtol romtol.c
+	/bin/rm -f romtol.o
+	if [ -f romtol.O ] ; then /bin/mv romtol.O romtol.o ; fi
+	
+	===================== begin romtol test ======================
+	
+	./romtol <romtol.dat >romtol.lst
+	There should be no differences found:
+	diff romtol.lok romtol.lst
+	
+	====================== end romtol test =======================
+	
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  bibclean.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  chek.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  do.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  fix.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  fndfil.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  isbn.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  keybrd.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  match.c
+	CC -I. -I. -g  -c -DHOST=\"`hostname`\" -DUSER=\"beebe\" option.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  strist.c
+	CC -c -I. -I. -DHAVE_CONFIG_H  -g  strtol.c
+	CC -o bibclean -g  bibclean.o chek.o do.o fix.o fndfil.o isbn.o keybrd.o match.o option.o romtol.o strist.o strtol.o 
+	ild: (Performing full relink) too many files changed
+	
+	==================== begin BibTeX test 1 =====================
+	
+	
+	./bibclean -init-file bibclean.ini testbib1.org >testbib1.bib 2>testbib1.err
+	
+	There should be no differences found:
+	diff testbib1.bok testbib1.bib
+	
+	There should be no differences found:
+	diff testbib1.eok testbib1.err
+	
+	===================== end BibTeX test 1 ======================
+	
+	
+	==================== begin BibTeX test 2 =====================
+	
+	
+	./bibclean -init-file bibclean.ini -no-check-values testbib2.org >testbib2.bib 2>testbib2.err
+	
+	There should be no differences found:
+	diff testbib2.bok testbib2.bib
+	
+	There should be no differences found:
+	diff testbib2.eok testbib2.err
+	
+	latex testbib2.ltx >/dev/null
+	
+	Expect 6 BibTeX warnings:
+	bibtex testbib2
+	Warning--empty year in Bennett
+	Warning--empty year in Cejchan
+	Warning--there's a number but no volume in Dubowsky:75
+	Warning--empty institution in Diver:88a
+	Warning--empty booktitle in Diver:88
+	Warning--empty year in Diver
+	(There were 6 warnings)
+	
+	latex testbib2.ltx >/dev/null
+	
+	latex testbib2.ltx
+	This is TeX, Version 3.1415 (C version 6.1)
+	(testbib2.ltx
+	LaTeX Version 2.09 <14 January 1991>
+	(/usr/local/lib/tex/latex/article.sty
+	Document Style `article' <16 Mar 88>.
+	(/usr/local/lib/tex/latex/art10.sty)) (testbib2.aux) (testbib2.bbl [1] [2]
+	[3]
+	Underfull \hbox (badness 1024) in paragraph at lines 261--264
+	[] []\tenrm L. M. Berkovich, V. P. Gerdt, Z. T. Kos-tova, and M. L.
+	[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]) [17] (testbib2.aux)
+	 )
+	(see the transcript file for additional information)
+	Output written on testbib2.dvi (17 pages, 49032 bytes).
+	Transcript written on testbib2.log.
+	
+	===================== end BibTeX test 2 ======================
+	
+	
+	==================== begin BibTeX test 3 =====================
+	
+	
+	./bibclean -init-file bibclean.ini -fix-font-change testbib3.org >testbib3.bib 2>testbib3.err
+	
+	There should be no differences found:
+	
+	There should be no differences found:
+	diff testbib3.eok testbib3.err
+	
+	===================== end BibTeX test 3 ======================
+	
+	
+	==================== begin BibTeX test 4 =====================
+	
+	
+	./bibclean -init-file bibclean.ini -fix-font-change testbib4.org >testbib4.bib 2>testbib4.err
+	
+	There should be no differences found:
+	
+	There should be no differences found:
+	diff testbib4.eok testbib4.err
+	
+	===================== end BibTeX test 4 ======================
+	
+	
+	==================== begin BibTeX test 5 =====================
+	
+	
+	./bibclean -init-file bibclean.ini -German-style testbib5.org >testbib5.bib 2>testbib5.err
+	
+	There should be no differences found:
+	
+	There should be no differences found:
+	diff testbib5.eok testbib5.err
+	
+	===================== end BibTeX test 5 ======================
+	
+	
+	==================== begin BibTeX test 6 =====================
+	
+	./bibclean -init-file bibclean.ini testisxn.org >testisxn.bib 2>testisxn.err
+	
+	There should be no differences found:
+	diff testisxn.bok testisxn.bib
+	
+	There should be no differences found:
+	diff testisxn.eok testisxn.err
+	
+	===================== end BibTeX test 6 ======================
+	
+	
+	==================== begin BibTeX test 7 =====================
+	
+	./bibclean -init-file bibclean.ini testcodn.org >testcodn.bib 2>testcodn.err
+	
+	There should be no differences found:
+	diff testcodn.bok testcodn.bib
+	
+	There should be no differences found:
+	diff testcodn.eok testcodn.err
+	
+	===================== end BibTeX test 7 ======================
+	
+	
+	==================== begin Scribe test 1 =====================
+	
+	
+	----------------------------------------------------
+	
+	./bibclean -init-file bibclean.ini -scribe -no-check testscr1.org >testscr1.bib
+	
+	There should be no differences found:
+	diff testscr1.bok testscr1.bib
+	
+	There should be no differences found:
+	diff testscr1.eok testscr1.err
+	
+	Expect 5 BibTeX warnings
+	bibtex testscr1
+	Warning--empty publisher in hanson-67
+	Warning--can't use both volume and number fields in kendeigh-52
+	Warning--empty author in singer-portion-chapter
+	Warning--empty author in singer-portion-volume
+	Warning--can't use both author and editor fields in wright-63
+	(There were 5 warnings)
+	
+	----------------------------------------------------
+	
+	./bibclean -init-file bibclean.ini -scribe -no-check testscr2.org >testscr2.bib
+	
+	There should be no differences found:
+	diff testscr2.bok testscr2.bib
+	
+	There should be no differences found:
+	diff testscr2.eok testscr2.err
+	
+	There should be no BibTeX warnings:
+	bibtex testscr2
+	===================== end Scribe test 1 ======================
+	
+	
+	==================== begin Scribe test 2 =====================
+	
+	./bibclean -init-file bibclean.ini -scribe -file -no-check testscr2.org \
+	>testscr2.bib 2>testscr2.err
+	
+	There should be no differences found:
+	diff testscr2.bok testscr2.bib
+	
+	There should be no differences found:
+	diff testscr2.eok testscr2.err
+	
+	
+	./bibclean -init-file bibclean.ini -scribe -file -no-check -no-par testscr2.org \
+	>testscr2.bi2 2>testscr2.er2
+	make: [test-scribe-2] Error 1 (ignored)
+	
+	There should be no differences found:
+	diff testscr2.bo2 testscr2.bi2
+	
+	There should be no differences found:
+	diff testscr2.eo2 testscr2.er2
+	
+	===================== end Scribe test 2 ======================
+	
+	
+	==================== begin Scribe test 3 =====================
+	
+	./bibclean -init-file bibclean.ini -scribe -no-check testscr3.org >testscr3.bib 2>testscr3.err
+	
+	There should be no differences found:
+	diff testscr3.bok testscr3.bib
+	
+	There should be no differences found:
+	diff testscr3.eok testscr3.err
+	
+	===================== end Scribe test 3 ======================
+	
+
+
+=====================================
+Details of UNIX installation attempts
+=====================================
+
+Clean builds and validations with "setenv CC xxx && ./configure &&
+make && make check" have been achieved on these systems:
+
+	DEC Alpha OSF/1 3.0
+		/bin/cc
+		/usr/ccs/bin/c89
+		/usr/ccs/bin/cc
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+		/usr/ucb/cc
+
+		For /bin/cxx, compiler switches to c89 for .c files, and
+		then gets an error which arises because
+		/usr/include/sys/signal.h:468: error: Missing ")".
+		stack_t is not defined by types.h except in Standard C
+		or C++ mode.
+
+		Recent versions of cxx have switch "-x cxx" to force
+		use of C++ compilation for .c files, but older ones do
+		not.  On one such old system, I made an experiment
+		with changing extensions from .c to .cxx and updating
+		the Makefile accordingly.  The build failed with:
+		``Fatal: An attempt to allocate memory failed.''
+		during compilation of bibclean.cxx, and with
+		conflicting declarations of swab() from
+		/usr/include/unistd.h and /usr/include/cxx/string.h
+		during compilation of fndfil.cxx.  These are both
+		vendor problems that may be fixed in newer releases of
+		the C++ compiler.
+
+	DEC Alpha OSF/1 3.2C (Digital UNIX)
+		/usr/ucb/cxx
+
+		The problems with cxx experienced on OSF/1 3.0 have
+		all disappeared, and I regularly use "cxx -x cxx" as
+		my C/C++ compiler of choice on this system.  [The
+		DEC 2100-5/250 on which the compiler is installed has
+		3 CPUs and 2GB of RAM, and each CPU does 250Mflops in
+		benchmarks, so it is a terrific development system!]
+
+	DECstation ULTRIX 4.3
+		/bin/cc
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+
+		Got many "warning: missing prototype" messages for
+		functions in system header files (because they are
+		still K&R style) with:
+		/usr/local/bin/lcc -A -A
+		but build completed and validated.
+
+	HP 9000/735 HP-UX 9.0.3
+		/bin/cc
+		/bin/c89
+		/usr/bin/CC
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+
+		For /bin/cc, the compiler warns
+
+		cc: "bibclean.c", line 3723: warning 30: Character
+		constant contains undefined escape sequence.
+		cc: "bibclean.c", line 3730: warning 30: Character
+		constant contains undefined escape sequence.
+
+		but the escape sequence ('\a') IS correctly translated.
+
+	HP 9000/735 HP-UX 10.0.1
+		/bin/cc
+		/bin/c89
+		/usr/bin/CC
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+
+		The warnings from /bin/cc no longer appear.
+
+	IBM RS/6000 AIX 3.2.5
+		/bin/cc
+		/bin/xlC
+		/usr/bin/c89
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+
+	IBM RS/6000 AIX 4.1
+		/bin/c89
+		/bin/xlC
+		/usr/bin/c89
+
+	Intel 486 Linux 1.3.15 and 1.3.97 (POSIX)
+		/usr/bin/g++
+		/usr/bin/gcc
+
+	MIPS RC 6280 RISCos 2.1.1AC
+		/bin/cc
+
+	NeXT Turbostation Mach 3.0
+		Compilation with any compiler produces failing links
+		with error: /bin/ld: multiple definitions of symbol _strtol
+		The configure.ac script attempts to deal with this by
+		AC_REPLACE_FUNCS(strtol), but that results in the created
+		Makefile having LIBOBJS=strtol.  Building with
+			make LIBOBJS=
+		provides a temporary workaround.
+
+		/usr/local/bin/gcc
+		/bin/cc
+		/usr/local/bin/g++
+
+		Many compilation "warning: missing prototype", plus
+		bibclean.c:2774: undeclared identifier `__ctype'
+		bibclean.c:3158: type error: pointer expected
+		...
+		for
+		/usr/local/bin/lcc -A -A
+		lcc on this system is an old version (1.9); the
+		current lcc elsewhere is 3.4b, but unfortunately,
+		lcc 3.x dropped support for the Motorola 68xxx
+		code generator.  I'm therefore writing off lcc
+		on the NeXT as not viable for software development.
+		
+	NeXT Turbostation Mach 3.1
+		/bin/cc
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+		
+	Silicon Graphics Indigo IRIX 4.0.5F
+
+		/usr/bin/cc
+		/usr/local/bin/gcc
+		/usr/local/bin/lcc -A -A
+
+		Compilation fails with
+		/usr/local/bin/g++
+		because of conflicts between system header files and
+		g++ built-in library function declarations.
+
+	Silicon Graphics Indigo-2 IRIX 5.3
+		/bin/cc
+		/usr/local/bin/g++
+		/usr/local/bin/gcc
+		/usr/local/bin/lcc -A -A
+
+	Silicon Graphics Power Challenge IRIX 6.0.1
+		/bin/CC
+		/bin/cc
+
+		For
+		/usr/local/bin/g++
+		and
+		/usr/local/bin/gcc
+		(2.7.0) get assembler errors from generated code.
+
+	Sun SPARC 4/380 Sun SunOS 4.1.3
+		/bin/cc
+		/usr/lang/acc
+		/usr/lang/CC
+		/usr/local/bin/gcc
+		/usr/ucb/cc
+
+		Linking fails with
+		/usr/local/bin/g++
+		because of multiply defined symbols.  These arise
+		because g++ generates inline C-style interfaces
+		to library functions like strchr(), but on this
+		system, the library also contains C-style functions
+		with the same name, so linking produces multiple
+		definitions, and failure.  Curiously, g++ 2.7.0 on
+		other systems, including Sun Solaris 2.x, does not
+		generate these interface functions, and so does not
+		cause problems there.
+
+		Compilation fails with
+		/usr/local/bin/lcc -A -A
+		because of a conflict in the definition of size_t
+		between /usr/include/sys/stdtypes.h and
+		/usr/local/include/lcc-3.4b/sparc-sun/stdlib.h.
+
+	Sun SPARC 20 Sun Solaris 2.3
+		/opt/SUNWspro/bin/cc
+		/opt/SUNWspro/bin/CC
+		/usr/local/bin/gcc
+		/usr/ucb/cc
+
+		Linking failed for
+		/usr/local/bin/g++
+		with MANY multiply-defined symbols (e.g. memchr in bibclean
+		and fndfil)
+
+		No problem on Solaris 2.4 with g++!
+
+		The reason that configure says
+			checking for strcspn... (cached) no
+			checking for strdup... (cached) no
+			checking for strspn... (cached) no
+			checking for strstr... (cached) no
+			checking for strtod... (cached) no
+			checking for strtol... (cached) no
+		is that it generates a test program with
+			char $ac_func();
+		as the prototype.  With C++, that is a separate
+		function that cannot be found in the library.  That is
+		also why LIBOBJS is being set incorrectly.
+
+		*** Need to check out g++ and lcc on this system ***
+		Build failed for
+		/usr/local/bin/lcc -A -A
+		with message
+		configure: error: can not run test program while cross compiling
+		This happens because configure uses -g, which blows
+		compilation because of unknown opcode ".stabd" errors
+		in assembler.
+
+		Can be fixed by manually changing configure line
+			test "${CFLAGS+set}" = set || CFLAGS="-g"
+		to
+			test "${CFLAGS+set}" = set || CFLAGS=""
+
+		There is another problem: STDC_HEADERS is not defined,
+		because a test program created by configure detects an
+		error in toupper().  This was traced to a bug in lcc's
+		ctype.h, and has been reported to the lcc-bugs list.
+		A manual patch to config.h solves the problem.
+
+===============================[The End]===============================

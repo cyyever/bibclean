@@ -1,0 +1,1239 @@
+\indexentry{Scribe@{\sc Scribe}}{395}
+\indexentry{bibclean@{\tt bibclean}}{395}
+\indexentry{Lamport, Leslie}{395}
+\indexentry{citation!key}{395}
+\indexentry{string!substitution}{395}
+\indexentry{Lamport, Leslie}{396}
+\indexentry{control sequence!bibliographystyle@{\tt \char 92\relax bibliographystyle}}{396}
+\indexentry{bibliographystyle@{\tt \char 92\relax bibliographystyle}}{396}
+\indexentry{citation!style}{396}
+\indexentry{bibliography!style}{396}
+\indexentry{control sequence!bibliography@{\tt \char 92\relax bibliography}}{396}
+\indexentry{bibliography@{\tt \char 92\relax bibliography}}{396}
+\indexentry{auxiliary file}{396}
+\indexentry{bibliography!file}{396}
+\indexentry{file!bibliography}{396}
+\indexentry{bibliography!style}{396}
+\indexentry{style!bibliography}{396}
+\indexentry{control sequence!cite@{\tt \char 92\relax cite}}{396}
+\indexentry{cite@{\tt \char 92\relax cite}}{396}
+\indexentry{control sequence!bibliography@{\tt \char 92\relax bibliography}}{396}
+\indexentry{bibliography@{\tt \char 92\relax bibliography}}{396}
+\indexentry{control sequence!cite@{\tt \char 92\relax cite}}{396}
+\indexentry{cite@{\tt \char 92\relax cite}}{396}
+\indexentry{GNU!Emacs}{396}
+\indexentry{Emacs}{396}
+\indexentry{Cameron, Debra}{396}
+\indexentry{Rosenblatt, Bill}{396}
+\indexentry{template!editor}{396}
+\indexentry{pop-up menu}{396}
+\indexentry{menu!pop-up}{396}
+\indexentry{UNIX@{\sc UNIX}}{396}
+\indexentry{VAX@{\sc VAX}}{396}
+\indexentry{VMS@{\sc VMS}}{396}
+\indexentry{PC-DOS@{\sc PC-DOS}}{396}
+\indexentry{SGML@{\sc SGML}}{396}
+\indexentry{Bryan, Martin}{396}
+\indexentry{van Herwijnen, Eric}{396}
+\indexentry{Herwijnen, Eric van}{396}
+\indexentry{TUG bibliography collection}{396}
+\indexentry{TUGboat@{\protect\TUB{}}}{396}
+\indexentry{TUG Resource Directory}{396}
+\indexentry{Beebe, Nelson H. F.}{396}
+\indexentry{bibclean@{\tt bibclean}}{396}
+\indexentry{UNIX@{\sc UNIX}}{397}
+\indexentry{lexical analysis}{397}
+\indexentry{token}{397}
+\indexentry{parsing}{397}
+\indexentry{code generation}{397}
+\indexentry{interpretation of code}{397}
+\indexentry{front end}{397}
+\indexentry{back end}{397}
+\indexentry{Free Software Foundation}{397}
+\indexentry{C++}{397}
+\indexentry{Objective C}{397}
+\indexentry{bibclean@{\tt bibclean}}{397}
+\indexentry{lexical analyzer}{397}
+\indexentry{prettyprinter}{397}
+\indexentry{bibclean@{\tt bibclean}}{397}
+\indexentry{bibliography!file}{397}
+\indexentry{file!bibliography}{397}
+\indexentry{VAX@{\sc VAX}}{397}
+\indexentry{VMS@{\sc VMS}}{397}
+\indexentry{PC-DOS@{\sc PC-DOS}}{397}
+\indexentry{author@{\tt -author}}{397}
+\indexentry{option!author@{\tt -author}}{397}
+\indexentry{standard error unit}{397}
+\indexentry{stderr@{\tt stderr}}{397}
+\indexentry{file!stderr@{\tt stderr}}{397}
+\indexentry{error-log filename@{\tt -error-log filename}}{397}
+\indexentry{option!error-log filename@{\tt -error-log filename}}{397}
+\indexentry{stderr@{\tt stderr}}{397}
+\indexentry{file!stderr@{\tt stderr}}{397}
+\indexentry{message!redirecting}{397}
+\indexentry{error!message!redirecting}{397}
+\indexentry{warning message!redirecting}{397}
+\indexentry{stderr@{\tt stderr}}{397}
+\indexentry{file!stderr@{\tt stderr}}{397}
+\indexentry{help {\prm or} -?@{\tt -help {\prm or} -?}}{397}
+\indexentry{option!help {\prm or} -?@{\tt -help {\prm or} -?}}{397}
+\indexentry{message!help}{397}
+\indexentry{stderr@{\tt stderr}}{397}
+\indexentry{file!stderr@{\tt stderr}}{397}
+\indexentry{init-file filename@{\tt -init-file filename}}{397}
+\indexentry{option!init-file filename@{\tt -init-file filename}}{397}
+\indexentry{initialization file}{397}
+\indexentry{file!initialization}{397}
+\indexentry{PATH@{\tt PATH}}{397}
+\indexentry{file!PATH@{\tt PATH}}{397}
+\indexentry{VAX@{\sc VAX}}{397}
+\indexentry{VMS@{\sc VMS}}{397}
+\indexentry{SYS\pdollar SYSTEM@{\tt SYS\pdollar SYSTEM}}{397}
+\indexentry{file!SYS\pdollar SYSTEM@{\tt SYS\pdollar SYSTEM}}{397}
+\indexentry{BIBINPUTS@{\tt BIBINPUTS}}{397}
+\indexentry{file!BIBINPUTS@{\tt BIBINPUTS}}{397}
+\indexentry{environment variable}{397}
+\indexentry{BIBCLEANINI@{\tt BIBCLEANINI}}{397}
+\indexentry{file!BIBCLEANINI@{\tt BIBCLEANINI}}{397}
+\indexentry{.bibcleanrc@{\tt .bibcleanrc}}{397}
+\indexentry{file!.bibcleanrc@{\tt .bibcleanrc}}{397}
+\indexentry{UNIX@{\sc UNIX}}{397}
+\indexentry{bibclean.ini@{\tt bibclean.ini}}{397}
+\indexentry{file!bibclean.ini@{\tt bibclean.ini}}{397}
+\indexentry{max-width nnn@{\tt -max-width nnn}}{397}
+\indexentry{option!max-width nnn@{\tt -max-width nnn}}{397}
+\indexentry{bibclean@{\tt bibclean}}{397}
+\indexentry{line!width limit}{397}
+\indexentry{decimal}{397}
+\indexentry{octal}{397}
+\indexentry{hexadecimal}{397}
+\indexentry{max-width 0@{\tt -max-width 0}}{397}
+\indexentry{option!max-width 0@{\tt -max-width 0}}{397}
+\indexentry{no-prettyprint@{\tt -no-prettyprint}}{397}
+\indexentry{option!no-prettyprint@{\tt -no-prettyprint}}{397}
+\indexentry{bibclean@{\tt bibclean}}{397}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{wrapping!of long lines}{398}
+\indexentry{line!wrapping}{398}
+\indexentry{Knuth, Donald E.}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{backslash-newline}{398}
+\indexentry{check-values@{\tt -check-values}}{398}
+\indexentry{option!check-values@{\tt -check-values}}{398}
+\indexentry{no-check-values@{\tt -no-check-values}}{398}
+\indexentry{option!no-check-values@{\tt -no-check-values}}{398}
+\indexentry{warning message!disabling}{398}
+\indexentry{delete-empty-values@{\tt -delete-empty-values}}{398}
+\indexentry{option!delete-empty-values@{\tt -delete-empty-values}}{398}
+\indexentry{no-delete-empty-values@{\tt -no-delete-empty-values}}{398}
+\indexentry{option!no-delete-empty-values@{\tt -no-delete-empty-values}}{398}
+\indexentry{empty!values!deleting}{398}
+\indexentry{remove-OPT-prefixes@{\tt -remove-OPT-prefixes}}{398}
+\indexentry{option!remove-OPT-prefixes@{\tt -remove-OPT-prefixes}}{398}
+\indexentry{no-remove-OPT-prefixes@{\tt -no-remove-OPT-prefixes}}{398}
+\indexentry{option!no-remove-OPT-prefixes@{\tt -no-remove-OPT-prefixes}}{398}
+\indexentry{file-position@{\tt -file-position}}{398}
+\indexentry{option!file-position@{\tt -file-position}}{398}
+\indexentry{no-file-position@{\tt -no-file-position}}{398}
+\indexentry{option!no-file-position@{\tt -no-file-position}}{398}
+\indexentry{fix-font-changes@{\tt -fix-font-changes}}{398}
+\indexentry{option!fix-font-changes@{\tt -fix-font-changes}}{398}
+\indexentry{no-fix-font-changes@{\tt -no-fix-font-changes}}{398}
+\indexentry{option!no-fix-font-changes@{\tt -no-fix-font-changes}}{398}
+\indexentry{font changes!fixing}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{fix-font-changes@{\tt -fix-font-changes}}{398}
+\indexentry{option!fix-font-changes@{\tt -fix-font-changes}}{398}
+\indexentry{fix-initials@{\tt -fix-initials}}{398}
+\indexentry{option!fix-initials@{\tt -fix-initials}}{398}
+\indexentry{no-fix-initials@{\tt -no-fix-initials}}{398}
+\indexentry{option!no-fix-initials@{\tt -no-fix-initials}}{398}
+\indexentry{author name!period after initials}{398}
+\indexentry{editor name!period after initials}{398}
+\indexentry{fix-names@{\tt -fix-names}}{398}
+\indexentry{option!fix-names@{\tt -fix-names}}{398}
+\indexentry{no-fix-names@{\tt -no-fix-names}}{398}
+\indexentry{option!no-fix-names@{\tt -no-fix-names}}{398}
+\indexentry{author name!reordering}{398}
+\indexentry{editor name!reordering}{398}
+\indexentry{par-breaks@{\tt -par-breaks}}{398}
+\indexentry{option!par-breaks@{\tt -par-breaks}}{398}
+\indexentry{no-par-breaks@{\tt -no-par-breaks}}{398}
+\indexentry{option!no-par-breaks@{\tt -no-par-breaks}}{398}
+\indexentry{runaway string argument}{398}
+\indexentry{string!runaway}{398}
+\indexentry{mismatched delimiters}{398}
+\indexentry{delimiters!mismatched}{398}
+\indexentry{prettyprint@{\tt -prettyprint}}{398}
+\indexentry{option!prettyprint@{\tt -prettyprint}}{398}
+\indexentry{no-prettyprint@{\tt -no-prettyprint}}{398}
+\indexentry{option!no-prettyprint@{\tt -no-prettyprint}}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{prettyprinter}{398}
+\indexentry{lexical analyzer}{398}
+\indexentry{print-patterns@{\tt -print-patterns}}{398}
+\indexentry{option!print-patterns@{\tt -print-patterns}}{398}
+\indexentry{no-print-patterns@{\tt -no-print-patterns}}{398}
+\indexentry{option!no-print-patterns@{\tt -no-print-patterns}}{398}
+\indexentry{initialization file!patterns in}{398}
+\indexentry{file!initialization!patterns in}{398}
+\indexentry{bibclean@{\tt bibclean}}{398}
+\indexentry{read-init-files@{\tt -read-init-files}}{398}
+\indexentry{option!read-init-files@{\tt -read-init-files}}{398}
+\indexentry{no-read-init-files@{\tt -no-read-init-files}}{398}
+\indexentry{option!no-read-init-files@{\tt -no-read-init-files}}{398}
+\indexentry{initialization file}{398}
+\indexentry{file!initialization}{398}
+\indexentry{init-file filename@{\tt -init-file filename}}{398}
+\indexentry{option!init-file filename@{\tt -init-file filename}}{398}
+\indexentry{remove-OPT-prefixes@{\tt -remove-OPT-prefixes}}{399}
+\indexentry{option!remove-OPT-prefixes@{\tt -remove-OPT-prefixes}}{399}
+\indexentry{no-remove-OPT-prefixes@{\tt -no-remove-OPT-prefixes}}{399}
+\indexentry{option!no-remove-OPT-prefixes@{\tt -no-remove-OPT-prefixes}}{399}
+\indexentry{OPT- prefix@{\tt OPT-} prefix!removing}{399}
+\indexentry{GNU!Emacs}{399}
+\indexentry{Emacs}{399}
+\indexentry{delete-empty-values@{\tt -delete-empty-values}}{399}
+\indexentry{option!delete-empty-values@{\tt -delete-empty-values}}{399}
+\indexentry{no-delete-empty-values@{\tt -no-delete-empty-values}}{399}
+\indexentry{option!no-delete-empty-values@{\tt -no-delete-empty-values}}{399}
+\indexentry{scribe@{\tt -scribe}}{399}
+\indexentry{option!scribe@{\tt -scribe}}{399}
+\indexentry{no-scribe@{\tt -no-scribe}}{399}
+\indexentry{option!no-scribe@{\tt -no-scribe}}{399}
+\indexentry{Scribe@{\sc Scribe}}{399}
+\indexentry{trace-file-opening@{\tt -trace-file-opening}}{399}
+\indexentry{option!trace-file-opening@{\tt -trace-file-opening}}{399}
+\indexentry{no-trace-file-opening@{\tt -no-trace-file-opening}}{399}
+\indexentry{option!no-trace-file-opening@{\tt -no-trace-file-opening}}{399}
+\indexentry{error!log file}{399}
+\indexentry{file!error log}{399}
+\indexentry{bibclean@{\tt bibclean}}{399}
+\indexentry{initialization file!locating}{399}
+\indexentry{file!initialization!locating}{399}
+\indexentry{warnings@{\tt -warnings}}{399}
+\indexentry{option!warnings@{\tt -warnings}}{399}
+\indexentry{no-warnings@{\tt -no-warnings}}{399}
+\indexentry{option!no-warnings@{\tt -no-warnings}}{399}
+\indexentry{warning message!disabling}{399}
+\indexentry{message!disabling warning}{399}
+\indexentry{version@{\tt -version}}{399}
+\indexentry{option!version@{\tt -version}}{399}
+\indexentry{program!version}{399}
+\indexentry{version!of program}{399}
+\indexentry{stderr@{\tt stderr}}{399}
+\indexentry{file!stderr@{\tt stderr}}{399}
+\indexentry{prettyprinting}{399}
+\indexentry{bibclean@{\tt bibclean}}{399}
+\indexentry{Scribe@{\sc Scribe}}{399}
+\indexentry{bibclean@{\tt bibclean}}{399}
+\indexentry{file-position@{\tt -file-position}}{399}
+\indexentry{option!file-position@{\tt -file-position}}{399}
+\indexentry{bibclean@{\tt bibclean}}{399}
+\indexentry{fix-font-changes@{\tt -fix-font-changes}}{399}
+\indexentry{option!fix-font-changes@{\tt -fix-font-changes}}{399}
+\indexentry{no-par-breaks@{\tt -no-par-breaks}}{399}
+\indexentry{option!no-par-breaks@{\tt -no-par-breaks}}{399}
+\indexentry{ISBN (International Standard Book Number)}{399}
+\indexentry{ISSN (International Standard Serial Number)}{399}
+\indexentry{TUG bibliography collection}{399}
+\indexentry{fix-names@{\tt -fix-names}}{400}
+\indexentry{option!fix-names@{\tt -fix-names}}{400}
+\indexentry{Bach, P. D. Q.}{400}
+\indexentry{Schickele, Peter}{400}
+\indexentry{fix-initials@{\tt -fix-initials}}{400}
+\indexentry{option!fix-initials@{\tt -fix-initials}}{400}
+\indexentry{check-values@{\tt -check-values}}{400}
+\indexentry{option!check-values@{\tt -check-values}}{400}
+\indexentry{check-values@{\tt -check-values}}{400}
+\indexentry{option!check-values@{\tt -check-values}}{400}
+\indexentry{trace-file-opening@{\tt -trace-file-opening}}{400}
+\indexentry{option!trace-file-opening@{\tt -trace-file-opening}}{400}
+\indexentry{bibclean@{\tt bibclean}}{400}
+\indexentry{@@{\tt @}}{400}
+\indexentry{@@{\tt @}}{400}
+\indexentry{bibclean@{\tt bibclean}}{400}
+\indexentry{bibclean@{\tt bibclean}}{400}
+\indexentry{pattern matching}{400}
+\indexentry{regular expression!pattern matching}{400}
+\indexentry{pattern matching!regular expression}{400}
+\indexentry{initialization file}{400}
+\indexentry{file!initialization}{400}
+\indexentry{bibclean@{\tt bibclean}}{400}
+\indexentry{initialization file}{400}
+\indexentry{file!initialization}{400}
+\indexentry{program!search path}{400}
+\indexentry{search path}{400}
+\indexentry{UNIX@{\sc UNIX}}{400}
+\indexentry{PC-DOS@{\sc PC-DOS}}{400}
+\indexentry{PATH@{\tt PATH}}{400}
+\indexentry{file!PATH@{\tt PATH}}{400}
+\indexentry{BIBINPUTS@{\tt BIBINPUTS}}{400}
+\indexentry{file!BIBINPUTS@{\tt BIBINPUTS}}{400}
+\indexentry{options}{400}
+\indexentry{init-file filename@{\tt -init-file filename}}{400}
+\indexentry{option!init-file filename@{\tt -init-file filename}}{400}
+\indexentry{.ini@{\tt .ini}}{400}
+\indexentry{file!.ini@{\tt .ini}}{400}
+\indexentry{BIBCLEANEXT@{\tt BIBCLEANEXT}}{400}
+\indexentry{file!BIBCLEANEXT@{\tt BIBCLEANEXT}}{400}
+\indexentry{stdin@{\tt stdin}}{400}
+\indexentry{file!stdin@{\tt stdin}}{400}
+\indexentry{no-init-files@{\tt -no-init-files}}{400}
+\indexentry{option!no-init-files@{\tt -no-init-files}}{400}
+\indexentry{init-file filename@{\tt -init-file filename}}{400}
+\indexentry{option!init-file filename@{\tt -init-file filename}}{400}
+\indexentry{initialization file!nested}{400}
+\indexentry{file!initialization!nested}{400}
+\indexentry{init-file filename@{\tt -init-file filename}}{400}
+\indexentry{option!init-file filename@{\tt -init-file filename}}{400}
+\indexentry{bibclean@{\tt bibclean}}{400}
+\indexentry{recursion}{400}
+\indexentry{backslash-newline}{400}
+\indexentry{backslash-newline}{400}
+\indexentry{bibclean@{\tt bibclean}}{401}
+\indexentry{initialization file!sample}{401}
+\indexentry{file!sample initialization}{401}
+\indexentry{UNIX@{\sc UNIX}}{401}
+\indexentry{escape sequence}{401}
+\indexentry{\char 34@{\tt \char 92\relax \char 34}}{401}
+\indexentry{\char 92@{\tt \char 92\relax \char 92}}{401}
+\indexentry{escape sequence!table}{401}
+\indexentry{a@{\tt \char 92\relax a}}{401}
+\indexentry{b@{\tt \char 92\relax b}}{401}
+\indexentry{f@{\tt \char 92\relax f}}{401}
+\indexentry{n@{\tt \char 92\relax n}}{401}
+\indexentry{r@{\tt \char 92\relax r}}{401}
+\indexentry{t@{\tt \char 92\relax t}}{401}
+\indexentry{v@{\tt \char 92\relax v}}{401}
+\indexentry{ooo@{\tt \char 92\relax ooo}}{401}
+\indexentry{012@{\tt \char 92\relax 012}}{401}
+\indexentry{0xhh@{\tt \char 92\relax 0xhh}}{401}
+\indexentry{0x0a@{\tt \char 92\relax 0x0a}}{401}
+\indexentry{NUL (0)!in string}{401}
+\indexentry{0@{\tt \char 92\relax 0}}{401}
+\indexentry{bibclean@{\tt bibclean}}{401}
+\indexentry{GNU!regexp package@{\tt regexp} package}{401}
+\indexentry{regexp@{\tt regexp}}{401}
+\indexentry{file!regexp@{\tt regexp}}{401}
+\indexentry{X@{\tt X}}{401}
+\indexentry{number@{\tt number}}{401}
+\indexentry{initialization file!pattern characters}{402}
+\indexentry{file!initialization!pattern characters}{402}
+\indexentry{a@{\tt a}}{402}
+\indexentry{A@{\tt A}}{402}
+\indexentry{d@{\tt d}}{402}
+\indexentry{D@{\tt D}}{402}
+\indexentry{r@{\tt r}}{402}
+\indexentry{R@{\tt R}}{402}
+\indexentry{w@{\tt w}}{402}
+\indexentry{W@{\tt W}}{402}
+\indexentry{.@{\tt .}}{402}
+\indexentry{:@{\tt :}}{402}
+\indexentry{X@{\tt X}}{402}
+\indexentry{x@{\tt \char 92\relax x}}{402}
+\indexentry{x@{\tt x}}{402}
+\indexentry{x@{\tt x}}{402}
+\indexentry{x@{\tt x}}{402}
+\indexentry{x@{\tt x}}{402}
+\indexentry{x@{\tt x}}{402}
+\indexentry{bibliography-specific pattern}{402}
+\indexentry{pattern!bibliography-specific}{402}
+\indexentry{.ini@{\tt .ini}}{402}
+\indexentry{file!.ini@{\tt .ini}}{402}
+\indexentry{empty!pattern}{402}
+\indexentry{pattern!empty}{402}
+\indexentry{quote!in pattern}{402}
+\indexentry{pattern!quotes in}{402}
+\indexentry{\char 34@{\tt \char 92\relax \char 34}}{402}
+\indexentry{pattern matching!brace ignored in}{402}
+\indexentry{brace!ignored in pattern matching}{402}
+\indexentry{brace!space around}{402}
+\indexentry{bibclean@{\tt bibclean}}{402}
+\indexentry{pattern!changing warning message}{402}
+\indexentry{warning message!changing}{402}
+\indexentry{format!item}{402}
+\indexentry{\%\%@{\tt \%\%}}{402}
+\indexentry{format!item!\%\%@{\tt \%\%}}{402}
+\indexentry{\%e@{\tt \%e}}{402}
+\indexentry{format!item!\%e@{\tt \%e}}{402}
+\indexentry{\%f@{\tt \%f}}{402}
+\indexentry{format!item!\%f@{\tt \%f}}{402}
+\indexentry{\%k@{\tt \%k}}{402}
+\indexentry{format!item!\%k@{\tt \%k}}{402}
+\indexentry{\%v@{\tt \%v}}{402}
+\indexentry{format!item!\%v@{\tt \%v}}{402}
+\indexentry{bibclean@{\tt bibclean}}{402}
+\indexentry{query (?)!in messages}{402}
+\indexentry{?}{402}
+\indexentry{escape sequence!in message text}{402}
+\indexentry{bibclean@{\tt bibclean}}{402}
+\indexentry{ISBN@{\tt ISBN}}{402}
+\indexentry{ISSN@{\tt ISSN}}{402}
+\indexentry{checksum!in ISBN and ISSN@in {\tt ISBN} and {\tt ISSN}}{402}
+\indexentry{bibclean@{\tt bibclean}}{402}
+\indexentry{chapter@{\tt chapter}}{402}
+\indexentry{number@{\tt number}}{402}
+\indexentry{pages@{\tt pages}}{402}
+\indexentry{volume@{\tt volume}}{402}
+\indexentry{month@{\tt month}}{402}
+\indexentry{year@{\tt year}}{403}
+\indexentry{bibclean@{\tt bibclean}}{403}
+\indexentry{key@{\tt key}}{403}
+\indexentry{citation!key}{403}
+\indexentry{no-prettyprint@{\tt -no-prettyprint}}{403}
+\indexentry{option!no-prettyprint@{\tt -no-prettyprint}}{403}
+\indexentry{bibclean@{\tt bibclean}}{403}
+\indexentry{lexical analyzer}{403}
+\indexentry{prettyprinter}{403}
+\indexentry{backslash-newline}{403}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{403}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{403}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{403}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{403}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{403}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{403}
+\indexentry{TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{403}
+\indexentry{terminal!TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{403}
+\indexentry{TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{403}
+\indexentry{terminal!TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{403}
+\indexentry{TOKEN_FIELD@{\tt TOKEN_FIELD}}{403}
+\indexentry{terminal!TOKEN_FIELD@{\tt TOKEN_FIELD}}{403}
+\indexentry{TOKEN_KEY@{\tt TOKEN_KEY}}{403}
+\indexentry{terminal!TOKEN_KEY@{\tt TOKEN_KEY}}{403}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{403}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{403}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{403}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{403}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{403}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{403}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{403}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{403}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{403}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{403}
+\indexentry{Lamport, Leslie}{403}
+\indexentry{token!type}{403}
+\indexentry{token!string}{403}
+\indexentry{sharp@sharp ({\tt\char35})}{403}
+\indexentry{preprocessor}{403}
+\indexentry{line!number directive}{403}
+\indexentry{ANSI/ISO Standard C@ANSI\slash ISO Standard C}{403}
+\indexentry{token!type}{403}
+\indexentry{bibclean@{\tt bibclean}}{403}
+\indexentry{ANSI/ISO Standard C@ANSI\slash ISO Standard C}{403}
+\indexentry{escape sequence}{403}
+\indexentry{max-width nnn@{\tt -max-width nnn}}{404}
+\indexentry{option!max-width nnn@{\tt -max-width nnn}}{404}
+\indexentry{wrapping!of long lines}{404}
+\indexentry{line!wrapping}{404}
+\indexentry{backslash-newline}{404}
+\indexentry{UNIX@{\sc UNIX}}{404}
+\indexentry{pipeline}{404}
+\indexentry{nawk@{\tt nawk}}{404}
+\indexentry{Aho, Alfred V.}{404}
+\indexentry{Kernighan, Brian W.}{404}
+\indexentry{Weinberger, Peter J.}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{UNIX@{\sc UNIX}}{404}
+\indexentry{tr@{\tt tr}}{404}
+\indexentry{file!tr@{\tt tr}}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{file!bibclean@{\tt bibclean}}{404}
+\indexentry{bibdup.awk@{\tt bibdup.awk}}{404}
+\indexentry{file!bibdup.awk@{\tt bibdup.awk}}{404}
+\indexentry{nawk@{\tt nawk}}{404}
+\indexentry{file!nawk@{\tt nawk}}{404}
+\indexentry{tr@{\tt tr}}{404}
+\indexentry{file!tr@{\tt tr}}{404}
+\indexentry{bibdup@{\tt bibdup}}{404}
+\indexentry{file!bibdup@{\tt bibdup}}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{Scribe@{\sc Scribe}}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{Scribe@{\sc Scribe}}{404}
+\indexentry{portability}{404}
+\indexentry{testing}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{ANSI/ISO Standard C@ANSI\slash ISO Standard C}{404}
+\indexentry{UNIX@{\sc UNIX}}{404}
+\indexentry{VAX@{\sc VAX}}{404}
+\indexentry{VMS@{\sc VMS}}{404}
+\indexentry{PC-DOS@{\sc PC-DOS}}{404}
+\indexentry{OS/2@{\sc OS/2}}{404}
+\indexentry{Atari}{404}
+\indexentry{TOS@{\sc TOS}}{404}
+\indexentry{UNIX@{\sc UNIX}}{404}
+\indexentry{ANSI/ISO Standard C@ANSI\slash ISO Standard C}{404}
+\indexentry{Pascal}{404}
+\indexentry{Knuth, Donald E.}{404}
+\indexentry{WEB@{\tt WEB}}{404}
+\indexentry{string!pool}{404}
+\indexentry{Kernighan, Brian W.}{404}
+\indexentry{Ritchie, Dennis M.}{404}
+\indexentry{Kahn, Philippe}{404}
+\indexentry{Borland International}{404}
+\indexentry{Feuer, Alan~R.}{404}
+\indexentry{Koenig, Andrew}{404}
+\indexentry{Harbison, Samuel P.}{404}
+\indexentry{Steele Jr., Guy L.}{404}
+\indexentry{Jaeschke, Rex}{404}
+\indexentry{Lapin, J. E.}{404}
+\indexentry{Plauger, P. J.}{404}
+\indexentry{Rabinowitz, Henry}{404}
+\indexentry{Schaap, Chaim}{404}
+\indexentry{Rochkind, Marc J.}{404}
+\indexentry{Stevens, W. Richard}{404}
+\indexentry{C++}{404}
+\indexentry{Ellis, Margaret A.}{404}
+\indexentry{Stroustrup, Bjarne}{404}
+\indexentry{object-oriented programming}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{Objective C}{404}
+\indexentry{bibclean@{\tt bibclean}}{404}
+\indexentry{class library}{404}
+\indexentry{dump!post-mortem}{405}
+\indexentry{post-mortem dump}{405}
+\indexentry{core dump}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{Reid, Brian}{405}
+\indexentry{GNU!Emacs}{405}
+\indexentry{Emacs}{405}
+\indexentry{GNU!texinfo@\protect\TeX{}info}{405}
+\indexentry{texinfo@\protect\TeX{}info}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{delimiters!in scribe@in \protect\SCRIBE{}}{405}
+\indexentry{at-sign}{405}
+\indexentry{\char 64@{\tt \char 64}}{405}
+\indexentry{\char 64\char 64@{\tt \char 64\char 64}}{405}
+\indexentry{\char 64name@{\tt \char 64name}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{\char 64Comment@{\tt \char 64Comment}}{405}
+\indexentry{\char 64End\penalty 0\{ comment\} @{\tt \char 64End\penalty 0\{ comment\} }}{405}
+\indexentry{comment@{\tt comment}}{405}
+\indexentry{\char 64Begin@{\tt \char 64Begin}}{405}
+\indexentry{\char 64End@{\tt \char 64End}}{405}
+\indexentry{\char 64Begin\penalty 0\{ comment\} @{\tt \char 64Begin\penalty 0\{ comment\} }}{405}
+\indexentry{\char 64End\penalty 0\{ comment\} @{\tt \char 64End\penalty 0\{ comment\} }}{405}
+\indexentry{key@{\tt key}}{405}
+\indexentry{backslash-quote}{405}
+\indexentry{escape sequence}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{bibclean@{\tt bibclean}}{405}
+\indexentry{Scribe@{\sc Scribe}}{405}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{405}
+\indexentry{\char 64String@{\tt \char 64String}}{405}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{405}
+\indexentry{\char 64Preamble\penalty 0\{ ...\} @{\tt \char 64Preamble\penalty 0\{ ...\} }}{405}
+\indexentry{grammar}{405}
+\indexentry{LL(0) grammar}{405}
+\indexentry{grammar!LL(0)}{405}
+\indexentry{Aho, Alfred V.}{405}
+\indexentry{Sethi, Ravi}{405}
+\indexentry{Ullman, Jeffrey D.}{405}
+\indexentry{LL(1)!grammar}{405}
+\indexentry{grammar!LL(1)}{405}
+\indexentry{UNIX@{\sc UNIX}}{406}
+\indexentry{lex@{\tt lex}}{406}
+\indexentry{Lesk, Michael E.}{406}
+\indexentry{Schmidt, Eric}{406}
+\indexentry{yacc@{\tt yacc}}{406}
+\indexentry{Johnson, Steven C.}{406}
+\indexentry{Levine, John R.}{406}
+\indexentry{Mason, Tony}{406}
+\indexentry{Brown, Doug}{406}
+\indexentry{Schreiner, Axel T.}{406}
+\indexentry{Friedman, Jr., H. George}{406}
+\indexentry{Free Software Foundation}{406}
+\indexentry{flex@{\tt flex}}{406}
+\indexentry{bison@{\tt bison}}{406}
+\indexentry{yacc@{\tt yacc}}{406}
+\indexentry{bison@{\tt bison}}{406}
+\indexentry{LALR(1)!parser}{406}
+\indexentry{parser!LALR(1)}{406}
+\indexentry{LR($k$) grammar}{406}
+\indexentry{grammar!LR($k$)}{406}
+\indexentry{Knuth, Donald E.}{406}
+\indexentry{LL(1)!grammar}{406}
+\indexentry{grammar!LL(1)}{406}
+\indexentry{LALR(1)!grammar}{406}
+\indexentry{grammar!LALR(1)}{406}
+\indexentry{comment!syntax}{406}
+\indexentry{Scribe@{\sc Scribe}}{406}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{406}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{406}
+\indexentry{WEB@{\tt WEB}}{406}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{406}
+\indexentry{UNIX@{\sc UNIX}}{406}
+\indexentry{bib@{\tt bib}}{406}
+\indexentry{refer@{\tt refer}}{406}
+\indexentry{Lamport, Leslie}{406}
+\indexentry{ISO10646M character set}{406}
+\indexentry{period!in citation key}{406}
+\indexentry{apostrophe!in citation key}{406}
+\indexentry{error!reporting}{406}
+\indexentry{line!number}{406}
+\indexentry{runaway string argument}{406}
+\indexentry{string!runaway}{406}
+\indexentry{buffer overflow}{406}
+\indexentry{overflow of string buffer}{406}
+\indexentry{\char 64@{\tt \char 64}}{406}
+\indexentry{file!inclusion}{406}
+\indexentry{control sequence!bibliography@{\tt \char 92\relax bibliography}}{406}
+\indexentry{bibliography@{\tt \char 92\relax bibliography}}{406}
+\indexentry{\char 64String\penalty 0\{ ...\} @{\tt \char 64String\penalty 0\{ ...\} }}{406}
+\indexentry{Scribe@{\sc Scribe}}{406}
+\indexentry{grammar!lexical}{407}
+\indexentry{lexical grammar}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{flex@{\tt flex}}{407}
+\indexentry{grammar!size of}{407}
+\indexentry{biblex@{\tt biblex}}{407}
+\indexentry{bibclean@{\tt bibclean}}{407}
+\indexentry{no-prettyprint@{\tt -no-prettyprint}}{407}
+\indexentry{option!no-prettyprint@{\tt -no-prettyprint}}{407}
+\indexentry{bibclean@{\tt bibclean}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{literate programming}{407}
+\indexentry{WEB@{\tt WEB}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{yacc@{\tt yacc}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{\%\%@{\protect\tt \%\%}}{407}
+\indexentry{\%(@{\protect\tt \%\{\iffalse "}\fi}}{407}
+\indexentry{\%)@{\protect\tt \iffalse "{\fi \%\}}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{macro definition!lex@{\tt lex}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{regular expression!syntax of}{407}
+\indexentry{period!in regular expression}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{macro use!lex@{\tt lex}}{407}
+\indexentry{N@{\tt N}}{407}
+\indexentry{macro!N@{\tt N}}{407}
+\indexentry{O@{\tt O}}{407}
+\indexentry{macro!O@{\tt O}}{407}
+\indexentry{Scribe@{\sc Scribe}}{407}
+\indexentry{W@{\tt W}}{407}
+\indexentry{macro!W@{\tt W}}{407}
+\indexentry{horizontal space character}{407}
+\indexentry{formfeed}{407}
+\indexentry{f@{\tt \char 92\relax f}}{407}
+\indexentry{vertical!tab}{407}
+\indexentry{v@{\tt \char 92\relax v}}{407}
+\indexentry{lex@{\tt lex}}{407}
+\indexentry{v@{\tt \char 92\relax v}}{407}
+\indexentry{013@{\tt \char 92\relax 013}}{407}
+\indexentry{carriage return}{407}
+\indexentry{r@{\tt \char 92\relax r}}{407}
+\indexentry{UNIX@{\sc UNIX}}{407}
+\indexentry{Apple Macintosh}{407}
+\indexentry{Macintosh!Apple}{407}
+\indexentry{ANSI/ISO Standard C@ANSI\slash ISO Standard C}{407}
+\indexentry{S@{\tt S}}{407}
+\indexentry{macro!S@{\tt S}}{407}
+\indexentry{format!of grammar rules}{407}
+\indexentry{grammar!format of rules}{407}
+\indexentry{lex@{\tt lex}}{408}
+\indexentry{wrapping!of long lines}{408}
+\indexentry{line!wrapping}{408}
+\indexentry{backslash-newline}{408}
+\indexentry{\char 64@{\tt \char 64}}{408}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{out_token@{\tt out_token()}}{408}
+\indexentry{function!out_token@{\tt out_token()}}{408}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{return@{\tt return}}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{yacc@{\tt yacc}}{408}
+\indexentry{bison@{\tt bison}}{408}
+\indexentry{bibclean@{\tt bibclean}}{408}
+\indexentry{Comment@{\tt Comment}}{408}
+\indexentry{Include@{\tt Include}}{408}
+\indexentry{Preamble@{\tt Preamble}}{408}
+\indexentry{String@{\tt String}}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{last_token@{\tt last_token}}{408}
+\indexentry{variable!last_token@{\tt last_token}}{408}
+\indexentry{out_token@{\tt out_token()}}{408}
+\indexentry{function!out_token@{\tt out_token()}}{408}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{408}
+\indexentry{TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{408}
+\indexentry{terminal!TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{408}
+\indexentry{TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{408}
+\indexentry{terminal!TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{408}
+\indexentry{TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{408}
+\indexentry{terminal!TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{408}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{408}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{408}
+\indexentry{lex@{\tt lex}}{408}
+\indexentry{N@{\tt N}}{408}
+\indexentry{macro!N@{\tt N}}{408}
+\indexentry{abbreviation}{408}
+\indexentry{entry!name}{408}
+\indexentry{field name}{408}
+\indexentry{key name}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{last_object@{\tt last_object}}{408}
+\indexentry{variable!last_object@{\tt last_object}}{408}
+\indexentry{last_token@{\tt last_token}}{408}
+\indexentry{variable!last_token@{\tt last_token}}{408}
+\indexentry{out_token@{\tt out_token()}}{408}
+\indexentry{function!out_token@{\tt out_token()}}{408}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{408}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{408}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{408}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{408}
+\indexentry{TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{408}
+\indexentry{terminal!TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{408}
+\indexentry{TOKEN_FIELD@{\tt TOKEN_FIELD}}{408}
+\indexentry{terminal!TOKEN_FIELD@{\tt TOKEN_FIELD}}{408}
+\indexentry{TOKEN_KEY@{\tt TOKEN_KEY}}{408}
+\indexentry{terminal!TOKEN_KEY@{\tt TOKEN_KEY}}{408}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{408}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{408}
+\indexentry{digit string}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{out_protected_string@{\tt out_protected_string()}}{408}
+\indexentry{function!out_protected_string@{\tt out_protected_string()}}{408}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{408}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{408}
+\indexentry{in-line comment}{408}
+\indexentry{comment!in-line}{408}
+\indexentry{RETURN@{\tt RETURN}}{408}
+\indexentry{macro!RETURN@{\tt RETURN}}{408}
+\indexentry{out_token@{\tt out_token()}}{408}
+\indexentry{function!out_token@{\tt out_token()}}{408}
+\indexentry{TOKEN_INLINE@{\tt TOKEN_INLINE}}{408}
+\indexentry{terminal!TOKEN_INLINE@{\tt TOKEN_INLINE}}{408}
+\indexentry{sharp@sharp ({\tt\char35})}{408}
+\indexentry{string!concatenation operator}{408}
+\indexentry{operator!string concatenation}{408}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_token@{\tt out_token()}}{409}
+\indexentry{function!out_token@{\tt out_token()}}{409}
+\indexentry{TOKEN_SHARP@{\tt TOKEN_SHARP}}{409}
+\indexentry{terminal!TOKEN_SHARP@{\tt TOKEN_SHARP}}{409}
+\indexentry{delimited string}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_string@{\tt out_string()}}{409}
+\indexentry{function!out_string@{\tt out_string()}}{409}
+\indexentry{out_string@{\tt out_string()}}{409}
+\indexentry{function!out_string@{\tt out_string()}}{409}
+\indexentry{embedded quote}{409}
+\indexentry{quote!embedded}{409}
+\indexentry{escape sequence}{409}
+\indexentry{brace}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_rbrace@{\tt out_rbrace()}}{409}
+\indexentry{function!out_rbrace@{\tt out_rbrace()}}{409}
+\indexentry{out_lbrace@{\tt out_lbrace()}}{409}
+\indexentry{function!out_lbrace@{\tt out_lbrace()}}{409}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{409}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{409}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{409}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{409}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{409}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{409}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{Comment@{\tt Comment}}{409}
+\indexentry{Include@{\tt Include}}{409}
+\indexentry{parenthesis}{409}
+\indexentry{brace}{409}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{out_rparen@{\tt out_rparen()}}{409}
+\indexentry{function!out_rparen@{\tt out_rparen()}}{409}
+\indexentry{out_lparen@{\tt out_lparen()}}{409}
+\indexentry{function!out_lparen@{\tt out_lparen()}}{409}
+\indexentry{Scribe@{\sc Scribe}}{409}
+\indexentry{assignment!operator}{409}
+\indexentry{operator!assignment}{409}
+\indexentry{assignment!separator}{409}
+\indexentry{separator!assignment}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_token@{\tt out_token()}}{409}
+\indexentry{function!out_token@{\tt out_token()}}{409}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{409}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{409}
+\indexentry{TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{409}
+\indexentry{terminal!TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{409}
+\indexentry{newline}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_token@{\tt out_token()}}{409}
+\indexentry{function!out_token@{\tt out_token()}}{409}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{409}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{409}
+\indexentry{horizontal space character}{409}
+\indexentry{newline}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_token@{\tt out_token()}}{409}
+\indexentry{function!out_token@{\tt out_token()}}{409}
+\indexentry{TOKEN_SPACE@{\tt TOKEN_SPACE}}{409}
+\indexentry{terminal!TOKEN_SPACE@{\tt TOKEN_SPACE}}{409}
+\indexentry{unclassifiable token}{409}
+\indexentry{token!unclassifiable}{409}
+\indexentry{period!in regular expression}{409}
+\indexentry{newline}{409}
+\indexentry{RETURN@{\tt RETURN}}{409}
+\indexentry{macro!RETURN@{\tt RETURN}}{409}
+\indexentry{out_token@{\tt out_token()}}{409}
+\indexentry{function!out_token@{\tt out_token()}}{409}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{409}
+\indexentry{lex@{\tt lex}}{409}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{409}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{409}
+\indexentry{\char 34@{\tt \char 92\relax \char 34}}{409}
+\indexentry{accent control sequence}{409}
+\indexentry{lex@{\tt lex}}{409}
+\indexentry{NUL (0)!in string}{409}
+\indexentry{0@{\tt \char 92\relax 0}}{409}
+\indexentry{lex@{\tt lex}}{409}
+\indexentry{8-bit clean}{409}
+\indexentry{X/Open Consortium}{409}
+\indexentry{UNIX@{\sc UNIX}}{409}
+\indexentry{grammar!parsing}{410}
+\indexentry{parsing grammar}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{lex@{\tt lex}}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{bison@{\tt bison}}{410}
+\indexentry{grammar!size of}{410}
+\indexentry{space}{410}
+\indexentry{in-line comment}{410}
+\indexentry{comment!in-line}{410}
+\indexentry{bibparse@{\tt bibparse}}{410}
+\indexentry{bibclean@{\tt bibclean}}{410}
+\indexentry{no-prettyprint@{\tt -no-prettyprint}}{410}
+\indexentry{option!no-prettyprint@{\tt -no-prettyprint}}{410}
+\indexentry{biblex@{\tt biblex}}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{literate programming}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{\%\%@{\protect\tt \%\%}}{410}
+\indexentry{\%(@{\protect\tt \%\{\iffalse "}\fi}}{410}
+\indexentry{\%)@{\protect\tt \iffalse "{\fi \%\}}}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{format!of grammar rules}{410}
+\indexentry{grammar!format of rules}{410}
+\indexentry{colon}{410}
+\indexentry{vertical!bar}{410}
+\indexentry{semicolon}{410}
+\indexentry{non-terminal}{410}
+\indexentry{terminal}{410}
+\indexentry{yacc@{\tt yacc}}{410}
+\indexentry{grammar!formatting conventions}{410}
+\indexentry{semicolon}{410}
+\indexentry{\%token@{\tt \%token}}{410}
+\indexentry{bibclean@{\tt bibclean}}{410}
+\indexentry{RETURN@{\tt RETURN}}{410}
+\indexentry{macro!RETURN@{\tt RETURN}}{410}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{410}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{410}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{410}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{410}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{410}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{410}
+\indexentry{TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{410}
+\indexentry{terminal!TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{410}
+\indexentry{TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{410}
+\indexentry{terminal!TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{410}
+\indexentry{TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{410}
+\indexentry{terminal!TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{410}
+\indexentry{TOKEN_FIELD@{\tt TOKEN_FIELD}}{410}
+\indexentry{terminal!TOKEN_FIELD@{\tt TOKEN_FIELD}}{410}
+\indexentry{TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{410}
+\indexentry{terminal!TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{410}
+\indexentry{TOKEN_INLINE@{\tt TOKEN_INLINE}}{410}
+\indexentry{terminal!TOKEN_INLINE@{\tt TOKEN_INLINE}}{410}
+\indexentry{TOKEN_KEY@{\tt TOKEN_KEY}}{410}
+\indexentry{terminal!TOKEN_KEY@{\tt TOKEN_KEY}}{410}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{410}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{410}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{410}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{410}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{410}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{410}
+\indexentry{TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{410}
+\indexentry{terminal!TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{410}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{410}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{410}
+\indexentry{TOKEN_SHARP@{\tt TOKEN_SHARP}}{410}
+\indexentry{terminal!TOKEN_SHARP@{\tt TOKEN_SHARP}}{410}
+\indexentry{TOKEN_SPACE@{\tt TOKEN_SPACE}}{410}
+\indexentry{terminal!TOKEN_SPACE@{\tt TOKEN_SPACE}}{410}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{410}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{410}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{410}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{410}
+\indexentry{precedence declaration}{410}
+\indexentry{\%nonassoc@{\tt \%nonassoc}}{410}
+\indexentry{nonassoc@{\tt \%nonassoc}}{410}
+\indexentry{assignment!operator!associativity of}{410}
+\indexentry{associativity}{410}
+\indexentry{TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{410}
+\indexentry{terminal!TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{410}
+\indexentry{\%left@{\tt \%left}}{410}
+\indexentry{left@{\tt \%left}}{410}
+\indexentry{space!associativity of}{410}
+\indexentry{in-line comment!associativity of}{410}
+\indexentry{comment!in-line!associativity of}{410}
+\indexentry{newline!associativity of}{410}
+\indexentry{TOKEN_INLINE@{\tt TOKEN_INLINE}}{410}
+\indexentry{terminal!TOKEN_INLINE@{\tt TOKEN_INLINE}}{410}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{410}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{410}
+\indexentry{TOKEN_SPACE@{\tt TOKEN_SPACE}}{410}
+\indexentry{terminal!TOKEN_SPACE@{\tt TOKEN_SPACE}}{410}
+\indexentry{\%left@{\tt \%left}}{411}
+\indexentry{left@{\tt \%left}}{411}
+\indexentry{string!concatenation operator}{411}
+\indexentry{operator!string concatenation}{411}
+\indexentry{space!precedence of}{411}
+\indexentry{in-line comment!precedence of}{411}
+\indexentry{comment!in-line!precedence of}{411}
+\indexentry{TOKEN_SHARP@{\tt TOKEN_SHARP}}{411}
+\indexentry{terminal!TOKEN_SHARP@{\tt TOKEN_SHARP}}{411}
+\indexentry{bibtex_file@{\tt bibtex_file} rule}{411}
+\indexentry{non-terminal!bibtex_file@{\tt bibtex_file}}{411}
+\indexentry{object_list@{\tt object_list} rule}{411}
+\indexentry{non-terminal!object_list@{\tt object_list}}{411}
+\indexentry{opt_space@{\tt opt_space} rule}{411}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{411}
+\indexentry{list!of objects}{411}
+\indexentry{object!list}{411}
+\indexentry{opt_space@{\tt opt_space} rule}{411}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{411}
+\indexentry{object@{\tt object} rule}{411}
+\indexentry{non-terminal!object@{\tt object}}{411}
+\indexentry{object_list@{\tt object_list} rule}{411}
+\indexentry{non-terminal!object_list@{\tt object_list}}{411}
+\indexentry{LL(1)!parser}{411}
+\indexentry{parser!LL(1)}{411}
+\indexentry{left-recursive rule}{411}
+\indexentry{Aho, Alfred V.}{411}
+\indexentry{Sethi, Ravi}{411}
+\indexentry{Ullman, Jeffrey D.}{411}
+\indexentry{object}{411}
+\indexentry{\char 64name\{ ...\} @{\tt \char 64name\{ ...\} }}{411}
+\indexentry{\char 64@{\tt \char 64}}{411}
+\indexentry{name@{\tt name}}{411}
+\indexentry{at_object@{\tt at_object} rule}{411}
+\indexentry{non-terminal!at_object@{\tt at_object}}{411}
+\indexentry{opt_space@{\tt opt_space} rule}{411}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{411}
+\indexentry{TOKEN_AT@{\tt TOKEN_AT}}{411}
+\indexentry{terminal!TOKEN_AT@{\tt TOKEN_AT}}{411}
+\indexentry{object@{\tt object} rule}{411}
+\indexentry{non-terminal!object@{\tt object}}{411}
+\indexentry{space!between tokens}{411}
+\indexentry{\char 64@{\tt \char 64}}{411}
+\indexentry{name@{\tt name}}{411}
+\indexentry{\char 64name@{\tt \char 64name}}{411}
+\indexentry{Scribe@{\sc Scribe}}{411}
+\indexentry{name@{\tt name}}{411}
+\indexentry{\char 64@{\tt \char 64}}{411}
+\indexentry{at_object@{\tt at_object} rule}{411}
+\indexentry{non-terminal!at_object@{\tt at_object}}{411}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{411}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{411}
+\indexentry{error@{\tt error} rule}{411}
+\indexentry{non-terminal!error@{\tt error}}{411}
+\indexentry{string@{\tt string} rule}{411}
+\indexentry{non-terminal!string@{\tt string}}{411}
+\indexentry{preamble@{\tt preamble} rule}{411}
+\indexentry{non-terminal!preamble@{\tt preamble}}{411}
+\indexentry{include@{\tt include} rule}{411}
+\indexentry{non-terminal!include@{\tt include}}{411}
+\indexentry{entry@{\tt entry} rule}{411}
+\indexentry{non-terminal!entry@{\tt entry}}{411}
+\indexentry{comment@{\tt comment} rule}{411}
+\indexentry{non-terminal!comment@{\tt comment}}{411}
+\indexentry{at_object@{\tt at_object} rule}{411}
+\indexentry{non-terminal!at_object@{\tt at_object}}{411}
+\indexentry{Comment@{\tt Comment}}{411}
+\indexentry{Include@{\tt Include}}{411}
+\indexentry{Preamble@{\tt Preamble}}{411}
+\indexentry{String@{\tt String}}{411}
+\indexentry{Article@{\tt Article}}{411}
+\indexentry{Book@{\tt Book}}{411}
+\indexentry{error@{\tt error} rule}{411}
+\indexentry{non-terminal!error@{\tt error}}{411}
+\indexentry{yacc@{\tt yacc}}{411}
+\indexentry{bison@{\tt bison}}{411}
+\indexentry{at_object@{\tt at_object} rule}{411}
+\indexentry{non-terminal!at_object@{\tt at_object}}{411}
+\indexentry{error!message}{411}
+\indexentry{message!error}{411}
+\indexentry{error!recovery}{411}
+\indexentry{recovery!from error}{411}
+\indexentry{assignment!rule!error recovery in}{411}
+\indexentry{comment!entry}{411}
+\indexentry{\char 64Comment\penalty 0\{ ...\} @{\tt \char 64Comment\penalty 0\{ ...\} }}{411}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{412}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{412}
+\indexentry{terminal!TOKEN_COMMENT@{\tt TOKEN_COMMENT}}{412}
+\indexentry{comment@{\tt comment} rule}{412}
+\indexentry{non-terminal!comment@{\tt comment}}{412}
+\indexentry{bibliography!entry}{412}
+\indexentry{citation!key}{412}
+\indexentry{comma}{412}
+\indexentry{list!of assignments}{412}
+\indexentry{assignment!list}{412}
+\indexentry{trailing context}{412}
+\indexentry{entry_head@{\tt entry_head} rule}{412}
+\indexentry{non-terminal!entry_head@{\tt entry_head}}{412}
+\indexentry{key_name@{\tt key_name} rule}{412}
+\indexentry{non-terminal!key_name@{\tt key_name}}{412}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{412}
+\indexentry{terminal!TOKEN_ENTRY@{\tt TOKEN_ENTRY}}{412}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{412}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{412}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{assignment_list@{\tt assignment_list} rule}{412}
+\indexentry{non-terminal!assignment_list@{\tt assignment_list}}{412}
+\indexentry{entry_head@{\tt entry_head} rule}{412}
+\indexentry{non-terminal!entry_head@{\tt entry_head}}{412}
+\indexentry{entry@{\tt entry} rule}{412}
+\indexentry{non-terminal!entry@{\tt entry}}{412}
+\indexentry{opt_space@{\tt opt_space}}{412}
+\indexentry{assignment_list@{\tt assignment_list}}{412}
+\indexentry{LALR(1)!grammar}{412}
+\indexentry{grammar!LALR(1)}{412}
+\indexentry{yacc@{\tt yacc}}{412}
+\indexentry{bison@{\tt bison}}{412}
+\indexentry{key name}{412}
+\indexentry{newline}{412}
+\indexentry{in-line comment}{412}
+\indexentry{comment!in-line}{412}
+\indexentry{citation!key!problems in recognizing}{412}
+\indexentry{trailing context}{412}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{412}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{412}
+\indexentry{TOKEN_KEY@{\tt TOKEN_KEY}}{412}
+\indexentry{terminal!TOKEN_KEY@{\tt TOKEN_KEY}}{412}
+\indexentry{key_name@{\tt key_name} rule}{412}
+\indexentry{non-terminal!key_name@{\tt key_name}}{412}
+\indexentry{file!inclusion}{412}
+\indexentry{Include@{\tt Include}}{412}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{412}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{412}
+\indexentry{terminal!TOKEN_INCLUDE@{\tt TOKEN_INCLUDE}}{412}
+\indexentry{include@{\tt include} rule}{412}
+\indexentry{non-terminal!include@{\tt include}}{412}
+\indexentry{file!name!syntax of}{412}
+\indexentry{file!name!space in}{412}
+\indexentry{bibclean@{\tt bibclean}}{412}
+\indexentry{Preamble@{\tt Preamble}}{412}
+\indexentry{.bbl@{\tt .bbl}}{412}
+\indexentry{file!.bbl@{\tt .bbl}}{412}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{value@{\tt value} rule}{412}
+\indexentry{non-terminal!value@{\tt value}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{412}
+\indexentry{terminal!TOKEN_PREAMBLE@{\tt TOKEN_PREAMBLE}}{412}
+\indexentry{preamble@{\tt preamble} rule}{412}
+\indexentry{non-terminal!preamble@{\tt preamble}}{412}
+\indexentry{String@{\tt String}}{412}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{412}
+\indexentry{assignment@{\tt assignment} rule}{412}
+\indexentry{non-terminal!assignment@{\tt assignment}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{TOKEN_STRING@{\tt TOKEN_STRING}}{412}
+\indexentry{terminal!TOKEN_STRING@{\tt TOKEN_STRING}}{412}
+\indexentry{string@{\tt string} rule}{412}
+\indexentry{non-terminal!string@{\tt string}}{412}
+\indexentry{value}{412}
+\indexentry{string!concatenation operator}{412}
+\indexentry{operator!string concatenation}{412}
+\indexentry{simple_value@{\tt simple_value} rule}{412}
+\indexentry{non-terminal!simple_value@{\tt simple_value}}{412}
+\indexentry{TOKEN_SHARP@{\tt TOKEN_SHARP}}{412}
+\indexentry{terminal!TOKEN_SHARP@{\tt TOKEN_SHARP}}{412}
+\indexentry{opt_space@{\tt opt_space} rule}{412}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{412}
+\indexentry{simple_value@{\tt simple_value} rule}{412}
+\indexentry{non-terminal!simple_value@{\tt simple_value}}{412}
+\indexentry{value@{\tt value} rule}{412}
+\indexentry{non-terminal!value@{\tt value}}{412}
+\indexentry{simple value}{413}
+\indexentry{delimited string}{413}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{413}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{413}
+\indexentry{abbreviation}{413}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{TOKEN_VALUE@{\tt TOKEN_VALUE}}{413}
+\indexentry{terminal!TOKEN_VALUE@{\tt TOKEN_VALUE}}{413}
+\indexentry{simple_value@{\tt simple_value} rule}{413}
+\indexentry{non-terminal!simple_value@{\tt simple_value}}{413}
+\indexentry{comma!optional after assignment}{413}
+\indexentry{entry@{\tt entry} rule}{413}
+\indexentry{non-terminal!entry@{\tt entry}}{413}
+\indexentry{TOKEN_COMMA@{\tt TOKEN_COMMA}}{413}
+\indexentry{terminal!TOKEN_COMMA@{\tt TOKEN_COMMA}}{413}
+\indexentry{opt_space@{\tt opt_space} rule}{413}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{413}
+\indexentry{assignment_list@{\tt assignment_list} rule}{413}
+\indexentry{non-terminal!assignment_list@{\tt assignment_list}}{413}
+\indexentry{assignment@{\tt assignment} rule}{413}
+\indexentry{non-terminal!assignment@{\tt assignment}}{413}
+\indexentry{assignment_list@{\tt assignment_list} rule}{413}
+\indexentry{non-terminal!assignment_list@{\tt assignment_list}}{413}
+\indexentry{assignment}{413}
+\indexentry{assignment!operator}{413}
+\indexentry{operator!assignment}{413}
+\indexentry{value@{\tt value} rule}{413}
+\indexentry{non-terminal!value@{\tt value}}{413}
+\indexentry{TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{413}
+\indexentry{terminal!TOKEN_EQUALS@{\tt TOKEN_EQUALS}}{413}
+\indexentry{opt_space@{\tt opt_space} rule}{413}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{413}
+\indexentry{assignment_lhs@{\tt assignment_lhs} rule}{413}
+\indexentry{non-terminal!assignment_lhs@{\tt assignment_lhs}}{413}
+\indexentry{assignment@{\tt assignment} rule}{413}
+\indexentry{non-terminal!assignment@{\tt assignment}}{413}
+\indexentry{assignment_list@{\tt assignment_list}}{413}
+\indexentry{field name}{413}
+\indexentry{author@{\tt author}}{413}
+\indexentry{title@{\tt title}}{413}
+\indexentry{abbreviation}{413}
+\indexentry{TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{terminal!TOKEN_ABBREV@{\tt TOKEN_ABBREV}}{413}
+\indexentry{TOKEN_FIELD@{\tt TOKEN_FIELD}}{413}
+\indexentry{terminal!TOKEN_FIELD@{\tt TOKEN_FIELD}}{413}
+\indexentry{assignment_lhs@{\tt assignment_lhs} rule}{413}
+\indexentry{non-terminal!assignment_lhs@{\tt assignment_lhs}}{413}
+\indexentry{empty!string}{413}
+\indexentry{/*...*/@{\tt /*...*/}}{413}
+\indexentry{space@{\tt space} rule}{413}
+\indexentry{non-terminal!space@{\tt space}}{413}
+\indexentry{/* empty */@{\tt /* empty */} rule}{413}
+\indexentry{non-terminal!/* empty */@{\tt /* empty */}}{413}
+\indexentry{opt_space@{\tt opt_space} rule}{413}
+\indexentry{non-terminal!opt_space@{\tt opt_space}}{413}
+\indexentry{space}{413}
+\indexentry{single_space@{\tt single_space} rule}{413}
+\indexentry{non-terminal!single_space@{\tt single_space}}{413}
+\indexentry{space@{\tt space} rule}{413}
+\indexentry{non-terminal!space@{\tt space}}{413}
+\indexentry{single space}{413}
+\indexentry{space}{413}
+\indexentry{in-line comment}{413}
+\indexentry{comment!in-line}{413}
+\indexentry{newline}{413}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{413}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{413}
+\indexentry{TOKEN_INLINE@{\tt TOKEN_INLINE}}{413}
+\indexentry{terminal!TOKEN_INLINE@{\tt TOKEN_INLINE}}{413}
+\indexentry{TOKEN_SPACE@{\tt TOKEN_SPACE}}{413}
+\indexentry{terminal!TOKEN_SPACE@{\tt TOKEN_SPACE}}{413}
+\indexentry{single_space@{\tt single_space} rule}{413}
+\indexentry{non-terminal!single_space@{\tt single_space}}{413}
+\indexentry{TOKEN_SPACE@{\tt TOKEN_SPACE}}{413}
+\indexentry{terminal!TOKEN_SPACE@{\tt TOKEN_SPACE}}{413}
+\indexentry{TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{413}
+\indexentry{terminal!TOKEN_NEWLINE@{\tt TOKEN_NEWLINE}}{413}
+\indexentry{mismatched delimiters}{413}
+\indexentry{delimiters!mismatched}{413}
+\indexentry{yacc@{\tt yacc}}{413}
+\indexentry{yacc@{\tt yacc}}{413}
+\indexentry{TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{414}
+\indexentry{terminal!TOKEN_LBRACE@{\tt TOKEN_LBRACE}}{414}
+\indexentry{TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{414}
+\indexentry{terminal!TOKEN_RBRACE@{\tt TOKEN_RBRACE}}{414}
+\indexentry{TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{414}
+\indexentry{terminal!TOKEN_LITERAL@{\tt TOKEN_LITERAL}}{414}
+\indexentry{trailing context}{414}
+\indexentry{source code}{414}
+\indexentry{documentation}{414}
+\indexentry{bibclean@{\tt bibclean}}{414}
+\indexentry{bibclean@{\tt bibclean}}{414}
+\indexentry{lex@{\tt lex}}{414}
+\indexentry{flex@{\tt flex}}{414}
+\indexentry{yacc@{\tt yacc}}{414}
+\indexentry{bison@{\tt bison}}{414}
+\indexentry{anonymous ftp@anonymous {\tt ftp}}{414}
+\indexentry{ftp@{\tt ftp}}{414}
+\indexentry{ftp.math.utah.edu@{\tt ftp.math.utah.edu}}{414}
+\indexentry{file!ftp.math.utah.edu@{\tt ftp.math.utah.edu}}{414}
+\indexentry{pub/tex/bib@{\tt pub/tex/bib}}{414}
+\indexentry{file!pub/tex/bib@{\tt pub/tex/bib}}{414}
+\indexentry{Internet archive hosts}{414}
+\indexentry{archive hosts!Internet}{414}
+\indexentry{bibclean@{\tt bibclean}}{414}
+\indexentry{ftp@{\tt ftp}}{414}
+\indexentry{electronic mail server}{414}
+\indexentry{tuglib\char 64math.utah.edu@{\tt tuglib\char 64math.utah.edu}}{414}
+\indexentry{file!tuglib\char 64math.utah.edu@{\tt tuglib\char 64math.utah.edu}}{414}
+\indexentry{send@{\tt send}}{414}
+\indexentry{help@{\tt help}}{414}
+\indexentry{bibclean@{\tt bibclean}}{414}
+\indexentry{testing}{414}
+\indexentry{trip@{\tt trip}}{414}
+\indexentry{trap@{\tt trap}}{414}
+\indexentry{command-line options|see{options}}{415}
+\indexentry{concatenation|see{string}}{415}
+\indexentry{editor|see{Emacs}}{415}
+\indexentry{lexer|see{lexical analyzer}}{415}
+\indexentry{macro|seealso{control sequence}}{415}
+\indexentry{run-time options|see{options}}{415}
+\indexentry{text editor|see{Emacs}}{415}
+\indexentry{token|see{terminal}}{415}
+\indexentry{Scribe@{\sc Scribe}}{417}

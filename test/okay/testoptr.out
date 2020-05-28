@@ -1,0 +1,50 @@
+@Book{x,
+  title =        "The {ExCeLeNt} Program",
+  booktitle =    "The {ExCeLeNt} Program",
+}
+
+@Book{x,
+  title =        "{3. [i.e., drei] Fachtagung {\"u}ber
+                 Programmiersprachen, Kiel, 5.--7. Marz 1974. (German)
+                 [Third Technical Conference on Programming Languages,
+                 Kiel, 5--7 March, 1974]}",
+}
+
+@Book{x,
+  title =        "Logic of programs: workshop, {ETH Z{\"u}rich,
+                 May--July 1979}",
+}
+
+@Proceedings{x,
+  title =        "{Advances in database technology, EDBT '88:
+                 International Conference on Extending Database
+                 Technology, Venice, Italy, March 14--18, 1988,
+                 proceedings}",
+}
+
+@Proceedings{x,
+  title =        "{CONPAR} 90-{VAPP IV}: Joint International Conference
+                 on Vector and Parallel Processing, {Z}{\"u}rich,
+                 Switzerland, September 10--13, 1990: proceedings",
+}
+
+@Proceedings{x,
+  title =        "{CONPAR 90-VAPP IV: Joint International Conference on
+                 Vector and Parallel Processing, Z{\"u}rich,
+                 Switzerland, September 10--13, 1990: proceedings}",
+}
+
+@Proceedings{x,
+  title =        "{Advances in computing and information --- ICCI '90}",
+}
+
+@Book{x,
+  title =        "{Text understanding in LILOG: integrating
+                 computational linguistics and artificial intelligence:
+                 final report on the IBM Germany LILOG-project}",
+}
+
+@Book{x,
+  title =        "{Dynamic $3$D Imaging: DAGM 2009 Workshop, Dyn3D 2009,
+                 Jena, Germany, September 9, 2009. Proceedings}",
+}

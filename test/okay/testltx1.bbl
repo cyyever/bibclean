@@ -1,0 +1,1149 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{ANGK{\etalchar{+}}87}
+
+\bibitem[AB70]{Appelquist:70}
+T.~W. Appelquist and S.~J. Brodsky.
+\newblock The order $\alpha^{2}$ electrodynamic corrections to the {Lamb}
+  shift.
+\newblock {\em Phys. Rev. Letters}, 24:562--565, 1970.
+
+\bibitem[AB83]{Adkins:83a}
+G.~S. Adkins and F.~R. Brown.
+\newblock Rate for positronium decay to five photons.
+\newblock {\em Phys. Rev. A}, 28:1164--1165, 1983.
+
+\bibitem[AB89]{Autin:89}
+B.~Autin and J.~Bengtsson.
+\newblock Symbolic evaluation of integrals occurring in accelerator orbit
+  theory.
+\newblock {\em J. Symbolic Computation}, 7(2):183--187, February 1989.
+
+\bibitem[Abb87]{Abbott:87a}
+J.~A. Abbott.
+\newblock Integration: Solving the {Risch} differential equation.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 465--467. Springer-Verlag, 1987.
+
+\bibitem[Abb88]{Abbott:88}
+J.~A. Abbott.
+\newblock {\em Factorisation of Polynomials over Algebraic Number Fields}.
+\newblock PhD thesis, Univ. of Bath, England, 1988.
+
+\bibitem[Abb89]{Abbott:89}
+J.~A. Abbott.
+\newblock Recovery of algebraic numbers from their p-adic approximations.
+\newblock In {\em Proc. of {ISSAC} '89}, pages 112--120. {ACM} Press, New York,
+  1989.
+
+\bibitem[ABD85]{Abbott:85}
+J.~A. Abbott, R.~J. Bradford, and J.~H. Davenport.
+\newblock A remark on factorisation.
+\newblock {\em {SIGSAM} Bulletin}, 19(2):31--33, May 1985.
+
+\bibitem[ABD86a]{Abbott:86}
+J.~A. Abbott, R.~J. Bradford, and J.~H. Davenport.
+\newblock The {Bath} algebraic number package.
+\newblock In {\em Proc. of {SYMSAC} '86}, pages 250--253, 1986.
+
+\bibitem[ABD86b]{Arbuzov:86}
+B.~A. Arbuzov, E.~E. Boos, and A.~I. Davydychev.
+\newblock Infrared asymptotics of gluonic {Green} functions in covariant gauge.
+\newblock Preprint 86-123, IHEP, 1986.
+
+\bibitem[ABD89]{Abbott:89a}
+J.~A. Abbott, R.~J. Bradford, and J.~H. Davenport.
+\newblock A remark on the multiplication of sparse polynomials.
+\newblock Technical Report TR 89-21, School of Mathematical Sciences,
+  University of Bath, 1989.
+
+\bibitem[ABDK69]{Aldins:69}
+J.~Aldins, S.~J. Brodsky, A.~J. Dufner, and T.~Kinoshita.
+\newblock Photon-photon scattering contribution to the sixth order magnetic
+  moments of the muon and electron.
+\newblock {\em Phys. Rev. Lett.}, 23:441--443, 1969.
+
+\bibitem[{Abi}83]{Abiezzi:83}
+Salim~S. {Abi-Ezzi}.
+\newblock Clarification to the symbolic mode in {REDUCE}.
+\newblock {\em {SIGSAM} Bulletin}, 17(3 and 4):43--47, August and November
+  1983.
+
+\bibitem[AD87]{Abbott:87}
+J.~A. Abbott and J.~H. Davenport.
+\newblock Polynomial factorization: An exploration of {Lenstra's} algorithm.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 391--402. Springer-Verlag, 1987.
+
+\bibitem[AD88]{Abbott:88a}
+J.~A. Abbott and J.~H. Davenport.
+\newblock A remark on a paper by {Wang}: Another surprising property of 42.
+\newblock {\em Math. Comp.}, 51:837--839, 1988.
+
+\bibitem[Ada83]{Adams:83}
+K.~J. Adams.
+\newblock Analytic estimates for the dynamic aperture of nonlinear lattices.
+\newblock {\em IEEE Trans. Nucl. Sci.}, NS-30:2436--2438, 1983.
+
+\bibitem[ADB{\etalchar{+}}84a]{Aurenche:84}
+P.~Aurenche, A.~Douir, R.~Baier, M.~Fontannaz, and D.~Schiff.
+\newblock Photoproduction of hadrons at large transverse momentum in second
+  order {QCD}.
+\newblock {\em Phys. Lett.}, 135B:164--168, 1984.
+
+\bibitem[ADB{\etalchar{+}}84b]{Aurenche:84a}
+P.~Aurenche, A.~Douir, R.~Baier, M.~Fontannaz, and D.~Schiff.
+\newblock Prompt photon production at large $p_{\tau}$ in {GCD} beyond the
+  leading order.
+\newblock {\em Phys. Lett.}, 140B:87--92, 1984.
+
+\bibitem[Adk83]{Adkins:83}
+G.~S. Adkins.
+\newblock Analytic evaluation of an {O}($\alpha$) vertex correction to the rate
+  of orthopositronium.
+\newblock {\em Phys. Rev. A}, 27:530--532, 1983.
+
+\bibitem[Adk85]{Adkins:85}
+G.~S. Adkins.
+\newblock Inner-vertex contributions to the decay rate of orthopositronium.
+\newblock {\em Phys. Rev. A}, 31:1250--1252, 1985.
+
+\bibitem[AE86]{Alekseev:86}
+A.~I. Alekseev and V.~F. Edneral.
+\newblock Tensor structure of axial gauge polarization operator in the infrared
+  region.
+\newblock Preprint 86-46, IHEP, 1986.
+
+\bibitem[AE87a]{Alekseev:87a}
+A.~I. Alekseev and V.~F. Edneral.
+\newblock On evaluation of {Feynman} integrals in axial gauge.
+\newblock Preprint 87-118, IHEP, 1987.
+
+\bibitem[AE87b]{Alekseev:87}
+A.~I. Alekseev and V.~F. Edneral.
+\newblock Tensor structure of gluon polarization operator in the axial gauge
+  for infra-red region.
+\newblock {\em Journal of Nuclear Physics}, pages 1105--1114, 1987.
+
+\bibitem[AH73]{Atherton:73}
+R.~W. Atherton and G.~M. Homsey.
+\newblock Use of symbolic computation to generate evolution equations and
+  asymptotic solutions to elliptic equations.
+\newblock {\em Journ. Comp. Phys.}, 1:45--59, 1973.
+
+\bibitem[Alf82]{Alfeld:82}
+P.~Alfeld.
+\newblock Fixed point iteration with inexact function values.
+\newblock {\em Math. Comp.}, 38:87--98, 1982.
+
+\bibitem[ANGK{\etalchar{+}}87]{Aguilera-Navarro:87}
+V.~C. Aguilera-Navarro, R.~Guardiola, C.~Keller, M.~de~Llano, M.~Popovic, and
+  M.~Fortes.
+\newblock Van der {Waals} perturbation theory for fermion and boson
+  ground-state matter.
+\newblock {\em Phys. Rev. A}, 35:563--584, 1987.
+
+\bibitem[ANK81]{Aso:81}
+T.~Aso, T.~Nonoyama, and S.~Kato.
+\newblock Numerical simulation of semidiurnal atmospheric tides.
+\newblock {\em J. Geophysical R.}, 86(11):388--400, 1981.
+
+\bibitem[ASW89]{Antweiler:89}
+Werner Antweiler, Andreas Strotmann, and Volker Winkelmann.
+\newblock A {\TeX-{reduce}-interface}.
+\newblock {\em SIGSAM Bulletin}, 23:26--33, February 1989.
+
+\bibitem[AW88]{Abdali:88}
+S.~K. Abdali and D.~S. Wise.
+\newblock Experiments with quadtree representation of matrices.
+\newblock In {\em Proc. of {ISSAC} '88}, volume 358, pages 96--108.
+  Springer-Verlag, 1988.
+
+\bibitem[AZZ87]{Amirkhanov:87}
+I.~V. Amirkhanov, E.~P. Zhydkov, and I.~E. Zhydkova.
+\newblock The conditions of bounding of the oscillation amplitudes of charge
+  particle within the resonance vicinity investigations.
+\newblock Technical Report P11-87-452, J.I.N.R., Dubna, 1987.
+
+\bibitem[BBA73]{Barthes-Biesel:73}
+D.~Barthes-Biesel and A.~Acrivos.
+\newblock On computer generated analytic solutions to the equations of fluid
+  mechanics, the case of creeping flows.
+\newblock {\em Journ. Comp. Phys.}, 3:403--411, 1973.
+
+\bibitem[BBF{\etalchar{+}}82]{Baker:81}
+G.~A. Baker, L.~P. Benofy, M.~Fortes, M.~de~Llano, S.~M. Peltier, and
+  A.~Plastino.
+\newblock Hard-core square-well fermion.
+\newblock {\em Phys. Rev. A}, 26:3575--3588, 1982.
+
+\bibitem[BBR85]{Bessis:85}
+N.~Bessis, G.~Bessis, and D.~Roux.
+\newblock Closed-form expressions for the {Dirac-Coulomb} radial $r^{t}$
+  integrals.
+\newblock {\em Phys. Rev. A}, 32:2044--2050, 1985.
+
+\bibitem[BC81]{Bordoni:81}
+Luciana Bordoni and Attilio Colagrossi.
+\newblock An application of {REDUCE} to industrial mechanics.
+\newblock {\em {SIGSAM} Bulletin}, 15(2):8--12, May 1981.
+
+\bibitem[BC90]{Bittencourt:90}
+Guilherme Bittencourt and Jacques Calmet.
+\newblock Integrating computer algebra and knowledge representation.
+\newblock Preprint, {Universit\"{a}t} Karlsruhe Institut {f\"{u}r} Algorithmen
+  und Kognitive Systeme, 1990.
+
+\bibitem[BCDS87]{Brackx:87a}
+F.~Brackx, D.~Constales, R.~Delanghe, and H.~Serras.
+\newblock {Clifford} algebra with {REDUCE}.
+\newblock {\em Rend. Circ. Mat. Palermo, Ser. II}, 16:11--19, 1987.
+
+\bibitem[BCRS89]{Brackx:89}
+F.~Brackx, D.~Constales, A.~Ronveaux, and H.~Serras.
+\newblock On the harmonic and monogenic decomposition of polynomials.
+\newblock {\em J. Symbolic Computation}, 8(3):297--304, September 1989.
+
+\bibitem[BCTC75]{Biswas:75}
+S.~N. Biswas, S.~R. Chaudhuri, K.~S. Taank, and J.~A. Campbell.
+\newblock Neutrino production in stellar matter by photons in a renormalizable
+  scalar-boson-exchange model of weak interactions.
+\newblock {\em Phys. Rev. D}, 8:2523--2525, 1975.
+
+\bibitem[BD88]{Bradford:88}
+R.~J. Bradford and J.~H. Davenport.
+\newblock Effective tests for cyclotomic polynomials.
+\newblock In {\em Proc. of {ISSAC} '88}, volume 358, pages 244--251.
+  Springer-Verlag, 1988.
+
+\bibitem[BDM{\etalchar{+}}87]{Bowyer:87}
+A.~Bowyer, J.~H. Davenport, P.~S. Milne, J.~A. Padget, and A.~F. Wallis.
+\newblock Applications of computer algebra in solid modelling.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 244--245. Springer-Verlag, 1987.
+
+\bibitem[BDS]{Bennett}
+J.~P. Bennett, J.~H. Davenport, and H.~M. Sauro.
+\newblock Solution of some equations in biochemistry.
+\newblock Technical Report 88-12, School of Mathematical Sciences, University
+  of Bath, England.
+
+\bibitem[BG87]{Baekler:87a}
+P.~Baekler and M.~Guerses.
+\newblock Exact solutions of the {Poincar\'{e}} gauge theory from its
+  linearized field equations.
+\newblock {\em Lett. Math. Phys.}, 14:185--191, 1987.
+
+\bibitem[BGH88]{Baekler:88b}
+P.~Baekler, M.~Guerses, and F.~W. Hehl.
+\newblock A new method to solve the field equations of {Poincar\'{e}} gauge
+  theories.
+\newblock {\em Class. Quantum Grav.}, 1988.
+
+\bibitem[BGHM88]{Baekler:88a}
+P.~Baekler, M.~Guerses, F.~W. Hehl, and J.~D. McCrea.
+\newblock The exterior gravitational field of a charged spinning source in the
+  {Poincar\'{e}} gauge theory: A {Kerr-Newman} metric with dynamic torsion.
+\newblock {\em Phys. Lett.}, A128:245--250, 1988.
+
+\bibitem[BGJ72]{Brodsky:72a}
+S.~J. Brodsky, J.~F. Gunion, and R.~L. Jaffe.
+\newblock Test for fractionally charged partons from deep-inelastic
+  bremsstrahlung in the scaling region.
+\newblock {\em Phys. Rev. D}, 6:2487--2494, 1972.
+
+\bibitem[BGK86]{Boege:86}
+W.~Boege, R.~Gebauer, and H.~Kredel.
+\newblock Some examples for solving systems of algebraic equations by
+  calculating {Groebner} bases.
+\newblock {\em J. Symbolic Computation}, 2(1):83--98, March 1986.
+
+\bibitem[BGKN89]{Berkovich:89}
+L.M. Berkovich, V.P. Gerdt, Z.T. Kostova, and M.L. Nechaevsky.
+\newblock Second order reducible linear differential equations.
+\newblock Preprint E5-89-141, J.I.N.R., Dubna, 1989.
+
+\bibitem[BH72]{Barton:72}
+David Barton and Anthony~C. Hearn.
+\newblock Comment on problem \#2 - the {Y(2n)} functions.
+\newblock {\em SIGSAM Bulletin}, 15, 1972.
+
+\bibitem[BH79]{Brown:79}
+W.~S. Brown and A.~C. Hearn.
+\newblock Applications of symbolic algebraic computation.
+\newblock {\em Comp. Phys. Comm.}, 17:207--215, 1979.
+
+\bibitem[BH84a]{Baekler:84}
+P.~Baekler and F.~W. Hehl.
+\newblock A charged {Taub-NUT} metric with torsion: A new axially symmetric
+  solution of the {Poincar\'{e}} gauge field theory.
+\newblock {\em Phys. Lett.}, 100A:277--316, 1984.
+
+\bibitem[BH84b]{Baekler:84a}
+Peter Baekler and Friedrich~W. Hehl.
+\newblock On the dynamics of the torsion of spacetime: Exact solutions in a
+  gauge theoretical model of gravity.
+\newblock Technical Report UCLA/84/TEP/19, Department of Physics, University of
+  California, Los Angeles, December 1984.
+
+\bibitem[BH88]{Bogdanova:88}
+N.~Bogdanova and H.~Hogreve.
+\newblock A {REDUCE} package for exact {Coulomb} interaction matrix elements.
+\newblock {\em Comp. Phys. Commun.}, 48(2):319--326, February 1988.
+
+\bibitem[BHHS87]{Baekler:87}
+P.~Baekler, R.~Hecht, F.~W. Hehl, and T.~Shirafuji.
+\newblock Mass and spin of exact solutions of the {Poincar\'{e}} gauge theory.
+\newblock {\em Prog. Theor. Phys.}, 78:16--21, 1987.
+
+\bibitem[BHM86]{Baekler:86}
+P.~Baekler, F.~W. Hehl, and E.~W. Mielke.
+\newblock Nonmetricity and torsion: Facts and fancies in gauge approaches to
+  gravity.
+\newblock In R.~Ruffini, editor, {\em Proc. 4th Marcel Grossmann Meeting on
+  General Relativity, ed.}, pages 277--316. North-Holland, Amsterdam, 1986.
+
+\bibitem[BHP62]{Brodsky:62}
+S.~J. Brodsky, A.~C. Hearn, and R.~G. Parsons.
+\newblock Determination of the real part of the {Compton} amplitude at a
+  nucleon resonance.
+\newblock {\em Phys. Rev.}, 187:1899--1904, 1962.
+
+\bibitem[BHPS86]{Bradford:86}
+R.~J. Bradford, A.~C. Hearn, J.~A. Padget, and E.~{Schr\"{u}fer}.
+\newblock Enlarging the {REDUCE} domain of computation.
+\newblock In {\em Proc. of {SYMSAC} '86}, pages 100--106, 1986.
+
+\bibitem[Bir77]{Birrell:77}
+N.~D. Birrell.
+\newblock The application of adiabatic regularization to calculations of
+  cosmological interest.
+\newblock Technical report, Dept. Math, King's College, London, 1977.
+
+\bibitem[BJ87]{Bryan-Jones:87}
+Jane Bryan-Jones.
+\newblock A tutorial in computer algebra for statisticians.
+\newblock {\em The Professional Statistician}, 6(6):TBD, December 1987.
+
+\bibitem[BKdCW81]{Berends:81}
+A.~Berends, R.~Kleiss, P.~de~Causmaecher, and T.~T. Wu.
+\newblock Single bremsstrahlung process in gauge theories.
+\newblock {\em Phys. Lett.}, 103B:124--128, 1981.
+
+\bibitem[BLMN78]{Billoire:78}
+A.~Billoire, R.~Lacaze, A.~Morel, and H.~Navelet.
+\newblock The {OZI} rule violating radiative decays of the heavy pseudoscalars.
+\newblock Report DpH-T 43/78, {CEN}-Saclay, 1978.
+
+\bibitem[BMH87]{Baekler:87b}
+P.~Baekler, E.~W. Mielke, and F.~W. Hehl.
+\newblock Kinky torsion in a {Poincar\'{e}} gauge model of gravity coupled to a
+  massless scalar field.
+\newblock {\em Nuclear Phys.}, B288:800--812, 1987.
+
+\bibitem[BNdP{\etalchar{+}}87]{Biro:87}
+T.~S. Biro, K.~Niita, A.~L. de~Paoli, W.~Bauer, W.~Cassing, and U.~Mosel.
+\newblock Microscopic theory of photon production in proton-nucleus and
+  nucleus-nucleus collisions.
+\newblock {\em Nuclear Physics}, 475A:579--597, December 1987.
+
+\bibitem[BOH78]{Bajla:78}
+I.~Bajla, G.~A. Ososkov, and A.~C. Hearn.
+\newblock The orthogonalization program of polynomials in two variables in
+  {REDUCE}-2 language.
+\newblock Report P10-11944, J.I.N.R., Dubna, 1978.
+
+\bibitem[Boy78]{Boyd:78}
+John~P. Boyd.
+\newblock The effects of latitudinal shear on equatorial waves, part {I}:
+  Theory and methods.
+\newblock Preprint, Dept. of Atmos. and Oceanic Science, Univ. of Michigan,
+  January 1978.
+
+\bibitem[BPV78]{Balian:78}
+R.~Balian, G.~Parisi, and A.~Voros.
+\newblock Quartic oscillator.
+\newblock In {\em Proc. of the Colloq. on Mathematical Problems in {Feynman}
+  Path Integrals, Marseille}, May 1978.
+
+\bibitem[BR72]{Brodsky:72b}
+S.~J. Brodsky and R.~Roskies.
+\newblock Quantum electrodynamics and renormalization theory in the infinite
+  momentum frame.
+\newblock {\em Phys. Lett.}, 41B:517--520, 1972.
+
+\bibitem[Bro69]{Brodsky:69}
+S.~J. Brodsky.
+\newblock Status of quantum electrodynamics.
+\newblock In {\em Proc. International Symposium on Electron and Photon
+  Interactions at High Energies, Liverpool, England}, 1969.
+
+\bibitem[Bro70]{Brodsky:70}
+S.~J. Brodsky.
+\newblock Quantum electrodynamic theory: Its relation to precision low energy
+  experiments.
+\newblock Report SLAC-PUB-795, SLAC, August 1970.
+
+\bibitem[Bro71]{Brodsky:71}
+S.~J. Brodsky.
+\newblock Algebraic computation techniques in quantum electrodynamics.
+\newblock In {\em Proc. {2nd} Computing Methods in Theoretical Physics,
+  Marseilles}, volume~II, pages IV--1--IV--27, 1971.
+
+\bibitem[Bro72]{Brodsky:72}
+S.~J. Brodsky.
+\newblock Atomic physics and quantum electrodynamics in the infinite momentum
+  frame.
+\newblock Report SLAC-PUB-1118, SLAC, August 1972.
+
+\bibitem[Bro82]{Broughan:82}
+K.~A. Broughan.
+\newblock {Grad-Fokker-Planck} plasma equations. part 1. {Collision} moments.
+\newblock {\em J. Plasma Phys.}, 27:437--452, 1982.
+
+\bibitem[Bro85]{Broadhurst:85}
+D.~J. Broadhurst.
+\newblock Evaluation of a class of {Feynman} diagrams for all numbers of loops
+  and dimensions.
+\newblock {\em Phys. Lett. B}, 164:356--360, 1985.
+
+\bibitem[BRS73]{Brodsky:73}
+S.~J. Brodsky, R.~Roskies, and R.~Suaya.
+\newblock Quantum electrodynamics and renormalization theory in the
+  infinite-momentum frame.
+\newblock {\em Phys. Rev. D}, 8:4574--4594, 1973.
+
+\bibitem[BS67]{Brodsky:67}
+S.~J. Brodsky and J.~D. Sullivan.
+\newblock W-boson contribution to the anomalous magnetic moment of the muon.
+\newblock {\em Phys. Rev.}, 156:1644--1647, 1967.
+
+\bibitem[BS86]{Bateman:86}
+G.~Bateman and R.~G. Storer.
+\newblock Direct determination of axisymmetric magnetohydrodynamic equilibrium
+  in {Hamada} coordinates.
+\newblock {\em Journ. Comp. Phys.}, 64:161--176, 1986.
+
+\bibitem[BS87]{Brackx:87}
+F.~Brackx and H.~Serras.
+\newblock Boundary value problems for the {Laplacian} in {Euclidean} space
+  solved by symbolic computation.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 208--215. Springer-Verlag, 1987.
+
+\bibitem[BSW88]{Baekler:88}
+P.~Baekler, M.~Seitz, and V.~Winkelmann.
+\newblock Cyclindrically symmetric solutions of self-consistently coupled
+  {Dirac} fields in gauge theories of gravity.
+\newblock {\em Class. Quantum Grav.}, 5:479--490, 1988.
+
+\bibitem[BT63]{Berman:63}
+S.~M. Berman and Y.~S. Tsai.
+\newblock Intermediate boson pair production as a means for determining its
+  magnetic moment.
+\newblock {\em Phys. Rev. Lett.}, 11:483--487, 1963.
+
+\bibitem[BT78]{Bark:78}
+Fritz~H. Bark and Herman Tinoco.
+\newblock Stability of plane {Poiseuille} flow of a dilute suspension of
+  slender fibres.
+\newblock {\em J. Fluid Mech.}, 87:321--333, 1978.
+
+\bibitem[BZZ86]{Biro:86}
+T.~S. Biro, J.~Zimanyi, and M.~Zimanyi.
+\newblock Hadrochemistry in relativistic mean fields.
+\newblock {\em Physics Letters}, 167B(3):271--276, February 1986.
+
+\bibitem[CAH90]{Cline:90}
+Terry Cline, Harold Abelson, and Warren Harris.
+\newblock Symbolic computing in engineering design.
+\newblock {\em AI EDAM}, February 1990.
+
+\bibitem[Cal72a]{Calmet:72}
+Jacques Calmet.
+\newblock Further evaluation of the sixth order corrections to the anomalous
+  magnetic moment of the electron.
+\newblock Technical report, Department of Physics, University of Utah, 1972.
+
+\bibitem[Cal72b]{Calmet:72a}
+Jacques Calmet.
+\newblock A {REDUCE} approach to the calculation of {Feynman} diagrams.
+\newblock {\em Comp. Phys. Comm.}, 4:199--204, 1972.
+
+\bibitem[Cal74]{Calmet:74}
+Jacques Calmet.
+\newblock Computer recognition of divergences in {Feynman} graphs.
+\newblock {\em SIGSAM Bulletin}, 8(3):74--75, August 1974.
+
+\bibitem[Cam67]{Campbell:67}
+J.~A. Campbell.
+\newblock Algebraic computation of radiative corrections for electron-positron
+  scattering.
+\newblock {\em Nucl. Phys.}, B1:283--300, 1967.
+
+\bibitem[Cam68]{Campbell:68}
+J.~A. Campbell.
+\newblock Astrophysical consequences of the existence of charged intermediate
+  vector bosons.
+\newblock {\em Aust. Journ. of Phys.}, 21:139--148, 1968.
+
+\bibitem[Cam74]{Campbell:74}
+J.~A. Campbell.
+\newblock Symbolic computing and its relationship to particle physics.
+\newblock {\em Acta Physica Austriaca}, XIII:595--647, 1974.
+
+\bibitem[Cap84]{Caprasse:84}
+H.~Caprasse.
+\newblock Description et utilisation d'une extension du programme {REDUCE}.
+\newblock Technical report, Physique Th\'{e}orique et Math\'{e}matique,
+  Universit\'{e} de Li\`{e}ge, October 1984.
+
+\bibitem[Cap86a]{Caprasse:86a}
+H.~Caprasse.
+\newblock A complete simplification package for the absolute value function in
+  {REDUCE}.
+\newblock {\em {SIGSAM} Bulletin}, 20(1 and 2):18--21, February and May 1986.
+
+\bibitem[Cap86b]{Caprasse:86}
+H.~Caprasse.
+\newblock Description of an extension of the matrix package of {REDUCE}.
+\newblock {\em {SIGSAM} Bulletin}, 20(4):7--10, December 1986.
+
+\bibitem[Cap89]{Caprasse:89a}
+H.~Caprasse.
+\newblock Les th\'{e}ories des {Champs} dans le monde de {REDUCE} (in french).
+\newblock {\em {CALSYF} (to appear)}, 1989.
+
+\bibitem[Cap90]{Caprasse:90}
+H.~Caprasse.
+\newblock Renormalization group, function iterations and computer algebra.
+\newblock {\em J. Symbolic Computation}, 9(1):61--72, January 1990.
+
+\bibitem[Car73]{Carroll:73}
+R.~Carroll.
+\newblock {\em The Anomalous Magnetic Moment of the Electron in the Mass
+  Operator Formalism}.
+\newblock PhD thesis, University of Michigan, 1973.
+
+\bibitem[Car75]{Carroll:75}
+R.~Carroll.
+\newblock Mass-operator calculation of the electron g-factor.
+\newblock {\em Phys. Rev. D}, 8:2344--2354, 1975.
+
+\bibitem[Car80]{Carlson:80}
+P.~Carlson.
+\newblock Coordinate free relativity.
+\newblock {\em J. Math. Phys.}, 21:1149--1154, 1980.
+
+\bibitem[CB76]{Cohen:76a}
+I.~Cohen and F.~Bark.
+\newblock Perturbation calculations for the spin up problem using {REDUCE}.
+\newblock Technical Report TRITA-MEK-76-03, The Royal Institute of Technology,
+  Department of Mechanics, 1976.
+
+\bibitem[CBR84]{Conwell:84}
+P.~R. Conwell, P.~W. Barber, and C.~K. Rushworth.
+\newblock Resonant spectra of dielectric sphere.
+\newblock {\em J. Opt. Soc. Am. A}, 1:62--67, 1984.
+
+\bibitem[CC88]{Chaffy:88}
+C.~Chaffy-Camus.
+\newblock An application of {REDUCE} to the approximation of {f(x,y)}.
+\newblock In {\em Proc. of {ISSAC} '88}, volume 358, pages 73--84.
+  Springer-Verlag, 1988.
+
+\bibitem[CCEL84]{Connor:84a}
+J.~N.~L. Connor, P.~R. Curtis, C.~J. Edge, and A.~Lagan`{a}.
+\newblock The uniform asymptotic swallowtail approximation: Application to the
+  collinear $h+f_{2}$.
+\newblock {\em J. Chem. Phys.}, 80(3):1362--1363, February 1984.
+
+\bibitem[CCF84]{Connor:84}
+J.~N.~L. Connor, P.~R. Curtis, and D.~Farrelly.
+\newblock The uniform asymptotic swallowtail approximation: Practical methods
+  for oscillating integrals with four coalescing saddle points.
+\newblock {\em J. Phys. A}, 17:283--310, 1984.
+
+\bibitem[CCH70]{Campbell:70a}
+J.~A. Campbell, R.~B. Clark, and D.~Horn.
+\newblock Low-t theorems for charged-pion photoproduction.
+\newblock {\em Phys. Rev. D}, 2:217--224, 1970.
+
+\bibitem[CDS88]{Caprasse:88}
+H.~Caprasse, J.~Demaret, and E.~Schruefer.
+\newblock Can {EXCALC} be used to investigate {High-dimensional} cosmological
+  models with {Non-Linear Lagrangians}.
+\newblock In {\em Proc. of {ISSAC} '88}, pages 116--124. Springer-Verlag, 1988.
+
+\bibitem[CF{\AA}84]{Cohen:84}
+H.~I. Cohen, I.~B. Frick, and J.~E. {\AA}man.
+\newblock Algebraic computing in general relativity.
+\newblock {\em General Relativity and Gravitation, ed.}, pages 139--162, 1984.
+
+\bibitem[CFW87]{Campbell:87}
+J.~A. Campbell, P.~O. {Fr\"{o}man}, and E.~Walles.
+\newblock Explicit series formulae for the evaluation of integrals by the
+  method of steepest descents.
+\newblock {\em Studies in Applied Mathematics}, 77:151--172, 1987.
+
+\bibitem[CG79]{Cowan:79}
+Richard~M. Cowan and Martin~L. Griss.
+\newblock Hashing -- the key to rapid pattern matching.
+\newblock In {\em Proc. {EUROSAM} 1979, Lecture Notes in Computer Science},
+  volume~72, pages 266--278. Springer-Verlag, 1979.
+
+\bibitem[CGGK86]{Chinnick:86}
+K.~Chinnick, C.~Gibson, J.~F. Griffiths, and W.~Kordylewski.
+\newblock Isothermal interpretations of oscillatory ignition during hydrogen
+  oxidation in an open system. {I}. {Analytical} predictions and experimental
+  measurements of periodicity.
+\newblock {\em Proc. Royal Soc. Lond.}, A405:117--128, 1986.
+
+\bibitem[CH70]{Campbell:70}
+J.~A. Campbell and A.~C. Hearn.
+\newblock Symbolic analysis of {Feynman} diagrams by computer.
+\newblock {\em Journ. of Comp. Phys.}, 5:280--327, 1970.
+
+\bibitem[CH85]{Caprasse:85}
+H.~Caprasse and M.~Hans.
+\newblock A new use of operators in the algebraic mode of {REDUCE}.
+\newblock {\em {SIGSAM} Bulletin}, 19(3):46--52, August 1985.
+
+\bibitem[CLS76]{Cohen:76}
+H.~I. Cohen, O.~Leringe, and Y.~Sundblad.
+\newblock The use of algebraic computing in general relativity.
+\newblock Technical Report TRITA-MEK-76-02, The Royal Institute of Technology
+  Department of Mechanics, 1976.
+
+\bibitem[CN]{Cejchan}
+A.~Cejchan and J.~Nadrchal.
+\newblock Application of {REDUCE}-2 and analytic integration program in the
+  theoretical solid state physics.
+\newblock Technical report, Institute of Physics, CSAV, Prague.
+
+\bibitem[Coh89]{Cohen:89}
+Joel~S. Cohen.
+\newblock The effective use of computer algebra systems.
+\newblock In {\em Transactions of the Sixth Army Conference on Applied
+  Mathematics and Computing}, pages 677--698, 1989.
+
+\bibitem[CS77]{Cohen:77}
+I.~Cohen and S.~Yu. Slavyanov.
+\newblock Smooth perturbations of the {Schr\"{o}dinger} equation with a linear
+  potential related to the charmonium models.
+\newblock USIP Report 77-17, University of Stockholm Institute of Physics,
+  1977.
+
+\bibitem[Cun75]{Cung:75}
+V.~K. Cung.
+\newblock Differential cross section of e+ + e- to e+ + mu- + nubar(mu) +
+  nubar(e).
+\newblock {\em Phys. Lett.}, 55B:67--70, 1975.
+
+\bibitem[CvH83]{Calmet:83}
+J.~Calmet and J.~A. van Hulzen.
+\newblock Computer algebra applications.
+\newblock In B.~Buchberger, G.~E. Collins, R.~Loos, and R.~Albrecht, editors,
+  {\em Computer Algebra Symbolic and Algebraic Computation}. Springer-Verlag,
+  2nd edition, 1983.
+
+\bibitem[Dar86]{Darbaidze:86}
+Ya.~Z. Darbaidze.
+\newblock A gluon bremsstrahlung in supersymmetry {QCD}.
+\newblock Preprint P2-86-825, JINR, 1986.
+
+\bibitem[Dau79]{Dautcourt:79}
+G.~Dautcourt.
+\newblock Application of {REDUCE} to algebraic computations in general
+  relativity and astrophysics.
+\newblock In {\em Proc. of the Workshop in Symbolic Computation, Dubna,
+  {U.S.S.R.}}, September 1979.
+
+\bibitem[Dau83]{Dautcourt:83}
+G.~Dautcourt.
+\newblock The cosmological problem as an initial value problem on the
+  observer's past light cone: Geometry.
+\newblock {\em J. Phys. A}, 16:3507--3528, 1983.
+
+\bibitem[Dav81]{Davenport:81}
+James~Harold Davenport.
+\newblock On the integration of algebraic functions.
+\newblock {\em Lecture Notes in Computer Science}, 102:1--197, 1981.
+
+\bibitem[Dav82a]{Davenport:82}
+James~H. Davenport.
+\newblock Fast {REDUCE:} the {trade-off} between efficiency and generality.
+\newblock {\em {SIGSAM} Bulletin}, 16(1):8--11, February 1982.
+
+\bibitem[Dav82b]{Davenport:82a}
+James~H. Davenport.
+\newblock What do we want from a {high-level} language?
+\newblock {\em {SIGSAM} Bulletin}, 16(4):6--9, November 1982.
+
+\bibitem[Dav88]{Davenport:88}
+J.~H. Davenport.
+\newblock The world of computer algebra.
+\newblock {\em New Scientist}, 1629:71--72, September 1988.
+
+\bibitem[DCM{\etalchar{+}}89]{Demaret:89}
+J.~Demaret, H.~Caprasse, A.~Moussiaux, Ph. Tombal, and D.~Papadopoulos.
+\newblock {Ten-dimensional Lovelock-type Space-Times}.
+\newblock {\em {To appear} Phys. Rev. D}, July 1989.
+
+\bibitem[DD85]{Dorfi:85}
+E.~A. Dorfi and L.~O'C. Drury.
+\newblock Simple adaptive grids for {1D} initial value problems.
+\newblock Technical Report MPI H-1985-V21, Max-Plack-Institut fuer Kernphysik,
+  Heidelberg, West Germany, 1985.
+
+\bibitem[DDDD85]{Della-Dora:85}
+Jean Della-Dora, Claire Dicrescenzo, and Dominique Duval.
+\newblock About a new method for computing in algebraic number fields.
+\newblock Technical report, Universit\'{e} de Grenoble, Institut Fourier,
+  France, November 1985.
+
+\bibitem[Dew89]{Dewar:89}
+M.~C. Dewar.
+\newblock {IRENA --} an integrated symbolic and numerical computation
+  environment.
+\newblock In {\em Proc. of {ISSAC} '89}, pages 171--179. {ACM} Press, New York,
+  1989.
+
+\bibitem[DG75]{Dubowsky:75}
+S.~Dubowsky and J.~L. Grant.
+\newblock Application of symbolic manipulation to time domain analysis of
+  nonlinear dynamic systems.
+\newblock {\em Journ. of Dynamic Systems, Measurement, and Control},
+  (75-Aut-J), 1975.
+
+\bibitem[DGH{\etalchar{+}}86]{Dorizzi:86}
+B.~Dorizzi, B.~Grammaticos, J.~Hietarinta, A.~Ramani, and F.~Schwarz.
+\newblock New integrable three dimensional quartic potentials.
+\newblock {\em Phys. Lett.}, 116A:432--436, 1986.
+
+\bibitem[Dic85]{Dicrescenzo:85}
+Claire Dicrescenzo.
+\newblock Algebraic computation on algebraic numbers.
+\newblock Technical report, Institut Fourier, Laboratoire de Math\'{e}matiques,
+  France, December 1985.
+
+\bibitem[DJ80]{Dautcourt:80}
+G.~Dautcourt and K.~P. Jann.
+\newblock A program package in {REDUCE} 2 for algebraic computations in general
+  relativity.
+\newblock Technical report, Zentralinstitut fuer Astrophysik der Akademie der
+  Wissenschaften, 1980.
+
+\bibitem[DJ89]{Dudley:89}
+M.~L. Dudley and R.~W. James.
+\newblock {Computer-aided} derivation of spherical harmonic spectral equations
+  in astrogeophyics.
+\newblock {\em J. Symbolic Computation}, 8(4):423--427, October 1989.
+
+\bibitem[DJRR81]{Dautcourt:81}
+G.~Dautcourt, K.~P. Jann, E.~Riemer, and M.~Riemer.
+\newblock User's guide to {REDUCE} subroutines for algebraic computations in
+  general relativity.
+\newblock {\em Astron. Nachr.}, 302:1--13, 1981.
+
+\bibitem[DL86]{Diver:86}
+D.~A. Diver and E.~W. Laing.
+\newblock Proc. 8th {Europhysics} conference on computational physics.
+\newblock In {\em Computing in Plasma Physics}, 1986.
+
+\bibitem[DL88a]{Diver:88a}
+D.~A. Diver and E.~W. Laing.
+\newblock Alfven resonance absorption in a magnetofluid.
+\newblock Internal Report GUTPA 88/04-01, July 1988.
+
+\bibitem[DL88b]{Diver:88}
+D.~A. Diver and E.~W. Laing.
+\newblock Proc. {XV} {European} conference on controlled fusion and plasma
+  heating.
+\newblock 1988.
+
+\bibitem[DLS]{Diver}
+D.~A. Diver, E.~Q. Laing, and C.~C. Sellar.
+\newblock Waves in a cold plasma with a spatially rotating magnetic field.
+\newblock Report GU TPA 88/12-1, Department of Physics and Astronomy,
+  University of Glasgow, Plasma Physics Group.
+
+\bibitem[DM85]{Dhar:85}
+D.~Dhar and J-M. Maillard.
+\newblock Susceptibility of the checkerboard {Ising} model.
+\newblock {\em J. Phys. A}, 18:L383--L388, 1985.
+
+\bibitem[DMMS86]{Darbaidze:86a}
+J.~Z. Darbaidze, V.~A. Matveev, Z.~V. Merebashvili, and L.~A. Slepchenko.
+\newblock Gluon bremsstrahlung in supersymmetric {QCD}.
+\newblock {\em Phys. Lett.}, B177, 1986.
+
+\bibitem[DMR88]{Darbaidze:88}
+Ya.~Z. Darbaidze, Z.V. Merebashvili, and V.A. Rostovtsev.
+\newblock Some computer realizations of the {REDUCE-3} calculations for
+  exclusive processes.
+\newblock Preprint P2-88-769, JINR, 1988.
+
+\bibitem[DP85]{Davenport:85}
+James Davenport and Julian Padget.
+\newblock {HEUGCD:} how elementary upperbounds generate cheaper data.
+\newblock In {\em Proc. {EUROCAL} 1985, Lecture Notes in Computer Science},
+  volume 204, pages 18--28. Springer-Verlag, 1985.
+
+\bibitem[DR85]{Demichev:85}
+A.~P. Demichev and A.~Ya. Rodionov.
+\newblock A {REDUCE} program for the calculation of geometrical characteristics
+  of compactified multidimensional {Riemannian} space.
+\newblock {\em Comp. Phys. Comm.}, 38:441--448, 1985.
+
+\bibitem[DR86a]{Demichev:86}
+A.~P. Demichev and A.~Ya. Rodionov.
+\newblock Freund-{Rubin} type solutions for different compactifications of the
+  eleven-dimensional space.
+\newblock Preprint 86-85, Institute for High Energy Physics, 1986.
+
+\bibitem[DR86b]{Duncan:86}
+Anthony Duncan and Ralph Roskies.
+\newblock Representations of unusual mathematical structures in scientific
+  applications of symbolic computation.
+\newblock {\em J. Symbolic Computation}, 2(2):201--206, June 1986.
+
+\bibitem[DR89]{Darbaidze:89}
+Ya.~Z. Darbaidze and V.A. Rostovtsev.
+\newblock Analysis of the differential equations for the exclusive processes
+  and explanation for the {"Mystery"} of the {Gamma-Distribution}.
+\newblock Preprint E2-89-286, JINR, 1989.
+
+\bibitem[dRD88]{deRop:88}
+Y.~de~Rop and J.~Demaret.
+\newblock Using {EXCALC} to study nondiagonal multidimensional spatially
+  homogeneous cosmologies.
+\newblock {\em Gen. Rel. Grav.}, 20:1127--1139, 1988.
+
+\bibitem[dS87]{dosSantos:87a}
+R.~P. dos Santos.
+\newblock {\em O M\'{e}todo de Supercampos para o C\'{a}lculo de Potencial
+  Efetivo em Modelos com Supercampos Quirais: Os Modelos de Wess e Zumino e de
+  O'Raifeartaigh}.
+\newblock PhD thesis, Centro Brasileiro de Pesquisas F\'{i}sicas, 1987.
+
+\bibitem[dS88]{dosSantos:88a}
+Renato~P. dos Santos.
+\newblock Introdu\c{c}\~{a}o ao sistema {REDUCE} de c\'{a}lculo alg\'{e}brico.
+\newblock Technical Report CBPF-NT-001/88, CBPF, Rio de Janeiro, Brazil, 1988.
+
+\bibitem[dS89]{dosSantos:87}
+Renato~P. dos Santos.
+\newblock Using {REDUCE} in supersymmetry.
+\newblock {\em J. Symb. Comp.}, 7:523--525, 1989.
+
+\bibitem[dSS85]{dosSantos:85}
+R.~P. dos Santos and P.~P. Srivastava.
+\newblock Two-loop effective potential for wess-zumino model using superfields.
+\newblock Technical Report IC/85/205, International Centre for Theoretical
+  Physics, October 1985.
+
+\bibitem[DST88]{Davenport:88a}
+J.~H. Davenport, Y.~Siret, and E.~Tournier.
+\newblock {\em Computer Algebra, Systems and Algorithms for Algebraic
+  Computation}.
+\newblock Academic Press, 1988.
+
+\bibitem[DT69]{Dufner:69}
+A.~M. Dufner and Y.~S. Tsai.
+\newblock Phenomenological analysis of the $\gamma$nn* form factors.
+\newblock {\em Phys. Rev.}, 168:1801--1809, 1969.
+
+\bibitem[DT81]{Della-Dora:81}
+J.~Della Dora and E.~Tournier.
+\newblock Solutions formelles {D'Equations} differentielles au voisinage de
+  points singuliers reguliers.
+\newblock Report 239, Centre National de la Recherche Scientifique, 1981.
+
+\bibitem[DT84]{Della-Dora:84}
+J.~Della Dora and E.~Tournier.
+\newblock Homogeneous linear difference equation {(Frobenius-Boole Method)}.
+\newblock In {\em Proc. {EUROSAM} 1984, Lecture Notes in Computer Science},
+  volume 174, pages 2--12. Springer-Verlag, 1984.
+
+\bibitem[Dul87]{Dulyan:87}
+L.~S. Dulyan.
+\newblock The calculation of {QCD} triangular {Feynman} graphs in the external
+  gluonic field using {REDUCE}-2 system.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 172--173. Springer-Verlag, 1987.
+
+\bibitem[Duv87]{Duval:87}
+Dominique Duval.
+\newblock {\em Diverses questions relatives au Calcul Formel Avec des Nombres
+  Alg\'{e}briques}.
+\newblock PhD thesis, L'Universit\'{e} Scientifique, Technologique et
+  M\'{e}dicale de Grenoble, 1987.
+
+\bibitem[Ear70]{Earles:70}
+D.~Earles.
+\newblock A measurement of the electron-production of muon pairs.
+\newblock {\em Phys. Rev. Lett.}, 25:129--133, 1970.
+
+\bibitem[Eas87]{Eastwood:87}
+James~W. Eastwood.
+\newblock Orthovec: A {REDUCE} program for {3-D} vector analysis in orthogonal
+  curvilinear coordinates.
+\newblock {\em Comp. Phys. Commun.}, 47(1):139--147, October 1987.
+
+\bibitem[EC87]{Elishakoff:87a}
+Isaac Elishakoff and Brian Couch.
+\newblock Application of symbolic algebra to the instability of a
+  nonconservative system.
+\newblock {\em J. Symbolic Computation}, 4(3):391--396, December 1987.
+
+\bibitem[Ede81]{Edelen:81}
+Dominic G.~B. Edelen.
+\newblock Programs for calculation of isovector fields in the {REDUCE}-2
+  environment.
+\newblock Technical Report TBD, Center for the Application of Mathematics,
+  Lehigh University, August 1981.
+
+\bibitem[Ede82]{Edelen:82}
+D.~G.~B. Edelen.
+\newblock Isovector fields for problems in the mechanics of solids and fluids.
+\newblock {\em Int. Journ. Eng. Sci.}, 20:803--815, 1982.
+
+\bibitem[EFK85]{Eliseev:85}
+V.~P. Eliseev, R.~N. Fedorova, and V.~V. Kornyak.
+\newblock A {REDUCE} program for determining point and contact {Lie} symmetries
+  of differential equations.
+\newblock {\em Comp. Phys. Comm.}, 36:383--389, 1985.
+
+\bibitem[EH86]{Eissfeller:86}
+Bernd {Ei{\ss}feller} and {G\"{u}nter}~W. Hein.
+\newblock A contribution to {3D-Operational} geodesy.
+\newblock Technical Report Heft 17, {Universit\"{a}rer} Studiengang
+  Vermessungswesen and {Universit\"{a}t} der Bundeswehr {M\"{u}nchen}, December
+  1986.
+
+\bibitem[EH87]{Elishakoff:87}
+Isaac Elishakoff and Joseph Hollkamp.
+\newblock Computerized symbolic solution for a nonconservative system in which
+  instability occurs by flutter in one range of a parameter and by divergence
+  in another.
+\newblock {\em Comp. Methods in Applied Mechanics and Engineering}, 62:27--46,
+  1987.
+
+\bibitem[Eis90]{Eisenberger:90}
+Moshe Eisenberger.
+\newblock Application of symbolic algebra to the analysis of plates on variable
+  elastic foundation.
+\newblock {\em J. Symbolic Computation}, 9(2):207--213, February 1990.
+
+\bibitem[Eit73]{Eitelbach:73}
+D.~L. Eitelbach.
+\newblock {\em Automatic Analysis of Problems in Elementary Mechanics}.
+\newblock PhD thesis, University of Illinois, 1973.
+
+\bibitem[EKR89]{Edneral:89}
+Viktor~F. Edneral, Aleksandr~P. Kryukov, and Anatolii~Ia. Rodionov.
+\newblock {\em The language of the analytic computer program {REDUCE}}.
+\newblock Moscow, {Izd-vo}, Moskovskogo {un-ta}, 1989.
+
+\bibitem[EM82]{Eleuterio:82}
+S.~M. Eleut\'{e}rio and R.~V. Mendes.
+\newblock Note on equivalence and singularities: An application of computer
+  algebra.
+\newblock {\em Journ. Comp. Phys.}, 48:150--156, 1982.
+
+\bibitem[ER90]{Esteban:90}
+E.P. Esteban and E.~Ramos.
+\newblock Algebraic computing and the {Newman-Penrose} formalism.
+\newblock {\em Computers in Physics}, pages 285--290, May/June 1990.
+
+\bibitem[FB89]{Foster:89}
+Kenneth~R. Foster and Haim~H. Bau.
+\newblock Symbolic manipulation programs for the personal computer.
+\newblock {\em Science}, 243:679--243, February 1989.
+
+\bibitem[FBC86]{Flatau:86}
+Piotr~J. Flatau, John~P. Boyd, and William~R. Cotton.
+\newblock Symbolic algebra in applied mathematics and geophysical fluid
+  dynamics - {REDUCE} examples.
+\newblock Technical report, Dept. of Atmospheric and Oceanic Science,
+  University of Michigan, and Dept. of Atmospheric Science, Colorado State
+  University, 1986.
+
+\bibitem[FC79]{Cohen:79}
+J.~P. Fitch and H.~I. Cohen.
+\newblock Using {CAMAL} for algebraic calculations in general relativity.
+\newblock {\em General Relativity and Gravitation}, 11:411--418, 1979.
+
+\bibitem[FC84]{Fazio:84}
+P.~M. Fazio and G.~E. Copeland.
+\newblock Cooper-type minima in multipole cross sections of atomic hydrogen.
+\newblock {\em Phys. Rev. Lett.}, 53(2), July 1984.
+
+\bibitem[FC85]{Fuzio:85}
+P.~M. Fuzio and G.~E. Copeland.
+\newblock Partial radiative-recombination cross sections for excited states of
+  hydrogen.
+\newblock {\em Phys. Rev. A}, 31(1):187--195, 1985.
+
+\bibitem[Feu84]{Feuillebois:84}
+F.~Feuillebois.
+\newblock Sedimentation in a dispersion with vertical inhomogenieties.
+\newblock {\em Journ. Fluid Mech.}, 139:145--171, 1984.
+
+\bibitem[FF82a]{Fogelholm:82}
+Rabbe Fogelholm and Inge~B. Frick.
+\newblock Standard {LISP} for the {VAX:} a provisional implementation.
+\newblock {\em {SIGSAM} Bulletin}, 16(4):10--12, November 1982.
+
+\bibitem[FF82b]{Frick:82}
+I.~G. Frick and R.~Fogelholm.
+\newblock An implementation of {Standard} {Lisp} built on top of {Franz Lisp}.
+\newblock Report, University of Stockholm, Institute of Physics, April 1982.
+
+\bibitem[FG84]{Fujimoto:84}
+Y.~Fujimoto and T.~Garavaglia.
+\newblock Phase diagrams in {Scalar QED}.
+\newblock {\em Physics Letters}, 148B(1,2,3):220--224, November 1984.
+
+\bibitem[FGGS87]{Fedorova:87}
+R.~N. Fedorova, V.~P. Gerdt, N.~N. Govorun, and V.~P. Shirikov.
+\newblock Computer algebra in physical research of {Joint Institute} for
+  {Nuclear Research}.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 1--10. Springer-Verlag, 1987.
+
+\bibitem[FGK89]{Falck:89}
+N.~K. Falck, D.~Graudenz, and G.~Kramer.
+\newblock Cross section for {five-parton} production in $e^{+} e^{-}$
+  annihilation.
+\newblock {\em Comp. Phys. Comm.}, 56(2):181--198, December 1989.
+
+\bibitem[FGM73]{Fleischer:73}
+J.~Fleischer, J.~L. Gammel, and M.~T. Menzel.
+\newblock Matrix {Pad\'{e}} approximants for the {1SO}- and {3PO}- partial
+  waves in nucleon-nucleon scattering.
+\newblock {\em Phys. Rev. D}, 8:1545--1552, 1973.
+
+\bibitem[FGP89]{Freire:89}
+E.~Freire, E.~Gamero, and E.~Ponce.
+\newblock An algorithm for symbolic computation of {Hopf} bifurcation.
+\newblock In E.~Kaltofen and S.~M. Watt, editors, {\em Proc. Computers and
+  Mathematics '89}, pages 109--118. Springer-Verlag, New York, 1989.
+
+\bibitem[FGPF88]{Freire:88}
+E.~Freire, E.~Gamero, E.~Ponce, and L.~G. Franquelo.
+\newblock An algorithm for symbolic computation of center manifolds.
+\newblock In {\em Proc. of {ISSAC} '88}, volume 358, pages 218--230.
+  Springer-Verlag, 1988.
+
+\bibitem[FH74]{Fox:74}
+John~A. Fox and Anthony~C. Hearn.
+\newblock Analytic computation of some integrals in fourth order quantum
+  electrodynamics.
+\newblock {\em Journ. Comp. Phys.}, 14:301--317, 1974.
+
+\bibitem[FH87]{Fitch:87a}
+J.~P. Fitch and R.~G. Hall.
+\newblock Symbolic computation and the finite element method.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 95--96. Springer-Verlag, 1987.
+
+\bibitem[Fit73]{Fitch:73}
+John Fitch.
+\newblock Problems \#3 and \#4 in {REDUCE} and {MACSYMA}.
+\newblock {\em SIGSAM Bulletin}, pages 10--11, 1973.
+
+\bibitem[Fit81]{Fitch:81}
+J.~P. Fitch.
+\newblock User-based integration software.
+\newblock In {\em Proc. 1981 {ACM} Symposium on Symbolic and Algebraic
+  Computation}, pages 245--248, 1981.
+
+\bibitem[Fit83]{Fitch:83}
+J.~P. Fitch.
+\newblock Implementing {REDUCE} on a microprocessor.
+\newblock In {\em Proc. {EUROCAL} 1983, Lecture Notes in Computer Science},
+  volume 162, pages 128--136. Springer-Verlag, 1983.
+
+\bibitem[Fit85a]{Fitch:85a}
+J.~P. Fitch.
+\newblock Applying computer algebra.
+\newblock In {\em International Conference on Computer Algebra and its
+  Application in Theory}, pages 262--275, 1985.
+
+\bibitem[Fit85b]{Fitch:85}
+J.~P. Fitch.
+\newblock Solving algebraic problems with {REDUCE}.
+\newblock {\em J. of Symbolic Computation}, 1(2):211--227, June 1985.
+
+\bibitem[Fit87]{Fitch:87}
+J.~P. Fitch.
+\newblock Utilisation du calcul formel.
+\newblock In P.~Chenin, editor, {\em Calcul Formel et Automatique}, pages
+  119--136. Editions du {CNRS}, 1987.
+
+\bibitem[Fit89a]{Fitch:89a}
+J.~Fitch.
+\newblock Compiling for parallelism.
+\newblock {\em Computer Algebra and Parallelism}, pages 19--31, 1989.
+
+\bibitem[Fit89b]{Fitch:89}
+J.~P. Fitch.
+\newblock Can {REDUCE} be run in parallel?
+\newblock In {\em Proc. of {ISSAC} '89}, pages 155--162. {ACM} Press, New York,
+  1989.
+
+\bibitem[FK86]{Feldmar:86}
+E.~Feldmar and K.~S. {K\"{o}lbig}.
+\newblock {REDUCE} procedures for the manipulation of generalized power series.
+\newblock {\em Comp. Phys. Comm.}, 39:267--284, 1986.
+
+\bibitem[FK87]{Fedorova:87a}
+R.~N. Fedorova and V.~V. Kornyak.
+\newblock Computer algebra application for determining local symmetries of
+  differential equations.
+\newblock In {\em Proc. {EUROCAL} '87, Lecture Notes in Computer Science},
+  volume 378, pages 174--175. Springer-Verlag, 1987.
+
+\bibitem[Fla86]{Flath:86}
+Dan Flath.
+\newblock Remarks on tensor operators.
+\newblock Research Report 266, National University of Singapore, Department of
+  Mathematics, July 1986.
+
+\bibitem[Fle71]{Fleischer:71}
+J.~Fleischer.
+\newblock Partial wave analysis of nucleon-nucleon {Bethe}-{Salpeter} equation
+  on the computer.
+\newblock {\em Journ. of Comp. Phys.}, 12:112--123, 1971.
+
+\bibitem[Fox71]{Fox:71}
+J.~A. Fox.
+\newblock Recalculation of the crossed graph contribution to the 4th order
+  {Lamb} shift.
+\newblock {\em Phys. Rev. D}, 3:3228--3230, 1971.
+
+\bibitem[FP85]{Franceschetti:85}
+G.~Franceschetti and I.~Pinto.
+\newblock Nonlinear propagation and scattering: Analytical solution and
+  symbolic code implementation.
+\newblock {\em J. Opt. Soc. Am. A}, 2:997--1006, 1985.
+
+\bibitem[FT75]{Fleischer:75}
+J.~Fleischer and J.~A. Tjon.
+\newblock Bethe-{Salpeter} equation for {J}=0 nucleon-nucleon scattering with
+  one-boson exchange.
+\newblock {\em Nuclear Physics}, B84:375--396, 1975.
+
+\bibitem[MMR87]{DeMenna:87}
+L.~De Menna, G.~Miano, and G.~Rubinacci.
+\newblock Volterra's series solutions of free boundary plasma equilibria.
+\newblock {\em Phys. Fluids}, 30:409--416, 1987.
+
+\bibitem[Vos89]{DeVos:89}
+Alexis~De Vos.
+\newblock The use of {Reduce} in solar energy conversion theory.
+\newblock Reports of the {CAGe} Project~4, State University of Gent, {CAGe}
+  Computer Algebra Group, August 1989.
+
+\end{thebibliography}

@@ -1,0 +1,20 @@
+Warning--entry type for "COMMENT" isn't style-file defined
+--line 1 of file testscr4.bib
+Repeated entry---line 6 of file testscr4.bib
+ : @end{COMMENT
+ :             }
+I'm skipping whatever remains of this entry
+Warning--string name "bsi" is undefined
+--line 56 of file testscr4.bib
+Warning--string name "bs" is undefined
+--line 61 of file testscr4.bib
+Warning--string name "bsi" is undefined
+--line 66 of file testscr4.bib
+Warning--string name "bs" is undefined
+--line 72 of file testscr4.bib
+Warning--to sort, need author or key in COMMENT
+Warning--to sort, need author or key in bs-1629-4
+Warning--to sort, need author or key in bs-1629-5
+Warning--empty author in bs-1629-4
+Warning--empty author in bs-1629-5
+(There was 1 error message)

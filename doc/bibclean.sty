@@ -1,0 +1,294 @@
+%%% ====================================================================
+%%%  @LaTeX-style-file{
+%%%     author          = "Nelson H. F. Beebe",
+%%%     version         = "1.01",
+%%%     date            = "17 November 1993",
+%%%     time            = "15:40:32 MST",
+%%%     filename        = "bibclean.sty",
+%%%     address         = "Center for Scientific Computing
+%%%                        Department of Mathematics
+%%%                        University of Utah
+%%%                        Salt Lake City, UT 84112
+%%%                        USA",
+%%%     telephone       = "+1 801 581 5254",
+%%%     FAX             = "+1 801 581 4148",
+%%%     checksum        = "24086 294 1121 12451",
+%%%     email           = "beebe@math.utah.edu (Internet)",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "BibTeX, bibliography, prettyprint, syntax check,
+%%%                        LaTeX style",
+%%%     supported       = "yes",
+%%%     docstring       = "This file contains macros for bibclean.ltx,
+%%%                        plus modifications to style macros from
+%%%                        ltugboat.sty and latex.tex to repair
+%%%                        problems and add features.
+%%%
+%%%                        Some of these modifications should be
+%%%                        incorporated in a future revision of
+%%%                        ltugboat.sty.
+%%%
+%%%                        The checksum field above contains a CRC-16
+%%%                        checksum as the first value, followed by the
+%%%                        equivalent of the standard UNIX wc (word
+%%%                        count) utility output of lines, words, and
+%%%                        characters.  This is produced by Robert
+%%%                        Solovay's checksum utility.",
+%%%  }
+%%% ====================================================================
+
+\hyphenation{bib-li-og-ra-phy-style pretty-printer}
+
+%%======================================================================
+%% Definitions of macros used in writing bibclean.ltx.
+%%
+%% NOTE TO THE EDITOR:
+%% Small cap names in macros are given in upper-case letters, because
+%% they look too small if entirely in lower-case.  We change TUGboat's
+%% \UNIX to match the others.  Several of these macros automatically
+%% generate index entries, and some get discretionary hyphens added.
+%
+\catcode`\_=11                  % underscore is a letter in this document
+%
+\renewcommand{\BibTeX}{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+            \-T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}%
+\newcommand{\BIBCLEAN}{{\tt bib\-clean}\index{bibclean@{\protect\tt bibclean}}}
+\newcommand{\CS}[1]{{\tt\char92\relax#1}%
+                    \index{control sequence!#1@{\protect\tt\char92\relax#1}}%
+                    \index{#1@{\protect\tt\char92\relax#1}}}
+\newcommand{\ESCAPE}[1]{{\tt\char92\relax#1}%
+                    \index{#1@{\protect\tt\char92\relax#1}}}
+\newcommand{\FORMAT}[1]{{\tt \%#1}%
+                        \index{\%#1@{\protect\tt \%#1}}%
+                        \index{format!item!\%#1@{\protect\tt \%#1}}%
+}
+\newcommand{\FUNCTION}[1]{{\tt #1()}%
+                        \index{#1@{\protect\tt #1()}}%
+                        \index{function!#1@{\protect\tt #1()}}%
+}
+\newcommand{\FUNCTIONINDEX}[1]{%
+                        \index{#1@{\protect\tt #1()}}%
+                        \index{function!#1@{\protect\tt #1()}}%
+}
+\newcommand{\MACRO}[1]{{\tt #1}\index{#1@{\protect\tt #1}}%
+                               \index{macro!#1@{\protect\tt #1}}}
+\newcommand{\MACROINDEX}[1]{\index{#1@{\protect\tt #1}}%
+                            \index{macro!#1@{\protect\tt #1}}}
+
+% Here is some fancy work.  We want \OPTION{foobar} to generate a
+% foobar index entry, and \OPTION{[no-]foobar} to generate both
+% no-foobar and foobar entries.  The TeX macro \gobbleno gobbles the
+% [no-] prefix (actually, all text up to a right bracket).  The \if
+% tests inside \OPTION and \OPTIONITEM check for the cases of foobar
+% and [no-]foobar.
+
+\def\gobbleno#1]{}              % gobble [no-] prefix
+
+\newcommand{\OPTION}[1]{{\tt -#1}%
+           \def\@firstchar##1##2\end@firstchar{##1}%
+	   \if[\@firstchar#1\end@firstchar % ] for bracket balance
+               \index{\gobbleno#1@{\protect\tt -\gobbleno#1}}%
+               \index{option!\gobbleno#1@{\protect\tt -\gobbleno#1}}%
+               \index{no-\gobbleno#1@{\protect\tt -no-\gobbleno#1}}%
+               \index{option!no-\gobbleno#1@{\protect\tt -no-\gobbleno#1}}%
+           \else
+               \index{#1@{\protect\tt -#1}}%
+               \index{option!#1@{\protect\tt -#1}}%
+	   \fi
+}
+\newcommand{\OPTIONITEM}[1]{\item[{\tt -#1}]%
+           \hskip 0pt plus 12pt% for better line breaking
+           \def\@firstchar##1##2\end@firstchar{##1}%
+	   \if[\@firstchar#1\end@firstchar % ] for bracket balance
+               \index{\gobbleno#1@{\protect\tt -\gobbleno#1}}%
+               \index{option!\gobbleno#1@{\protect\tt -\gobbleno#1}}%
+               \index{no-\gobbleno#1@{\protect\tt -no-\gobbleno#1}}%
+               \index{option!no-\gobbleno#1@{\protect\tt -no-\gobbleno#1}}%
+           \else
+               \index{#1@{\protect\tt -#1}}%
+               \index{option!#1@{\protect\tt -#1}}%
+	   \fi
+}
+
+\newcommand{\OSTWO}{{\sc OS/2}\index{OS/2@{\protect\sc OS/2}}}
+\newcommand{\PATHINDEX}[1]{\index{#1@{\protect\tt #1}}%
+                           \index{file!#1@{\protect\tt #1}}}
+\newcommand{\PCDOS}{{\sc PC-DOS}\index{PC-DOS@{\protect\sc PC-DOS}}}
+\newcommand{\PROGRAM}[1]{{\tt #1}\index{#1@{\protect\tt #1}}}
+\newcommand{\RULE}[1]{{\tt #1}\index{#1@{\protect\tt #1} rule}%
+                            \index{non-terminal!#1@{\protect\tt #1}}}
+\newcommand{\RULEINDEX}[1]{\index{#1@{\protect\tt #1} rule}%
+                            \index{non-terminal!#1@{\protect\tt #1}}}
+\newcommand{\SCRIBE}{{\sc Scribe}\index{Scribe@{\protect\sc Scribe}}}
+\newcommand{\seealso}[2]{{\em see also\/} #1}
+% \SGML was added to tugboat.cmn 1.11c [29-Nov-1992], but we want
+% our private version to index the name as well as typeset it, so
+% we change \newcommand to \renewcommand.
+\renewcommand{\SGML}{{\sc SGML}\index{SGML@{\protect\sc SGML}}}
+\newcommand{\TOKEN}[1]{{\tt #1}\index{#1@{\protect\tt #1}}%
+                            \index{terminal!#1@{\protect\tt #1}}}
+\newcommand{\TOKENINDEX}[1]{\index{#1@{\protect\tt #1}}%
+                            \index{terminal!#1@{\protect\tt #1}}}
+\newcommand{\TOS}{{\sc TOS}\index{TOS@{\protect\sc TOS}}}
+\newcommand{\TT}[1]{{\tt #1}\index{#1@{\protect\tt #1}}}
+\newcommand{\TTINDEX}[1]{\index{#1@{\protect\tt #1}}}
+\renewcommand{\UNIX}{{\sc UNIX}\index{UNIX@{\protect\sc UNIX}}}
+\newcommand{\VARIABLE}[1]{{\tt #1}%
+                        \index{#1@{\protect\tt #1}}%
+                        \index{variable!#1@{\protect\tt #1}}%
+}
+\newcommand{\VARIABLEINDEX}[1]{%
+                        \index{#1@{\protect\tt #1}}%
+                        \index{variable!#1@{\protect\tt #1}}%
+}
+\renewcommand{\VAX}{{\sc VAX}\index{VAX@{\protect\sc VAX}}}
+\newcommand{\VMS}{{\sc VMS}\index{VMS@{\protect\sc VMS}}}
+\renewcommand{\WEB}{{\tt WEB}\index{WEB@{\protect\tt WEB}}}
+%
+%%======================================================================
+%% Parameter adjustments to reduce the number of overfull and
+%% underfull boxes in the narrow TUGboat columns
+%
+\newcommand{\optbreak}{\penalty 0}% optional hyphenless line break point
+\emergencystretch = 1pt         % a little bit of extra stretch helps
+\exhyphenpenalty = 25           % hyphenations are okay
+\hbadness = 3000                % be quiet unless badness exceeds this
+\hfuzz = 2pt                    % allow slightly overfull boxes
+\hyphenchar\nintt = `-          % allow hyphenation in \tt font sizes
+\hyphenchar\tentt = `-
+\hyphenchar\elvtt = `-
+\hyphenchar\twltt = `-
+\hyphenpenalty = 25             % hyphenations are okay
+\tolerance = 2000               % extra white space is expected
+%
+%%======================================================================
+%% Bug fixes.
+%%
+%% Repair some problems in latex.tex.
+%%
+%% LaTeX's default tolerance of 10000 in sloppy and sloppypar is
+%% unsatisfactory in two-column mode; \emergencystretch saves the day.
+%%
+%% OLD: \def\sloppy{\tolerance 10000 \hfuzz .5\p@ \vfuzz .5\p@}
+\renewcommand{\sloppy}{\emergencystretch=10pt
+                       \tolerance 9000 \hfuzz 0.5pt \vfuzz 0.5pt}
+%
+%%======================================================================
+%% Bug fixes.
+%%
+%% Repair some problems in ltugboat.sty.  I believe that these changes
+%% should be made permanently to ltugboat.sty.
+%%
+%% Revise ltugboat.sty's \l@section which typesets a section heading
+%% table of contents entry.  The original version sets long headings
+%% flush right, which gives spaced out text which looks awful.  We
+%% change it to typeset headings in \raggedright instead, and indent
+%% the macro to make it more readable.
+%% \l@section{TOC-ENTRY}{PAGE-NUMBER}
+\def\l@section#1#2%
+{%
+    \addpenalty{\@secpenalty}%
+    \addvspace{1.0em plus 1pt}%
+    \@tempdima 1.5em
+    \begingroup
+        \parindent \z@
+        \rightskip \z@  % article style makes \rightskip > 0
+        \parfillskip \z@
+        \bf
+        \leavevmode
+        \advance\leftskip\@tempdima% indent text by width of \numberline
+        \hskip -\leftskip       % move left for section number on first line
+        \raggedright            % NEW: no flushright text in tocs
+        #1% toc-entry text
+        \unskip                 % NEW: discard intervening space
+        \nobreak
+        \hfill                  % was \hfil, but need stronger version
+        \nobreak
+        \hbox to \@pnumwidth {\hss #2}% page number
+        \par
+    \endgroup
+}
+%
+%% OLD: \def\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
+\def\l@figure{\@dottedtocline{1}{0em}{1.5em}}
+\let\l@table=\l@figure
+%
+%% Increase \@pnumwidth by 0.45em (4.5pt) to avoid overfull box
+%% from bad default setting.
+%% OLD: \def\@pnumwidth{1.55em}
+\def\@pnumwidth{2em}
+%
+%% Modification of \@dottedtocline from latex.tex to produce ragged right
+%% entries instead of   very   spaced    out     entries.
+\def\@dottedtocline#1#2#3#4#5{%
+ \ifnum #1>\c@tocdepth
+ \else
+    \vskip \z@ plus .2pt
+    {%
+      \leftskip #2\relax
+      \rightskip \@tocrmarg
+      \parfillskip -\rightskip
+      \parindent #2\relax
+      \@afterindenttrue
+      \interlinepenalty\@M
+      \leavevmode
+      \@tempdima #3\relax       % tempdima := NUMWIDTH
+      \advance\leftskip \@tempdima % leftskip := INDENT + NUMWIDTH
+      \hbox{}%
+      \hskip -\leftskip
+      {%
+          \raggedright
+          #4
+          \unskip
+          \nobreak
+          \hfill
+          \nobreak
+          \hbox to\@pnumwidth{\hfil\rm #5}%
+          \par
+      }%
+      \par
+    }%
+  \fi
+}
+%
+%%======================================================================
+%% Stylistic changes.
+%%
+%% Modifications to get toc entries for bibliography and index
+%% sections and to avoid loss of section headings in index.  Both of
+%% these should be merged into ltugboat.sty.
+%
+\def\thebibliography#1{%
+  \section*{References\@mkboth
+  {REFERENCES}{REFERENCES}}\list
+  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \usecounter{enumi}}%
+    \def\newblock{\hskip .11em plus .33em minus .07em}%
+    \tolerance 8000 \hfuzz .5\p@ \vfuzz .5\p@
+    \clubpenalty4000\widowpenalty4000
+    \addcontentsline{toc}{section}{\numberline {}References}%
+    \sfcode`\.=1000\relax
+}
+%
+% Change \theindex to not fiddle page style, typeset in ragged right,
+% and use a \small font to shorten the article.  For bibclean.ltx,
+% this only reduces the index size from 8 pages to 7 pages.  A \tiny
+% font (5 pt) reduces it to 4, but standard LaTeX lacks \sc and \tt in
+% that size, and we need both of them.
+\renewcommand{\theindex}{%
+    \section*{Index}%
+    \@mkboth{INDEX}{INDEX}%
+%% OLD:   \thispagestyle{plain}    %leave pagestyle alone
+    \parindent\z@
+    \parskip\z@ plus .3pt\relax\let\item\@idxitem
+    \addcontentsline{toc}{section}{\numberline {}Index}%
+    \raggedright                % index entries are sometimes long
+    \small                      % small font to compress index
+}
+%
+% Change \endtheindex to not do a page eject, so signature display can
+% fall on index page, and reset type size to \normalsize.
+\def\endtheindex{\if@restonecol\onecolumn\else\fi\par\normalsize}
+
+%=======================================================================
+\endinput

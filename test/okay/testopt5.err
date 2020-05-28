@@ -1,0 +1,430 @@
+%% :0:Unrecognized option switch: -bogus-option.
+bibclean Version 3.04 [21-Nov-2019]
+
+with native pattern matching
+E-mail bug reports to Nelson H. F. Beebe <beebe@math.utah.edu>
+
+Copyright (C) 1990--2018 by Nelson H. F. Beebe and the Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Usage: ../bibclean [ -author ] [ -copyleft ] [ -copyright ]
+	[ -error-log filename ] [ -help ] [ '-?'  ]
+	[ -init-file filename ] [ -ISBN-file filename ]
+	[ -keyword-file filename ] [ -max-width nnn ]
+	[ -[no-]align-equals ] [ -[no-]brace-protect ]
+	[ -[no-]check-values ] [ -[no-]debug-match-failures ]
+	[ -[no-]delete-empty-values ] [ -[no-]file-position ]
+	[ -[no-]fix-accents ] [ -[no-]fix-braces ] [ -[no-]fix-degrees ]
+	[ -[no-]fix-font-changes ] [ -[no-]fix-initials ]
+	[ -[no-]fix-math ] [ -[no-]fix-names ] [ -[no-]German-style ]
+	[ -[no-]keep-linebreaks ] [ -[no-]keep-parbreaks ]
+	[ -[no-]keep-preamble-spaces ] [ -[no-]keep-spaces ]
+	[ -[no-]keep-string-spaces ] [ -[no-]parbreaks ]
+	[ -[no-]prettyprint ] [ -[no-]print-ISBN-table ]
+	[ -[no-]print-keyword-table ] [ -[no-]print-patterns ]
+	[ -[no-]quiet ] [ -[no-]read-init-files ]
+	[ -[no-]remove-OPT-prefixes ] [ -[no-]scribe ]
+	[ -[no-]trace-file-opening ] [ -[no-]warnings ]
+	[ -output-file filename ] [ -version ]
+	[ <infile or bibfile1 bibfile2 bibfile3 ...] >outfile
+
+Command-line switches may be abbreviated to a unique leading
+prefix, and letter case is not significant.  All options are parsed
+before any input bibliography files are read, no matter what their
+order on the command line.  Options that correspond to a yes/no
+setting of a flag have a form with a prefix "no-" to set the flag
+to no.  For such options, the last setting determines the flag
+value used.  That is significant when options are also specified in
+initialization files (see the INITIALIZATION FILES manual section).
+
+The leading hyphen that distinguishes an option from a filename may
+be doubled, for compatibility with GNU and POSIX conventions.
+Thus, -author and --author are equivalent.
+
+To avoid confusion with options, if a filename begins with a
+hyphen, it must be disguised by a leading absolute or relative
+directory path, e.g., /tmp/-foo.bib or ./-foo.bib.
+
+-author   Display an author credit on the standard error unit,
+          stderr, and then terminate with a success return code.
+          Sometimes an executable program is separated from its
+          documentation and source code; this option provides a way
+          to recover from that.
+
+-copyleft Display copyright information on the standard error unit,
+          stderr, and then terminate with a success return code.
+
+-copyright
+          Display copyright information on the standard error unit,
+          stderr, and then terminate with a success return code.
+
+-error-log filename
+          Redirect stderr to the indicated file, which then
+          contains all of the error and warning messages.  This
+          option is provided for those systems that have difficulty
+          redirecting stderr.
+
+-help or -?
+          Display a help message on stderr, giving a usage
+          description, similar to this section of the manual pages,
+          and then terminate with a success return code.
+
+-ISBN-file filename
+          Provide an explicit ISBN-range initialization file.  It
+          is processed after any system-wide and job-wide ISBN
+          initialization files found on the PATH (for VAX VMS,
+          SYS$SYSTEM) and BIBINPUTS search paths, respectively, and
+          may override them.  The ISBN initialization file name can
+          be changed at compile time, or at run time through a
+          setting of the environment variable BIBCLEANISBN, but
+          defaults to .bibclean.isbn on UNIX, and bibclean.isb
+          elsewhere.  For further details, see the ISBN
+          INITIALIZATION FILES manual section.
+
+-init-file filename
+          Provide an explicit value pattern initialization file.
+          It is processed after any system-wide and job-wide
+          initialization files found on the PATH (for VAX VMS,
+          SYS$SYSTEM) and BIBINPUTS search paths, respectively, and
+          may override them.  It in turn may be overridden by a
+          subsequent file-specific initialization file.  The
+          initialization file name can be changed at compile time,
+          or at run time through a setting of the environment
+          variable BIBCLEANINI, but defaults to .bibcleanrc on
+          UNIX, and to bibclean.ini elsewhere.  For further
+          details, see the INITIALIZATION FILES manual section.
+
+-keyword-file filename
+          Provide an explicit keyword initialization file.  It is
+          processed after any system-wide and job-wide keyword
+          initialization files found on the PATH (for VAX VMS,
+          SYS$SYSTEM) and BIBINPUTS search paths, respectively, and
+          may override them.  The keyword initialization file name
+          can be changed at compile time, or at run time through a
+          setting of the environment variable BIBCLEANKEY, but
+          defaults to .bibclean.key on UNIX, and bibclean.key
+          elsewhere.  For further details, see the KEYWORD
+          INITIALIZATION FILES manual section.
+
+-max-width nnn
+          bibclean normally limits output line widths to 72
+          characters, and in the interests of consistency, that
+          value should not be changed.  Occasionally, special-
+          purpose applications may require different maximum line
+          widths, so this option provides that capability.  The
+          number following the option name can be specified in
+          decimal, octal (starting with 0), or hexadecimal
+          (starting with 0x).  A zero or negative value is
+          interpreted to mean unlimited, so -max-width 0 can be
+          used to ensure that each field/value pair appears on a
+          single line.
+
+          When -no-prettyprint requests bibclean to act as a
+          lexical analyzer, the default line width is unlimited,
+          unless overridden by this option.
+
+          When bibclean is prettyprinting, line wrapping is done
+          only at a space. Consequently, a long non-blank character
+          sequence may result in the output exceeding the requested
+          line width.
+
+          When bibclean is lexing, line wrapping is done by
+          inserting a backslash-newline pair when the specified
+          maximum is reached, so no line length ever exceeds the
+          maximum.
+
+-[no-]align-equals
+          With the positive form, align the equals sign in
+          key/value assignments at the same column, separated by a
+          single space from the value string.  Otherwise, the
+          equals sign follows the key, separated by a single space.
+          Default: no.
+
+-[no-]brace-protect
+          Protect uppercase and mixedcase words at brace-level zero
+          with braces to prevent downcasing by some BibTeX styles.
+          Default: yes.
+
+-[no-]check-values
+          With the positive form, apply heuristic pattern matching
+          to field values in order to detect possible errors (e.g.,
+          ``year = "192"'' instead of ``year = "1992"''), and issue
+          warnings when unexpected patterns are found.
+
+          That checking is usually beneficial, but if it produces
+          too many bogus warnings for a particular bibliography
+          file, you can disable it with the negative form of this
+          option.  Default: yes.
+
+-[no-]debug-match-failures
+          With the positive form, print out a warning when a value
+          pattern fails to match a value string.
+
+          That is helpful in debugging new patterns, but because
+          the output can be voluminous, you should use this option
+          only with small test files, and initialization files that
+          eliminate all patterns apart from the ones that you are
+          testing.  Default: no.
+
+-[no-]delete-empty-values
+          With the positive form, remove all field/value pairs for
+          which the value is an empty string.  That is helpful in
+          cleaning up bibliographies generated from text editor
+          templates. Compare this option with -[no-]remove-OPT-
+          prefixes described below.  Default: no.
+
+-[no-]file-position
+          With the positive form, give detailed file position
+          information in warning and error messages.  Default: no.
+
+-[no-]fix-accents
+          With the positive form, normalize TeX accents in annotes,
+          authors, booktitles, editors, notes, remarks, and titles.
+          Default: no.
+
+-[no-]fix-braces
+          With the positive form, normalize bracing in annotes,
+          authors, booktitles, editors, notes, remarks, and titles,
+          by removing unnecessary levels of braces.  Default: no.
+
+-[no-]fix-degrees
+          With the positive form, remove spaces in author/editor
+          fields inside braces after letter-ending periods.  That
+          makes reductions from J. J. {Thomson, M. A., F. R. S.},
+          Frederick {Soddy, B. A. (Oxon.)}, and John A. {Cable, M.
+          A., M. Ed., Dipl. Deutsch (Marburg), A. L. C. M.} to J.
+          J. {Thomson, M.A., F.R.S.}, Frederick {Soddy, B.A.
+          (Oxon.)}, and John A. {Cable, M.A., M.Ed., Dipl.Deutsch
+          (Marburg), A.L.C.M.}, respectively.
+
+          In journals in the humanities and history of science, as
+          well as in some scientific journals until well into the
+          20th Century, academic, honorary, and professional titles
+          and degrees are commonly attached to personal names.
+          Even though modern publishing practice avoids such
+          decorations, for accuracy, bibliography entries should
+          preferably retain them.  Journal typographical practice
+          generally follows the reductions described here.
+
+-[no-]fix-font-changes
+          With the positive form, supply an additional brace level
+          around font changes in titles to protect against
+          downcasing by some BibTeX styles.  Font changes that
+          already have more than one level of braces are not
+          modified.
+
+          For example, if a title contains the Latin phrase {\em
+          Dictyostelium discoideum} or {\em {D}ictyostelium
+          discoideum}, then downcasing incorrectly converts the
+          phrase to lower-case letters.  Most BibTeX users are
+          surprised that bracing the initial letters does not
+          prevent the downcase action.  The correct coding is {{\em
+          Dictyostelium discoideum}}.  However, there are also
+          legitimate cases where an extra level of bracing wrongly
+          protects from downcasing.  Consequently, bibclean
+          normally does not supply an extra level of braces, but if
+          you have a bibliography where the extra braces are
+          routinely missing, you can use this option to supply
+          them.
+
+          If you think that you need this option, it is strongly
+          recommended that you apply bibclean to your bibliography
+          file with and without -fix-font-changes, then compare the
+          two output files to ensure that extra braces are not
+          being supplied in titles where they should not be
+          present.  You must decide which of the two output files
+          is the better choice, then repair the incorrect title
+          bracing by hand.
+
+          Because font changes in titles are uncommon, except for
+          cases of the type that this option is designed to
+          correct, it should do more good than harm.  Default: no.
+
+-[no-]fix-initials
+          With the positive form, insert a space after a period
+          following author initials.  Default: yes.
+
+-[no-]fix-math
+          With the positive form, improve readability of math mode
+          in titles by inserting spaces around operators, deleting
+          other unnecessary space, and removing braces around
+          single-character subscripts and superscripts.  Default:
+          no.
+
+-[no-]fix-names
+          With the positive form, reorder author and editor name
+          lists to remove commas at brace level zero, placing first
+          names or initials before last names.  Default: yes.
+
+-[no-]German-style
+          With the positive form, interpret quote characters ["]
+          inside braced value strings at brace level 1 according to
+          the conventions of the TeX style file german.sty, which
+          overloads quote to simplify input and representation of
+          German umlaut accents, sharp-s (es-zet), ligature
+          separators, invisible hyphens, raised/lowered quotes,
+          French guillemets, and discretionary hyphens.  Recognized
+          character combinations are braced to prevent BibTeX from
+          interpreting the quote as a string delimiter.
+
+          Quoted strings receive no special handling from this
+          option, and because German nouns in titles must anyway be
+          protected from the downcasing operation of most BibTeX
+          bibliography styles, German value strings that use the
+          overloaded quote character can always be entered in the
+          form "{...}", without the need to specify this option at
+          all.
+
+          Default: no.
+
+-[no-]keep-linebreaks
+          Normally, line breaks inside value strings are collapsed
+          into a single space, so that long value strings can later
+          be broken to provide lines of reasonable length.
+
+          With the positive form, linebreaks are preserved in value
+          strings.  If -max-width is set to zero, this preserves
+          the original line breaks.  Spacing outside value strings
+          remains under bibclean's control, and is not affected by
+          this option.
+
+          Default: no.
+
+-[no-]keep-parbreaks
+          With the positive form, preserve paragraph breaks (either
+          formfeeds, or lines containing only spaces) in value
+          strings.  Normally, paragraph breaks are collapsed into a
+          single space.  Spacing outside value strings remains
+          under bibclean's control, and is not affected by this
+          option.  Default: no.
+
+-[no-]keep-preamble-spaces
+          With the positive form, preserve all whitespace in
+          @Preamble{...} entries.  Default: no.
+
+-[no-]keep-spaces
+          With the positive form, preserve all spaces in value
+          strings.  Normally, multiple spaces are collapsed into a
+          single space.  This option can be used together with
+          -keep-linebreaks, -keep-parbreaks, and -max-width 0 to
+          preserve the form of value strings while still providing
+          syntax and value checking.  Spacing outside value strings
+          remains under bibclean's control, and is not affected by
+          this option.  Default: no.
+
+-[no-]keep-string-spaces
+          With the positive form, preserve all whitespace in
+          @String{...} entries.  Default: no.
+
+-[no-]parbreaks
+          With the negative form, a paragraph break (either a
+          formfeed, or a line containing only spaces) is not
+          permitted in value strings, or between field/value pairs.
+          That may be useful to quickly trap runaway strings
+          arising from mismatched delimiters.  Default: yes.
+
+-[no-]prettyprint
+          Normally, bibclean functions as a prettyprinter.
+          However, with the negative form of this option, it acts
+          as a lexical analyzer instead, producing a stream of
+          lexical tokens.  See the LEXICAL ANALYSIS manual section
+          for further details.  Default: yes.
+
+-[no-]print-ISBN-table
+          With the positive form, print the ISBN-range table on
+          stderr, then terminate with a success return code.
+
+          That action is taken after all command-line options are
+          processed, and before any input files are read (other
+          than those that are values of command-line options).
+
+          The format of the output ISBN-range table is acceptable
+          for input as an ISBN initialization file (see the ISBN
+          INITIALIZATION FILES manual section).  Default: no.
+
+-[no-]print-keyword-table
+          With the positive form, print the keyword initialization
+          table on stderr, then terminate with a success return
+          code.
+
+          That action is taken after all command-line options are
+          processed, and before any input files are read (other
+          than those that are values of command-line options).
+
+          The format of the output table is acceptable for input as
+          a keyword initialization file (see the KEYWORD
+          INITIALIZATION FILES manual section).  Default: no.
+
+-[no-]print-patterns
+          With the positive form, print the value patterns read
+          from initialization files as they are added to internal
+          tables.  Use this option to check newly-added patterns,
+          or to see what patterns are being used.
+
+          When bibclean is compiled with native pattern-matching
+          code (the default), those patterns are the ones that are
+          used in checking value strings for valid syntax, and all
+          of them are specified in initialization files, rather
+          than hard-coded into the program.  For further details,
+          see the INITIALIZATION FILES manual section.  Default:
+          no.
+
+-[no-]quiet
+          This option is the opposite of -[no-]warning; it exists
+          for user convenience, and for compatibility with other
+          programs that use -q  for quiet operation, without
+          warning messages.
+
+-[no-]read-init-files
+          With the negative form, suppress loading of system-,
+          user-, and file-specific initialization files.
+          Initializations then come only from those files
+          explicitly given by -init-file filename options.
+          Default: yes.
+
+-[no-]remove-OPT-prefixes
+          With the positive form, remove the ``OPT'' prefix from
+          each field name where the corresponding value is not an
+          empty string.  The prefix ``OPT'' must be entirely in
+          upper-case to be recognized.
+
+          This option is for bibliographies generated with the help
+          of the GNU Emacs BibTeX editing support, which generates
+          templates with optional fields identified by the ``OPT''
+          prefix.  Although the function M-x bibtex-remove-OPT
+          normally bound to the keystrokes C-c C-o does the job,
+          users often forget, with the result that BibTeX does not
+          recognize the field name, and ignores the value string.
+          Compare this option with -[no-]delete-empty-values
+          described above.  Default: no.
+
+-[no-]scribe
+          With the positive form, accept input syntax conforming to
+          the Scribe document system.  The output is converted to
+          conform to BibTeX syntax.  See the SCRIBE BIBLIOGRAPHY
+          FORMAT manual section for further details.  Default: no.
+
+-[no-]trace-file-opening
+          With the positive form, record in the error log file the
+          names of all files that bibclean attempts to open.  Use
+          this option to identify where initialization files are
+          located.  Default: no.
+
+-[no-]warnings
+          With the positive form, allow all warning messages.  The
+          negative form is not recommended because it may mask
+          problems that should be repaired.  Default: yes.
+
+-output-file filename
+          Supply an alternate output file to replace stdout.  If
+          the filename cannot be opened for output, execution
+          terminates immediately with a nonzero exit code.
+
+-version  Display the program version number on stderr, and then
+          terminate with a success return code.  That includes an
+          indication of who compiled the program, the host name on
+          which it was compiled, the time of compilation, and the
+          type of string-value matching code selected, when that
+          information is available to the compiler.
+

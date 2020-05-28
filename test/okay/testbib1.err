@@ -1,0 +1,26 @@
+%% testbib1.bib:48:Unexpected value in ``chapter = "23."''.
+%% testbib1.bib:49:Unexpected value in ``chapter = "Two"''.
+%% testbib1.bib:51:Unexpected value in ``month = "janvier"''.
+%% testbib1.bib:53:Unexpected value in ``pages = "1,3,5,7"''.
+%% testbib1.bib:54:Unexpected value in ``pages = "1--3, 5, 7"''.
+%% testbib1.bib:55:Unexpected value in ``pages = "10,560--10,574"''.
+%% testbib1.bib:56:Unexpected value in ``pages = "12--13, 17, 18"''.
+%% testbib1.bib:59:Unexpected value in ``pages = "445 + viii with 30 illustrations"''.
+%% testbib1.bib:60:Unexpected value in ``pages = "445 + viii"''.
+%% testbib1.bib:62:Unexpected value in ``price = "DM\$60.5"''.
+%% testbib1.bib:63:Unexpected value in ``price = "DM\$60.537"''.
+%% testbib1.bib:64:Unexpected value in ``price = "US\$12.9"''.
+%% testbib1.bib:65:Put country prefix on price "\$12.95".
+%% testbib1.bib:66:Put country prefix on price "\$13".
+%% testbib1.bib:67:Put country prefix on price "\pounds 13".
+%% testbib1.bib:69:Unexpected value in ``volume = "1."''.
+%% testbib1.bib:70:Unexpected value in ``volume = "12(5)"''.
+%% testbib1.bib:71:Unexpected value in ``volume = "1:"''.
+%% testbib1.bib:73:Unexpected value in ``year = "(1985)"''.
+%% testbib1.bib:74:Unexpected value in ``year = "1789"''.
+%% testbib1.bib:74:Suspicious year in ``year = "1789"''.
+%% testbib1.bib:75:Unexpected value in ``year = "23"''.
+%% testbib1.bib:75:Suspicious year in ``year = "23"''.
+%% testbib1.bib:76:Unexpected value in ``year = "2525"''.
+%% testbib1.bib:76:Suspicious year in ``year = "2525"''.
+%% testbib1.bib:77:Unexpected value in ``year = "????"''.

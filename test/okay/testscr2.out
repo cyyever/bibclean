@@ -1,0 +1,60 @@
+@Comment{
+This file contains some test Scribe bibliography entries with embedded
+paragraph breaks for testing the -no-parbreaks switch in bibclean.
+Without that switch, it should process correctly; with it, 3 sets of
+error messages should be displayed.
+}
+
+@TechReport{bs-1629-0,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-1,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-2,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-3,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-4,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}
+
+@TechReport{bs-1629-5,
+  author =       "BSI",
+  title =        "Bibliographic References",
+  institution =  "British Standards Institution",
+  year =         "1976",
+  type =         "BS",
+  number =       "1629",
+}

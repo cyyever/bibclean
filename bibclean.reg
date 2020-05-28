@@ -1,0 +1,101 @@
+%% -*-text-*-
+%% /u/sy/beebe/tex/bibclean/bibclean.reg, Sun Nov 15 14:58:54 1992
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+%% This file contains bibclean value regular-expression pattern matching
+%% specifications and default options to be read during initialization.
+%% bibclean must be compiled with either HAVE_REGEXP or HAVE_RECOMP to
+%% use these patterns correctly.
+%%
+%% For either of these options, the string values are NOT filtered to
+%% remove braces and TeX control sequences, so if these are expected,
+%% regular expressions must be provided to match them.
+
+chapter	=	"^\"[0-9]+\"$"			%% 23
+chapter	=	"^\"[0-9]+-[0-9]+\"$"		%% 11-2
+
+month	=	"^[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY] *#\
+ *\" +[0-9]+\"$"				%% oct # " 10"
+month	=	"^[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY] *#\
+ *\" +[0-9][0-9]?--[0-9][0-9]?\"$"		%% oct # " 8--10"
+month	=	"^\"[0-9]+ *\" *#\
+ *[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY]$"	%% "10 " # oct
+month	=	"^\"[0-9][0-9]?--[0-9][0-9]? *\" *#\
+ *[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY]$"  %% "8--10 " # oct
+month	=	"^[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY] *#\
+ *\"\\\\[a-zA-Z]+ *\" *#\
+ *[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY]$"
+						%% jul # "\emdash " # aug
+month	=	"^[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY] *#\
+ *\" *-- *\" *#\
+ *[adfjmnosADFJMNOS][acepouACEPOU][bcglnprtvyBCGLNPRTVY]$"
+						%% jul # "--" # aug
+
+number	=	"^\"[0-9]+\"$"				%% "23"
+number	=	"^\"[a-zA-Z]+ +[a-zA-Z]+[0-9]+\"$"	%% "PN LPS5001"
+number	=	"^\"[a-zA-Z]+ +[0-9]+([0-9]+)\"$"	%% "RJ 34(49)"
+number	=	"^\"[a-zA-Z]+ +[0-9]+\"$"		%% "XNSS 288811"
+number	=	"^\"[a-zA-Z]+ +[0-9]+[.][0-9]+\"$"	%% "Version 3.20"
+number	=	"^\"[a-zA-Z]+-[a-zA-Z]+-[0-9]+-[0-9]+\"$" %% "UMIAC-TR-89-11"
+number	=	"^\"[a-zA-Z]+-[a-zA-Z]+-[0-9]+\"$"	%% "CS-TR-2189"
+number	=	"^\"[a-zA-Z]+-[a-zA-Z]+-[0-9]+[.][0-9]+\"$" %% "CS-TR-21.7"
+number	=	"^\"[a-zA-Z]+-[a-zA-Z]+\\\\[a-zA-Z]+ +[0-9]+-[0-9]+\"$"
+							%% "TN-K\slash 27-70"
+number	=	"^\"[a-zA-Z]+-[0-9]+ +[0-9]+\"$"	%% "PB-251 845"
+number	=	"^\"[a-zA-Z]+-[0-9]+-[0-9]+\"$"		%% "ANL-30-74"
+number	=	"^\"[a-zA-Z]+-[0-9]+\"$"		%% "TR-2189"
+number	=	"^\"[a-zA-Z]+[0-9]+-[0-9]+-[0-9]+\"$"	%% "GG24-3611-00"
+number	=	"^\"[a-zA-Z]+[0-9]+-[0-9]+\"$"		%% "SP43-29"
+number	=	"^\"[a-zA-Z]+[0-9]+\"$"			%% "LPS0064"
+number	=	"^\"[a-zA-Z]+\\\\#[0-9]+-[0-9]+\"$"	%% "TR\#89-24"
+number	=	"^\"[0-9]+ and +[0-9]+\"$"		%% "11 and 12"
+number	=	"^\"[0-9]+[-+/.][0-9]+\"$"	%% "3+4, 23-27, 23/27, 23.27"
+number	=	"^\"[0-9]+[a-zA-Z]+\"$"			%% "23A"
+number	=	"^\"[a-zA-Z]+-[a-zA-Z]+ +[a-zA-Z]+\"$"	%% "AERE-R 12329"
+number	=\
+	"^\"[a-zA-Z]+-[a-zA-Z]+-[0-9]+\\\\[a-zA-Z]+ *[0-9]+-[a-zA-Z]+[0-9]+\"$"
+						%% "OSU-CISRC-4\slash 87-TR9"
+number	=	"^\"[a-zA-Z0-9]+\\( *[a-zA-Z0-9]+\\)\"$"
+					%% "Computer Science Report 100"
+number	=	"^\"[a-zA-Z0-9]+\\([-/.][a-zA-Z0-9]+\\)\"$"
+						%% "TR/AB/3-43.7-3/AB"
+
+pages	=	"^\"[a-zA-Z]?[0-9]+\"$"		%% "23" and "A23"
+pages	=	"^\"[A-Za-z]?[0-9]+--[A-Za-z]?[0-9]+\"$"
+						%% "23--29" and "A23--A29"
+pages	=	"^\"[A-Za-z]?[0-9]+-[A-Za-z]?[0-9]+\"$" \
+		"Use en-dash, --, to separate page numbers"
+						%% "23-29" and "A23-A29"
+pages	=	"^\"[A-Za-z]?[0-9]+---[A-Za-z]?[0-9]+\"$" \
+		"Use en-dash, --, to separate page numbers"
+						%% "23---29" and "A23---A29"
+pages	=	"^\"[A-Za-z]?[0-9---]+\\(, *[A-Za-z]?[0-9---]+\\)*\"$"
+					%% "23, 27, 29" and "A23, A27, A29"
+pages	=	"^\"[ivxlcdmIVXLCDM]+\"$"	%% "xxxiv"
+pages	=	"^\"[ivxlcdmIVXLCDM]+ *[+] *[0-9]+"
+					%% "xiii + 457 with 230 illustrations"
+
+volume	=	"^\"[0-9]+a?\"$"		%% "27" and "27A"
+volume	=	"^\"[0-9]+/?[0-9]+\"$"		%% "27/3"
+volume	=	"^\"[0-9]+[a-zA-Z] [0-9]+\"$"	%% "27A 3"
+volume	=	"^\"[0-9a-zA-Z]+-[0-9]+\"$"	%% "SMC-13"
+volume	=	"^\"[ivxlcdmIVXLCDM]+\"$"	%% "VIII"
+volume	=	"^\"[0-9]+[.][0-9]+\"$"		%% "27.3"
+volume	=	"^\"[0-9]+[a-zA-Z] [0-9]+\"$"	%% "27A 3"
+volume	=	"^\"[A-Za-z0-9]+\\( *[A-Za-z0-9]+\\)*\"$" %% "Special issue A"
+volume	=	"^\"[0-9]+ and [0-9]+\""	%% "11 and 12"
+
+year	=	"^\"[12][0-9][0-9][0-9]\"$"	%% "1992"
+year	=	"^\"[12][0-9][0-9][0-9]\\(, [12][0-9][0-9][0-9]\\)*\"$"
+						%% "1989, 1990, ..."
+year	=	"^\"{\\[a-zA-Z]+{[12][0-9][0-9][0-9][a-zA-Z]}}\
+[12][0-9][0-9][0-9]\"$"				%% "{\noopsort{1985a}}1985"
+
+%% This is for GNU Emacs file-specific customization:
+%% Local Variables:
+%% eval: (auto-fill-mode -1)
+%% comment-start: "%% "
+%% comment-start-skip: "%+ *"
+%% comment-end: ""
+%% comment-column: 48
+%% End:

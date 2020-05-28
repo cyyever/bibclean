@@ -1,0 +1,360 @@
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 20dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd aaa 20dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 20dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 20dd"]
+
+file=[/usr/local/bin/.bibcleanrc] field=[chapter     ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[chapter     ] pattern=["D"]
+file=[/usr/local/bin/.bibcleanrc] field=[chapter     ] pattern=["D-D"]
+
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # " D"]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # " D--D"]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=["D " # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=["D--D " # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # "" # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # "--" # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # " -- " # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # "/" # aaa]
+file=[/usr/local/bin/.bibcleanrc] field=[month       ] pattern=[aaa # " A " # aaa]
+
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A AD"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A D(D)"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A D\.D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-A-D-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-A-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-A-D\.D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-AD-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-D D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-D-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["AD-D-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["AD-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["AD"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["A\#D-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D \an\d D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D+D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D+D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D/D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D  D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["DA"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["D\.D"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["W-W W"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["W-W-WW-W"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["W"]
+file=[/usr/local/bin/.bibcleanrc] field=[number      ] pattern=["X"]
+
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D--D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD--aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D, D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD, aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D, D, D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD, aD, aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D, D, D, D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD, aD, aD, aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["R + D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["R + D, w D w"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D, w D w"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D--D, D--D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["D--D, D--D, D--D"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD--aD, aD--aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["aD--aD, aD--aD, aD--aD"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["??--??"]
+file=[/usr/local/bin/.bibcleanrc] field=[pages       ] pattern=["????"]
+
+file=[/usr/local/bin/.bibcleanrc] field=[price       ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[price       ] pattern=["AD\.dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[price       ] pattern=["D\.dd"] message[Put country prefix on price %v]
+file=[/usr/local/bin/.bibcleanrc] field=[price       ] pattern=["AD"]
+file=[/usr/local/bin/.bibcleanrc] field=[price       ] pattern=["D"] message[Put country prefix on price %v]
+
+file=[/usr/local/bin/.bibcleanrc] field=[tag         ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[tag         ] pattern=[A:Add]
+file=[/usr/local/bin/.bibcleanrc] field=[tag         ] pattern=[A:Adda]
+
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["DA"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["D/D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["DA D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["w-D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["A"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["D.D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["D \an\d D"]
+file=[/usr/local/bin/.bibcleanrc] field=[volume      ] pattern=["W"]
+
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] existing patterns discarded
+
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd, 19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd, 19dd, 19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dda19dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["18dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["18dd, 18dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["18dd, 18dd, 18dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["18dda18dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd (19dd)"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd" # "--"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["20dd"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["18dd--d"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["19dd--d"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["20dd--d"]
+file=[/usr/local/bin/.bibcleanrc] field=[year        ] pattern=["20dd--d"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 20dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd aaa 20dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 20dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 20dd"]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[chapter     ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[chapter     ] pattern=["D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[chapter     ] pattern=["D-D"]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # " D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # " D--D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=["D " # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=["D--D " # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # "" # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # "--" # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # " -- " # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # "/" # aaa]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[month       ] pattern=[aaa # " A " # aaa]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A AD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A D(D)"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A D\.D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-A-D-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-A-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-A-D\.D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-AD-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-D D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-D-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["AD-D-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["AD-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["AD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["A\#D-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D \an\d D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D+D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D+D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D/D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D  D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["DA"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["D\.D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["W-W W"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["W-W-WW-W"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["W"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[number      ] pattern=["X"]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D--D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD--aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D, D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD, aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D, D, D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD, aD, aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D, D, D, D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD, aD, aD, aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["R + D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["R + D, w D w"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D, w D w"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D--D, D--D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["D--D, D--D, D--D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD--aD, aD--aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["aD--aD, aD--aD, aD--aD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["??--??"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[pages       ] pattern=["????"]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[price       ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[price       ] pattern=["AD\.dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[price       ] pattern=["D\.dd"] message[Put country prefix on price %v]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[price       ] pattern=["AD"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[price       ] pattern=["D"] message[Put country prefix on price %v]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[tag         ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[tag         ] pattern=[A:Add]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[tag         ] pattern=[A:Adda]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["DA"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["D/D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["DA D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["w-D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["A"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["D.D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["D \an\d D"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[volume      ] pattern=["W"]
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] existing patterns discarded
+
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd, 19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd, 19dd, 19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dda19dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["18dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["18dd, 18dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["18dd, 18dd, 18dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["18dda18dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd (19dd)"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd" # "--"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["20dd"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["18dd--d"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["19dd--d"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["20dd--d"]
+file=[/u/sy/beebe/tex/bib/.bibcleanrc] field=[year        ] pattern=["20dd--d"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 19dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 19dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd 20dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa d dd:dd:dd aaa 20dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd 20dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 19dd"]
+file=[../bibclean.ini] field=[bibdate     ] pattern=["aaa aaa dd dd:dd:dd aaa 20dd"]
+
+file=[../bibclean.ini] field=[chapter     ] existing patterns discarded
+
+file=[../bibclean.ini] field=[chapter     ] pattern=["D"]
+file=[../bibclean.ini] field=[chapter     ] pattern=["D-D"]
+
+file=[../bibclean.ini] field=[month       ] existing patterns discarded
+
+file=[../bibclean.ini] field=[month       ] pattern=[aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # " D"]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # " D--D"]
+file=[../bibclean.ini] field=[month       ] pattern=["D " # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=["D--D " # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # "" # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # "--" # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # " -- " # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # "/" # aaa]
+file=[../bibclean.ini] field=[month       ] pattern=[aaa # " A " # aaa]
+
+file=[../bibclean.ini] field=[number      ] existing patterns discarded
+
+file=[../bibclean.ini] field=[number      ] pattern=["D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A AD"]
+file=[../bibclean.ini] field=[number      ] pattern=["A D(D)"]
+file=[../bibclean.ini] field=[number      ] pattern=["A D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A D\.D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-A-D-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-A-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-A-D\.D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-AD-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-D D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-D-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["A-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["AD-D-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["AD-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["AD"]
+file=[../bibclean.ini] field=[number      ] pattern=["A\#D-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D \an\d D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D+D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D+D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D-D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D/D"]
+file=[../bibclean.ini] field=[number      ] pattern=["D  D"]
+file=[../bibclean.ini] field=[number      ] pattern=["DA"]
+file=[../bibclean.ini] field=[number      ] pattern=["D\.D"]
+file=[../bibclean.ini] field=[number      ] pattern=["W-W W"]
+file=[../bibclean.ini] field=[number      ] pattern=["W-W-WW-W"]
+file=[../bibclean.ini] field=[number      ] pattern=["W"]
+file=[../bibclean.ini] field=[number      ] pattern=["X"]
+
+file=[../bibclean.ini] field=[pages       ] existing patterns discarded
+
+file=[../bibclean.ini] field=[pages       ] pattern=["D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D--D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD--aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D, D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD, aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D, D, D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD, aD, aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D, D, D, D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD, aD, aD, aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["R + D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["R + D, w D w"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D, w D w"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D--D, D--D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["D--D, D--D, D--D"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD--aD, aD--aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["aD--aD, aD--aD, aD--aD"]
+file=[../bibclean.ini] field=[pages       ] pattern=["??--??"]
+file=[../bibclean.ini] field=[pages       ] pattern=["????"]
+
+file=[../bibclean.ini] field=[price       ] existing patterns discarded
+
+file=[../bibclean.ini] field=[price       ] pattern=["AD\.dd"]
+file=[../bibclean.ini] field=[price       ] pattern=["D\.dd"] message[Put country prefix on price %v]
+file=[../bibclean.ini] field=[price       ] pattern=["AD"]
+file=[../bibclean.ini] field=[price       ] pattern=["D"] message[Put country prefix on price %v]
+
+file=[../bibclean.ini] field=[tag         ] existing patterns discarded
+
+file=[../bibclean.ini] field=[tag         ] pattern=[A:Add]
+file=[../bibclean.ini] field=[tag         ] pattern=[A:Adda]
+
+file=[../bibclean.ini] field=[volume      ] existing patterns discarded
+
+file=[../bibclean.ini] field=[volume      ] pattern=["D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["DA"]
+file=[../bibclean.ini] field=[volume      ] pattern=["D/D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["DA D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["w-D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["A"]
+file=[../bibclean.ini] field=[volume      ] pattern=["D.D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["D \an\d D"]
+file=[../bibclean.ini] field=[volume      ] pattern=["W"]
+
+file=[../bibclean.ini] field=[year        ] existing patterns discarded
+
+file=[../bibclean.ini] field=[year        ] pattern=["19dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dd, 19dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dd, 19dd, 19dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dda19dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["18dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["18dd, 18dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["18dd, 18dd, 18dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["18dda18dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dd (19dd)"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dd" # "--"]
+file=[../bibclean.ini] field=[year        ] pattern=["20dd"]
+file=[../bibclean.ini] field=[year        ] pattern=["18dd--d"]
+file=[../bibclean.ini] field=[year        ] pattern=["19dd--d"]
+file=[../bibclean.ini] field=[year        ] pattern=["20dd--d"]
+file=[../bibclean.ini] field=[year        ] pattern=["20dd--d"]

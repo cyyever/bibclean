@@ -1,0 +1,7 @@
+This is makeindex, portable version 2.13 (beta) [11-Apr-1994].
+Scanning input file bibclean.idx.....done (1239 entries accepted, 0 rejected).
+Sorting entries..................done (14659 comparisons).
+Generating output file bibclean.ind....done (744 lines written, 0 warnings).
+Output written in bibclean.ind.
+Transcript written in bibclean.ilg.
+Dynamic memory allocated: 170204 bytes.

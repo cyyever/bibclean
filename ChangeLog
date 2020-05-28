@@ -1,0 +1,1973 @@
+2019-11-21 10:50:01-0700  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Prepare, but do not release, bibclean 3.04 with minor changes to
+	  address behavior and customization issues raised by a remote
+	  user.
+
+	* Makefile.in: Add ${XDEFS} to DEFS value, and add large
+	  comment block before XDEFS assignment to document local
+	  customizations at some sites.
+
+	* chek.c: Make STD_MAX_TOKEN compile-time settable, and
+	  document the reason for the increase in its default value from
+	  1000 to 20000 (BibTeX evolution in TeX Live distributions).
+
+	  Add a block enabled by nondefault compile-time definition of
+	  DOI_RAW_VALID to accept DOI = "10.xxx" values in BibTeX entries.
+	  I do NOT want this to be a default for bibclean, because I feel
+	  that BibTeX entries should use the URL form of DOI values, and
+	  BibTeX styles that support DOI keywords should strip the URL
+	  prefix in the output .bbl file.
+
+	* configure.ac: Update version and date.
+
+	* do.c: In do_initfile(), skip comment lines and empty lines,
+	  rather than passing them to do_single_arg() or do_new_pattern().
+	  That could be considered a bug fix, but I never noticed
+	  unexpected behavior in 29 years of use of bibclean on hundreds
+	  of millions of BibTeX entries.
+
+	* token.h: Increase MAX_TOKEN from 32760 to 65525 and
+	  revise comment documentation that justifies that change.
+
+2018-03-12 06:44:34-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release bibclean 3.03 with no user-visible changes, but with
+	  internal redesign to eliminate all memory leaks.  Previously,
+	  the user-extendable ISBN and keywords tables contained a mixture
+	  of compile-time static strings, and optional user-provided
+	  dynamic strings, so their storage was never dynamically
+	  recovered.  With the new code in this version, at startup, all
+	  static strings in those tables are dynamically reallocated, and
+	  then, just before exit, their storage is freed.  Memory leak
+	  detectors in clang and gcc (compiler options -fsanitize=address
+	  -fsanitize=undefined -fsanitize-recover=all), and Solaris dbx
+	  (check -all) now report zero memory leaks when execution
+	  terminates.  While those changes might be seen as cosmetic, they
+	  will be beneficial if bibclean is again extended in the future,
+	  and new memory leaks appear during development and testing.
+
+	* configure.ac: New name for old configure.in to meet recent
+	  autoconf requirements.  Update version and PACKAGE_DATE.
+
+	* bibclean.c: Add two function prototypes.  Call
+	  keyword_initialize() on startup.  Add new wrapper function
+	  finish(status) to call free_keyword_table() and
+	  free_ISBN_table() before successful exits, and replace all but
+	  two exit(EXIT_xxx) calls by finish(EXIT_xxx).  The exceptions
+	  are for fatal errors that are caught early in execution.
+	  Failure exits intentionally do not do memory cleanups.
+
+	* bibclean.key: Add rules for ISMN and ORCID-numbers; the latter
+	  are present in Web of Science BibTeX output, and record unique
+	  check-digited identifiers for authors (see https://orcid.org/
+	  and https://en.wikipedia.org/wiki/ORCID).
+
+	* dbx-test.run: New file to automate memory leak checking in
+	  Solaris dbx over almost all of the test suite. It uses "check
+	  -all" to maximize error checking, but has to use "suppress rui"
+	  to suppress read-from-uninitialized checks, because the Solaris
+	  C library function, strlen(), raises such errors, perhaps
+	  because it acts on words, rather than bytes.
+
+	* do.c: Add new functions free_keyword_table() and
+	  keyword_initialize().  Revise add_one_keyword() and
+	  add_one_pattern() to free strings before assigning new ones.
+	  Change exit() calls to finish() calls to localize memory cleanup
+	  immediately before termination.
+
+	* isbn.c: Add new function free_ISBN_table().  Change logic in
+	  ISBN_range[] table handling to require (and check for) begin /
+	  end / countries triples to be all non--NULL, or all NULL;
+	  previously, countries was handled differently.  All assignments
+	  to ISBN_range[] table entries are now either NULL, or the result
+	  of a Strdup() call, so all non--NULL pointers in that table are
+	  allowable in FREE() calls.
+
+	* isbn.h: Add function prototype for free_ISBN_table().
+
+	* match.c: Add condition (p >= &line[0]) in loop to ensure that
+	  memory before line[0] is never referenced.
+
+	* option.c: Add prototypes for finish() and free_keyword_table().
+	  Change exit() calls to finish() calls to localize memory cleanup
+	  immediately before termination.  Update copyright year ranges.
+
+	* isbn.tbl: change all but last entry's NULL pointers to empty
+	  strings ("") to match logic changes in ISBN_range[] table
+	  handling.
+
+	* isbn-el-to-bibclean-isbn.awk: Change NULL initializations of
+	  countries field to empty string ("") to match logic changes in
+	  bibclean to remove all memory leaks.
+
+	* test/plain.bst: Copy of standard BibTeX style file so that
+	  systems that have a bibtex executable, but lack that style file,
+	  or don't have environment variable search paths to find it
+	  elsewhere, can find it here during "make check" runs.
+
+2017-06-09 08:20:55-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release bibclean 3.02 with minor extensions.
+
+	* chek.c: Revise validate_DOI() to recognize any of a list
+	  of DOI prefixes introduced by the DOI agency in 2016.
+	  Revise validate_URL() to recognize "https:" protocol,
+	  and to issue only one warning message (previously, two
+	  similar warnings could be produced).
+
+	* fix.c: Repair an incorrectly-nested multiline comment.
+
+	* configure.in: Update revision date and version number.
+
+	* keybrd.c and match.c: Tabify leading spaces.
+
+	* test/okay/*.err: Update 5 such files to reflect changes in
+	  warning messages.
+
+2017-04-01 12:11:32-0600  Nelson H F Beebe  <beebe@openbsd60.vm.math.utah.edu>
+
+	* Release bibclean 3.01 with support for OpenBSD pledge-style
+	  privilege reduction.  This is a security feature, and legitimate
+	  use of bibclean is not affected.  Version 3.01 otherwise behaves
+	  identically to 3.00.
+
+	* configure.in: Change version and date.
+
+	* option.c: Revise copyright years.
+
+2016-02-29 09:55:45-0600 	  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release bibclean 3.00 with improved standardization of
+	  configure-file installation locations, rehosting of
+	  already-built installations in new positions in the file tree,
+	  and -[no-]fix-degrees options.
+
+	* configure.in: Change version and date.
+
+	* Makefile.in: Change $(var) to ${var} throughout.  Add
+	  datarootdir, datadir, bibcleandir, and initdir variables and
+	  revise "make install" commands to reflect new locations
+
+	* bibclean.c: Revise locations of installed configuration files.
+	  Add large code block near start of main() to permit configuration
+	  files to be found relative to the bibclen executable, allowing
+	  trivial rehosting of a pre-built installation tree to anywhere
+	  else in the filesystem (e.g., in a user's home directory tree).
+	  Add declaration of fix_degrees.
+
+	* fix.c: Add new fix_author_degrees() function.
+
+	* option.c: Add support for -[no-]fix-degrees options. Allow
+	  USER and HOST to be undefined, and absent from the executable
+	  for privacy reasons.  Update copyright years.
+
+2015-02-15 13:40:28-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release bibclean 2.17.
+
+	* Makefile.in and test/*: Add greatly expanded test suite.
+
+	* configure.in: Change version and date.
+
+	* option.c: Add --no-brace-protect option, and revise copyright years
+
+2014-04-03 12:10:55-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release bibclean 2.16 after 15 months of extensive internal
+	  use and testing.
+
+2013-01-01 15:07:45-0700  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+============================
+Development of bibclean 2.16
+============================
+
+This is the first major update of bibclean in a decade, a period in
+which it has successfully processed millions of BibTeX entries and
+been an essential, reliable, and robust tool for creating high-quality
+BibTeX data and databases. During that time, it has exhibited ZERO
+bugs.
+
+That decade of use, however, showed limitations in bibclean's cleanup
+and correction of accents and title bracing, and the manual work
+necessitated in further repairs of BibTeX entries generated from
+publisher Web site data made it increasingly urgent to improve
+bibclean so that a computer can do much more of the bibliographer's
+drudge work.
+
+During that decade, document URLs became common, and DOI (Digital
+Object Identifier) and ISBN-13 book numbers were introduced.  In early
+2013, 40% of the more than 740,000 entries in the TeX User Group and
+BibNet Project bibliography archives contain URL values, 27% contain
+DOI values, and 6% contain ISBN-13 values (but they appear in 82% of
+Book/Proceedings entries).  Because ISBNs were only introduced in
+1972, there will always be a substantial fraction of book-like entries
+for which no ISBNs have been issued.
+
+Only limited syntax checking on URLs and DOIs is possible, but because
+a DOI is intended to be a unique document identifier, it should be
+rare for there to be more than one DOI value, so this new version
+checks for exceptions to that rule.  It is regrettable that the DOI
+consortium at
+
+	http://dx.doi.org/
+
+did not learn from past mistakes, and require a simple but rigorous
+syntax for all DOI values, and include error correction digits that
+could be used to detect, and even repair, single and double character
+errors.  All that can be sure about a DOI value is that it begins with
+"10." followed by a decimal digit string identifying the publisher,
+followed by a slash, followed by anything whatever.  In browser-usable
+form, it begins "http://dx.doi.org/10."; that site then redirects it
+to the current owner of the document (the original publisher might no
+longer exist).
+
+In 1997, this author developed bibsearch
+
+	http://www.math.utah.edu/pub/bibsearch
+
+to provide an interface to the MG (Managing Gigabytes) fast free-text
+search engine.  Extensive experience with bibsearch shows that its
+inability to restrict searches to document subfields is a major
+limitation: entries can be found quickly (in just milliseconds).  As a
+result, there are usually many entries found that are not of interest,
+and the search often hides the sought-for golden needle in a file of
+chaff.  Also, it is not possible to easily extract subsets of the
+date, such as a list of unique authors or journals whose entries match
+the search.
+
+Consequently, in 2008, this author developed bibtosql and bibsql: see
+
+	http://www.math.utah.edu/~beebe/talks/index.html#2009
+	http://www.math.utah.edu/pub/bibsql
+
+They provide a way to get clean (thanks to bibclean!) BibTeX data
+into, and out of, three different SQL databases (MySQL, PostgreSQL,
+and SQLite3).  That makes it possible to do precise subfield
+searching, with SQL queries like this:
+
+	select filename, year, label from bibtab
+	    where (author like '%Knuth%')
+	      and (title like '%TeX%')
+	    order by filename, year, label;
+
+It also allows implementing extensive sanity checks on BibTeX data
+(e.g., find unexpected digits in author or editor values, probably
+left there because of errors in conversion of publisher data that
+superscripted author names to relate them to author address values).
+Those sanity checks are now run automatically prior to Web publication
+of newly-updated or newly-released BibTeX files at the sites
+
+	http://www.math.utah.edu/pub/bibnet/
+	http://www.math.utah.edu/pub/tex/bib/index-table.html
+
+SQL searches also facilitate automated extraction of material from the
+entire corpus for use in other BibTeX bibliographies.  Nightly cron
+jobs produce temporary files containing possible updates to author-
+and subject-specific bibliographies, making it much less likely that
+new material is overlooked.  Cron jobs run several times daily update
+the SQL databases with data from recently-changed BibTeX files.
+
+An rcsdiff of the final code for bibclean version 2.16 shows about 530
+replaced lines (out of about 15,260 original lines of code in version
+2.15), and 2900 new lines.  Thus, version 2.16 is a SUBSTANTIAL update
+that must receive extensive local use before it is released on the Web
+at
+
+	http://www.math.utah.edu/pub/bibclean
+
+Here is a summary of the many changes for version 2.16:
+
+	* Change license fields in comment preambles from "public
+	  domain" to "GNU General Public License, version 2 or later".
+
+	* Change copyright owner to include the Free Software
+          Foundation.
+
+	* Makefile.in: Change file order in cmp and diff commands in
+	  check targets to conventional order "diff oldfile newfile".
+
+	  Add new check-syntax target and several related targets for
+	  additional source-code syntax checking.
+
+	  Add more tests to CHECK-BIBTEX list, and remove their file
+	  extensions, with suitable changes in the commands in the
+	  check-bibtex target.
+
+	  Extend check-bibtex target commands to number the tests, and
+	  produce reports of passes and failures; expect a final
+	  report that says ALL TESTS PASSED!
+
+	* README: Update author addresses.
+
+	* bibclean.c: Update author addresses. Add declaration of new
+	  brace_protect, fix_accents, fix_font_changes, and fix_math
+	  options.  Use new IN_SET() macro to simplify some coding.
+	  Revise warning location data to use conventional GNU-style
+	  filename:lineno:message format, but retain WARNING_PREFIX on
+	  stdout so that warnings in the output can be readily found
+          and removed as repairs are made.
+
+	* bibclean.h: Regenerate to reflect new options and their
+	  documentation.
+
+	* bibclean.ini: Add three more bibdate patterns and two more
+	  pages patterns.
+
+	* bibclean.man: Update author addresses.  Document new options
+	  (-copyleft, -copyright, -[no]-brace-protect,
+	  -[no-]fix-accents) (-[no-]fix-braces, -[no-]fix-math,
+	  -[no-]quiet, and -output-file).
+
+	* chek.c: Add new functions for ISBN-13 and ISSN-L support, and
+	  limited checks on DOI and URL values.
+
+	* configure.in: Update version number and date, and add checks
+	  for six extra C/C++ syntax checkers, and for a declaration of
+	  fileno().
+
+	* configure: Regenerate with latest autoconf (2.69).
+
+	* custom.h: Add definition of IN_SET() macro.
+
+	* chek.c: Add new functions bad_ISBN_13(), check_DOI(),
+	  check_ISBN_13(), check_ISSN_L(), is_DOI_char(),
+	  is_ISBN_13_char(), validate_DOI(), validate_ISBN_13(), and
+	  validate_URL().
+
+	* do.c: Add booktitle to fixes[].  Add DOI, ISBN-13, and
+	  ISSN_L to checks[]. Add book-DOI, book-URL, DOI, ISBN-13,
+	  ISSN-L, xxDOI, ZMclass, ZMnumber, and ZMreviewer to
+	  field_pair[].  Use new IN_SET() macro to simplify some
+	  coding.  Remove one unused format item in a debug print
+	  statement.  Bind editor field to check_other() (like the
+	  author field: the editor field had been forgotten in earlier
+	  bibclean versions).  Bind abstract, annote, note, and remark
+	  to fix_math_spacing().  Bind booktitle to fix_title().
+
+	* fix.c: Replace bracing algorithm in fix_title() and put
+	  its use under control of the new -brace-protect option.  Add
+	  new functions fix_accent_bracing(), fix_math_spacing(), and
+	  squeeze_space() for support of the new fix-accents and
+	  -fix-math options.  Use new IN_SET() macro to simplify some
+	  coding.  Add several macros (COPY_1(), COPY_2(), ...,
+	  STORE_NUL()) to simplify coding.
+
+	  REMARK: the complex -fix-accents, -fix-braces, and -fix-math
+	  support is the largest feature addition with this release,
+	  and will save me much time in future Web-to-BibTeX data
+	  conversions.
+
+	* fndfil.c: Use new IN_SET() macro to simplify some coding.
+
+	* isbn.c: Add new functions fix_ISBN_13(),
+	  hyphenate_one_ISBN_13(), and next_ISBN_13().
+
+	* isbn.tbl: New version with latest ISBN pattern data fetched on
+	  08 January 2013 from
+
+	      http://www.isbn-international.org/agency?rmpdf=1
+	      http://www.isbn-international.org/agency?rmpdf=1&sort=agency
+	      http://www.isbn-international.org/agency?rmxml=1
+	      http://www.isbn-international.org/page/ranges
+
+	  and converted from XML to Emacs Lisp code with
+	  RangeMessage-xml-to-el.awk and from that output, to an
+	  initializer in C code with isbn-el-to-bibclean-isbn.awk.
+
+	  It is important to update isbn.tbl INFREQUENTLY, because that
+	  requires rebuilding and reinstalling bibclean.  Instead, just
+	  add new patterns to the bibclean.isbn file that is normally
+	  installed as the hidden file $(prefix)/bin/.bibclean.isbn.
+	  There have been lots of changes to the ISBN patterns since the
+	  previous version of isbn.tbl from 23-Aug-2003, so it was
+	  worthwhile to update it for this major new release of
+	  bibclean.
+
+	* keybrd.c: Move two declarations inside nearest enclosing
+	  braced statement.  Make kbcode() and kbget() static, because
+	  they are not used outside this file.
+
+	* match.c: Use new IN_SET() macro to simplify some coding.
+
+	* option.c: Update author addresses. Add support for new options
+	  (-copyleft, -copyright, -[no]-brace-protect,
+	  -[no-]fix-accents) (-[no-]fix-braces, -[no-]fix-math,
+	  -[no-]quiet, and -output-file).  Include copyleft statement
+	  in -version output.  Remove duplication of option lists in
+	  two functions by using new top-level help_lines[] array.
+
+	* save/*: Update with current file versions.
+
+	* test/*.{bib,opt}: Add several new tests of new features.
+
+	* test/okay/*: Update to reflect changed behavior of this
+	  version of bibclean.
+
+	* test/testopt[l-o].{bib,opt}: test files for new features.
+
+	* xstdio.h: Add additional test for HAVE_FILENO_DECL.
+
+2003-08-23 19:30:25-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Makefile.in: Update CPPFLAGS and LDFLAGS to import
+	  configure-time values.  Add doc/bibclean.pdf,
+	  doc/bibclean.ps, tstctype.c, and typedefs.h to DIST-FILES.
+	  Add check-setup target so that compilations of test programs
+	  do not clutter test output.  Add new check-ctype test, after
+	  tracing test failures on OpenBSD 3.2 to broken <ctype.h>
+	  support.  Supply some missing echo statements to make the
+	  test output wrappers similar.  Add check for missing LaTeX
+	  and/or BibTeX in check-scribe.  Add FIXBLG macro and use to
+	  remove unwanted crud from .blg files.  Add tstctype target.
+
+	* bibclean.c: Update version number to 2.14, and update file
+	  header FAX number.
+
+	* configure.in: Update version number to 2.14, and add check for
+	  _Bool type.
+
+	* isbn.tbl: Update from latest emacs.el.
+
+	* xstdbool.h: When <stdbool.h> is not available, remap _Bool to
+	  private type to avoid reserved-word conflicts on some recent
+	  compilers.
+
+
+2003-08-22 16:57:15-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	Start new version 2.14, as promised below in log entry for
+	2001-08-29 16:41:50-0600.
+
+	More changes to make splint (formerly, lclint) much happier.
+	Also, introduce use of C++98/C99 bool type, wrapped for
+	portability to older compilers.  Eventually, bool may replace the
+	similar YESorNO type.  Use of bool provides splint with more
+	information, enhancing error checking.
+
+	* Makefile.in: Update many dependency lists to add new header
+	  files.  Add splint and splint.log targets.  Add SPLINT,
+	  SPLINTFLAGS, and XSPLINTFLAGS macros.
+
+	* custom.h: Add splint annotations.
+
+	* ch.h: Add several (int) typecasts to reduce instances of
+	  char/int type mixing.
+
+	* isbn.h: Add splint annotations.
+
+	* match.h: Add splint annotations.  Add file wrapper conditional.
+
+	* token.h: Increase MAX_TOKEN, and add long comment about it.
+
+	* typedefs.h: New file to avoid duplication of seven typedefs in
+	  several source files.
+
+	* xctype.h: Change definitions of Isxxx() macros to produce
+	  Boolean result.
+
+	* xlimits.h: Remove L suffix on INT_MAX value.
+
+	* xstdbool.h: New file to wrap C99 <stdbool.h>
+
+	* yesorno.h: Add file wrapper conditional.
+
+	* configure.in: Add check for stdbool.h and SPLINT.
+
+	* bibclean.c: Add splint annotations. Move typedefs into
+	  typedefs.h.  Include typedefs.h and xstdbool.h.  Add several
+	  (int) typecasts to reduce instances of char/int type mixing.
+	  Change isxxx() functions to is_xxx() to avoid conflict with
+	  reserved names in C89 and C99, and make their type bool instead
+	  of int.  Change conditionals based on zero/nonzero tests to
+	  explicit Boolean relational expressions.
+
+	* chek.c: Add splint annotations. Move typedefs into typedefs.h.
+	  Include typedefs.h. Add several (int) typecasts to reduce
+	  instances of char/int type mixing.   Change isxxx() functions to
+	  Isxxx().
+
+	* do.c:  Add splint annotations. Move typedefs into typedefs.h.
+	  Include typedefs.h. Add several (char) and (int) typecasts to
+	  reduce instances of char/int type mixing.  Change isxxx()
+	  functions to Isxxx().  Change isxxx() functions to is_xxx() to
+	  avoid conflict with reserved names in C89 and C99, and make
+	  their type bool instead of int.
+
+	* fix.c: Add splint annotations. Move typedefs into typedefs.h.
+	  Include match.h and typedefs.h. Add several (char) and (int)
+	  typecasts to reduce instances of char/int type mixing.
+
+	* fndfil.c: Add splint annotations.  Include xstdbool.h. Add
+	  several (char) and (int) typecasts to reduce instances of
+	  char/int type mixing.  Change isxxx() functions to Isxxx().
+	  Change isxxx() functions to is_xxx() to avoid conflict with
+	  reserved names in C89 and C99, and make their type bool instead
+	  of int.  Change conditionals based on zero/nonzero tests to
+	  explicit Boolean relational expressions.  Rename
+	  file_is_readable() and FILE_IS_READABLE() to is_file_readable()
+	  and IS_FILE_READABLE(), and change their type from int to bool.
+
+	* isbn.c: Add splint annotations.  Include xstdbool.h. Add several
+	  (char) and (int) typecasts to reduce instances of char/int type
+	  mixing.  Change isxxx() functions to Isxxx().  Change
+	  conditionals based on zero/nonzero tests to explicit Boolean
+	  relational expressions.
+
+	* keybrd.c: Add several (int) typecasts to reduce instances of
+	  char/int type mixing.  Change conditionals based on zero/nonzero
+	  tests to explicit Boolean relational expressions.
+
+	* match.c: Add splint annotations.  Include xstdbool.h. Add several
+	  (char) and (int) typecasts to reduce instances of char/int type
+	  mixing.  Change isxxx() functions to Isxxx().  Change
+	  conditionals based on zero/nonzero tests to explicit Boolean
+	  relational expressions.
+
+	* option.c: Add splint annotations.  Move typedefs into
+	  typedefs.h.  Include typedefs.h and xstdbool.h. Add several
+	  (char) and (int) typecasts to reduce instances of char/int type
+	  mixing.  Change isxxx() functions to Isxxx().  Change isxxx()
+	  functions to is_xxx() to avoid conflict with reserved names in
+	  C89 and C99, and make their type bool instead of int.  Change
+	  conditionals based on zero/nonzero tests to explicit Boolean
+	  relational expressions.
+
+	* romtol.c: Add splint annotations.  Include xstdbool.h. Add
+	  several (char) and (int) typecasts to reduce instances of
+	  char/int type mixing.  Change isxxx() functions to Isxxx().
+	  Change isxxx() functions to is_xxx() to avoid conflict with
+	  reserved names in C89 and C99, and make their type bool instead
+	  of int.  Change conditionals based on zero/nonzero tests to
+	  explicit Boolean relational expressions.
+
+	* strist.c: Change conditionals based on zero/nonzero tests to
+	  explicit Boolean relational expressions.
+
+	* strtol.c: Add splint annotations.  Include xstdbool.h.  Check
+	  for NULL nptr. Add several (char) and (int) typecasts to reduce
+	  instances of char/int type mixing.  Change isxxx() functions to
+	  Isxxx().  Change conditionals based on zero/nonzero tests to
+	  explicit Boolean relational expressions.  Change int negative to
+	  bool is_negative.
+
+	* vaxvms.c: Add splint annotations. Change isxxx() functions to
+	  Isxxx().
+
+	* vmswild.c: Add splint annotations.  Change isxxx() functions to
+	  is_xxx() to avoid conflict with reserved names in C89 and C99,
+	  and make their type bool instead of int.
+
+
+2001-10-06 15:45:03-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	These changes for version 2.13 were suggested by the excellent
+	lclint utility, or by more C++ compilations:
+
+	* bibclean.c: Reset pt->patterns to NULL after freeing its
+	  storage.
+
+	* chek.c: Include xstdlib.h to get strtol() prototype.
+
+	* fix.c: Add checks for NULL author argument, and NULL next
+	  pointer.
+
+	* isbn.c: Add check for NULL the_countries pointer.
+
+	* keybrd.c: Add lclint /*@-modobserver@*/ comment.
+
+	* match.c: Add lclint and lint fall-through comments, and correct
+	  type of string-length argument in sprintf() call from size_t to
+	  int.
+
+	* vmswild.c: Set p to NULL after freeing its storage.
+
+	* Makefile.in:
+	  Update file lists.
+
+	  Do not save bibtex's stdout for comparisons with master copies,
+	  because some bibtex versions produce memory usage statistics on
+	  stdout, and others do not.
+
+
+2001-08-29 16:41:50-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Release version 2.12.  This release has been delayed since the
+	  `completion' logged below on 7-Nov-2000, partly for lack of time
+	  to complete extensive testing, but mostly to resolve the problem
+	  of getting up-to-date ISBN data.  Both of these have now been
+	  satisfactorily dealt with, :^)!
+
+	  A companion version 2.13 will be released shortly; it is
+	  intended that its source code (*.c, *.h, configure.in) be
+	  identical to that of 2.12, apart from version numbering;
+	  however, the 2.13 test suite has been completely redesigned and
+	  extended.  Source changes beyond 2.13 will be incorporated in
+	  version 2.14.
+
+
+2001-08-29 16:17:51-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* isbn.c: Fix bug in add_one_ISBN_range(): incorrectly assigned
+	  NULL the_countries instead of "" to ISBN_range[where].countries,
+	  invalidating the requirement of non-NULL entries in the
+	  ISBN_range[] table (except for the last one, which flags table
+	  end).
+
+	  Fix bug in do_print_ISBN_table(): when
+	  ISBN_range[k].countries[0] == "", set country_names to NULL
+	  instead of "".  Otherwise, the output incorrectly contains bogus
+	  empty lines.
+
+	* isbn.tbl: Replace contents with data derived automatically on
+	  8-Aug-2001 from data at the International ISBN Agency Web site.
+	  Work in November 2000 with that data turned up a number of
+	  errors and omissions which were reported to the Agency, and have
+	  now been repaired.
+
+	* bibclean.isbn: New file obtained from "./bibclean
+	  --print-ISBN-table".   Since this data is already provided in
+	  isbn.tbl, this file is superfluous, but is retained (and will be
+	  installed) as a demonstration of the dynamic ISBN table
+	  facility.
+
+
+2001-08-28 18:50:34-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Makefile.in: Major overhaul of check target family, replacing
+	  all TEST-xxx variables and test-xxx targets, with CHECK-xxx
+	  variables and check-xxx targets.  This gives much cleaner test
+	  output, analogous to what many other packages now use.  Instead
+	  of top-level test*.* files, there is now a directory tree test
+	  with input files, and test/okay with expected output files.
+
+	  Testing with "make check" is divided into five subtargets
+	  (check-match check-romtol check-bibtex check-latex
+	  check-scribe), each of which includes a loop over base files,
+	  making it trivial to add new tests, simply by updating the
+	  CHECK-xxx variables, and adding suitable input files in ./test.
+
+	  About 20 new tests have been added to check the parsing of most
+	  of the command line options that can be tested portably
+	  (-trace-file-opening cannot be, since the output depends on
+	  user-defined search paths and local directory tree conventions).
+	  Lack of such testing in previous versions was responsible for
+	  the omitted -no-keep-string-spaces table entry bug (see below).
+
+	  Update install-xxx targets.
+
+	* Makefile.in: Update comments to Lisp style. Add uninstall-xxx
+	  targets.
+
+	* bibclean.c: Add code to out_lines() to make screen_lines == 0
+	  suppress paging, so that --help can be used in batch mode, for
+	  testing, or dumping the entire help document.
+
+	* keybrd.c: Add code in get_screen_lines() to return 0 if either
+	  stdin or stdout is not a terminal device.
+
+	* option.c: Add missing -no-keep-string-spaces option entry in
+	  options[].
+
+	* option.c: Change BIBCLEAN_VERSION to use PACKAGE_xxx variables
+	  set in configure.in, to remove the need to update this file when
+	  the version number changes.
+
+	* match.c: Supply missing semicolon in K&R declaration of
+	  match_failure().
+
+
+2001-08-27 12:36:34-0600  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* bibclean.c: Update version number to 2.13.
+
+	* option.c: Update version number to 2.13, and include xlimits.h.
+
+	* testisxn.{eok,bok}: Update to reflect new output.
+
+	* Makefile.in: Update distclean target removals.
+
+	* acconfig.h: Remove (subsumed by new configure.in file).
+
+	* configure.in: Update with new autoconf-2.5x AH_TEMPLATE() and
+	  AH_BOTTOM() macros that allow elimination of acconfig.h,
+	  update call to AC_INIT(), and add call to new AC_CONFIG_SRCDIR().
+
+	* custom.h: Update with material previously included in
+	  hand-generated config.hin.  That file is now created
+	  automatically by autoheader.
+
+
+2000-11-25  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+  	* Replace isbn.tbl with new (25-Nov-2000) data derived
+	  automatically from the World-Wide Web site of The International
+	  ISBN Agency at
+
+	  	http://www.isbn.spk-berlin.de/html/prefix.htm
+
+	  This data is at least a year newer than the previous contents of
+	  isbn.tbl, and includes several new regions (\approx countries),
+	  and a great many changes in allowable publisher ranges.
+
+	  Provided that Web site continues to be accessible, it should be
+	  possible to simply provide updates to .bibclean.isbn, instead of
+	  changing isbn.tbl, and releasing a new version of bibclean.
+
+
+2000-11-25  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.13 almost completed.
+
+	* Add missing array dimension in isbn.tbl; this bug
+	  was in isbn-el-to-bibclean-isbn.awk, and has been
+	  fixed there too.
+
+	* In isbn.c, assign "" instead of the_countries to
+	  ISBN_range[where].countries, because it is not expected to ever
+	  be a NULL pointer.  If it is, then there can be a NULL pointer
+	  dereference when a .bibclean.isbn file is read and processed.
+
+1999-11-07  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.12 completed.
+
+	* Implement eight new options: "-ISBN-file filename",
+	  "-keyword-file filename", "-[no-]debug-match-failures",
+	  "-[no-]print-ISBN-table", and "-[no-]print-keyword-table".
+
+	* Files changed with this release: ChangeLog, Makefile.in,
+	  bibclean.c, bibclean.h, bibclean.hlp, bibclean.html,
+	  bibclean.man, bibclean.pdf, bibclean.ps, bibclean.txt,
+	  configure, configure.sed, do.c, fndfil.c, isbn.c, keybrd.c,
+	  match.c, match.lok, option.c, romtol.c, testisxn.bok,
+	  testisxn.eok, and xstring.h.
+
+	* Files new with this release: isbn.h and isbn.tbl.
+
+	* Makefile.in: adjust dependency lists, and add bibclean.html and
+	  bibclean.pdf to the docs target
+
+	* bibclean.c: add definitions of compile-time overridable
+	  environment variables BIBCLEANISBN and BIBCLEANKEY, with
+	  suitable default definitions of their files.
+
+	* bibclean.c: add new code to call do_ISBN_file(),
+	  do_keyword_file(), do_print_ISBN_table(), and
+	  do_print_keyword_table().
+
+	* bibclean.c: Add two blanks to trace-file-opening output string
+	  to get lineup with new tracing in fndfil.c:file_is_readable().
+
+	* bibclean.h: regenerate to include documentation of new
+	  commands.
+
+	* bibclean.hlp: regenerate automatically
+
+	* bibclean.html: regenerate automatically
+
+	* bibclean.man: update with documentation of the new options,
+	  and new sections "ISBN INITIALIZATION FILES" and "KEYWORD
+	  INITIALIZATION FILES"
+
+	* bibclean.pdf: regenerate automatically
+
+	* bibclean.ps: regenerate automatically
+
+	* bibclean.txt: regenerate automatically
+
+	* configure: regenerate automatically
+
+	* configure.sed: extend with substitutions to remove the
+	  non-portable default compiler options that autoconf generates
+
+	* do.c: major update with new functions add_keyword(),
+	  add_one_keyword(), do_keyword_file, and
+	  do_print_keyword_table() to handle two of the new options.
+
+	  These new functions are quite similar to new ones in isbn.c,
+	  but not sufficiently so to permit code sharing without further
+	  generalization.  Once the ISBN ones were written and debugged,
+	  the ones in this file were produced from them by
+	  straightforward edit substitutions, and worked correctly
+	  immediately.
+
+	  Replace strcmp() uses by calls to STREQUAL macro.
+
+	  Move field_pair[] out of do_field() into private file scope,
+	  so that it can be accesed by the new functions.
+
+	  Add MRclass and xxMRclass to the field_pair[] table.
+
+	  Remove duplicate xxURI from field_pair[] table.
+
+	  Give field_pair[] a compile-time adjustable size MAX_KEYWORD,
+	  with plenty of extra space for run-time updates (I do not want
+	  to use malloc() to expand this table).
+
+	* fndfil.c: Replace lone strcmp() use by call to STREQUAL macro.
+
+	* fndfil.c: Replace FILE_IS_READABLE() macro to call new function
+	  file_is_readable(), which now provides tracing of access() calls.
+
+	* isbn.c: major update with new functions add_ISBN_range(),
+	  add_one_ISBN_range(), do_print_ISBN_table(),
+	  is_valid_ISBN_prefix(), ISBN_match_country_language(), and
+	  ISBN_initialize() to support two of the new options.
+
+	  Move the ISBN_range[] table out of fix_ISBN() into private
+	  file scope, so that it can be accessed by the new functions.
+
+	  Give ISBN_range[] a compile-time adjustable size
+	  MAX_ISBN_RANGE, with plenty of extra space for run-time
+	  updates (I do not want to use malloc() to expand this table).
+
+	  Apply massive update to ISBN_range[] table entries to reflect
+	  changes from the ISBN numeric index registry volume
+	  (Publishers' International ISBN Directory, 19th edition,
+	  1992/1993, Volume 2, Numerical ISBN Section, R. R. Bowker, New
+	  York, 1992, ISBN 3-598-21601-7, to the same volume of the 25th
+	  edition, 1998/1999, ISBN 3-598-21607-6).  The need for such
+	  updates was a major impetus for the new run-time ISBN-range
+	  customization features.
+
+	  The companion Emacs Lisp file, isbn.el, has been similarly
+	  updated; it is not included in the bibclean distribution, but
+	  can be obtained at either of these locations:
+
+		ftp://ftp.math.utah.edu/pub/emacs/isbn.el
+		http://www.math.utah.edu/pub/emacs/isbn.el
+
+	  Replace calls to strcmp() by STREQUAL and STRGREATER macros.
+
+	* isbn.h: new file to encapulate public interface to ISBN
+	  support code.
+
+	* isbn.tbl: new file containing initialization of ISBN_range[]
+	  table; this file is generated automatically from isbn.el by
+	  a new awk program, isbn-el-to-bibclean-isbn.awk.
+
+	* keybrd.c: change bindings of \r and \n from KEYBOARD_DOWN
+	  to KEYBOARD_PGDN, to match bindings in more and less pagers.
+
+	* match.c: add support for new "-[no-]debug-match-failures"
+	  options, with new functions match_failure() and
+	  match_warning().
+
+	  Rename private macro isspecial() to is_special() to avoid
+	  conflict with that name in <ctype.h> on Apple Macintosh
+	  Rhapsody 5.5, sigh... I believe that their supplying
+	  such a symbol is a violation of ANSI/ISO Standard C, which
+	  reserves names matching "^(is|to)[a-z][a-zA-Z0-9_]*$" for
+	  future expansion.
+
+	  Correct bug in handling of '.' pattern.
+
+	  Update comment in main() test program to document which keys
+	  are handled.
+
+	  Add definition of MIN() macro.
+
+	  Correct `Roman' to `roman'.
+
+	* option.c: update BIBCLEAN_VERSION to reflect this release.
+
+	  Add support for the new options, with additional entries in
+	  the options[] table in do_args(), new usage summaries in
+	  opt_help() and usage(), and new functions
+	  opt_debug_match_failures(), opt_ISBN_file(),
+	  opt_keyword_file(), opt_print_ISBN_table(), and
+	  opt_print_keyword_table().
+
+	* romtol.c: change from gets() to fgets(), for safety (though
+	  that function was used only in the test program, and did not
+	  compromise the security of bibclean)
+
+	* xstring.h: add STRGREATER macro
+
+
+Sun May 10 06:28:55 1998  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11.4 completed.
+
+	* Files changed with this release: ChangeLog Makefile.in README
+	bibclean.c bibclean.h bibclean.html bibclean.man custom.h fix.c
+	isbn.c option.c.
+
+	* New files with this release: testbib6.bok testbib6.eok
+	testbib6.org.
+
+	* Makefile.in: Add testbib6.org to the BIBTEX-TESTS list to
+	exercise the bug fix in fix_month() described below.
+
+	Change modes of installed files to permit group write access.
+
+	Change the mode of the installed .bibcleanrc file to ensure
+	readability.
+
+	Save any old installed version of bibclean as bibclean.old during
+	"make install".
+
+	Create a hard link from the installed bibclean to bibclean-2.11.4,
+	and similarly, for the installed manual page.  That way, if a
+	later version comes out and is installed, then bibclean-2.11.4
+	will still remain accessible.  [I'm doing this for all of my
+	software distributions; extensive experience with GNUware, and
+	even commercial packages like Matlab and Maple, on ten
+	architectures, has shown the desirability of having multiple
+	versions available as a check when a suspected bug turns up.]
+
+	The "make uninstall" command will remove the
+	version-number-specific installed files, if you wish to back out
+	of an install.
+
+	Change symbolic links to hard links; they are all used in a
+	context where this has no side effects.
+
+	Change CP to mean "rcp -p", so as to preserve file time stamps on
+	installation.
+
+	* README: Update my mailing addresses.
+
+	* bibclean.c: Update my mailing addresses in the file header.
+
+	* bibclean.h: Automatically generated from the formatted output of
+	bibclean.man to include that file's changes.
+
+	* bibclean.hhtml: Automatically generated from bibclean.man to
+	include that file's changes.
+
+	* bibclean.man: Update my mailing addresses in the file header and
+	the AUTHOR section.  Document the new exit behavior for -author
+	and -version.  Documen the new GNU/POSIX --option support, and add
+	a paragraph on the handling of filenames that would be confused
+	with option names.  Add cross references to bibcheck(1),
+	bibdup(1), bibjoin(1), biblabel(), and biborder(1).
+
+	* custom.h: Change type of sleep() on NeXT from int to unsigned
+	int.
+
+	* fix.c: Fix a rarely-encountered, but long-standing, bug in
+	fix_month(). Prior to this version, a value
+
+	    mar # "\slash" # apr
+
+	would be incorrectly transformed
+
+	    month = mar # "\slash" # " # apr # "
+
+	because in_quoted_string was incorrect for the remaineder of
+	the value.
+
+	If the input value was changed to
+
+	    mar # "\slash " # apr
+
+	then that space inside the quoted string preserved the correctness
+	of in_quoted_string, and the output was correct.
+
+	* isbn.c: Add several countries to the list of recognized ISBN
+	prefixes.  Similar updates have been added to the Emacs Lisp file,
+	isbn.el, available in a separate software distribution.  Update my
+	mailing addresses in the file header.
+
+	* option.c: : Update my mailing addresses on opt_author().  Add
+	support for GNU/POSIX-style --options.  Update bibclean version
+	number.  Make -author and -version handling exit with a success
+	code after their output on stderr.
+
+
+Sat May  4 07:52:26 1996  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11.3 (final edits before public release)
+
+	* Build and test bibclean under 8 IBM PC DOS C and C++
+ 	compilers, and under VAX VMS 6.1.  bibclean already builds and
+ 	tests successfully under about 40 C and C++ compilers on 10
+ 	different UNIX architectures.
+
+	* Update README, ibmpc/dos/README and vms/vax/README files.
+
+	* In bibclean.c, move sanity checks on HAVE_xxx pattern matching
+ 	flags to custom.h.
+
+	* In bibclean.man, update version release date to match that set
+ 	in option.c.
+
+	* In chek.c, update computation of stdlog_on_stdout to be
+ 	stricter.  Fix off-by-one error in loop termination condition in
+ 	u72copy_element().  Add code in copy_element() to skip trailing
+ 	space and hyphens, to avoid generating bogus warnings about
+ 	checksum mismatches.
+
+	* In configure.in, remove -g from CFLAGS if we are compiling
+ 	with lcc because it produces bad debug symbol tables on Sun
+ 	Solaris 2.x.
+
+	* In do.c, remove unused LAST_SCREEN_LINE macro.  Change open of
+	bibliography files to use binary mode in OS_PCDOS.
+
+	* In fix.c, change types of n and nupper in fix_title() from int
+	to size_t to avoid type conflict warnings from some compilers.
+
+	* In fndfil.c, remove unused NEWLINE() macro.  Update remainder
+ 	of code to match fndfil.c in DVI 3.0 development tree.
+
+	* In isbn.c, add workaround for bug in Watcom 10.0 C++ compilers
+	in ISBN_hyphenate().  Fix serious bug in squeeze_ISBN() that had
+	gone undetected for a very long time: the loop exit condition
+	referred to in_ISBN instead of *in_ISBN.
+
+	* In keybrd.c, add #include <starlet.h> to get some needed
+ 	library function headers.  Remove some old unused macros.
+  	Update get_screen_lines() for VAX VMS 6.x.
+
+	* In Makefile.in, remove some obsolete files and targets, update
+ 	the DIST-FILES list, and add missing testbib5.org file to
+ 	BIBTEX-TESTS list.  Remove DIST-FILES-BIN list, since the share
+ 	bundle option is no longer provided, and DIST-FILES now has all
+ 	files listed.  Add match, romtol, and subdist targets.  Add
+ 	dependency on subdist of distribution file targets.  Add
+ 	test-match and test-romtol targets.
+
+	* In match.c, add month_patterns[], pages_patterns[], and
+ 	volume_patterns[].  Update messages to include input line
+ 	number.  Modify process() to accept ``key = "value",'' lines
+ 	that can be easily extracted from bibliography file collections.
+  	A test suite has been prepared in match.dat, and the test-match
+ 	and match targets added to Makefile.in to support this testing.
+
+	* In option.c, update release date in BIBCLEAN_VERSION.
+
+	* In vaxvms.c, include <lib$routines.h> and <starlet.h> for more
+	function prototypes.  Update for VAX VMS 6.x.  Add conditionals
+	around memxxx() functions, so as to avoid linker warnings about
+	duplicate symbols, and add missing return values in the memxxx()
+	functions.  Change LIB$SPAWN to lib$spawn.
+
+	* In vmswild.c, remove unused LINSIZ macro.
+
+
+Sun Apr 28 08:54:38 1996  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11.3 (continued):
+
+	* Makefile.in (test-bibtex): Add test-bibtex-7 with test files
+	testcodn.{org,bok,eok}, to test CODEN handling.
+
+
+Thu Apr 25 11:24:18 1996  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11.3:
+
+	* In bibclean.c, remove declarations of unused functions that
+ 	were moved to new file chek.c in 2.11.0.  Change one test (n <=
+ 	0) to (n == 0) to avoid compiler warnings about test of unsigned
+ 	values for being negative.
+
+	* Add CODEN validation support to chek.c, and completely rewrite
+ 	the ISBN and ISSN handling.  The reason for the latter is that
+ 	by defining a simple list grammar for CODEN, ISBN, and ISSN
+ 	string values, the code becomes cleaner and more rigorous, and
+ 	parts of it can be shared for the checking of all three types.
+  	Future versions of bibclean may add support for additional
+ 	key/value pairs for which the string values can also be
+ 	validated, and such support will then be very simple to supply.
+  	New functions added: check_CODEN(), bad_CODEN(), copy_element(),
+ 	incomplete_CODEN(), is_CODEN_char(), is_ISBN_char(),
+ 	is_ISSN_char(), parse_list(), parse_element(),
+ 	parse_separator(), validate_CODEN(), validate_ISBN(),
+ 	validate_ISSN().  New typedef added: parse_data.
+
+	These improvements necessitated a change in testisxn.eok, since
+ 	the recognition of ISBN values (and also CODEN and ISSN values)
+ 	is now quite strict, so some of the erroneous ISBNs in
+ 	testisxn.org are now handled slightly differently.  The same
+ 	number of error messages are issued in both 2.11.2 and 2.11.3
+ 	however.
+
+	* Add mention of the CODEN validations to bibclean.man.
+
+	* Add CODEN entry in out_value() checks[] array in do.c.
+
+
+Mon Mar  4 16:23:20 1996  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11.2: This version adds six new command-line
+	options: -[no]-align-equals, -[no]-keep-preamble-spaces,
+	and -[no]-keep-string-spaces.
+
+ 	The first pair of these was suggested by Matthew Morley
+ 	<Matthew.Morley@gmd.de> who contributed an implementation for a
+ 	much older version of bibclean (2.05); the idea has been used, but
+ 	not the contributed code.
+
+	The second and third pairs supply a need that has developed as
+	the TUG and BibNet bibliography collections have grown: namely,
+	sometimes bibliographies have rather long, and carefully spaced,
+	@Preamble{} and @String{} entries, and these new options allow
+	the internal spacing in those entries to be preserved.
+
+	* bibclean.c: Add the six new options to the file header comments.
+  	Add function out_verbatim() to handle output without space
+ 	fiddling.  Add new macros KEEP_PREAMBLE_SPACES() and
+ 	KEEP_STRING_SPACES(), and use them in get_next_non_blank() and
+ 	out_string().
+
+	* bibclean.man: Document the new -[no]-align-equals,
+	-[no]-keep-preamble-spaces, and -[no]-keep-string-spaces options.
+
+	* do.c: Add new macros KEEP_PREAMBLE_SPACES() and
+ 	KEEP_STRING_SPACES(), and use them in several places.  Add new
+ 	global variables keep_preamble_spaces and keep_string_spaces.
+  	Make in_preamble instead of static, since it is now needed in
+ 	bibclean.c too.  Add new functions do_preamble_2() and
+ 	do_string_2() to hold old bodies of do_preamble() and do_string(),
+ 	to simplify setting of in_preamble and in_string flags.  Add
+ 	support in out_equals() for -align-equals option.  The code for
+ 	-keep-preamble-spaces and -keep-string-spaces turned out to be
+ 	quite hard to get right, largely because of the design flaw (for
+ 	which I alone hold responsibility) that input space is discarded
+ 	at a rather low level, rather than being collected as a legitimate
+ 	token that is carried up to the highest levels, and then
+ 	discarded, or otherwise modified.
+
+	* fix.c: Add additional checks in fix_pages() to avoid inserting
+	en-dashes where they don't belong.
+
+	* keybrd.c: Add MIN() macro.  Add new functions beep() and
+ 	erase_characters() to shorten coding.  Move search code out of
+ 	do_more() into separate function do_search().  Add support for
+ 	word-erase, line-erase, and line-reprint in do_search().  When a
+ 	search string is reused, print it again.  Beep if too many
+ 	characters are entered in a search string.  Add support for
+ 	forward-paragraph and backward-paragraph commands.  Correct
+ 	binding of M-> to be KEYBOARD_END instead of KEYBOARD_HOME.  Add
+ 	support for X Window System arrow keys, and PgUP and PgDn keys.
+
+	* option.c: Add new functions opt_align_equals(),
+	opt_keep_preamble_spaces(), and opt_keep_string_spaces(), plus
+	corresponding entries in the options[] array, and document them
+	in the opt_help() help_lines[] and usage() usage_lines[] arrays.
+
+
+Sat Oct  7 08:59:48 1995  Nelson H. F. Beebe  <beebe@math.utah.edu>
+
+	* Version 2.11: The major change for this new version is the
+	conversion of the source code to use the GNU autoconf system so
+	that on UNIX systems, the configure script can automatically
+	prepare a header file, config.h, that deals with the variations
+	in UNIX and compiler implementations.  This entailed:
+
+		(a) the creation of 3 new files: Makefile.in,
+ 		config.hin, and configure.in;
+
+		(b) elimination of 12 header files: machdefs.h os.h
+ 		osatari.h ospcdos.h osprimos.h osrmx.h ostops20.h
+ 		osunix.h osvaxvms.h osvmcms.h unixlib.h xstddef.h;
+
+		(c) adjustments of #include statements, protecting most
+ 		with #if HAVE_xxx ... #endif;
+
+		(d) change of the NEW_STYLE and STDC macros to
+ 		HAVE_STDC;
+
+		(e) replacement of free() calls by macro FREE(), so as
+ 		to be able to hide some typecasting to deal with
+ 		defective C/C++ implementations.
+
+	* bibclean.c: The code in this file became too large for IBM PC
+ 	DOS compilers, so it has been split into 10 new header files:
+		ch.h config.h custom.h delete.h keybrd.h pattern.h
+ 		token.h toklst.h xunistd.h yesorno.h
+	and 5 additional source code files:
+		chek.c do.c fix.c keybrd.c option.c.
+	[The name is chek.c, rather than check.c, to avoid a conflict
+ 	with the GNU standard Makefile target, check.]  The 683-line
+ 	revision history has been moved from bibclean.c into this new
+ 	ChangeLog file (see below), following GNU Project conventions;
+ 	I've not bothered to revise the recording style to match that
+ 	supported by the GNU Emacs add-change-log-entry-other-window
+ 	command.
+
+	This file splitting reduced bibclean.c from 8K lines to 2K
+ 	lines, and the file do.c, at 2.9K lines, is now the largest
+ 	source code file.  Here is a current source code line count:
+
+		% wc -l *.c | sort +0nr -1
+		  11626 total
+		   2885 do.c
+		   2094 bibclean.c
+		   1051 vmswild.c
+		    880 vaxvms.c
+		    790 isbn.c
+		    774 chek.c
+		    606 keybrd.c
+		    572 fix.c
+		    569 fndfil.c
+		    551 option.c
+		    395 match.c
+		    240 strtol.c
+		    174 romtol.c
+		     45 strist.c
+
+		% wc -l *.h | sort +0nr -1
+		    835 total
+		    260 bibclean.h
+		    178 config.h
+		     81 custom.h
+		     51 toklst.h
+		     47 keybrd.h
+		     37 ch.h
+		     26 xctype.h
+		     18 xstring.h
+		     17 xstdlib.h
+		     16 xstat.h
+		     15 token.h
+		     12 xtypes.h
+		     12 xunistd.h
+		     11 pattern.h
+		     10 delete.h
+		     10 match.h
+		      9 xerrno.h
+		      9 xlimits.h
+		      9 xpwd.h
+		      7 yesorno.h
+
+	Despite the increased number of source files between versions
+ 	2.10 and 2.11, the total source code has been reduced from 16.6K
+ 	lines to 12.5K lines, largely due to the use of GNU configure.
+  	Of course, one must factor in about 1K new lines in Makefile.in,
+ 	config.hin, and configure.in, and 1.6K lines in the
+ 	automatically-generated configure script.
+
+	In summary, although this was my first use of autoconf, and the
+ 	development effort stretched over 3 otherwise very busy weeks, I
+ 	believe the payoff for other programs will be significant,
+ 	because their config.in and configure.in files will be very
+ 	similar to those for bibclean, so the conversion effort will be
+ 	much smaller.
+
+	Once config.h files are manually generated for other operating
+	systems, they too will be largely reusable for most of my other
+	programs in C/C++.
+
+	* do.c: In get_line(), change
+		if (*(p-1) == '\\')
+	to
+		if ((p > &line[0]) && (*(p-1) == '\\'))
+	in order to avoid possible out-of-bounds pointer reference.
+
+	* fix.c: In fix_pages(), add code
+	* match.c: In next_s(), change
+		for (++s; ; )
+	to
+		for (++s; *s; )
+	to eliminate compiler warnings about the final return() being
+ 	unreachable.  The additional test of *s against '\0' is of
+	no significance for execution time.
+
+	* Makefile.in: remove vaxvms.c and vmswild.c, since they will be
+ 	handled now by a separate Makefile for VAX VMS and OpenVMS.
+
+	* README: Completely rewrite, with new installation instructions
+ 	for UNIX using the configure script, and new subsections
+ 	containing status reports of installation attempts on all major
+ 	UNIX variants.
+
+
+Revision history (reverse time order):
+
+
+[08-Mar-1995]	2.10.1
+		In get_braced_string(), handle overlooked case of \"{x}.
+
+
+[04-Jun-1994]--[18-Oct-1994]	2.10
+		Add support for simple forward and backward searches
+		in help display in do_more().
+
+		Add World-Wide Web URI, URL, and URN names to the list
+		of field names that are forced to uppercase.  Disable
+		code in out_s() that breaks lines at punctuation
+		characters, because this can introduce unwanted line
+		breaks in file names and WWW names.
+
+		Add code in out_c() to preserve last line in output
+		buffer, so that a subsequent DELETE_LINE operation
+		will have a complete line to delete.  Previously, with
+		-delete-empty, if the output buffer filled up in the
+		middle of a line that was going to be deleted, the
+		initial part of the line would be (incorrectly)
+		output.  This was a hard bug to track down, because it
+		happened very rarely.  Extend out_flush() to force out
+		all buffered output.
+
+		Change bad_ISBN() to not put incorrect hyphens back
+		into ISBNs.  ISBN hyphen positions vary, because large
+		publishers get short prefixes, and small publishers
+		get long prefixes.  The ISBN is a 10-character value
+		of the form
+
+		countrygroupnumber-publishernumber-booknumber-checkdigit
+
+		where the first three fields are of variable width and
+		contain only the digits [0-9], and the last
+		single-character checkdigit field contains [0-9X].
+		Larger country groups or publishers have smaller
+		numbers, and correspondingly larger booknumbers.
+		Thus, the TeXbook ISBN, 0-201-13447-0, consists of 0
+		for English-language countries, 201 for
+		Addison-Wesley, 13447 for the book number, and 0 for
+		the check digit.  Although it is permissible to use
+		spaces instead of hyphends, we prefer the latter in
+		order to have unbreakable text for improved
+		readability and editing convenience.
+
+		Add code in fix_title() to supply braces around
+		brace-level-zero TeX control words containing
+		upper-case letters, to obtain conversions like these:
+		    "\TeX{} for the Impatient" -> "{\TeX} for the Impatient"
+		    "\TeX\ for the Impatient"  -> "{\TeX} for the Impatient"
+		in order to protect the control words from downcasing
+		in some BibTeX styles.
+
+		Change DELETE_CHAR and DELETE_LINE values to be
+		outside the range of possible signed or unsigned
+		character values, so as not to interfere with handling
+		of 8-bit character data.
+
+		Add new functions bcolumn(), bdelc(), bdelline(),
+		bflush(), blastc(), bpeekc(), and bputc() to localize
+		access to the output buffer, buf[], and the variables
+		that record line number, column number, and output
+		byte position.  Completely rewrite out_c() to use
+		these new functions, substantially simplifying the
+		code.
+
+		Add original_file initialized to the_file in error()
+		and warning(), and used in out_status(), to more
+		accurately reflect output file positions.  Previously,
+		the error messages themselves resulted in modification
+		of these values.
+
+		In new_entry(), initialize non_white_chars to zero.
+		Previously, if multiple input files were specified,
+		the first entry in files after the first was not
+		correctly recognized if it started on the first line.
+		This bug went undetected for so long because bibclean
+		is rarely used with multiple input files.
+
+		At most calls of out_with_parbreak_error(), put the
+		current character back into the input stream so that
+		it is output after the error message instead of before.
+		This is more likely to avoid splitting an input token.
+
+		The remaining fixes are for bugs and problems caught
+		by Alf-Christian Achilles <bibservadmin@ira.uka.de>
+		who maintains a very large bibliography collection on
+		ftp.ira.uka.de in /pub/bibliography consisting of
+		about 300 bibliographies, and 800 bibcleaned files,
+		occupying about 100MB.
+
+		In trim_value(), check for final "\<space>" control
+		sequence, and discard it; previously, only the space
+		was discarded, leaving an erroneous bare backslash.
+
+		In get_braced_string(), add missing additional
+		boundary check in loop to convert braced string to
+		quoted string.
+
+		Add DELETE_WHITESPACE support.  In out_c(), this
+		requests discarding of all trailing whitespace in the
+		output buffer.  In do_BibTeX_entry(), do_group(),
+		do_preamble(), and do_Scribe_entry(), if
+		prettyprinting, call out_c(DELETE_WHITESPACE) after
+		parsing optional space following the @ and the name.
+		Previously, a newline following the @ or the name
+		would be preserved, which is legal, but not desirable
+		in prettyprinted output.  At end of do_one_file(),
+		call out_c(DELETE_WHITESPACE) to discard trailing
+		space at end of file.
+
+		Add -[no-]German-style option to provide for special
+		treatment of quote characters inside braced strings,
+		following the conventions of german.sty, which
+		overloads quote to simplify input and representation
+		of German umlaut accents, sharp-s (es-zet), ligature
+		separators, invisible hyphens, raised/lowered quotes,
+		French guillemets, and discretionary hyphens.
+
+		Add external file isbn.c, and call to ISBN_hyphenate()
+		in bad_ISBN() and check_ISBN(), so that correct
+		hyphenation of ISBNs is automatically supplied.
+
+
+[01-Mar-1994]	2.09
+		Add -[no-]keep-linebreaks, -[no-]keep-parbreaks, and
+		-[no-]keep-spaces.  This required usurping two control
+		characters, Ctl-N and Ctl-P, for LINEBREAK and
+		PARBREAK respectively; should such characters occur in
+		an input string value, they will be misinterpreted,
+		and will not be preserved in the output.
+
+		This restriction could be eliminated if value strings
+		had such characters converted to escape sequences
+		which were converted back again on output; however,
+		this would pose a substantial complication for column
+		position tracking, and carry a run-time penalty from
+		the extra conversions.  Since control characters are
+		not expected to be present in value strings, loss of
+		two of them is not expected to be a problem.
+
+
+[24-Sep-1993]	2.08
+		Update bibclean.c to handle characters in range
+		128..255 when char is a signed data type, and extend
+		testbib1.bib with more tests of the complete character
+		set.  Augment Makefile with convenience targets for
+		each host environment.  Add private input character
+		pushback support, because ANSI/ISO Standard C only
+		guarantees one character of pushback, and bibclean
+		needs at least 3.
+
+
+[04-Jun-1993]	2.07
+		Update *.h files from DVI development to include support
+		for DEC Alpha 3000/500x OSF 1.2 (cc, c89, cxx), and HP
+		9000/735 HP-UX A.09.01 (cc, c89, CC, gcc, g++).  Private
+		memset() below is not compiled on DEC Alpha to avoid
+		conflicts with vendor-supplied version.
+
+
+[30-Nov-1992 -- 29-Jan-1993]	2.06
+		[1] Extend fix_author() to handle conversion of
+		"Smith, Jr., A. B." to "A. B. {Smith, Jr.}", and
+		"Smith Jr., A. B." to "A. B. {Smith Jr.}".  Introduce
+		new auxiliary function check_junior() called by
+		fix_author().
+
+		[2] Extend month_pair[] table to include abbreviated month
+		names.  Add new function month_token() and rewrite
+		fix_month() to use it to do a token-based parse of the
+		current_value[] string in order to be able to handle
+		conversions like these:
+
+			"January"		--> jan
+			"Jan."			--> jan
+			"January 24"		--> jan # " 24"
+			"24 Jan."		--> "24 " # jan
+			"May/June"		--> may # "/" # jun
+			"February and May"	--> feb # " and " # may
+
+		New test input files have been added, with new
+		expected output and error files.
+
+		[3] Add -[no-]fix-font-changes switch and new function
+		opt_fix_font_changes() to supply additional braces
+		around font changes in titles to prevent letter case
+		conversion by some BibTeX stylos.  The real work is
+		done in the new function brace_font_changes() called
+		at the end of fix_title().
+
+		[4] Fix bug in out_value() with -delete-empty-fields
+		requested.  The code incorrectly assumed that a string
+		value of 2 or fewer characters was an empty string.
+		That is correct if the string value is a quoted
+		string, but wrong if the string value is a 1- or
+		2-character macro.  The code now correctly checks
+		explicitly for empty string, rather than using its
+		length to make the deletion decision. Thanks to
+		Manfred Aben <manfred@swi.psy.uva.nl> for reporting
+		this bug!
+
+		[5] Fix bug in get_token(); the code must test for a
+		non-NULL pointer before calling SKIP_SPACE().  Thanks
+		to Gil Webster <gil@dap.csiro.au> for reporting this
+		bug!  [And thanks to the Internet funding agencies,
+		who make worldwide collaboration like this possible.]
+
+		[6] Add support for Roman numeral matching in match.c.
+		New file romtol.c contains romtol(), isroman(), and a
+		test program.
+
+		[7] Add calls to perror() at file open failures.
+
+		[8] Fix stupid error in brace_font_changes(); s[] was not
+		NUL-terminated before the final call to strcpy().
+
+		[9] In format(), make newmsg[] an internal static array
+		instead of reusing shared_string; otherwise, a warning
+		message from check_length() wipes out the current
+		string value.
+
+		[10] In main(), initialize the_file.input.filename to an
+		empty string, to avoid dereferencing a NULL pointer in
+		warning() during command-line option parsing.
+
+		[11] In do_args(), add code to display erroneous option
+		switches.
+
+		[12] In apply_function(), make string comparisons use
+		longer of the minimum match length and the option
+		switch length, so that all characters of the option
+		switch are tested.  Previously, option misspellings
+		after the minimum match length went undetected.
+
+		[13] Add -[no-]prettyprint support, with new functions
+		do_string(), opt_prettyprint(), out_at(),
+		out_close_brace(), out_comma(), out_newline(),
+		out_open_brace(), out_other(), and out_token(), and
+		new data type token_t.  Move do_comma() processing
+		out of do_field_value_pair() so that it can be used
+		by do_string().
+
+		[14] Add BYTE_VAL() macro for printing of characters with
+		octal formats.
+
+		[15] Change tag/key to key/field to agree with Appendix B
+		of LaTeX User's Guide and Reference Manual.  Change
+		format items %t/%k to %k/%f to match key/field
+		terminology.  The user impact of this rather large
+		source code and documentation change should be
+		minimal, and the removal of the disagreement with the
+		LaTeX book needs to be done now, rather than later.
+		bibclean.ini does not use either of the changed format
+		items.
+
+		[16] Change keyboard uses of key to keyboard, so key now
+		refers exclusively to bibliography citation keys.
+
+		[17] Change MAX_COLUMN to MAX_WIDTH and add -max-width
+		support, with new function opt_max_width() and new
+		variable max_width.  Include "xlimits.h".
+
+		[18] Add BIBCLEAN_EXT and BIBCLEAN_INI to define
+		environment variables that can supply alternate
+		initialization file extension and name.  Add
+		GETDEFAULT() macro to simplify coding.
+
+		[19] Rename put_char() to out_c(), and remove macro out_c().
+
+		[20] Add line wrapping support for lexical analysis output
+		in out_c().
+
+		[21] Add ``# line nnn "filename"'' output from out_token()
+		for lexical analysis output.
+
+		[22] Add strdup macro to redefine that name as
+		strdup_private to avoid problems with incorrect
+		<string.h> declarations of that function (for DEC
+		Alpha OSF/1).
+
+		[23] Add out_input_position() and token_start so that
+		out_token() can record both starting and ending line
+		numbers of a multi-line value token in lexical
+		analyzer output.
+
+		[24] Add check for non-zero brace level at end-of-file in
+		do_one_file().
+
+		[25] Add support for @Include{...}, a proposed extension
+		of BibTeX.
+
+		[26] Add append_value(), do_newline(),
+		do_optional_inline_comment(), do_optional_space(),
+		do_space(), get_inline_comment(),
+		get_optional_space(), and out_complex_value() so that
+		intervening space can be output when lexing, and so
+		that we can support in-line comments as well as
+		horizontal and vertical space between lexical items,
+		according to the proposed grammar for BibTeX.  Add
+		do_preamble() to do rigorous parse of @Preamble{...}.
+		Revise do_BibTeX_value() to support recognition of
+		optional space between tokens of a string expression,
+		splitting it into two separate functions
+		do_BibTeX_value_1() and do_BibTeX_value_2() to handle
+		the two cases of prettyprinting and lexical analysis.
+		Add out_string() to localize test for output style.
+
+		[27] Add checks for end-of-file in quoted and braced
+		strings so these errors get reported.  Suppress
+		pattern value checking for empty values; some of the
+		check_xxx() functions did this already, but some did
+		not.  Now the test is localized in one place, in
+		out_value(), for all of them.
+
+
+[16-Nov-1992 -- 24-Nov-1992]	2.05
+		Add Makefile steps to automatically extract help() text
+		from output of manual pages into new file bibclean.h, so
+		the built-in documentation stays up-to-date.  The usage
+		messages still need manual adjustment if switches are
+		added or changed.
+
+		Add missing test of check_values in check_patterns().
+
+		Add support for optional warning messages with
+		patterns from initialization files.  New function:
+		get_token().  New parsing code in do_new_pattern() to
+		handle optional warning message strings.  Add message
+		argument to add_pattern().
+
+		Remove strip_comments() since comment processing is
+		now handled by get_token() and do_new_pattern().  This
+		permits unescaped comment characters inside quoted
+		strings.
+
+		Write bibclean.reg, an initialization file similar to
+		bibclean.ini, but with regular expressions.
+
+		Replace cascaded if statements for regular expression
+		testing with loop over patterns in check_patterns().
+
+		Move inclusion of match.h to after definition of
+		typedef YESorNO, and change type of match_pattern()
+		from int to YESorNO.
+
+		Add do_fileinit() and code in main() to call
+		do_fileinit() for each named input file with an
+		extension, replacing that extension with INITFILE_EXT
+		(default .ini).  This adds a bibliography-specific
+		initialization capability to the system-wide,
+		user-wide, and job-wide files already supported.
+
+		Change -keep-initials and -keep-names to -fix-initials
+		and -fix-names, making them positive, rather than
+		negative, options.  Also, make them independent by
+		moving invocations of fix_periods() outside of
+		fix_author(), and by checking fix_names in
+		fix_author() instead of at start of fix_namelist().
+
+		Add -[no-]read-init-files option to allow control over
+		which initialization files are read.
+
+		Add -[no-]trace-file-opening option to allow easy
+		tracing of file opening attempts by the program.  A
+		similar feature in my DVI drivers has proved enormously
+		valuable in tracking down problems of missing files.
+
+		Rename entry_name[] to current_entry_name[], key[] to
+		current_key[], tag[] to current_tag[], and value[] to
+		current_value[] to get more distinctive names for
+		those global variables.
+
+		Include the value string matching code selection in the
+		version() message; this is needed so that users can
+		prepare initialization files with the correct pattern
+		syntax.
+
+		Make several MAX_xxx symbolic constants definable
+		at compile time.
+
+		Add MAX_PATTERN_NAMES constant, and increase
+		pattern_names[] table to that size, leaving empty slots
+		for expansion.  Extend add_pattern() so that
+		unrecognized key names result in creation of new entries
+		in pattern_names[], making the set of key/value pairs
+		extensible without modification of the bibclean source
+		code.  Add check_other() to handle checking of other
+		keywords.
+
+		Add unexpected() to localize issuing of unexpected value
+		warnings.
+
+		Repair next_s() in match.c to skip past <backslash><non-letter>
+		TeX control sequence; it was stopping one character
+		early.
+
+		Revise upper-case letter bracing code in fix_title()
+		to handle more cases.
+
+		Rewrite space collapsing code in fix_pages() to only
+		collapse space around en-dashes.  The previous code
+		was too aggressive, so that "319 with 30 illustrations"
+		became "319 with30illustrations".
+
+		Add check_tag() called from do_tag_name(), and add
+		second argument, value, to check_patterns().
+
+		Add format() called from error() and warning() to
+		expand %e (@entry name), %k (key), %t (tag), %v
+		(value), and %% (percent) format items in messages.
+		This feature is needed so user-defined messages in
+		initialization files can get key, tag, and value into
+		messages.  It also simplifies, and improves, calls to
+		warning() and error().
+
+		Add some missing (void) typecasts before str***() calls.
+
+		Change word_length() to return one more than true
+		length at end of string.  Change tests in out_s() to
+		> MAX_COLUMN instead of >= MAX_COLUMN.  Previously, if
+		a line ended exactly at column MAX_COLUMN, bibclean
+		could produce a spurious blank line, and would
+		sometimes wrap a line earlier than necessary.  Add
+		additional punctuation wrap points in out_s(), and
+		remove tests for non-blank whitespace in switch()
+		statement.
+
+		Change type of all string index variables from int to
+		size_t.
+
+		In get_simple_string(), use enum type for type codes if
+		NEW_STYLE.
+
+		In check_year(), validate all sequences of 1 or more
+		digits.
+
+		Use the C preprocessor to define memmove() to be
+		Memmove(), so we always use our own version.  Too many
+		C and C++ implementations were found to be lacking it,
+		sigh...  Similarly, we provide our own version of
+		strtol() (in a separate file) from the DVI 3.0
+		development, because it too is missing from older UNIX
+		systems.
+
+		Complete port to IBM PC DOS with Turbo C 2.0, and
+		Turbo C and C++ 3.0.  This required economization of
+		storage for arrays of size [MAX_TOKEN_SIZE] to get
+		global data below 64KB without having to reduce
+		MAX_TOKEN.
+
+		Added code in do_more() and preprocessor conditionals
+		in out_lines() to handle character-at-a-time input for
+		help paging on IBM PC DOS. Keyboard function keys
+		PgUp, PgDn, End, Home, Up arrow and Down arrow are
+		also recognized.  This was easy to do because most PC
+		DOS C compilers provide getch() to get a keyboard
+		character without echo.  No fiddling of terminal modes
+		is needed like it is on other systems.
+
+		The IBM PC DOS port exposed a problem in findfile(),
+		where it was assumed that an environment variable
+		would not be longer than the longest filename.  Turbo
+		C sets the latter to 80 characters, but environment
+		variables can be set that are almost 128 characters
+		long.  Microsoft C 5.0 also sets it to 80, but C 5.1
+		sets it to 144, and C 6.0 and C and C++ 7.0 set it to
+		260.  This has been handled by defining MAXPATHLEN at
+		compile time, overriding the built-in defaults.
+
+		Add support for character-at-a-time input for help
+		paging on VAX VMS, and for getting the screen size in
+		get_screen_lines().
+
+		Rename do_more_init() to kbopen(), do_more_term() to
+		kbclose(), and use kbget() in do_more() to conceal the
+		heavily-O/S dependent details of the kbxxx()
+		functions.
+
+		Introduce STREQUAL() macro to simplify coding.
+
+		Introduce KEY_FUNCTION_ENTRY type and apply_function()
+		to simplify coding, and use it in do_args(),
+		do_preargs(), and out_value().  Argument actions are
+		moved into separate functions, opt_xxx().  Rename
+		show_author() to opt_author(), and help() to
+		opt_help().  Rename do_file() to do_one_file(), and
+		move file loop code from main() into new do_files().
+
+		Split large body of get_simple_string() into four new
+		functions, get_braced_string(), get_digit_string(),
+		get_quoted_string(), and get_identifier_string().
+
+		Add check_inodes() to determine whether stdlog and
+		stdout are the same file.  If so, we need to ensure
+		that each warning message begins a new line, without
+		double spacing unnecessarily when they are different
+		files.
+
+		Add memset() implementation for SunOS 4.1.1 CC (C++)
+		and BSD 4.3 UNIX because it is missing from their
+		run-time libraries.
+
+		Replace fopen() by macro FOPEN() to work around
+		erroneous fopen() prototype for SunOS 4.1.1 CC (C++).
+
+		Complete port to IBM PC DOS with Microsoft C 5.1 and
+		6.0 compilers.  Minor source changes (the CONST macro
+		below) needed to work around compiler errors.
+
+
+[15-Nov-1992]	2.04
+		Minor changes to complete successful VAX VMS
+		installation and test.
+
+
+[15-Nov-1992]	2.03
+		Add match_pattern() support for consistent pattern
+		matching in the check_xxx() functions, using new code
+		defined separately in match.c.
+
+		Add support for run-time redefinition of patterns via
+		one or more initialization file(s) found in the PATH
+		(system-defined) and BIBINPUTS (user-defined) search
+		paths.  New functions: add_pattern(),
+		check_patterns(), do_initfile(), do_new_pattern(),
+		do_single_arg(), enlarge_table(), get_line(),
+		strdup(), strip_comments(), and trim_value().  New C
+		preprocessor symbols: HAVE_OLDCODE, HAVE_PATTERNS,
+		HAVE_RECOMP, and HAVE_REGEXP.  One of these should be
+		defined at compile time; if none are, then
+		HAVE_PATTERNS is the default.
+
+		Since options can now be specified in initialization
+		files, they each need negations so the command line
+		can override values from an initialization file.
+
+		Change all YES/NO flags to new type, YESorNO, for
+		better type checking.
+
+		Add do_more(), do_more_init(), and do_more_term(), for
+		pausing during help output; a private version of
+		screen paging is used instead of a pager invoked by
+		system() for better portability across systems.  Set
+		SCREEN_LINES to 0 at compile time to suppress this
+		feature.
+
+		In fix_title(), add code to brace upper-case letters
+		for cases like:
+			"X11" -> "{X11}"
+			"Standard C Library" -> "Standard {C} Library"
+			"C++ Book" -> "{C}++ Book"
+		leaving
+			"A xxx"
+		unchanged.
+
+
+[11-Nov-1992]	2.02
+		Add bad_ISBN(), bad_ISSN(), check_ISBN(), and
+		check_ISSN() for validation of ISBN and ISSN values.
+		ISBN == "International Standard Book Number", and ISSN
+		= "International Standard Serial Number".
+
+		Add testisxn.bib and testisxn.bok to the test
+		collection, with steps in the Makefile to run the
+		test.
+
+		Add support for embedded \" in Scribe value strings
+		(forgotten in 2.01 revision); they are converted from
+		\"x to {\"x}.
+
+
+[10-Nov-1992]	2.01
+		Add support for conversion of level-0 \"x to {\"x} and
+		x"y to x{"}y in value strings.  Such input is illegal
+		for BibTeX, and causes hard-to-find errors, since
+		BibTeX raises an error at the line where it runs out
+		of string collection space, rather than at the
+		beginning of the collection point.
+
+
+[06-Nov-1992]	2.00
+		Add full Scribe .bib file input compatibility with
+		-scribe command-line option.
+
+		Add support for multiple .bib file arguments on
+		command line, with new do_file() function to process
+		them.
+
+		Allow slash as well as hyphen for introducing
+		command-line options on VAX VMS and IBM PC DOS.
+
+		Add argument summary to help() (text extracted
+		verbatim from the manual pages).
+
+		Add new -delete-empty-fields, -keep-names,
+		-no-parbreaks, -remove-OPT-prefixes, and -no-warnings
+		command-line options and support code.
+
+		Add new out_with_error() and out_with_parbreak_error()
+		functions, and APPEND_CHAR() and EMPTY_STRING() macros
+		to shorten and clarify coding.
+
+		Add flush_inter_entry_space() function to standardize
+		line spacing.
+
+		Increase array sizes to MAX_TOKEN_SIZE (= MAX_TOKEN +
+		3) to reduce array bounds checking in inner loops.
+
+		Add additional file position tracking to enhance error
+		localization (structures IO_PAIR and POSITION, and
+		functions new_io_pair(), new_position(),
+		out_position(), and out_status()).  Error messages are
+		parsable by GNU Emacs M-x next-error (C-x `) when
+		bibclean is run from Emacs by the command
+		M-x compile<RET>bibclean foo.bib >foo.new
+
+		Use arrays of constant strings for multiple string
+		output via new function out_lines(), instead of multiple
+		calls to fprintf().
+
+		Add additional checking via check_chapter(),
+		check_month(), check_number(), check_pages(),
+		check_volume(), check_year(), and match_regexp().
+
+		Supply implementation of memmove() library function
+		missing from g++ 2.2.2 library.
+
+
+[03-Oct-1992]	1.06
+		Correct logic error in do_comma() that prevented correct
+		recognition of @name(key = "value") where the last
+		key/value pair did not have a trailing comma.
+
+		Add C++ support.
+
+		Add key_pair[] and entry_pair[] tables for
+		standardization of letter case usage, and use the new
+		NAME_PAIR type in fix_month().
+
+		Update author address.
+
+		Rename author() to show_author() to avoid shadowing
+		global names.
+
+		Fix two assignments of constant strings to char*
+		pointers.
+
+		Remove variable at_line_number which was defined, but
+		never used.
+
+
+[01-Aug-1992]	1.05
+		Add -keep-initials switch support (thanks to Karl Berry
+		<karl@cs.umb.edu>).  Internationalize telephone and FAX
+		numbers.
+
+
+[02-Jan-1992]	1.04
+		Modify fix_title() to ignore macros.  Modify
+		fix_author()) to ignore author lists with parentheses
+		(e.g.  author = "P. D. Q. Bach (113 MozartStrasse,
+		Vienna, Austria)").
+
+
+[31-Dec-1991]	1.03
+		Add fix_title() to supply braces around unbraced
+		upper-case acronyms in titles, and add private
+		definition of MAX().
+
+
+[15-Nov-1991]	1.02
+		Handle @String(...) and @Preamble(...), converting
+		outer parentheses to braces.  Insert spaces after
+		author and editor initials, and normalize names to
+		form "P. D. Q. Bach" instead of "Bach, P. D. Q.".
+
+
+[10-Oct-1991]	1.01
+		Increase MAX_TOKEN to match enlarged BibTeX, and add
+		check against STD_MAX_TOKEN.
+		Output ISBN and ISSN in upper case.
+		Always surround = by blanks in key = "value".
+
+
+[19-Dec-1990]	1.00 (version number unchanged)
+		Install Sun386i bug fix.
+
+
+[08-Oct-1990]	1.00
+		Original version.

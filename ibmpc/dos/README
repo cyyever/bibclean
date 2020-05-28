@@ -1,0 +1,348 @@
+%% /u/sy/beebe/tex/bibclean/2-11/ibmpc/dos/README, Thu May  2 08:18:01 1996
+%% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+
+		   ===============================
+		   bibclean for IBM PC DOS systems
+		   ===============================
+
+%% Author:
+%% 	Nelson H. F. Beebe
+%% 	Center for Scientific Computing
+%% 	Department of Mathematics
+%% 	University of Utah
+%% 	Salt Lake City, UT 84112
+%% 	USA
+%% 	Email: beebe@math.utah.edu (Internet)
+%% 	WWW URL: http://www.math.utah.edu/~beebe
+
+
+====
+NEWS
+====
+
+Several pre-compiled versions of bibclean for the IBM PC DOS
+environment are provided with this release, so most users will only
+have to copy the bibclean.exe file and the bibclean.ini file into some
+directory listed in the PATH variable.  See the ``Doing it Yourself''
+section below for details on building bibclean.
+
+Here are the file sizes of the bibclean executables on the Intel
+architecture, sorted from smallest to largest:
+
+         71684 May  1 20:25 ./linux/bibclean (stripped)
+        112238 May  2 08:07 ./dos/wat10/wcc386/bibclean.exe
+        113514 May  2 08:11 ./dos/wat10/wpp386/bibclean.exe
+        133563 May  2 07:52 ./dos/msc6p0/bibclean.exe
+        133604 May  2 08:03 ./dos/wat10/wcc/bibclean.exe
+        152883 May  2 07:48 ./dos/msc5p1/bibclean.exe
+        156860 May  2 07:58 ./dos/tcc3p0/bibclean.exe
+        157004 May  2 07:25 ./dos/tpp3p0/bibclean.exe
+        157785 May  2 07:56 ./dos/tcc2p0/bibclean.exe
+        211679 May  1 20:25 ./linux/bibclean (not stripped)
+
+For O/S-independent changes in bibclean, see the top-level ChangeLog
+file.
+
+One of the changes in this release for IBM PC DOS systems is the use
+of binary input mode for the BibTeX input files, making it possible
+for Ctl-Z to be treated as a regular character.  It is no longer
+necessary, as it was in previous releases of bibclean for the IBM PC,
+to remove the test line in testbib1.org, in order to get all of the
+tests to pass.
+
+Occasionally, the error file will contain blank lines between
+messages.  The reason for this is that check_inodes() in chek.c sets
+the variable stdlog_on_stdout by trying to figure out if the log file
+is different from the normal output file.  When that variable is set
+to YES, warnings are prefixed by a newline to prevent them from being
+issued in the middle of a line of output data.  IBM PC DOS does not
+have the concept of an inode, which together with the device number,
+on UNIX and VAX VMS is a unique file identifier, so check_inodes()
+tests other fields of the stat structure for equality to see, and
+these tests are not sufficient to always make the correct decision.
+For example, if the output and log files are both created as named
+files within the same clock tick (1/60 sec), then the test in
+check_inodes() will incorrectly conclude they are identical, even
+though they are different.
+
+One possible solution would be to issue a sleep(1) call before the log
+file is opened, which would ensure different time stamps; however,
+that function is not available with the Microsoft C compilers,
+although both Turbo C and Watcom C have it.  What is really needed to
+distinguish the files is their initial disk block addresses, or their
+file names (DOS file systems do not support links, so different
+filenames imply different files; this is not true on UNIX or VMS), but
+I can find no documented C library call that will obtain this
+information.
+
+Another solution would be to call utime() after the open of the log
+file and set its write time forward by one clock tick (two seconds in
+DOS file systems).  With the Microsoft C compilers, _dos_getftime()
+and _dos_setftime() could be used too; with Turbo C, getftime() and
+setftime() similarly available.
+
+If anyone has a better idea how to solve this problem, I will happily
+accept suggestions.
+
+
+=======================
+Borland Turbo C and C++
+=======================
+
+This release of bibclean 2.11 has been built and successfully tested
+with Turbo C 3.0, using tcc30bld.bat on SunPC 4.1 running on a native
+Intel 486 25MHz processor board inside my Sun UltraSPARC 170
+workstation.  The huge memory model is required to successfully link
+the program.  The executable, associated batch files, and the
+customized config.h file, can be found in the tcc3p0 subdirectory.
+
+Success was also obtained with Turbo C 2.0 in the huge memory model;
+the files are in the tcc2p0 subdirectory.
+
+Turbo C++ 3.0 compilation and testing also works; the results are in
+the tpp3p0 directory.
+
+
+===================
+Microsoft C and C++
+===================
+
+A build with Microsoft C 5.0 was successful in the compact, large, and
+huge models, but the output in the compact model was erroneous, and
+the large and huge model versions died with
+
+	run-time error R6009
+	- not enough space for environment
+
+despite the fact that the environment contained on 3 short variables
+and the PATH variable.
+
+With Microsoft C 5.1, compilation and testing was successful in the
+huge model; the executable and associated files are in the msc5p1
+subdirectory.  The bibclean.exe file produced is 153KB, slightly
+smaller than the 156KB file from Turbo C 3.0.
+
+Compilation and testing with Microsoft C 6.0 was successful in the
+compact model; the executable and associated files are in the msc6p0
+subdirectory.
+
+Microsoft C 7.0 will not run on SunPC, even with a native 486
+processor board; it complains:
+
+	run-time error R6901
+	- DOSX32 : This is a protected-mode application that requires DPMI
+	(DOS Protected Mode Interface) services. Examples of hosts that provide
+	these services include:
+	  - a DOS session under Windows 3.x in enhanced mode
+	  - Qualitas' 386MAX or BlueMAX version 6.x
+
+With older versions of SunPC, it would not start even if 386max.sys was
+installed in config.sys.  When I put 386max.sys there for these tests,
+after rebooting, the compiler starts, and then shuts down:
+
+	cl -c -I. isbn.c
+	Microsoft (R) C/C++ Optimizing Compiler Version 7.00
+	Copyright (c) Microsoft Corp 1984-1992. All rights reserved.
+
+	isbn.c
+
+	runtime error R6008
+	- not enough space for arguments
+
+This happens no matter what the /E switch on command.com is set to in
+config.sys: I tried sizes from 512 to 40K.
+
+Also, if 386max.sys is used, then SunPC will only work with a 486
+hardware board, but not in software emulation mode,
+
+Microsoft software products, as usual, are the pits!
+
+I've placed copies of the batch files and config.h file in the msc7p0
+subdirectory, but I cannot create an executable.  Perhaps some reader
+can do so, and send me the results. I would also very much like to see
+the results of Microsoft C++ compilation.
+
+
+================
+Watcom C and C++
+================
+
+The batch files for building bibclean with the Waterloo compiler
+assume that you have copied the file watcom/src/startup/wildargv.c
+from the compiler installation tree to the current directory. I have
+not supplied a copy command in the batch files, because the local home
+of this compiler on my system has not yet been finalized.
+
+On a Sun UltraSPARC 170 running Sun Solaris 2.5, with C++ 4.0
+compilation, the memory sizes of the various object files are:
+
+	=============================================
+	Module		code    init    uninit  total
+				data	data
+	=============================================
+	bibclean.o      30898    1837   12372   45107
+	chek.o          15646     716       0   16362
+	do.o            62733    4214   10248   77195
+	fix.o           13863     159    4096   18118
+	fndfil.o         4763      86    3084    7933
+	isbn.o          11205    6633      14   17852
+	keybrd.o         9643     362      36   10041
+	match.o          4583     157       0    4740
+	option.o        13549   17797      12   31358
+	romtol.o         1483      98       0    1581
+	strist.o          578      58       0     636
+	strtol.o         2974      99       0    3073
+	---------------------------------------------
+	Total          171918   32216   29862  233996
+	=============================================
+
+Evidently, the sum of initialized and uninitialized data is about
+62KB.
+
+After several attempts that were thwarted by the IBM PC 64KB segment
+size limit, I finally found a set of switches that allow use of the
+Watcom C/C++ 10.0 wcc compiler:
+
+	wcc -I. -ml -zq -zt512 chek.c
+
+This produced an executable in both compact and large models that
+passed the validation suite successfully, except for the last one,
+Scribe test 3, where the program goes into an infinite loop writing
+
+	%% "testscr3.org", line 0: Pushback buffer overflow: characters lost.
+
+Adding the -ox optimization switch to the compilations had no effect.
+Thus, the wat10/wcc/bibclean.exe executable should not be regarded as
+reliable.
+
+I also tried using C++ compilation like this:
+
+	wcl -c -cc++ -I. -mc -ox -zq -zt512 chek.c
+
+I then had to remove the -ox optimization flag for chek.c and do.c
+because the compiler ran out of memory.  Even without that flag, the
+compiler could not handle do.c, which is the largest source file in
+bibclean.  Also I had to change one statement in isbn.c from
+
+    for (p = start = s; (p = next_ISBN(p,&next), p) != (const char*)NULL;
+	 start = p)
+to
+    for (p = start = s; (p = next_ISBN(p,&next)) != (const char*)NULL;
+	 start = p)
+
+because the C++ compiler erroneously treated the comma expression as
+of type long, which is incompatible with const char *.
+
+Thus, successful compilation with Watcom C++ is not possible without
+code rewriting, which I'm not prepared to do at this time.
+
+Compilation and testing with the Watcom C/C++ 10.0 wcc386 compiler was
+successful; the required files are stored in the watcom subdirectory.
+This version of the program requires an Intel 386 or higher processor,
+and does not use segmented memory addressing.  Because it uses more
+efficient 32-bit addressing, instead of multiple instructions to
+twiddle segment and offset registers, it is likely to run faster than
+the Turbo C version.  The 386 executable program file is also 28%
+smaller than the segmented memory version.  If you attempt to run the
+wat10/wcc386/bibclean.exe file on a 286 or older system, or on an
+emulator that does not support the 386 extensions, such as SunPC 4.1,
+it terminates immediately with an error
+
+	DOS/16M error: [15]  protected mode available only with 386 or 486
+
+It works successfully on SunPC 4.1 when the 486 board is installed.
+Unfortunately, it also produces an obnoxious copyright message each
+time it is run:
+
+DOS/4GW Protected Mode Run-time  Version 1.95
+Copyright (c) Rational Systems, Inc. 1990-1993
+
+These messages arise from the dos4gw.exe file that is dynamically
+loaded.  You can suppress them by setting an environment variable like
+this:
+	set DOS4G=quiet
+
+The dos4gw.exe file is needed to run the bibclean.exe file, and can be
+FREELY distributed with it.  Further details can be found in its
+documentation file, wat10/wcc386/dos4gw.doc.
+
+Finally, a build and test was done successfully with the 386 C++
+compiler, wpp386; the associated files are in the wat10/wpp386
+subdirectory.
+
+
+=================
+Doing it Yourself
+=================
+
+If you are content to use a precompiled version of bibclean provided
+with the distribution, stop reading now.
+
+Because of the poor quality of, and variation in, IBM PC DOS make
+implementations, I have not attempted to use Makefiles for building
+bibclean on the IBM PC.  Instead, I use a pair of batch files, one to
+set the search paths and environment variables for a particular
+compiler, and another to invoke the compiler to compile and link the
+complete program.  The first of these will require modification at
+end-user sites, because there are no standards for where software is
+installed on IBM PC DOS systems.  The second will not require
+modification unless you change compilers, or want to experiment with
+different compilation options.
+
+Copy the source files, *.c and *.h, and the test files, test*.*, from
+the distribution directory into an empty directory, and then copy in
+the batch files and the config.h file from one of these
+subdirectories:
+
+	./msc5p1
+	./msc6p0
+	./msc7p0
+	./tcc2p0
+	./tcc3p0
+	./wat10/wcc
+	./wat10/wcc386
+	./wat10/wpp386
+
+For example, tcc3p0 contains these files:
+
+	bibclean.exe  ibmclean.bat  tcc30bld.bat
+	config.h      ibmtest.bat   tcc30pth.bat
+
+Depending on how you installed the files, it may be necessary to
+change UNIX LF line terminators to PC DOS CR LF terminators in the
+*.c, *.h, and test*.* files in the first step.  Some compilers will
+happily handle both styles of line termination.  The files in the
+above compiler-specific directories have already been converted to PC
+DOS format.
+
+After modifying the batch files as needed, execute the one that sets
+the sets the path (e.g. tcc30pth) to prepare for compilation.  Then
+execute the build batch file (e.g. tcc30bld).  If the compilation
+and/or linking fail, fix the problems (config.h may need minor tweaks
+if you changed compilers).  Otherwise, execute the ibmtest batch file.
+If the installation is correct, no differences will be found during
+its execution.  You can use ibmclean to remove the temporary output
+test files.  Some versions of PC DOS have an improved file comparison
+utility named fc; you can copy it into the current directory under the
+name diff.exe if you want to use it instead of the primitive diff
+utility historically available with PC DOS.
+
+Your port should support wildcarded files on the command line.  With
+the Microsoft, Turbo, and Waterloo C compilers, special library object
+files named setargv (Microsoft), wildargs (Turbo), or wildargv
+(Waterloo) can be linked in to provide this service.
+
+If you succeed in porting bibclean to a new compiler and/or operating
+system, and the resulting program can pass all of the validation
+tests, please return an archive file (e.g. .arc, .tar, .zip, or .zoo)
+to the author with the executable program, your batch files, and all
+changed source files.  Send either a uuencoded or Mime-encoded e-mail
+message to the address above, or if you have Internet anonymous ftp
+access, deposit the archive file in ftp://ftp.math.utah.edu/incoming,
+and then send the author notification that you have done so.  For
+security reasons, that directory cannot be listed, nor can you
+overwrite anything that is already there.
+
+			       =======
+			       THE END
+			       =======

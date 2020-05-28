@@ -1,0 +1,1265 @@
+BIBCLEAN(1)                 General Commands Manual                BIBCLEAN(1)
+
+
+
+1mNAME0m
+       bibclean  - prettyprint and syntax check BibTeX and Scribe bibliography
+       data base files
+
+1mSYNOPSIS0m
+       1mbibclean 22m[ 1m-author 22m] [ 1m-copyleft 22m] [ 1m-copyright 22m]
+                [ 1m-error-log 4m22mfilename24m ] [ 1m-help 22m] [ 1m'-?'  22m]
+                [ 1m-init-file 4m22mfilename24m ] [ 1m-ISBN-file 4m22mfilename24m ]
+                [ 1m-keyword-file 4m22mfilename24m ] [ 1m-max-width 4m22mnnn24m ]
+                [ 1m-[no-]align-equals 22m] [ 1m-[no-]brace-protect 22m]
+                [ 1m-[no-]check-values 22m] [ 1m-[no-]debug-match-failures 22m]
+                [ 1m-[no-]delete-empty-values 22m] [ 1m-[no-]file-position 22m]
+                [ 1m-[no-]fix-accents 22m] [ 1m-[no-]fix-braces 22m]
+                [ 1m-[no-]fix-degrees 22m] [ 1m-[no-]fix-font-changes 22m]
+                [ 1m-[no-]fix-initials 22m] [ 1m-[no-]fix-math 22m] [ 1m-[no-]fix-names 22m]
+                [ 1m-[no-]German-style 22m] [ 1m-[no-]keep-linebreaks 22m]
+                [ 1m-[no-]keep-parbreaks 22m] [ 1m-[no-]keep-preamble-spaces 22m]
+                [ 1m-[no-]keep-spaces 22m] [ 1m-[no-]keep-string-spaces 22m]
+                [ 1m-[no-]parbreaks 22m] [ 1m-[no-]prettyprint 22m]
+                [ 1m-[no-]print-ISBN-table 22m] [ 1m-[no-]print-keyword-table 22m]
+                [ 1m-[no-]print-patterns 22m] [ 1m-[no-]quiet 22m]
+                [ 1m-[no-]read-init-files 22m] [ 1m-[no-]remove-OPT-prefixes 22m]
+                [ 1m-[no-]scribe 22m] [ 1m-[no-]trace-file-opening 22m]
+                [ 1m-[no-]warnings 22m] [ 1m-output-file 4m22mfilename24m ] [ 1m-version 22m]
+                4m<infile24m or  4mbibfile124m 4mbibfile224m 4mbibfile324m 4m...0m
+                4m>outfile0m
+
+       All options can be abbreviated to a unique leading prefix.
+
+       An explicit file name of ``-'' represents standard input; it is assumed
+       if no input files are specified.
+
+       On VAX VMS and IBM PC DOS, the leading ``-'' on option names may be re-
+       placed by a slash, ``/''; however, the ``-'' option  prefix  is  always
+       recognized.
+
+1mDESCRIPTION0m
+       1mbibclean 22mprettyprints input BibTeX files to 4mstdout24m, or to a user-speci-
+       fied file, and checks the brace balance and bibliography  entry  syntax
+       as  well.  It can be used to detect problems in BibTeX files that some-
+       times confuse even BibTeX itself, and importantly, can be used to  nor-
+       malize the appearance of collections of BibTeX files.
+
+       Here is a summary of the formatting actions:
+
+       o  BibTeX  items  are  formatted  into  a consistent structure with one
+          4mfield24m 4m=24m 4m"value"24m pair per line, and the initial @ and trailing  right
+          brace in column 1.
+
+       o  Tabs  are  expanded into blank strings; their use is discouraged be-
+          cause they inhibit portability, and can suffer corruption  in  elec-
+          tronic mail.
+
+       o  Long  string values are split at a blank and continued onto the next
+          line with leading indentation.
+
+       o  A single blank line separates adjacent bibliography entries.
+
+       o  Text outside BibTeX entries is passed through verbatim.
+
+       o  Outer parentheses around entries are converted to braces.
+
+       o  Personal names in 4mauthor24m and 4meditor24m field values are  normalized  to
+          the  form  ``P.  D.  Q.   Bach'',  from  ``P.D.Q. Bach'' and ``Bach,
+          P.D.Q.''.
+
+       o  Hyphen sequences in page numbers are converted to en-dashes.
+
+       o  Month values are converted to standard BibTeX string abbreviations.
+
+       o  In titles, sequences of upper-case characters at  brace  level  zero
+          are  braced  to protect them from being converted to lower-case let-
+          ters by some bibliography styles.
+
+       o  CODEN, ISBN (International Standard Book Number) and ISSN  (Interna-
+          tional  Standard  Serial Number) entry values are examined to verify
+          the checksums of each listed number, and correct ISBN hyphenation is
+          automatically supplied.
+
+       The standardized format of the output of 1mbibclean 22mfacilitates the later
+       application of simple filters, such as 1mbibcheck22m(1),  1mbibdup22m(1),  1mbibex-0m
+       1mtract22m(1),  1mbibindex22m(1),  1mbibjoin22m(1),  1mbiblabel22m(1),  1mbiblook22m(1),  1mbibor-0m
+       1mder22m(1), 1mbibsort22m(1), 1mcitefind22m(1), and 1mcitetags22m(1), to process the  text,
+       and also is the one expected by the GNU Emacs BibTeX support functions.
+
+1mOPTIONS0m
+       Command-line  switches  may  be abbreviated to a unique leading prefix,
+       and letter case is 4mnot24m significant.  All options are parsed before  any
+       input  bibliography  files  are read, no matter what their order on the
+       command line.  Options that correspond to a yes/no setting  of  a  flag
+       have  a  form  with a prefix "no-" to set the flag to 4mno24m.  For such op-
+       tions, the last setting determines the flag value used.  That  is  sig-
+       nificant  when  options are also specified in initialization files (see
+       the 1mINITIALIZATION FILES 22mmanual section).
+
+       The leading hyphen that distinguishes an option from a filename may  be
+       doubled,  for compatibility with GNU and POSIX conventions.  Thus, 1m-au-0m
+       1mthor 22mand 1m--author 22mare equivalent.
+
+       To avoid confusion with options, if a filename begins with a hyphen, it
+       must  be  disguised  by  a leading absolute or relative directory path,
+       e.g., 4m/tmp/-foo.bib24m or 4m./-foo.bib24m.
+
+       1m-author                     22mDisplay an author credit  on  the  standard
+                                   error unit, 4mstderr24m, and then terminate with
+                                   a success return code.  Sometimes  an  exe-
+                                   cutable program is separated from its docu-
+                                   mentation and source code; this option pro-
+                                   vides a way to recover from that.
+
+       1m-copyleft                   22mDisplay  copyright information on the stan-
+                                   dard error unit, 4mstderr24m, and then terminate
+                                   with a success return code.
+
+       1m-copyright                  22mDisplay  copyright information on the stan-
+                                   dard error unit, 4mstderr24m, and then terminate
+                                   with a success return code.
+
+       1m-error-log 4m22mfilename24m         Redirect  4mstderr24m  to  the  indicated  file,
+                                   which then contains all of  the  error  and
+                                   warning  messages.  This option is provided
+                                   for  those  systems  that  have  difficulty
+                                   redirecting 4mstderr24m.
+
+       1m-help 22mor 1m-?                 22mDisplay  a help message on 4mstderr24m, giving a
+                                   usage description, similar to this  section
+                                   of  the  manual  pages,  and then terminate
+                                   with a success return code.
+
+       1m-ISBN-file 4m22mfilename24m         Provide an explicit ISBN-range  initializa-
+                                   tion  file.  It is processed 4mafter24m any sys-
+                                   tem-wide and job-wide  ISBN  initialization
+                                   files  found  on  the  1mPATH  22m(for  VAX VMS,
+                                   1mSYS$SYSTEM22m) and 1mBIBINPUTS 22msearch paths, re-
+                                   spectively,  and  may  override  them.  The
+                                   ISBN  initialization  file  name   can   be
+                                   changed  at  compile  time,  or at run time
+                                   through a setting of the environment  vari-
+                                   able  1mBIBCLEANISBN22m,  but  defaults to 4m.bib-0m
+                                   4mclean.isbn24m on UNIX, and 4mbibclean.isb24m  else-
+                                   where.   For  further details, see the 1mISBN0m
+                                   1mINITIALIZATION FILES 22mmanual section.
+
+       1m-init-file 4m22mfilename24m         Provide an explicit value pattern  initial-
+                                   ization  file.   It  is processed 4mafter24m any
+                                   system-wide  and  job-wide   initialization
+                                   files  found  on  the  1mPATH  22m(for  VAX VMS,
+                                   1mSYS$SYSTEM22m) and 1mBIBINPUTS 22msearch paths, re-
+                                   spectively,  and  may override them.  It in
+                                   turn may  be  overridden  by  a  subsequent
+                                   file-specific   initialization  file.   The
+                                   initialization file name can be changed  at
+                                   compile time, or at run time through a set-
+                                   ting  of  the  environment  variable   1mBIB-0m
+                                   1mCLEANINI22m,  but  defaults  to 4m.bibcleanrc24m on
+                                   UNIX, and to 4mbibclean.ini24m  elsewhere.   For
+                                   further  details,  see  the  1mINITIALIZATION0m
+                                   1mFILES 22mmanual section.
+
+       1m-keyword-file 4m22mfilename24m      Provide an explicit keyword  initialization
+                                   file.   It  is  processed 4mafter24m any system-
+                                   wide and  job-wide  keyword  initialization
+                                   files  found  on  the  1mPATH  22m(for  VAX VMS,
+                                   1mSYS$SYSTEM22m) and 1mBIBINPUTS 22msearch paths, re-
+                                   spectively,  and  may  override  them.  The
+                                   keyword initialization  file  name  can  be
+                                   changed  at  compile  time,  or at run time
+                                   through a setting of the environment  vari-
+                                   able  1mBIBCLEANKEY22m,  but  defaults  to 4m.bib-0m
+                                   4mclean.key24m on UNIX, and  4mbibclean.key24m  else-
+                                   where.   For  further details, see the 1mKEY-0m
+                                   1mWORD INITIALIZATION FILES 22mmanual section.
+
+       1m-max-width 4m22mnnn24m              1mbibclean 22mnormally limits output line widths
+                                   to  72  characters, and in the interests of
+                                   consistency,  that  value  should  not   be
+                                   changed.  Occasionally, special-purpose ap-
+                                   plications may  require  different  maximum
+                                   line  widths,  so this option provides that
+                                   capability.  The number following  the  op-
+                                   tion  name can be specified in decimal, oc-
+                                   tal  (starting  with  0),  or   hexadecimal
+                                   (starting  with  0x).   A  zero or negative
+                                   value is interpreted to mean unlimited,  so
+                                   1m-max-width  4m22m024m  can  be  used to ensure that
+                                   each field/value pair appears on  a  single
+                                   line.
+
+                                   When  1m-no-prettyprint  22mrequests 1mbibclean 22mto
+                                   act as a lexical analyzer, the default line
+                                   width  is  unlimited,  unless overridden by
+                                   this option.
+
+                                   When 1mbibclean 22mis prettyprinting, line wrap-
+                                   ping is done only at a space. Consequently,
+                                   a long non-blank character sequence may re-
+                                   sult  in the output exceeding the requested
+                                   line width.
+
+                                   When 1mbibclean 22mis lexing, line  wrapping  is
+                                   done  by inserting a backslash-newline pair
+                                   when the specified maximum is  reached,  so
+                                   no line length ever exceeds the maximum.
+
+       1m-[no-]align-equals          22mWith  the  positive  form, align the equals
+                                   sign in key/value assignments at  the  same
+                                   column,  separated  by  a single space from
+                                   the value string.   Otherwise,  the  equals
+                                   sign follows the key, separated by a single
+                                   space.  Default: 4mno24m.
+
+       1m-[no-]brace-protect         22mProtect uppercase and  mixedcase  words  at
+                                   brace-level  zero  with  braces  to prevent
+                                   downcasing by some BibTeX styles.  Default:
+                                   4myes24m.
+
+       1m-[no-]check-values          22mWith  the  positive  form,  apply heuristic
+                                   pattern matching to field values  in  order
+                                   to  detect  possible errors (e.g., ``4myear24m 4m=0m
+                                   4m"192"24m'' instead of ``4myear24m 4m=24m 4m"1992"24m''),  and
+                                   issue warnings when unexpected patterns are
+                                   found.
+
+                                   That checking is usually beneficial, but if
+                                   it  produces  too many bogus warnings for a
+                                   particular bibliography file, you can  dis-
+                                   able  it with the negative form of this op-
+                                   tion.  Default: 4myes24m.
+
+       1m-[no-]debug-match-failures  22mWith the positive form, print out a warning
+                                   when a value pattern fails to match a value
+                                   string.
+
+                                   That is helpful in debugging new  patterns,
+                                   but  because  the output can be voluminous,
+                                   you should use this option only with  small
+                                   test  files,  and initialization files that
+                                   eliminate all patterns apart from the  ones
+                                   that you are testing.  Default: 4mno24m.
+
+       1m-[no-]delete-empty-values   22mWith   the   positive   form,   remove  all
+                                   field/value pairs for which the value is an
+                                   empty  string.  That is helpful in cleaning
+                                   up bibliographies generated from text  edi-
+                                   tor  templates.  Compare  this  option with
+                                   1m-[no-]remove-OPT-prefixes 22mdescribed  below.
+                                   Default: 4mno24m.
+
+       1m-[no-]file-position         22mWith  the positive form, give detailed file
+                                   position information in warning  and  error
+                                   messages.  Default: 4mno24m.
+
+       1m-[no-]fix-accents           22mWith  the  positive form, normalize TeX ac-
+                                   cents in annotes, authors, booktitles, edi-
+                                   tors, notes, remarks, and titles.  Default:
+                                   4mno24m.
+
+       1m-[no-]fix-braces            22mWith the positive form,  normalize  bracing
+                                   in  annotes,  authors, booktitles, editors,
+                                   notes, remarks, and titles, by removing un-
+                                   necessary levels of braces.  Default: 4mno24m.
+
+       1m-[no-]fix-degrees           22mWith  the  positive  form, remove spaces in
+                                   author/editor fields  inside  braces  after
+                                   letter-ending  periods.   That makes reduc-
+                                   tions from 4mJ.24m 4mJ.24m 4m{Thomson,24m  4mM.24m  4mA.,24m  4mF.24m  4mR.0m
+                                   4mS.}24m,  4mFrederick24m 4m{Soddy,24m 4mB.24m 4mA.24m 4m(Oxon.)}24m, and
+                                   4mJohn24m  4mA.24m  4m{Cable,24m  4mM.24m  4mA.,24m  4mM.24m  4mEd.,24m  4mDipl.0m
+                                   4mDeutsch24m  4m(Marburg),24m  4mA.24m  4mL.24m 4mC.24m 4mM.}24m to 1mJ. J.0m
+                                   1m{Thomson, M.A., F.R.S.}22m, 1mFrederick  {Soddy,0m
+                                   1mB.A.  (Oxon.)}22m,  and  1mJohn A. {Cable, M.A.,0m
+                                   1mM.Ed., Dipl.Deutsch  (Marburg),  A.L.C.M.}22m,
+                                   respectively.
+
+                                   In  journals  in the humanities and history
+                                   of science, as well as in  some  scientific
+                                   journals  until well into the 20th Century,
+                                   academic, honorary, and professional titles
+                                   and  degrees  are commonly attached to per-
+                                   sonal names.  Even though modern publishing
+                                   practice avoids such decorations, for accu-
+                                   racy, bibliography entries  should  prefer-
+                                   ably  retain  them.   Journal typographical
+                                   practice generally follows  the  reductions
+                                   described here.
+
+       1m-[no-]fix-font-changes      22mWith  the  positive  form,  supply an addi-
+                                   tional brace level around font  changes  in
+                                   titles  to  protect  against  downcasing by
+                                   some BibTeX styles.  Font changes that  al-
+                                   ready  have  more  than one level of braces
+                                   are not modified.
+
+                                   For example, if a title contains the  Latin
+                                   phrase  4m{\em24m  4mDictyostelium24m  4mdiscoideum}24m or
+                                   4m{\em24m  4m{D}ictyostelium24m   4mdiscoideum}24m,   then
+                                   downcasing  incorrectly converts the phrase
+                                   to lower-case letters.  Most  BibTeX  users
+                                   are surprised that bracing the initial let-
+                                   ters does not prevent the downcase  action.
+                                   The  correct  coding is 4m{{\em24m 4mDictyostelium0m
+                                   4mdiscoideum}}24m.  However, there are also  le-
+                                   gitimate  cases  where  an  extra  level of
+                                   bracing wrongly protects  from  downcasing.
+                                   Consequently,  1mbibclean  22mnormally  does 4mnot0m
+                                   supply an extra level of braces, but if you
+                                   have  a bibliography where the extra braces
+                                   are routinely missing, you can use this op-
+                                   tion to supply them.
+
+                                   If  you think that you need this option, it
+                                   is 4mstrongly24m recommended that you apply 1mbib-0m
+                                   1mclean  22mto  your  bibliography file with and
+                                   without 1m-fix-font-changes22m, then compare the
+                                   two  output  files  to  ensure  that  extra
+                                   braces are not  being  supplied  in  titles
+                                   where they should not be present.  You must
+                                   decide which of the two output files is the
+                                   better  choice,  then  repair the incorrect
+                                   title bracing by hand.
+
+                                   Because font changes in titles  are  uncom-
+                                   mon, except for cases of the type that this
+                                   option is designed to correct, it should do
+                                   more good than harm.  Default: 4mno24m.
+
+       1m-[no-]fix-initials          22mWith  the positive form, insert a space af-
+                                   ter a  period  following  author  initials.
+                                   Default: 4myes24m.
+
+       1m-[no-]fix-math              22mWith the positive form, improve readability
+                                   of math mode in titles by inserting  spaces
+                                   around  operators,  deleting other unneces-
+                                   sary space, and removing braces around sin-
+                                   gle-character  subscripts and superscripts.
+                                   Default: 4mno24m.
+
+       1m-[no-]fix-names             22mWith the positive form, reorder 4mauthor24m  and
+                                   4meditor24m name lists to remove commas at brace
+                                   level zero, placing first names or initials
+                                   before last names.  Default: 4myes24m.
+
+       1m-[no-]German-style          22mWith  the  positive  form,  interpret quote
+                                   characters ["] inside 4mbraced24m value  strings
+                                   at  brace  level 1 according to the conven-
+                                   tions of the  TeX  style  file  4mgerman.sty24m,
+                                   which overloads quote to simplify input and
+                                   representation of  German  umlaut  accents,
+                                   sharp-s  (es-zet), ligature separators, in-
+                                   visible  hyphens,  raised/lowered   quotes,
+                                   French  guillemets,  and  discretionary hy-
+                                   phens.  Recognized  character  combinations
+                                   are  braced  to  prevent BibTeX from inter-
+                                   preting the quote as a string delimiter.
+
+                                   Quoted strings receive no special  handling
+                                   from  this option, and because German nouns
+                                   in titles must anyway be protected from the
+                                   downcasing  operation of most BibTeX bibli-
+                                   ography styles, German value  strings  that
+                                   use  the overloaded quote character can al-
+                                   ways be entered in the form "{...}",  with-
+                                   out the need to specify this option at all.
+
+                                   Default: 4mno24m.
+
+       1m-[no-]keep-linebreaks       22mNormally,  line breaks inside value strings
+                                   are collapsed into a single space, so  that
+                                   long  value  strings can later be broken to
+                                   provide lines of reasonable length.
+
+                                   With the positive form, linebreaks are pre-
+                                   served  in value strings.  If 1m-max-width 22mis
+                                   set to zero, this  preserves  the  original
+                                   line breaks.  Spacing 4moutside24m value strings
+                                   remains under 1mbibclean22m's  control,  and  is
+                                   not affected by this option.
+
+                                   Default: 4mno24m.
+
+       1m-[no-]keep-parbreaks        22mWith  the positive form, preserve paragraph
+                                   breaks (either formfeeds, or lines contain-
+                                   ing  only  spaces)  in value strings.  Nor-
+                                   mally, paragraph breaks are collapsed  into
+                                   a  single  space.   Spacing  4moutside24m  value
+                                   strings remains under  1mbibclean22m's  control,
+                                   and  is  not  affected by this option.  De-
+                                   fault: 4mno24m.
+
+       1m-[no-]keep-preamble-spaces  22mWith the positive form, preserve all white-
+                                   space  in @Preamble{...} entries.  Default:
+                                   4mno24m.
+
+       1m-[no-]keep-spaces           22mWith the positive form, preserve all spaces
+                                   in  value strings.  Normally, multiple spa-
+                                   ces are  collapsed  into  a  single  space.
+                                   This  option  can  be  used  together  with
+                                   1m-keep-linebreaks22m,   1m-keep-parbreaks22m,    and
+                                   1m-max-width  4m22m024m to preserve the form of value
+                                   strings while still  providing  syntax  and
+                                   value   checking.   Spacing  4moutside24m  value
+                                   strings remains under  1mbibclean22m's  control,
+                                   and  is  not  affected by this option.  De-
+                                   fault: 4mno24m.
+
+       1m-[no-]keep-string-spaces    22mWith the positive form, preserve all white-
+                                   space  in  @String{...}  entries.  Default:
+                                   4mno24m.
+
+       1m-[no-]parbreaks             22mWith the negative form, a  paragraph  break
+                                   (either  a  formfeed,  or a line containing
+                                   only spaces)  is  not  permitted  in  value
+                                   strings,   or  between  field/value  pairs.
+                                   That may be useful to quickly trap  runaway
+                                   strings arising from mismatched delimiters.
+                                   Default: 4myes24m.
+
+       1m-[no-]prettyprint           22mNormally, 1mbibclean 22mfunctions as  a  pretty-
+                                   printer.   However,  with the negative form
+                                   of this option, it acts as a  lexical  ana-
+                                   lyzer  instead, producing a stream of lexi-
+                                   cal tokens.  See the 1mLEXICAL ANALYSIS  22mman-
+                                   ual  section for further details.  Default:
+                                   4myes24m.
+
+       1m-[no-]print-ISBN-table      22mWith the positive  form,  print  the  ISBN-
+                                   range  table on 4mstderr24m, then terminate with
+                                   a success return code.
+
+                                   That action is taken after all command-line
+                                   options are processed, and before any input
+                                   files are read (other than those  that  are
+                                   values of command-line options).
+
+                                   The  format  of the output ISBN-range table
+                                   is acceptable for input as an ISBN initial-
+                                   ization  file  (see the 1mISBN INITIALIZATION0m
+                                   1mFILES 22mmanual section).  Default: 4mno24m.
+
+       1m-[no-]print-keyword-table   22mWith the positive form, print  the  keyword
+                                   initialization table on 4mstderr24m, then termi-
+                                   nate with a success return code.
+
+                                   That action is taken after all command-line
+                                   options are processed, and before any input
+                                   files are read (other than those  that  are
+                                   values of command-line options).
+
+                                   The  format  of the output table is accept-
+                                   able for input as a keyword  initialization
+                                   file  (see the 1mKEYWORD INITIALIZATION FILES0m
+                                   manual section).  Default: 4mno24m.
+
+       1m-[no-]print-patterns        22mWith the positive  form,  print  the  value
+                                   patterns  read from initialization files as
+                                   they are added  to  internal  tables.   Use
+                                   this  option to check newly-added patterns,
+                                   or to see what patterns are being used.
+
+                                   When 1mbibclean 22mis compiled with native  pat-
+                                   tern-matching  code  (the  default),  those
+                                   patterns are the  ones  that  are  used  in
+                                   checking  value  strings  for valid syntax,
+                                   and all of them are specified  in  initial-
+                                   ization  files, rather than hard-coded into
+                                   the program.  For further details, see  the
+                                   1mINITIALIZATION  FILES  22mmanual section.  De-
+                                   fault: 4mno24m.
+
+       1m-[no-]quiet                 22mThis option is the opposite of  1m-[no-]warn-0m
+                                   1ming22m;  it  exists  for user convenience, and
+                                   for compatibility with other programs  that
+                                   use  1m-q  22mfor quiet operation, without warn-
+                                   ing messages.
+
+       1m-[no-]read-init-files       22mWith the negative form, suppress loading of
+                                   system-,  user-, and file-specific initial-
+                                   ization files.  Initializations  then  come
+                                   4monly24m  from  those files explicitly given by
+                                   1m-init-file 4m22mfilename24m options.  Default: 4myes24m.
+
+       1m-[no-]remove-OPT-prefixes   22mWith the positive form, remove the  ``OPT''
+                                   prefix  from each field name where the cor-
+                                   responding value is 4mnot24m  an  empty  string.
+                                   The  prefix ``OPT'' must be entirely in up-
+                                   per-case to be recognized.
+
+                                   This option is for bibliographies generated
+                                   with the help of the GNU Emacs BibTeX edit-
+                                   ing support, which generates templates with
+                                   optional  fields  identified by the ``OPT''
+                                   prefix.  Although the function 4mM-x24m  4mbibtex-0m
+                                   4mremove-OPT24m normally bound to the keystrokes
+                                   4mC-c24m 4mC-o24m does the job, users  often  forget,
+                                   with the result that BibTeX does not recog-
+                                   nize the field name, and ignores the  value
+                                   string.     Compare    this   option   with
+                                   1m-[no-]delete-empty-values 22mdescribed  above.
+                                   Default: 4mno24m.
+
+       1m-[no-]scribe                22mWith the positive form, accept input syntax
+                                   conforming to the Scribe  document  system.
+                                   The  output is converted to conform to Bib-
+                                   TeX syntax.  See  the  1mSCRIBE  BIBLIOGRAPHY0m
+                                   1mFORMAT  22mmanual section for further details.
+                                   Default: 4mno24m.
+
+       1m-[no-]trace-file-opening    22mWith the positive form, record in the error
+                                   log  file  the names of all files that 1mbib-0m
+                                   1mclean 22mattempts to open.  Use this option to
+                                   identify where initialization files are lo-
+                                   cated.  Default: 4mno24m.
+
+       1m-[no-]warnings              22mWith the positive form, allow  all  warning
+                                   messages.   The negative form is 4mnot24m recom-
+                                   mended because it may  mask  problems  that
+                                   should be repaired.  Default: 4myes24m.
+
+       1m-output-file 4m22mfilename24m       Supply  an alternate output file to replace
+                                   4mstdout24m.  If the filename cannot  be  opened
+                                   for  output,  execution  terminates immedi-
+                                   ately with a nonzero exit code.
+
+       1m-version                    22mDisplay  the  program  version  number   on
+                                   4mstderr24m,  and  then terminate with a success
+                                   return code.  That includes  an  indication
+                                   of  who compiled the program, the host name
+                                   on which it was compiled, the time of  com-
+                                   pilation,  and  the  type  of  string-value
+                                   matching code selected, when that  informa-
+                                   tion is available to the compiler.
+
+1mERROR RECOVERY AND WARNINGS0m
+       When  1mbibclean  22mdetects  an  error,  it issues an error message to both
+       4mstderr24m and 4mstdout24m.  That way, the user is  clearly  notified,  and  the
+       output bibliography also contains the message at the point of error.
+
+       Error  messages begin with a distinctive pair of queries, ??, beginning
+       in column 1, followed by the input file name and line number.   If  the
+       1m-file-position  22moption  was  specified, they also contain the input and
+       output positions of the current file, entry, and value.  Each  position
+       includes  the file byte number, the line number, and the column number.
+       In the event of a runaway string argument, the entry  and  value  posi-
+       tions  should  precisely pinpoint the erroneous bibliography entry, and
+       the file positions indicate where it was detected, which may be  rather
+       later in the files.
+
+       Warning  messages  identify  possible  problems, and are therefore sent
+       only to 4mstderr24m, and not to 4mstdout24m, so they never appear in  the  output
+       file.   They  are identified by a distinctive pair of percents, %%, be-
+       ginning in column 1, and as with error messages,  may  be  followed  by
+       file position messages if the 1m-file-position 22moption was specified.
+
+       For  convenience, the first line of each error and warning message sent
+       to 4mstderr24m is formatted according to the expectations of the  GNU  Emacs
+       4mnext-error24m  command.   You  can invoke 1mbibclean 22mwith the Emacs 4mM-x24m 4mcom-0m
+       4mpile<RET>bibclean24m 4mfilename.bib24m  4m>filename.new24m  command,  then  use  the
+       4mnext-error24m  command,  normally bound to 4mC-x24m 4m`24m (that's a grave, or back,
+       accent), to move to the location of the error in the input file.
+
+       If error messages are ignored, and  left  in  the  output  bibliography
+       file,  they  precipitates  an  error when the bibliography is next pro-
+       cessed with BibTeX.
+
+       After issuing an error message, 1mbibclean 22mthen resynchronizes its  input
+       by copying it verbatim to 4mstdout24m until a new bibliography entry is rec-
+       ognized on a line in which the first non-blank character is an  at-sign
+       (@).   That ensures that nothing is lost from the input file(s), allow-
+       ing corrections to be made in either the input  or  the  output  files.
+       However,  if 1mbibclean 22mdetects an internal error in its data structures,
+       it terminates abruptly without further input or output processing; that
+       kind  of  error  should  never happen, and if it does, it should be re-
+       ported immediately to the author of the program.  Errors in initializa-
+       tion  files, and running out of dynamic memory, also immediately termi-
+       nate 1mbibclean22m.
+
+1mSEARCH PATHS0m
+       Versions of 1mbibclean 22mbefore 3.00 found  some  of  their  initialization
+       files  in  the  same  directory as the executable program.  That design
+       choice means that those files can be copied anywhere in the  file  sys-
+       tem, and still be found at run time.  Some software distributions, how-
+       ever, prefer to follow the model where initialization and other related
+       files  are  instead stored in a directory whose name is related to that
+       of the executable by a conventional difference in filepath.  For  exam-
+       ple,  a program might be installed in 4m/opt/bin24m and its associated files
+       in   4m/opt/share/lib/PROGRAMNAME/24m   or   4m/opt/share/lib/PROGRAMNAME/PRO-0m
+       4mGRAMVERSION/24m.  The second form is preferable, because it permits multi-
+       ple versions of the same program to be installed, as long as  the  exe-
+       cutable  program  names carry a version suffix. Thus, a site might have
+       installed programs named 4mbibclean-1.0024m,  4mbibclean-2.0024m,  4mbibclean-2.1524m,
+       and  4mbibclean-3.0024m, with the versionless name 4mbibclean24m being a symbolic
+       link to whichever version is the desired local default.
+
+       With most software packages, the absolute path to  the  directory  con-
+       taining associated files is compiled into the program, making it impos-
+       sible to change the installation locations after the program  has  been
+       built from source code.
+
+       Some packages, however, instead use the location of the executable pro-
+       gram to find files by relative path at runtime.  In the above  example,
+       the  program  would  determine  its filesystem location at runtime, say
+       4m/opt/bin24m, then find its associated files relative to that  location  in
+       4m../share/lib/PROGRAMNAME/PROGRAMVERSION/24m.
+
+       From  version 3.00, 4mbibclean24m uses that second approach, with an associ-
+       ated directory like 4m../share/lib/bibclean/3.0024m.  That allows an instal-
+       lation  directory tree to be distributed to other systems and unbundled
+       4manywhere24m in the file system, as long as  the  relative  paths  are  not
+       changed.   4mbibclean24m tests whether its compiled-in library path is a di-
+       rectory on the local system, and if so, uses  it.   Otherwise,  it  re-
+       places  that  path  by a reconstructed one based on the location of the
+       executable program.  If the reconstructed path for the  library  direc-
+       tory  does  not exist, it uses a warning.  In either case, it continues
+       normally.
+
+       With the old approach, initialization files on Unix systems were  named
+       with  a  leading period, making them `hidden' files for the 4mls24m command.
+       With the new practice, initialization files are no longer named as hid-
+       den files.
+
+1mINITIALIZATION FILES0m
+       1mbibclean  22mcan  be compiled with one of three different types of pattern
+       matching; the choice is made by the installer at compile time:
+
+              o  The original version uses explicit hand-coded tests of value-
+                 string syntax.
+
+              o  The  second  version uses regular-expression pattern-matching
+                 host library routines together with  regular-expression  pat-
+                 terns that come entirely from initialization files.
+
+              o  The  third  version  uses special patterns that come entirely
+                 from initialization files.
+
+       The second and third versions are the ones of most interest  here,  be-
+       cause they allow the user to control what values are considered accept-
+       able.  However, command-line options can also be specified in  initial-
+       ization files, no matter which pattern matching choice was selected.
+
+       When 1mbibclean 22mstarts, it searches for initialization files, finding the
+       first one in the system executable program search path (on UNIX and IBM
+       PC  DOS, 1mPATH22m) and the first one in the 1mBIBINPUTS 22msearch path, and pro-
+       cesses them in turn.  Then, when command-line arguments are  processed,
+       any  additional files specified by 1m-init-file 4m22mfilename24m options are also
+       processed.  Finally, immediately before each 4mnamed24m bibliography file is
+       processed,  an  attempt  is made to process an initialization file with
+       the same name, but with the extension changed to 4m.ini24m.  The default ex-
+       tension  can  be  changed by a setting of the environment variable 1mBIB-0m
+       1mCLEANEXT22m.  That scheme permits  system-wide,  user-wide,  session-wide,
+       and file-specific initialization files to be supported.
+
+       When  input  is taken from 4mstdin24m, there is no file-specific initializa-
+       tion.
+
+       For precise control, the 1m-no-read-init-files 22moption suppresses all ini-
+       tialization  files except those explicitly named by 1m-init-file 4m22mfilename0m
+       options, either on the command line,  or  in  requested  initialization
+       files.
+
+       Recursive  execution of initialization files with nested 1m-init-file 22mop-
+       tions is permitted; if the recursion is circular, 1mbibclean 22mfinally gets
+       a  non-fatal  initialization  file  open failure after opening too many
+       files.  That terminates further initialization file processing.  As the
+       recursion  unwinds,  the  files are all closed, then execution proceeds
+       normally.
+
+       An initialization file may contain empty lines, comments  from  percent
+       to  end  of line (just like TeX), option switches, and field/pattern or
+       field/pattern/message assignments.  Leading and trailing spaces are ig-
+       nored.  That is best illustrated by a short example:
+
+       % This is a small bibclean initialization file
+
+       -init-file /u/math/bib/.bibcleanrc  %% departmental patterns
+
+       chapter = "\"D\""                 %% 23
+
+       pages   = "\"D--D\""              %% 23--27
+
+       volume  = "\"D \\an\\d D\""       %% 11 and 12
+
+       year    = \
+          "\"dddd, dddd, dddd\"" \
+          "Multiple years specified."      %% 1989, 1990, 1991
+
+       -no-fix-names   %% do not modify author/editor lists
+
+       Long  logical lines can be split into multiple physical lines by break-
+       ing at a backslash-newline pair; the  backslash-newline  pair  is  dis-
+       carded.   That  processing happens while characters are being read, be-
+       fore any further interpretation of the input stream.
+
+       Each logical line must contain a complete option  (and  its  value,  if
+       any),  or  a  complete  field/pattern  pair, or a field/pattern/message
+       triple.
+
+       Comments are stripped during the parsing of  the  field,  pattern,  and
+       message  values.   The  comment  start  symbol is not recognized inside
+       quoted strings, so it can be freely used in such strings.
+
+       Comments on logical lines that were input as  multiple  physical  lines
+       via  the  backslash-newline convention must appear on the 4mlast24m physical
+       line; otherwise, the remaining physical lines become part of  the  com-
+       ment.
+
+       Pattern  strings  must  be  enclosed  in  quotation  marks; within such
+       strings, a backslash starts an escape mechanism that is  commonly  used
+       in UNIX software.  The recognized escape sequences are:
+
+              1m\a     22malarm bell (octal 007)
+
+              1m\b     22mbackspace (octal 010)
+
+              1m\f     22mformfeed (octal 014)
+
+              1m\n     22mnewline (octal 012)
+
+              1m\r     22mcarriage return (octal 015)
+
+              1m\t     22mhorizontal tab (octal 011)
+
+              1m\v     22mvertical tab (octal 013)
+
+              1m\ooo   22mcharacter number octal 4mooo24m (e.g 1m\012 22mis linefeed).  Up to
+                     3 octal digits may be used.
+
+              1m\0xhh  22mcharacter number hexadecimal 4mhh24m  (e.g.,  1m\0x0a  22mis  line-
+                     feed).   4mxhh24m may be in either letter case.  Any number of
+                     hexadecimal digits may be used.
+
+       Backslash followed by any other character produces just that character.
+       Thus, \% gets a literal percent into a string (preventing its interpre-
+       tation as a comment), \" produces a quotation mark, and \\  produces  a
+       single backslash.
+
+       An ASCII NUL 4m(\0)24m in a string terminates it; that is a feature of the C
+       programming language in which 1mbibclean 22mis implemented.
+
+       Field/pattern pairs can be separated by arbitrary  space,  and  option-
+       ally, either an equals sign or colon functioning as an assignment oper-
+       ator.  Thus, the following are equivalent:
+
+       pages="\"D--D\""
+       pages:"\"D--D\""
+       pages "\"D--D\""
+         pages = "\"D--D\""
+         pages : "\"D--D\""
+       pages   "\"D--D\""
+
+       Each field name can have an arbitrary  number  of  patterns  associated
+       with  it; however, they must be specified in separate field/pattern as-
+       signments.
+
+       An empty pattern string  causes  previously-loaded  patterns  for  that
+       field  name  to  be  forgotten.  That feature permits an initialization
+       file to completely discard patterns from earlier initialization files.
+
+       Patterns for value strings are represented in  a  tiny  special-purpose
+       language  that  is both convenient and suitable for bibliography value-
+       string syntax checking.  While not as powerful as the language of regu-
+       lar-expression  patterns,  its  parsing  can be portably implemented in
+       less than 3% of the code in  a  widely-used  regular-expression  parser
+       (the GNU 1mregexp 22mpackage).
+
+       The patterns are represented by the following special characters:
+
+              1m<space>  22mone or more spaces
+
+              1ma        22mexactly one letter
+
+              1mA        22mone or more letters
+
+              1md        22mexactly one digit
+
+              1mD        22mone or more digits
+
+              1mr        22mexactly one Roman numeral
+
+              1mR        22mone or more Roman numerals (i.e. a Roman number)
+
+              1mw        22mexactly one word (one or more letters and digits)
+
+              1mW        22mone or more space-separated words, beginning and ending
+                       with a word
+
+              1m.        22mone  `special'  character,  one   of   the   characters
+                       <space>!#()*+,-./:;?[]~,  a subset of punctuation char-
+                       acters that are typically used in string values
+
+              1m:        22mone or more `special' characters
+
+              1mX        22mone or more `special'-separated  words,  beginning  and
+                       ending with a word
+
+              1m\x       22mexactly  one  x  (x is any character), possibly with an
+                       escape sequence interpretation given earlier
+
+              1mx        22mexactly the character x (x is anything but one of these
+                       pattern characters: aAdDrRwW.:<space>\)
+
+       The  1mX  22mpattern  character is very powerful, but generally inadvisable,
+       because it matches almost anything likely to be found in a BibTeX value
+       string.  The reason for providing pattern matching on the value strings
+       is to uncover possible errors, not mask them.
+
+       There is no provision for specifying ranges or repetitions  of  charac-
+       ters,  but  that  can  usually be done with separate patterns.  It is a
+       good idea to accompany the pattern with a comment showing the  kind  of
+       thing  it is expected to match.  Here is a portion of an initialization
+       file giving a few of the patterns used to match 4mnumber24m value strings:
+
+       number  =       "\"D\""         %% 23
+       number  =       "\"A AD\""      %% PN LPS5001
+       number  =       "\"A D(D)\""    %% RJ 34(49)
+       number  =       "\"A D\""       %% XNSS 288811
+       number  =       "\"A D\\.D\""   %% Version 3.20
+       number  =       "\"A-A-D-D\""   %% UMIAC-TR-89-11
+       number  =       "\"A-A-D\""     %% CS-TR-2189
+       number  =       "\"A-A-D\\.D\"" %% CS-TR-21.7
+
+       For a bibliography that contains only 4marticle24m entries, that list should
+       probably  be  reduced to just the first pattern, so that anything other
+       than a digit string fails the pattern-match test.  That is easily  done
+       by  keeping bibliography-specific patterns in a corresponding file with
+       extension 4m.ini24m, because that file is read automatically.
+
+       You should be sure to use empty pattern strings in the pattern file  to
+       discard patterns from earlier initialization files.
+
+       The  value  strings  passed  to the pattern matcher contain surrounding
+       quotes, so the patterns should also.  However, you could use a  pattern
+       specification  like  "\"D" to match an initial digit string followed by
+       anything else; the omission of the final quotation mark \" in the  pat-
+       tern allows the match to succeed without checking that the next charac-
+       ter in the value string is a quotation mark.
+
+       Because the value strings are intended to be processed by TeX, the pat-
+       tern  matching ignores braces, and TeX control sequences, together with
+       any space following those control sequences.  Spaces around braces  are
+       preserved.  That convention allows the pattern fragment 4mA-AD-D24m to match
+       the value string 4mTN-K\slash24m 4m27-7024m, because the value is implicitly col-
+       lapsed to 4mTN-K27-7024m during the matching operation.
+
+       1mbibclean22m's  normal action when a string value fails to match any of the
+       corresponding patterns is to issue a  4mwarning24m  message  something  like
+       this:  4m"Unexpected24m  4mvalue24m  4min24m 4m``year24m 4m=24m 4m"192"''24m.  In most cases, that is
+       sufficient to alert the user to a problem.  In some cases, however,  it
+       may  be  desirable  to  associate a different message with a particular
+       pattern.  That can be done by supplying a message string following  the
+       pattern  string.  Format items 4m%%24m (single percent), 4m%e24m (entry name), 4m%f0m
+       (field name), 4m%k24m (citation key), and 4m%v24m (string value) are available to
+       get current values expanded in the messages.  Here is an example:
+
+       chapter = "\"D:D\"" "Colon found in ``%f = %v''" %% 23:2
+
+       To  be  consistent  with other messages output by 1mbibclean22m, the message
+       string should 4mnot24m end with punctuation.
+
+       If you wish to make the message an error, rather than just  a  warning,
+       begin it with a query (?), like this:
+
+       chapter = "\"D:D\"" "?Colon found in ``%f = %v''" %% 23:2
+
+       The query is be included in the output message.
+
+       Escape  sequences are supported in message strings, just as they are in
+       pattern strings.  You can use that to advantage for fancy things,  such
+       as  terminal display mode control.  If you rewrite the previous example
+       as
+
+       chapter = "\"D:D\"" \
+                 "?\033[7mColon found in ``%f = %v''\033[0m" %% 23:2
+
+       the error message appears in inverse video on display screens that sup-
+       port  ANSI  terminal  control sequences.  Such practice is not normally
+       recommended, because it may have undesirable effects on some output de-
+       vices.   Nevertheless,  you  may find it useful for restricted applica-
+       tions.
+
+       For some types of bibliography fields, 1mbibclean  22mcontains  special-pur-
+       pose code to supplement or replace the pattern matching:
+
+              o  4mCODEN24m,  4mISBN24m  and  4mISSN24m field values are handled that way be-
+                 cause their validation requires evaluation of checksums  that
+                 cannot  be expressed by simple patterns; no patterns are even
+                 used in these three cases.
+
+              o  When 1mbibclean 22mis compiled with pattern-matching code support,
+                 4mchapter24m, 4mnumber24m, 4mpages24m, and 4mvolume24m values are checked only by
+                 pattern matching.
+
+              o  4mmonth24m values are first checked against  the  standard  BibTeX
+                 month  abbreviations,  and only if no match is found are pat-
+                 terns then used.
+
+              o  4myear24m values are first checked against patterns,  then  if  no
+                 match  is  found, the year numbers are found and converted to
+                 integer values for testing against reasonable bounds.
+
+       Values for other fields are checked only  against  patterns.   You  can
+       provide  patterns  for  4many24m field you like, even ones 1mbibclean 22mdoes not
+       already know about.  New ones are simply added  to  an  internal  table
+       that is searched for each string to be validated.
+
+       The  special field, 4mkey24m, represents the bibliographic citation key.  It
+       can be given patterns, like any other field.  Here is an initialization
+       file  pattern  assignment that matches an author name, a colon, a four-
+       digit year, a colon, and an alphabetic string, in  the  BibNet  Project
+       style:
+
+       key = "A:dddd:A"                     %% Knuth:1986:TB
+
+       Notice that no quotation marks are included in the pattern, because the
+       citation keys are not quoted.  You can use such patterns  to  help  en-
+       force  uniform  naming conventions for citation keys, which is increas-
+       ingly important as your bibliography data base grows.
+
+1mISBN INITIALIZATION FILES0m
+       1mbibclean 22mcontains a compiled-in table of ISBN ranges  and  country/lan-
+       guage settings that is suitable for most applications.
+
+       However,  ISBN data change yearly, as new countries adopt ISBNs, and as
+       publishers are granted new, or additional, ISBN prefixes.
+
+       Thus, from version 2.12, 1mbibclean 22msupports  reading  of  run-time  ISBN
+       initialization  files  found  on the 1mPATH 22m(for VAX VMS, 1mSYS$SYSTEM22m) and
+       1mBIBINPUTS 22msearch paths, and then any specified by  1m-ISBN-file  4m22mfilename0m
+       options.
+
+       That  feature  makes  it  possible to incorporate new ISBN data without
+       having to produce a new 1mbibclean 22mrelease and reinstall the software  at
+       end-user sites.
+
+       The  format  of  an  ISBN initialization file is similar to that of the
+       1mbibclean 22minitialization files described in the preceding section:  com-
+       ments  begin  with percent and continue to end of line, blank and empty
+       lines are ignored, backslash-newline joins adjacent lines,  and  other-
+       wise,  lines  are  expected  to  contain  a required pair of ISBN coun-
+       try/language-publisher prefixes forming a non-decreasing range, option-
+       ally  followed  by  one  or  more words of text that are treated as the
+       country/language group value.  The latter value plays no part  in  ISBN
+       validation,  but its presence is strongly recommended, in order to make
+       the ISBN table more understandable for humans.
+
+       Here is a short example:
+              %% The Faeroes got ISBN assignments between 1993 and 1998
+              99918-0         99918-3        Faeroes
+              99918-40        99918-61
+              99918-900       99918-938
+       It is not necessary to repeat the country names on  succeeding  entries
+       with  the  same initial number (99918 in that example); that is handled
+       internally.
+
+       Data from ISBN files normally augment the compiled-in  data.   However,
+       if  the  first  prefix  begins with a hyphen, then 1mbibclean 22mdeletes the
+       first entry in the table matching that first prefix (ignoring the lead-
+       ing hyphen):
+              %% Latvia got ISBN ranges between 1993 and 1998
+              %% so we remove the old placeholder, then add the
+              %% new ranges.
+              -9984-0         9984-9         This one is no longer valid
+
+              9984-00         9984-20        Latvia
+              9984-500        9984-770
+              9984-9000       9984-9984
+
+1mKEYWORD INITIALIZATION FILES0m
+       1mbibclean 22mcontains a compiled-in table of keyword mappings that is suit-
+       able for most applications.  The default settings merely adjust letter-
+       case  in certain keyword names, so that, for example, 4misbn24m is output as
+       4mISBN24m.
+
+       From version 2.12, 1mbibclean 22msupports reading of run-time  keyword  ini-
+       tialization  files found on the 1mPATH 22m(for VAX VMS, 1mSYS$SYSTEM22m) and 1mBIB-0m
+       1mINPUTS 22msearch paths, and then any specified by  1m-keyword-file  4m22mfilename0m
+       options.
+
+       That  feature makes it possible to incorporate special spellings of new
+       keywords without having to produce a new 1mbibclean 22mrelease and reinstall
+       the software at end-user sites.
+
+       The  format  of a keyword initialization file is similar to that of the
+       other 1mbibclean 22minitialization files described  in  the  preceding  sec-
+       tions:  comments  begin with percent and continue to end of line, blank
+       and empty lines are ignored, backslash-newline  joins  adjacent  lines,
+       and otherwise, lines are expected to contain a required pair of old and
+       new keyword names.
+
+       Here is a short example:
+              %% We want special handling of MathReviews keywords
+              mrclass         MRclass
+              mrnumber        MRnumber
+              mrreviewer      MRreviewer
+
+       Data from keywords files normally augment the compiled-in  data.   How-
+       ever,  if the first keyword begins with a hyphen, then 1mbibclean 22mdeletes
+       the first entry in the table matching that keyword (ignoring the  lead-
+       ing hyphen):
+              %% Remove special handling of ISBN, ISSN, and LCCN values.
+              -issn           ISSN
+              -isbn           ISBN
+              -lccn           LCCN
+       Even  though  the  second keyword in each deletion pair is not used, it
+       still must be specified.
+
+       Notice that this feature can be used to regularize keyword  names,  but
+       use  it  with  care, in order to avoid producing duplicate key names in
+       output BibTeX entries:
+              %% Map variations of keywords into a common name:
+              keys            keywords
+              keywds          keywords
+              keyword         keywords
+              keywrd          keywords
+              keywrds         keywords
+              searchkey       keywords
+
+1mLEXICAL ANALYSIS0m
+       When 1m-no-prettyprint 22mis specified, 1mbibclean 22macts as a lexical  analyzer
+       instead of a prettyprinter, producing output in lines of the form
+
+              <token-number><tab><token-name><tab>"<token-value>"
+
+       Each  output  line  contains  a  single complete token, identified by a
+       small integer number for use by a computer program, a token  type  name
+       for human readers, and a string value in quotes.
+
+       Special  characters  in  the  token  value  string are represented with
+       ANSI/ISO Standard C escape sequences, so all characters other than  NUL
+       are representable, and multi-line values can be represented in a single
+       line.
+
+       Here are the token numbers and token type names that can appear in  the
+       output when 1m-prettyprint 22mis specified:
+
+               0   UNKNOWN
+               1   ABBREV
+               2   AT
+               3   COMMA
+               4   COMMENT
+               5   ENTRY
+               6   EQUALS
+               7   FIELD
+               8   INCLUDE
+               9   INLINE
+              10   KEY
+              11   LBRACE
+              12   LITERAL
+              13   NEWLINE
+              14   PREAMBLE
+              15   RBRACE
+              16   SHARP
+              17   SPACE
+              18   STRING
+              19   VALUE
+
+       Programs  that  parse such output should also be prepared for lines be-
+       ginning with the warning prefix, %%, or the error prefix, ??,  and  for
+       ANSI/ISO Standard C line-number directives of the form
+              # line 273 "texbook1.bib"
+       that record the line number and file name of the current input file.
+
+       If  a  1m-max-width  4m22mnnn24m  command-line  option was specified, long output
+       lines are wrapped at a backslash-newline pair, and consequently,  soft-
+       ware that processes the lexical token stream should be prepared to col-
+       lapse such wrapped lines back into single lines.
+
+       As an example of the use of 1m-no-prettyprint22m, the UNIX command pipeline
+              1mbibclean -no-prettyprint 4m22mmylib.bib24m | \
+                  1mawk 22m'$2 == "KEY" {print $3}' | \
+                  1msed 22m-e 's/"//g' | \
+                  1msort0m
+       extracts a sorted list of all citation keys in the file 4mmylib.bib24m.
+
+       A certain amount of processing has been done on the tokens.  In partic-
+       ular, delimiters equivalent to braces have been replaced by braces, and
+       braced strings have become quoted strings.
+
+       The LITERAL token type is used for arbitrary text  that  1mbibclean  22mdoes
+       not  examine  further,  such  as  the contents of a @Preamble{...} or a
+       @Comment{...}.
+
+       The UNKNOWN token type should never appear in the output stream.  It is
+       used internally to initialize token type variables.
+
+1mSCRIBE BIBLIOGRAPHY FORMAT0m
+       1mbibclean22m's  support  for the Scribe bibliography format is based on the
+       syntax description in the Scribe Introductory User's Manual,  3rd  Edi-
+       tion,  May  1980.   Scribe  was  originally  developed by Brian Reid at
+       Carnegie-Mellon University, and was marketed by Unilogic,  Ltd.,  later
+       renamed to Scribe Systems, and apparently now long defunct.
+
+       The  BibTeX  bibliography format was strongly influenced by Scribe, and
+       indeed, with care, it is possible to share bibliography  files  between
+       the  two systems.  Nevertheless, there are some differences, so here is
+       a summary of features of the Scribe bibliography file format:
+
+       (1)   Letter case is not significant in field names  and  entry  names,
+             but case is preserved in value strings.
+
+       (2)   In field/value pairs, the field and value may be separated by one
+             of three characters: =, /, or space.  Space may  optionally  sur-
+             round these separators.
+
+       (3)   Value  delimiters  are  any of these seven pairs: { }   [ ]   ( )
+             < >   ' '   " "   ` `
+
+       (4)   Value delimiters may not be nested, even though  with  the  first
+             four  delimiter  pairs, nested balanced delimiters would be unam-
+             biguous.
+
+       (5)   Delimiters can be omitted around values that  contain  only  let-
+             ters,  digits,  sharp (#), ampersand (&), period (.), and percent
+             (%).
+
+       (6)   Outside of delimited values, a literal at-sign (@) is represented
+             by doubled at-signs (@@).
+
+       (7)   Bibliography  entries begin with @name, as for BibTeX, but any of
+             the seven Scribe value delimiter pairs may be  used  to  surround
+             the  values  in  field/value pairs.  As in (4), nested delimiters
+             are forbidden.
+
+       (8)   Arbitrary space may separate entry names from the  following  de-
+             limiters.
+
+       (9)   @Comment is a special command whose delimited value is discarded.
+             As in (4), nested delimiters are forbidden.
+
+       (10)  The special form
+
+             @Begin{comment}
+              ...
+             @End{comment}
+
+             permits encapsulating arbitrary text containing any characters or
+             delimiters,  other  than ``@End{comment}''.  Any of the seven de-
+             limiter pairs may be used around the word  ``comment''  following
+             the  ``@Begin'' or ``@End''; the delimiters in the two cases need
+             not   be    the    same,    and    consequently,    ``@Begin{com-
+             ment}''/``@End{comment}'' pairs may 4mnot24m be nested.
+
+       (11)  The 4mkey24m field is required in each bibliography entry.
+
+       (12)  A  backslashed  quote  in a string is assumed to be a TeX accent,
+             and braced appropriately.  While such accents do not  conform  to
+             Scribe  syntax, Scribe-format bibliographies have been found that
+             appear to be intended for TeX processing.
+
+       Because of that loose syntax, 1mbibclean22m's normal error detection heuris-
+       tics are less effective, and consequently, Scribe mode input is not the
+       default; it must be explicitly requested.
+
+1mENVIRONMENT VARIABLES0m
+       1mBIBCLEANEXT   22mFile extension  of  bibliography-specific  initialization
+                     files.  Default: 4m.ini24m.
+
+       1mBIBCLEANINI   22mName  of  1mbibclean  22minitialization files.  Default: 4m.bib-0m
+                     4mcleanrc24m (UNIX), 4mbibclean.ini24m (non-UNIX).
+
+       1mBIBCLEANISBN  22mName of 1mbibclean  22mISBN  initialization  files.   Default:
+                     4m.bibclean.isbn24m (UNIX), 4mbibclean.isb24m (non-UNIX).
+
+       1mBIBCLEANKEY   22mName  of 1mbibclean 22mkeyword initialization files.  Default:
+                     4m.bibclean.key24m (UNIX), 4mbibclean.key24m (non-UNIX).
+
+       1mBIBINPUTS     22mSearch path for 1mbibclean  22mand  BibTeX  input  files.   On
+                     UNIX,  it  is  a colon-separated list of directories that
+                     are searched in order from first to last.  It is  not  an
+                     error for a specified directory to not exist.
+
+                     On other operating systems, the directory names should be
+                     separated by whatever character is used in system  search
+                     path specifications, such as a semicolon on IBM PC DOS.
+
+       1mPATH          22mOn  Atari TOS, IBM PC DOS, IBM PC OS/2, Microsoft NT, and
+                     UNIX, search path for system executable files.  The  sys-
+                     tem-wide  1mbibclean 22minitialization file is searched for in
+                     that path.
+
+       1mSYS$SYSTEM    22mOn VAX VMS, search path for system executable  files  and
+                     the system-wide 1mbibclean 22minitialization file.
+
+1mFILES0m
+       4m*.bib24m          BibTeX and Scribe bibliography data base files.
+
+       4m*.ini24m          File-specific initialization files.
+
+       4m.bibclean.isbn24m UNIX  system-wide  and user-specific ISBN initialization
+                      files.
+
+       4m.bibclean.key24m  UNIX system-wide and user-specific  keyword  initializa-
+                      tion files.
+
+       4m.bibcleanrc24m    UNIX system-wide and user-specific initialization files.
+
+       4mbibclean.ini24m   Non-UNIX  system-wide  and  user-specific initialization
+                      files.
+
+       4mbibclean.isb24m   Non-UNIX system-wide and user-specific ISBN  initializa-
+                      tion files.
+
+       4mbibclean.key24m   Non-UNIX  system-wide and user-specific keyword initial-
+                      ization files.
+
+1mSEE ALSO0m
+       1mbibcheck22m(1), 1mbibdup22m(1), 1mbibextract22m(1), 1mbibindex22m(1), 1mbibjoin22m(1),  1mbibla-0m
+       1mbel22m(1),  1mbiblex22m(1), 1mbiblook22m(1), 1mbiborder22m(1), 1mbibparse22m(1), 1mbibsearch22m(1),
+       1mbibsort22m(1),  1mbibtex22m(1),  1mbibunlex22m(1),  1mcitefind22m(1),  1mcitesub22m(1),  1mcite-0m
+       1mtags22m(1), 1mlatex22m(1), 1mscribe22m(1), 1mtex22m(1).
+
+1mAUTHOR0m
+       Nelson H. F. Beebe
+       University of Utah
+       Department of Mathematics, 110 LCB
+       155 S 1400 E RM 233
+       Salt Lake City, UT 84112-0090
+       USA
+       Tel: +1 801 581 5254
+       FAX: +1 801 581 4148
+       Email: beebe@math.utah.edu, beebe@acm.org, beebe@computer.org (Internet)
+       URL: http://www.math.utah.edu/~beebe
+
+1mCOPYRIGHT0m
+       ########################################################################
+       ########################################################################
+       ########################################################################
+       ###                                                                  ###
+       ###     bibclean: prettyprint and syntax check BibTeX and Scribe     ###
+       ###                   bibliography data base files                   ###
+       ###                                                                  ###
+       ###           Copyright (C) 1990--2016 Nelson H. F. Beebe            ###
+       ###                                                                  ###
+       ### This program is covered by the GNU General Public License (GPL), ###
+       ### version 2 or later, available as the file COPYING in the program ###
+       ### source distribution, and on the Internet at                      ###
+       ###                                                                  ###
+       ###               ftp://ftp.gnu.org/gnu/GPL                          ###
+       ###                                                                  ###
+       ###               http://www.gnu.org/copyleft/gpl.html               ###
+       ###                                                                  ###
+       ### This program is free software; you can redistribute it and/or    ###
+       ### modify it under the terms of the GNU General Public License as   ###
+       ### published by the Free Software Foundation; either version 2 of   ###
+       ### the License, or (at your option) any later version.              ###
+       ###                                                                  ###
+       ### This program is distributed in the hope that it will be useful,  ###
+       ### but WITHOUT ANY WARRANTY; without even the implied warranty of   ###
+       ### MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    ###
+       ### GNU General Public License for more details.                     ###
+       ###                                                                  ###
+       ### You should have received a copy of the GNU General Public        ###
+       ### License along with this program; if not, write to the Free       ###
+       ### Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,   ###
+       ### MA 02111-1307 USA                                                ###
+       ########################################################################
+       ########################################################################
+       ########################################################################
+
+
+
+Version 3.00                   21 February 2016                    BIBCLEAN(1)

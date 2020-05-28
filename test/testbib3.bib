@@ -1,0 +1,140 @@
+%% Test cases for -fix-names
+
+@article{foo,
+  author = "Jones, Jr., William and Smith, Sr., Robert",
+  editor = "Jones Jr., William and Smith Sr., Robert",
+  author = "Jones, Sr., William and Smith, Sr., Robert",
+  editor = "Jones Sr., William and Smith Sr., Robert",
+  author = "Jones, Jr., William and {Smith, Sr.}, Robert",
+  editor = "Jones Jr., William and {Smith Sr.}, Robert",
+  author = "Jones, Sr., William and {Smith, Sr.}, Robert",
+  editor = "Jones Sr., William and {Smith Sr.}, Robert",
+  author = "von Beethoven, Ludwig",
+  editor = "{von Beethoven}, Ludwig",
+  author = "Charles XIII, King",
+  editor = "Elizabeth XXXIV, Queen",
+}
+
+%% Test cases for -fix-font-changes
+
+@article{test1,
+  author = 	 "A. Bominaar and B. Snaar-Jagalska and F. Kesbeke and
+		  P. van Haastert",
+  title = 	 "Signal-transducing {G} proteins in {\it Dictyosteliun
+                  Discoideum}",
+  journal = 	 "??",
+  year = 	 "1989",
+  volume = 	 "27",
+  pages = 	 "369-375",
+}
+
+@article{test2,
+  author = 	 "A. Bominaar and B. Snaar-Jagalska and F. Kesbeke and
+		  P. van Haastert",
+  title = 	 "Signal-transducing {G} proteins in {\it {D}ictyosteliun
+                  {D}iscoideum}",
+  journal = 	 "??",
+  year = 	 "1989",
+  volume = 	 "27",
+  pages = 	 "369-375",
+}
+
+@article{test3,
+  author = 	 "A. Bominaar and B. Snaar-Jagalska and F. Kesbeke and
+		  P. van Haastert",
+  title = 	 "Signal-transducing {G} proteins in {{\it Dictyosteliun
+                  Discoideum}}",
+  journal = 	 "??",
+  year = 	 "1989",
+  volume = 	 "27",
+  pages = 	 "369-375",
+}
+
+%% Test cases for month processing
+
+@Article{date-test,
+  month =        "13 October",
+  month =        "23 " # jan,
+  month =        "23 January",
+  month =        "3 January",
+  month =        "Apr.",
+  month =        "April",
+  month =        "Aug.",
+  month =        "August",
+  month =        "Dec.",
+  month =        "December",
+  month =        "Feb.",
+  month =        "February",
+  month =        "Jan.",
+  month =        "Janu.",
+  month =        "January 23",
+  month =        "January 3",
+  month =        "January",
+  month =        "Jul.",
+  month =        "July",
+  month =        "Jun.",
+  month =        "June",
+  month =        "Mar.",
+  month =        "March",
+  month =        "May",
+  month =        "Nov",
+  month =        "Nov.",
+  month =        "November",
+  month =        "Oct.",
+  month =        "October",
+  month =        "Sep.",
+  month =        "Sept.",
+  month =        "September",
+  month =        "unknown",
+  month =        aug,
+  month =        jan # " 23",
+  month =        jan,
+  month =        nov,
+  month =        "August and November",
+  month =        "February and May",
+  month =        "May/June",
+}
+
+%% Test cases for long string values
+
+@Article{ber90,
+    author	= "M. J. Berridge and B. V. L. Potter",
+    title	= "Inositol trisphosphate analogues induce different
+		 oscillatory patterns in {\xenopus} oocytes",
+    journal	= "Cell Regulation",
+    year	= 1990,
+    volume	= 1,
+    pages	= "675--681",
+    annote	= "calcium dynamics: The different analogues of {\IP{3}}
+		that were tested were {\IP{3}}, Ins(2,4,5)P${}_3$ and
+		Ins(1,3,4,5)P${}_4$. These were injected through a
+		double barrel electrode and the {\Cl} current was then
+		used to measure the {\Ca{}} response.  ``The naturally
+		occurring {\IP{3}} produced a large initial transient
+		followed by a single transient or burst of oscillations.
+		By contrast, two analogues ({\IP{3}} and
+		Ins(2,4,5)P${}_3$) produced different oscillatory
+		pattern made up of a short burst of shape transients.
+		$\cdots$ Both analogues failed to induce a response when
+		injected after the initial {\IP{3}}-induced response,
+		indicating that they act on the same intracellular pool
+		of \Ca{} [not necessarily the case]. The existence of
+		different oscillatory patterns suggests that there may
+		be different mechanisms for setting up \Ca{}
+		oscillations. The {\IP{3}} and Ins(2,4,5)P${}_3$
+		analogues may initiate oscillations through a negative
+		feedback mechanism whereby \Ca{} inhibits its own
+		release.  The two-pool model is most likely mechanism to
+		describe the {\IP{3}}-induced oscillations.''"
+}
+
+
+%%% Test case for bug fix of bibclean 2.10.1:
+
+@INPROCEEDINGS{Barthel94b,
+        AUTHOR             = {Kai Uwe Barthel and J\"{o}rg Sch\"{u}ttemeyer 
+			      and Thomas Voy\'{e} and Peter Noll},
+        AUTHOR             = "Kai Uwe Barthel and J{\"{o}}rg
+                  Sch{\"{u}}ttemeyer and Thomas Voy\'{e} and Peter
+                  Noll", 
+}

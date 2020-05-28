@@ -1,0 +1,4 @@
+%% testbib7.bib:227:Unusual compound assignment or equality-test operator in math mode value ``"For $|x| >= 17$"'' (e.g., perhaps replace <= by \leq).
+%% testbib7.bib:231:Unusual compound assignment or equality-test operator in math mode value ``"For $|x| <= 17$"'' (e.g., perhaps replace <= by \leq).
+%% testbib7.bib:235:Unusual compound assignment or equality-test operator in math mode value ``"For $|x| := 17$"'' (e.g., perhaps replace <= by \leq).
+%% testbib7.bib:245:Unbackslashed math word in math mode in value ``"For $x > log(y)$"''.

@@ -1,0 +1,244 @@
+@Article{a1,
+  author =       "A. Bee",
+  title =        "$r^3$",
+  title =        "{$R^3$}",
+  title =        "{{\bf R}}",
+  title =        "{{\bf Word}}",
+  title =        "Erd{\H{o}}s",
+  title =        "\TeX",
+  title =        "Erd{{\H O}}s",
+  title =        "{$\u{R}$}",
+  title =        "$\u{R}$",
+  title =        "$\mathbb{R}^3$",
+  title =        "{$\mathbb{R}$}$^3$",
+  booktitle =    "Embedding Plane $3$-Trees in $\mathbb{R}^2$ and
+                 {$\mathbb{R}$}$^3$ and alternate title: Embedding Plane
+                 $3$-Trees in {${\cal R}^2$} and {${\cal R}$}$^3$ and
+                 more alternate title: Embedding Plane $3$-Trees in
+                 {{\bf R}}$^2$ and {{\bf R}}$^3$",
+  year =         "2012",
+}
+
+@Article{a2,
+  author =       "A. Bee",
+  year =         "2012",
+  title =        "{{\bf R}}$^3$",
+}
+
+@Article{a3,
+  title =        "Efficient Mining of Frequent Items Coupled with Weight
+                 and \slash or Support over Progressive Databases",
+  title =        "{$R^3$}",
+}
+
+@Article{a4,
+  author =       "Kenny Q. Zhu and Kathleen Fisher and David Walker",
+  title =        "{LearnPADS$^{++}$}: Incremental Inference of Ad Hoc
+                 Data Formats",
+}
+
+@Article{a5,
+  title =        "{LearnPADS$^{++}$}: Incremental Inference of Ad Hoc
+                 Data Formats",
+  title =        "Is Light Blue ({\em azzurro}) Color Name Universal in
+                 the {Italian} Language?",
+}
+
+@Article{a6,
+  title =        "Optimal Anti-{Bayesian} Pattern",
+  title =        "Optimal Anti-Bayesian Pattern",
+  title =        "Optimal ``Anti-{establishment}'' Pattern",
+  title =        "Optimal ``Anti-{Bayesian}'' Pattern",
+  title =        "Optimal ``Anti-Bayesian'' Pattern",
+}
+
+@Misc{m01,
+  title =        "Postscript${}^{TM}$ printer",
+}
+
+@Misc{m02,
+  title =        "Postscript$^{TM}$ printer",
+}
+
+@Misc{m03,
+  title =        "On $\wedge$-operations and $\vee$-operations",
+}
+
+@Misc{m04,
+  title =        "Erd{\H{o}}s equation",
+}
+
+@Misc{m05,
+  title =        "Erd{{\H{O}}}s equation",
+}
+
+@Misc{m06,
+  title =        "Erd{\H{o}}s",
+}
+
+@Misc{m07,
+  title =        "Ath\'enes",
+}
+
+@Misc{m08,
+  title =        "Ath{\'e}nes",
+}
+
+@Misc{m09,
+  title =        "Ath{\'{e}}nes",
+}
+
+@Misc{m10,
+  title =        "{$3$D} graphics",
+}
+
+@Misc{m11,
+  title =        "Let $x$ and $y$ be positive.",
+}
+
+@Article{x1a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {Erd}{\H{O}}s equation",
+}
+
+@Article{x1b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {Erd}{{\H{O}}}s equation",
+}
+
+@Article{x1c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {Erd}{{\H{O}}}s equation",
+}
+
+@Article{x2a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- \TeX",
+}
+
+@Article{x2b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {\TeX}",
+}
+
+@Article{x2c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\TeX}}",
+}
+
+@Article{x3a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- \TeX book",
+}
+
+@Article{x3b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {\TeX book}",
+}
+
+@Article{x3c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\TeX book}}",
+}
+
+@Article{x4a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- \TeX Book",
+}
+
+@Article{x4b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\TeX Book}}",
+}
+
+@Article{x4c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\TeX Book}}",
+}
+
+@Article{x5a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {\H{o}} is a Long Accent",
+}
+
+@Article{x5b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\H{o} is a Long Accent}}",
+}
+
+@Article{x5c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\H{o} is a Long Accent}}",
+}
+
+@Article{x6a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {\H{O}} is a Long Accent",
+}
+
+@Article{x6b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\H{O} is a Long Accent}}",
+}
+
+@Article{x6c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\H{O} is a Long Accent}}",
+}
+
+@Article{x7a,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- \em Bose--Einstein",
+}
+
+@Article{x7b,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\em Bose--Einstein}}",
+}
+
+@Article{x7c,
+  author =       "A. Uthor",
+  journal =      "J. Ournal",
+  year =         "2000",
+  title =        "Sample --- {{\em Bose--Einstein}}",
+}

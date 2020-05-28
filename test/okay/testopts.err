@@ -1,0 +1,9 @@
+%% testopts.bib:43:Literal ellipsis ... should probably be \ldots{} in BibTeX title ``"Dots, dots, dots, ... and more dots"''.
+%% testopts.bib:47:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"Part XVII."''.
+%% testopts.bib:98:Unclosed math mode in value ``"Unclosed display math mode $$\sigma and others"''.
+%% testopts.bib:102:Unclosed math mode in value ``"Unclosed normal math mode $\sigma and others"''.
+%% testopts.bib:106:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"{\TeX}, XML, etc."''.
+%% testopts.bib:107:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"Part XVII."''.
+%% testopts.bib:111:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"Dots, dots, dots, ..."''.
+%% testopts.bib:111:Literal ellipsis ... should probably be \ldots{} in BibTeX title ``"Dots, dots, dots, ..."''.
+%% testopts.bib:112:Final period/dot/fullstop is unexpected, and often wrong, in BibTeX title ``"Part XVII."''.

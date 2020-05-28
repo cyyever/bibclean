@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{395}
+\contentsline {section}{\numberline {2}\BibTeX {} needs improvement}{396}
+\contentsline {section}{\numberline {3}Run-time options}{397}
+\contentsline {section}{\numberline {4}Prettyprinting}{399}
+\contentsline {section}{\numberline {5}Pattern matching and initialization files}{400}
+\contentsline {section}{\numberline {6}Lexical analysis}{403}
+\contentsline {section}{\numberline {7}Portability}{404}
+\contentsline {section}{\numberline {8}\SCRIBE {} bibliography format}{405}
+\contentsline {section}{\numberline {9}Recommendations for \BibTeX {} design}{405}
+\contentsline {section}{\numberline {10}A lexical grammar for \BibTeX {}}{407}
+\contentsline {section}{\numberline {11}A parsing grammar for \BibTeX {}}{410}
+\contentsline {section}{\numberline {12}Software availability}{414}
+\contentsline {section}{\hbox to\@tempdima {\hfil }References}{414}
+\contentsline {section}{\hbox to\@tempdima {\hfil }Index}{415}

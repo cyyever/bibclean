@@ -1,0 +1,36 @@
+@Misc{label,
+  abstract =     "\TeX{} ben{"o}tigt eine gro{"s}e Anzahl von
+                 Hilfskomponenten (Dateien und Programme), deren
+                 Bedeutung und gegenseitige \verb={"a}bc{"}=",
+  abstract2 =    "\TeX{} ben{"o}tigt eine gro{"s}e Anzahl von
+                 Hilfskomponenten (Dateien und Programme), deren
+                 Bedeutung und gegenseitige {\verb="abc"=}",
+  note =         "\TeX{} ben{\"o}tigt eine gro{\"s}e Anzahl von
+                 Hilfskomponenten (Dateien und Programme), deren
+                 Bedeutung und gegenseitige {\tt"}\verb=abc={\tt"}",
+  note2 =        "\TeX{} ben{\"o}tigt eine gro{\"s}e Anzahl von
+                 Hilfskomponenten (Dateien und Programme), deren
+                 Bedeutung und gegenseitige {\verb="abc"=}",
+  verbatim1 =    "\verb={"a}bc{"}",
+  verbatim2 =    "{\verb="abc"}",
+  verbatim3 =    "{\verb="abc"}",
+  everything1 =  "umlaut accents: {"a}, {"e}, {"i}, {"o}, {"u}, {"A},
+                 {"E}, {"I}, {"O}, {"U},\\
+                 sharp s: {"s},\\
+                 German quotes: {"`} (left), {"'} (right),\\
+                 French quotes: {"<} (left), {">} (right),\\
+                 discretionary hyphens: ba{"c}ken, Bet{"t}uch,
+                 xx{"f}fxx\\
+                 ligature separator: Auf{"|}lage,\\
+                 super discretionary hyphen: Rechen{"-}fehler,\\
+                 invisible hyphen: /usr{""}/spool{""}/news",
+  everything2 =  "{umlaut accents: "a, "e, "i, "o, "u, "A, "E, "I, "O,
+                 "U,\\
+                 sharp s: "s,\\
+                 German quotes: "` (left), "' (right),\\
+                 French quotes: "< (left), "> (right),\\
+                 discretionary hyphens: ba"cken, Bet"tuch, xx"ffxx\\
+                 ligature separator: Auf"|lage,\\
+                 super discretionary hyphen: Rechen"-fehler,\\
+                 invisible hyphen: /usr""/spool""/news}",
+}

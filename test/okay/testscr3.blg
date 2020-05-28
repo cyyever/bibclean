@@ -1,0 +1,46 @@
+Warning--entry type for "CommENT" isn't style-file defined
+--line 3 of file testscr3.bib
+I was expecting a `{' or a `('---line 6 of file testscr3.bib
+ : @end 
+ :      <cOMMent>
+I'm skipping whatever remains of this entry
+Repeated entry---line 8 of file testscr3.bib
+ : @begin {CommENT
+ :                }
+I'm skipping whatever remains of this entry
+Warning--entry type for "foo" isn't style-file defined
+--line 11 of file testscr3.bib
+Warning--entry type for "bar" isn't style-file defined
+--line 12 of file testscr3.bib
+Repeated entry---line 13 of file testscr3.bib
+ : @end{bar
+ :         }
+I'm skipping whatever remains of this entry
+Repeated entry---line 14 of file testscr3.bib
+ : @end{foo
+ :         }
+I'm skipping whatever remains of this entry
+I was expecting a `{' or a `('---line 15 of file testscr3.bib
+ : @end 
+ :      <cOMMent>
+I'm skipping whatever remains of this entry
+Repeated entry---line 17 of file testscr3.bib
+ : @begin {CommENT
+ :                }
+I'm skipping whatever remains of this entry
+I was expecting a `{' or a `('---line 20 of file testscr3.bib
+ : @end 
+ :      <cOMMent>
+I'm skipping whatever remains of this entry
+Repeated entry---line 22 of file testscr3.bib
+ : @begin {CommENT
+ :                }
+I'm skipping whatever remains of this entry
+I was expecting a `{' or a `('---line 25 of file testscr3.bib
+ : @end 
+ :      <cOMMent>
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in CommENT
+Warning--to sort, need author or key in foo
+Warning--to sort, need author or key in bar
+(There were 9 error messages)

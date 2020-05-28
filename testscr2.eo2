@@ -1,0 +1,15 @@
+?? "testscr2.org", line 21: Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=489 line=19 column= 1 output byte=474 line=17 column= 0
+??  Value   input byte=547 line=21 column=14 output byte=538 line=19 column=17
+??  Current input byte=564 line=23 column= 0 output byte=553 line=19 column=32
+?? "testscr2.org", line 45: Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=919 line=43 column= 1 output byte=1309 line=46 column= 0
+??  Value   input byte=977 line=45 column=14 output byte=1373 line=48 column=17
+??  Current input byte=994 line=47 column= 0 output byte=1388 line=48 column=32
+?? "testscr2.org", line 67: Unexpected paragraph break for field ``title''.
+??  File positions:  input [testscr2.org]  output [stdout]
+??  Entry   input byte=1337 line=65 column= 1 output byte=2146 line=74 column= 0
+??  Value   input byte=1393 line=67 column=14 output byte=2210 line=76 column=17
+??  Current input byte=1410 line=69 column= 0 output byte=2225 line=76 column=32

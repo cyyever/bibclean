@@ -1,0 +1,2136 @@
+.\"=====================================================================
+.\"  @Troff-man-file{
+.\"     author          = "Nelson H. F. Beebe",
+.\"     version         = "3.00",
+.\"     date            = "21 February 2016",
+.\"     time            = "07:15:14 MST",
+.\"     filename        = "bibclean.man",
+.\"     address         = "University of Utah
+.\"                        Department of Mathematics, 110 LCB
+.\"                        155 S 1400 E RM 233
+.\"                        Salt Lake City, UT 84112-0090
+.\"                        USA
+.\"     telephone       = "+1 801 581 5254",
+.\"     FAX             = "+1 801 581 4148",
+.\"     URL             = "http://www.math.utah.edu/~beebe",
+.\"     checksum        = "11974 2059 8371 57885",
+.\"     email           = "beebe@math.utah.edu, beebe@acm.org,
+.\"                        beebe@computer.org  (Internet)",
+.\"     codetable       = "ISO/ASCII",
+.\"     keywords        = "bibliography, BibTeX, prettyprint",
+.\"     license         = "GNU General Public License, version 2 or
+.\"                        later",
+.\"     supported       = "yes",
+.\"     docstring       = "This file is the UNIX nroff/troff manual page
+.\"                        documentation for bibclean, a prettyprinter
+.\"                        and syntax checker for BibTeX bibliography
+.\"                        data base files.
+.\"
+.\"                        The checksum field above contains a CRC-16
+.\"                        checksum as the first value, followed by the
+.\"                        equivalent of the standard UNIX wc (word
+.\"                        count) utility output of lines, words, and
+.\"                        characters.  This is produced by Robert
+.\"                        Solovay's checksum utility.",
+.\"  }
+.\"=====================================================================
+.\"
+.if t .ds Bi B\s-2IB\s+2T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Bi BibTeX
+.\"
+.if t .ds Sc S\s-2CRIBE\s+2
+.if n .ds Sc Scribe
+.\"
+.if t .ds Te T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Te TeX
+.\"
+.\"=====================================================================
+.TH BIBCLEAN 1 "21 February 2016" "Version 3.00"
+.\"=====================================================================
+.SH NAME
+bibclean \- prettyprint and syntax check BibTeX and Scribe bibliography \
+data base files
+.\"=====================================================================
+.SH SYNOPSIS
+.B bibclean
+[
+.B \-author
+]
+[
+.B \-copyleft
+]
+[
+.B \-copyright
+]
+.if n .ti +9n
+[
+.BI \-error-log " filename"
+]
+[
+.B \-help
+]
+[
+.B '\-?'
+]
+.if n .ti +9n
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.BI \-init-file " filename"
+]
+[
+.BI \-ISBN-file " filename"
+]
+.if n .ti +9n
+[
+.BI \-keyword-file " filename"
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.BI \-max-width " nnn"
+]
+.if n .ti +9n
+[
+.B \-[no-]align-equals
+]
+[
+.B \-[no-]brace-protect
+]
+.if n .ti +9n
+[
+.B \-[no-]check-values
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]debug-match-failures
+]
+.if n .ti +9n
+[
+.B \-[no-]delete-empty-values
+]
+[
+.B \-[no-]file-position
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+.if n .ti +9n
+[
+.B \-[no-]fix-accents
+]
+[
+.B \-[no-]fix-braces
+]
+.if n .ti +9n
+[
+.B \-[no-]fix-degrees
+]
+[
+.B \-[no-]fix-font-changes
+]
+.if n .ti +9n
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]fix-initials
+]
+[
+.B \-[no-]fix-math
+]
+[
+.B \-[no-]fix-names
+]
+.if n .ti +9n
+[
+.B \-[no-]German-style
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]keep-linebreaks
+]
+.if n .ti +9n
+[
+.B \-[no-]keep-parbreaks
+]
+[
+.B \-[no-]keep-preamble-spaces
+]
+.if n .ti +9n
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]keep-spaces
+]
+[
+.B \-[no-]keep-string-spaces
+]
+.if n .ti +9n
+[
+.B \-[no-]parbreaks
+]
+[
+.B \-[no-]prettyprint
+]
+.if n .ti +9n
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]print-ISBN-table
+]
+[
+.B \-[no-]print-keyword-table
+]
+.if n .ti +9n
+[
+.B \-[no-]print-patterns
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]quiet
+]
+.if n .ti +9n
+[
+.B \-[no-]read-init-files
+]
+[
+.B \-[no-]remove-OPT-prefixes
+]
+.if n .ti +9n
+[
+.B \-[no-]scribe
+]
+.if t .ti +\w'\fBbibclean\fP\ 'u
+[
+.B \-[no-]trace-file-opening
+]
+.if n .ti +9n
+[
+.B \-[no-]warnings
+]
+[
+.BI \-output-file " filename"
+]
+[
+.B \-version
+]
+.if n .ti +9n
+.if t .ti +.5i
+.IR "<infile" " or " " bibfile1 bibfile2 bibfile3 .\|.\|."
+.if n .ti +9n
+.if t .ti +.5i
+.I ">outfile"
+.PP
+All options can be abbreviated to a unique leading
+prefix.
+.PP
+An explicit file name of ``\-'' represents
+standard input; it is assumed if no input files
+are specified.
+.PP
+On VAX VMS and IBM PC DOS, the leading ``\-'' on
+option names may be replaced by a slash, ``/'';
+however, the ``\-'' option prefix is always
+recognized.
+.\"=====================================================================
+.SH DESCRIPTION
+.B bibclean
+prettyprints input \*(Bi\& files to
+.IR stdout ,
+or to a user-specified file,
+and checks the brace balance and bibliography
+entry syntax as well.  It can be used to detect
+problems in \*(Bi\& files that sometimes confuse
+even \*(Bi\& itself, and importantly, can be used
+to normalize the appearance of collections
+of \*(Bi\& files.
+.PP
+Here is a summary of the formatting actions:
+.TP \w'\(bu'u+2n
+\(bu
+\*(Bi\& items are formatted into a consistent
+structure with one \fIfield = "value"\fP pair per
+line, and the initial @ and trailing right brace
+in column 1.
+.TP
+\(bu
+Tabs are expanded into blank strings; their use is
+discouraged because they inhibit portability, and
+can suffer corruption in electronic mail.
+.TP
+\(bu
+Long string values are split at a blank and
+continued onto the next line with leading
+indentation.
+.TP
+\(bu
+A single blank line separates adjacent
+bibliography entries.
+.TP
+\(bu
+Text outside \*(Bi\& entries is passed through
+verbatim.
+.TP
+\(bu
+Outer parentheses around entries are
+converted to braces.
+.TP
+\(bu
+Personal names in
+.I author
+and
+.I editor
+field values are normalized to the form ``P. D. Q.
+Bach'', from ``P.D.Q. Bach'' and ``Bach, P.D.Q.''.
+.TP
+\(bu
+Hyphen sequences in page numbers are converted to
+en-dashes.
+.TP
+\(bu
+Month values are converted to standard \*(Bi\&
+string abbreviations.
+.TP
+\(bu
+In titles, sequences of upper-case characters at
+brace level zero are braced to protect them from
+being converted to lower-case letters by some
+bibliography styles.
+.TP
+\(bu
+CODEN, ISBN (International Standard Book Number)
+and ISSN (International Standard Serial Number)
+entry values are examined to verify the checksums
+of each listed number, and correct ISBN
+hyphenation is automatically supplied.
+.PP
+The standardized format of the output of
+.B bibclean
+facilitates the later application of simple
+filters, such as
+.BR bibcheck (1),
+.BR bibdup (1),
+.BR bibextract (1),
+.BR bibindex (1),
+.BR bibjoin (1),
+.BR biblabel (1),
+.BR biblook (1),
+.BR biborder (1),
+.BR bibsort (1),
+.BR citefind (1),
+and
+.BR citetags (1),
+to process the text, and also is the one expected
+by the GNU Emacs \*(Bi\& support functions.
+.\"=====================================================================
+.SH OPTIONS
+Command-line switches may be abbreviated to a
+unique leading prefix, and letter case is
+.I not
+significant.  All options are parsed before any
+input bibliography files are read, no matter what
+their order on the command line.  Options that
+correspond to a yes/no setting of a flag have a
+form with a prefix "no-" to set the flag to
+.IR no .
+For such options, the last setting determines the
+flag value used.  That is significant when options
+are also specified in initialization files (see
+the
+.B "INITIALIZATION FILES"
+manual section).
+.PP
+The leading hyphen that distinguishes an option
+from a filename may be doubled, for compatibility
+with GNU and POSIX conventions.  Thus,
+.B \-author
+and
+.B \-\-author
+are equivalent.
+.PP
+To avoid confusion with options, if a filename
+begins with a hyphen, it must be disguised by a
+leading absolute or relative directory path, e.g.,
+.I /tmp/-foo.bib
+or
+.IR ./-foo.bib .
+.\"-----------------------------------------------
+.TP \w'\-[no-]remove-OPT-prefixes'u+3n
+.B \-author
+Display an author credit on the standard error
+unit,
+.IR stderr ,
+and then terminate with a success return code.
+Sometimes an executable program is separated from
+its documentation and source code; this option
+provides a way to recover from that.
+.\"-----------------------------------------------
+.TP
+.B \-copyleft
+Display copyright information on the standard
+error unit,
+.IR stderr ,
+and then terminate with a success return code.
+.\"-----------------------------------------------
+.TP
+.B \-copyright
+Display copyright information on the standard
+error unit,
+.IR stderr ,
+and then terminate with a success return code.
+.\"-----------------------------------------------
+.TP
+.BI \-error-log " filename"
+Redirect
+.I stderr
+to the indicated file, which then contains all
+of the error and warning messages.  This option is
+provided for those systems that have difficulty
+redirecting
+.IR stderr .
+.\"-----------------------------------------------
+.TP
+.BR \-help " or " \-?
+Display a help message on
+.IR stderr ,
+giving a usage description, similar to this
+section of the manual pages, and then terminate
+with a success return code.
+.\"-----------------------------------------------
+.TP
+.BI \-ISBN-file " filename"
+Provide an explicit ISBN-range initialization
+file.  It is processed
+.I after
+any system-wide and job-wide ISBN initialization
+files found on the
+.B PATH
+(for VAX VMS,
+.BR SYS$SYSTEM )
+and
+.B BIBINPUTS
+search paths, respectively, and may override them.
+The ISBN initialization file name can be changed
+at compile time, or at run time through a setting
+of the environment variable
+.BR BIBCLEANISBN ,
+but defaults to
+.I .bibclean.isbn
+on UNIX, and
+.I bibclean.isb
+elsewhere.
+For further details, see the
+.B "ISBN INITIALIZATION FILES"
+manual section.
+.\"-----------------------------------------------
+.TP
+.BI \-init-file " filename"
+Provide an explicit value pattern initialization
+file.  It is processed
+.I after
+any system-wide and job-wide initialization files
+found on the
+.B PATH
+(for VAX VMS,
+.BR SYS$SYSTEM )
+and
+.B BIBINPUTS
+search paths, respectively, and may override them.
+It in turn may be overridden by a subsequent
+file-specific initialization file.  The
+initialization file name can be changed at compile
+time, or at run time through a setting of the
+environment variable
+.BR BIBCLEANINI ,
+but defaults to
+.I .bibcleanrc
+on UNIX, and to
+.I bibclean.ini
+elsewhere.
+For further details, see the
+.B "INITIALIZATION FILES"
+manual section.
+.\"-----------------------------------------------
+.TP
+.BI \-keyword-file " filename"
+Provide an explicit keyword initialization file.
+It is processed
+.I after
+any system-wide and job-wide keyword
+initialization files found on the
+.B PATH
+(for VAX VMS,
+.BR SYS$SYSTEM )
+and
+.B BIBINPUTS
+search paths, respectively, and may override them.
+The keyword initialization file name can be
+changed at compile time, or at run time through a
+setting of the environment variable
+.BR BIBCLEANKEY ,
+but defaults to
+.I .bibclean.key
+on UNIX, and
+.I bibclean.key
+elsewhere.
+For further details, see the
+.B "KEYWORD INITIALIZATION FILES"
+manual section.
+.\"-----------------------------------------------
+.TP
+.BI \-max-width " nnn"
+.B bibclean
+normally limits output line widths to 72
+characters, and in the interests of consistency,
+that value should not be changed.  Occasionally,
+special-purpose applications may require different
+maximum line widths, so this option provides that
+capability.  The number following the option name
+can be specified in decimal, octal (starting with
+0), or hexadecimal (starting with 0x).
+A zero or negative value is interpreted to mean
+unlimited, so
+.BI \-max-width " 0"
+can be used to ensure that each field/value pair
+appears on a single line.
+.IP
+When
+.B \-no-prettyprint
+requests
+.B bibclean
+to act as a lexical analyzer, the default line
+width is unlimited, unless overridden by this
+option.
+.IP
+When
+.B bibclean
+is prettyprinting, line wrapping is done only
+at a space. Consequently, a long non-blank
+character sequence may result in the output
+exceeding the requested line width.
+.IP
+When
+.B bibclean
+is lexing, line wrapping is done by inserting a
+backslash-newline pair when the specified maximum
+is reached, so no line length ever exceeds the
+maximum.
+.\"-----------------------------------------------
+.TP
+.B \-[no-]align-equals
+With the positive form, align the equals sign in
+key/value assignments at the same column,
+separated by a single space from the value string.
+Otherwise, the equals sign follows the key,
+separated by a single space.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]brace-protect
+Protect uppercase and mixedcase words at
+brace-level zero with braces to prevent downcasing
+by some \*(Bi\& styles.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]check-values
+With the positive form, apply heuristic pattern
+matching to field values in order to detect
+possible errors (e.g., ``\fIyear = "192"\fP''
+instead of ``\fIyear = "1992"\fP''), and issue
+warnings when unexpected patterns are found.
+.IP
+That checking is usually beneficial, but if it
+produces too many bogus warnings for a particular
+bibliography file, you can disable it with the
+negative form of this option.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]debug-match-failures
+With the positive form, print out a warning when a
+value pattern fails to match a value string.
+.IP
+That is helpful in debugging new patterns, but
+because the output can be voluminous, you should
+use this option only with small test files, and
+initialization files that eliminate all patterns
+apart from the ones that you are testing.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]delete-empty-values
+With the positive form, remove all field/value
+pairs for which the value is an empty string.
+That is helpful in cleaning up bibliographies
+generated from text editor templates. Compare this
+option with
+.B \-[no-]remove-OPT-prefixes
+described below.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]file-position
+With the positive form, give detailed file
+position information in warning and error
+messages.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-accents
+With the positive form, normalize \*(Te\& accents
+in annotes, authors, booktitles, editors, notes,
+remarks, and titles.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-braces
+With the positive form, normalize bracing in
+annotes, authors, booktitles, editors, notes,
+remarks, and titles, by removing unnecessary
+levels of braces.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-degrees
+With the positive form, remove spaces in
+author/editor fields inside braces after
+letter-ending periods.  That makes reductions from
+.IR "J. J. {Thomson, M. A., F. R. S.}" ,
+.IR "Frederick {Soddy, B. A. (Oxon.)}" ,
+and
+.I "John A. {Cable, M. A., M. Ed., Dipl. Deutsch (Marburg), A. L. C. M.}"
+to
+.BR "J. J. {Thomson, M.A., F.R.S.}" ,
+.BR "Frederick {Soddy, B.A. (Oxon.)}" ,
+and
+.BR "John A. {Cable, M.A., M.Ed., Dipl.Deutsch (Marburg), A.L.C.M.}" ,
+respectively.
+.IP
+In journals in the humanities and history of
+science, as well as in some scientific journals
+until well into the 20th Century, academic,
+honorary, and professional titles and degrees are
+commonly attached to personal names.  Even though
+modern publishing practice avoids such
+decorations, for accuracy, bibliography entries
+should preferably retain them.  Journal
+typographical practice generally follows the
+reductions described here.
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-font-changes
+With the positive form, supply an additional brace
+level around font changes in titles to protect
+against downcasing by some \*(Bi\& styles.  Font
+changes that already have more than one level of
+braces are not modified.
+.IP
+For example, if a title contains the Latin
+phrase
+.I "{\eem Dictyostelium discoideum}"
+or
+.IR "{\eem {D}ictyostelium discoideum}" ,
+then downcasing incorrectly converts the
+phrase to lower-case letters.  Most \*(Bi\& users
+are surprised that bracing the initial letters
+does not prevent the downcase action.  The correct
+coding is
+.IR "{{\eem Dictyostelium discoideum}}" .
+However, there are also legitimate cases where an
+extra level of bracing wrongly protects from
+downcasing.  Consequently,
+.B bibclean
+normally does
+.I not
+supply an extra level of braces, but if you have
+a bibliography where the extra braces are
+routinely missing, you can use this option to
+supply them.
+.IP
+If you think that you need this option,
+it is
+.I strongly
+recommended that you apply
+.B bibclean
+to your bibliography file
+with and without
+.BR \-fix-font-changes ,
+then compare the two output files to ensure that
+extra braces are not being supplied in titles
+where they should not be present.  You must
+decide which of the two output files is the
+better choice, then repair the incorrect title
+bracing by hand.
+.IP
+Because font changes in titles are uncommon,
+except for cases of the type that this option is
+designed to correct, it should do more good than
+harm.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-initials
+With the positive form, insert a space after a
+period following author initials.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-math
+With the positive form, improve readability of
+math mode in titles by inserting spaces around
+operators, deleting other unnecessary space, and
+removing braces around single-character subscripts
+and superscripts.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]fix-names
+With the positive form, reorder
+.I author
+and
+.I editor
+name lists to remove commas at brace level zero,
+placing first names or initials before last names.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]German-style
+With the positive form, interpret quote characters
+\&["] inside
+.I braced
+value strings at brace level 1 according to the
+conventions of the \*(Te\& style file
+.IR german.sty ,
+which overloads quote to simplify input and
+representation of German umlaut accents, sharp-s
+(es-zet), ligature separators, invisible hyphens,
+raised/lowered quotes, French guillemets, and
+discretionary hyphens.  Recognized character
+combinations are braced to prevent \*(Bi\&
+from interpreting the quote as a string delimiter.
+.IP
+Quoted strings receive no special handling from
+this option, and because German nouns in titles
+must anyway be protected from the downcasing
+operation of most \*(Bi\& bibliography styles,
+German value strings that use the overloaded quote
+character can always be entered in the form
+"{.\|.\|.}", without the need to specify this
+option at all.
+.IP
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]keep-linebreaks
+Normally, line breaks inside value strings are
+collapsed into a single space, so that long value
+strings can later be broken to provide lines of
+reasonable length.
+.IP
+With the positive form, linebreaks are preserved
+in value strings.  If
+.B \-max-width
+is set to zero, this preserves the original line
+breaks.  Spacing
+.I outside
+value strings remains under
+.BR bibclean 's
+control, and is not affected by this option.
+.IP
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]keep-parbreaks
+With the positive form, preserve paragraph breaks
+(either formfeeds, or lines containing only
+spaces) in value strings.  Normally, paragraph
+breaks are collapsed into a single space.  Spacing
+.I outside
+value strings remains under
+.BR bibclean 's
+control, and is not affected by this option.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]keep-preamble-spaces
+With the positive form, preserve all whitespace
+in @Preamble{.\|.\|.} entries.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]keep-spaces
+With the positive form, preserve all spaces in
+value strings.  Normally, multiple spaces are
+collapsed into a single space.  This option can be
+used together with
+.BR \-keep-linebreaks ,
+.BR \-keep-parbreaks ,
+and
+.BI \-max-width " 0"
+to preserve the form of value strings while still
+providing syntax and value checking.  Spacing
+.I outside
+value strings remains under
+.BR bibclean 's
+control, and is not affected by this option.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]keep-string-spaces
+With the positive form, preserve all whitespace
+in @String{.\|.\|.} entries.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]parbreaks
+With the negative form, a paragraph break (either
+a formfeed, or a line containing only spaces) is
+not permitted in value strings, or between
+field/value pairs.  That may be useful to quickly
+trap runaway strings arising from mismatched
+delimiters.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]prettyprint
+Normally,
+.B bibclean
+functions as a prettyprinter.  However, with the
+negative form of this option, it acts as a lexical
+analyzer instead, producing a stream of lexical
+tokens.  See the
+.B "LEXICAL ANALYSIS"
+manual section for further details.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]print-ISBN-table
+With the positive form, print the ISBN-range table
+on
+.IR stderr ,
+then terminate with a success return code.
+.IP
+That action is taken after all command-line
+options are processed, and before any input files
+are read (other than those that are values of
+command-line options).
+.IP
+The format of the output ISBN-range table is
+acceptable for input as an ISBN initialization
+file (see the
+.B "ISBN INITIALIZATION FILES"
+manual section).
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]print-keyword-table
+With the positive form, print the keyword
+initialization table on
+.IR stderr ,
+then terminate with a success return code.
+.IP
+That action is taken after all command-line
+options are processed, and before any input files
+are read (other than those that are values of
+command-line options).
+.IP
+The format of the output table is acceptable for
+input as a keyword initialization file (see the
+.B "KEYWORD INITIALIZATION FILES"
+manual section).
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]print-patterns
+With the positive form, print the value patterns
+read from initialization files as they are added
+to internal tables.  Use this option to check
+newly-added patterns, or to see what patterns are
+being used.
+.IP
+When
+.B bibclean
+is compiled with native pattern-matching code (the
+default), those patterns are the ones that are
+used in checking value strings for valid syntax,
+and all of them are specified in initialization
+files, rather than hard-coded into the program.
+For further details, see the
+.B "INITIALIZATION FILES"
+manual section.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]quiet
+This option is the opposite of
+.BR \-[no-]warning "; "
+it exists for user convenience, and for
+compatibility with other programs that use
+.BR \-q "\ "
+for quiet operation, without warning messages.
+.\"-----------------------------------------------
+.TP
+.B \-[no-]read-init-files
+With the negative form, suppress loading of
+system-, user-, and file-specific initialization
+files.  Initializations then come
+.I only
+from those files explicitly given by
+.BI \-init-file " filename"
+options.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]remove-OPT-prefixes
+With the positive form, remove the ``OPT'' prefix
+from each field name where the corresponding value
+is
+.I not
+an empty string.  The prefix ``OPT'' must be
+entirely in upper-case to be recognized.
+.IP
+This option is for bibliographies generated with
+the help of the GNU Emacs \*(Bi\& editing support,
+which generates templates with optional fields
+identified by the ``OPT'' prefix.  Although the
+function
+.I M-x bibtex-remove-OPT
+normally bound to the keystrokes
+.I C-c C-o
+does the job, users often forget, with the result
+that \*(Bi\& does not recognize the field name,
+and ignores the value string.  Compare this option
+with
+.B \-[no-]delete-empty-values
+described above.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]scribe
+With the positive form, accept input syntax
+conforming to the \*(Sc\& document system.  The
+output is converted to conform to \*(Bi\&
+syntax.  See the
+.B "SCRIBE BIBLIOGRAPHY FORMAT"
+manual section for further details.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]trace-file-opening
+With the positive form, record in the error log
+file the names of all files that
+.B bibclean
+attempts to open.  Use this option to identify
+where initialization files are located.
+.RI "Default: " no .
+.\"-----------------------------------------------
+.TP
+.B \-[no-]warnings
+With the positive form, allow all warning
+messages.  The negative form is
+.I not
+recommended because it may mask problems that
+should be repaired.
+.RI "Default: " yes .
+.\"-----------------------------------------------
+.TP
+.BI \-output-file " filename"
+Supply an alternate output file to replace
+.IR stdout .
+If the filename cannot be opened for output,
+execution terminates immediately with a nonzero
+exit code.
+.\"-----------------------------------------------
+.TP
+.B \-version
+Display the program version number on
+.IR stderr ,
+and then terminate with a success return code.
+That includes an indication of who
+compiled the program, the host name on which it
+was compiled, the time of compilation, and the
+type of string-value matching code selected, when
+that information is available to the compiler.
+.\"=====================================================================
+.SH "ERROR RECOVERY AND WARNINGS"
+When
+.B bibclean
+detects an error, it issues an error message to
+both
+.I stderr
+and
+.IR stdout .
+That way, the user is clearly notified, and the
+output bibliography also contains the message at
+the point of error.
+.PP
+Error messages begin with a distinctive pair of
+queries, ??, beginning in column 1, followed by
+the input file name and line number.  If the
+.B \-file-position
+option was specified, they also contain the input
+and output positions of the current file, entry,
+and value.  Each position includes the file byte
+number, the line number, and the column number.
+In the event of a runaway string argument, the
+entry and value positions should precisely
+pinpoint the erroneous bibliography entry, and the
+file positions indicate where it was
+detected, which may be rather later in the files.
+.PP
+Warning messages identify possible problems, and
+are therefore sent only to
+.IR stderr ,
+and not to
+.IR stdout ,
+so they never appear in the output file.  They are
+identified by a distinctive pair of percents, %%,
+beginning in column 1, and as with error messages,
+may be followed by file position messages if the
+.B \-file-position
+option was specified.
+.PP
+For convenience, the first line of each error and
+warning message sent to
+.I stderr
+is formatted according to the expectations of the
+GNU Emacs
+.I next-error
+command.  You can invoke
+.B bibclean
+with the Emacs
+.I "M-x compile<RET>bibclean filename.bib >filename.new"
+command, then use the
+.I next-error
+command, normally bound to
+.I "C-x `"
+(that's a grave, or back, accent), to move to the
+location of the error in the input file.
+.PP
+If error messages are ignored, and left in the
+output bibliography file, they precipitates an
+error when the bibliography is next processed
+with \*(Bi\&.
+.PP
+After issuing an error message,
+.B bibclean
+then resynchronizes its input by copying it
+verbatim to
+.I stdout
+until a new bibliography entry is recognized on a
+line in which the first non-blank character is an
+at-sign (@).  That ensures that nothing is lost
+from the input file(s), allowing corrections to be
+made in either the input or the output files.
+However, if
+.B bibclean
+detects an internal error in its data structures,
+it terminates abruptly without further input
+or output processing; that kind of error should
+never happen, and if it does, it should be
+reported immediately to the author of the program.
+Errors in initialization files, and running out of
+dynamic memory, also immediately terminate
+.BR bibclean .
+.\"=====================================================================
+.SH "SEARCH PATHS"
+Versions of
+.B bibclean
+before 3.00 found some of their initialization
+files in the same directory as the executable
+program.  That design choice means that those
+files can be copied anywhere in the file system,
+and still be found at run time.  Some software
+distributions, however, prefer to follow the model
+where initialization and other related files are
+instead stored in a directory whose name is
+related to that of the executable by a
+conventional difference in filepath.  For example,
+a program might be installed in
+.I /opt/bin
+and its associated files in
+.I /opt/share/lib/PROGRAMNAME/
+or
+.IR /opt/share/lib/PROGRAMNAME/PROGRAMVERSION/ .
+The second form is preferable, because it permits
+multiple versions of the same program to be
+installed, as long as the executable program names
+carry a version suffix. Thus, a site might have
+installed programs named
+.IR bibclean-1.00 ,
+.IR bibclean-2.00 ,
+.IR bibclean-2.15 ,
+and
+.IR bibclean-3.00 ,
+with the versionless name
+.I bibclean
+being a symbolic link to whichever version is the
+desired local default.
+.PP
+With most software packages, the absolute path to
+the directory containing associated files is
+compiled into the program, making it impossible to
+change the installation locations after the
+program has been built from source code.
+.PP
+Some packages, however, instead use the location
+of the executable program to find files by
+relative path at runtime.  In the above example,
+the program would determine its filesystem
+location at runtime, say
+.IR /opt/bin ,
+then find its associated files relative to that
+location in
+.IR ../share/lib/PROGRAMNAME/PROGRAMVERSION/ .
+.PP
+From version 3.00,
+.I bibclean
+uses that second approach, with an associated
+directory like
+.IR ../share/lib/bibclean/3.00 .
+That allows an installation directory tree to be
+distributed to other systems and unbundled
+.I anywhere 
+in the file system, as long as the relative paths
+are not changed.
+.I bibclean
+tests whether its compiled-in library path is a
+directory on the local system, and if so, uses it.
+Otherwise, it replaces that path by a
+reconstructed one based on the location of the
+executable program.  If the reconstructed path for
+the library directory does not exist, it uses a
+warning.  In either case, it continues normally.
+.PP
+With the old approach, initialization files on
+Unix systems were named with a leading period,
+making them `hidden' files for the
+.I ls
+command.  With the new practice, initialization
+files are no longer named as hidden files.
+.\"=====================================================================
+.SH "INITIALIZATION FILES"
+.B bibclean
+can be compiled with one of three different types
+of pattern matching; the choice is made by the
+installer at compile time:
+.RS
+.TP \w'\(bu'u+2n
+\(bu
+The original version uses explicit hand-coded
+tests of value-string syntax.
+.TP
+\(bu
+The second version uses regular-expression
+pattern-matching host library routines together
+with regular-expression patterns that come
+entirely from initialization files.
+.TP
+\(bu
+The third version uses special patterns that come
+entirely from initialization files.
+.RE
+.PP
+The second and third versions are the ones of most
+interest here, because they allow the user to
+control what values are considered acceptable.
+However, command-line options can also be
+specified in initialization files, no matter which
+pattern matching choice was selected.
+.PP
+When
+.B bibclean
+starts, it searches for initialization files,
+finding the first one in the system executable
+program search path (on UNIX and IBM PC DOS,
+.BR PATH )
+and the first one in the
+.B BIBINPUTS
+search path, and processes them in turn.  Then,
+when command-line arguments are processed, any
+additional files specified by
+.BI \-init-file " filename"
+options are also processed.  Finally, immediately
+before each
+.I named
+bibliography file is processed, an attempt is made
+to process an initialization file with the same
+name, but with the extension changed to
+.IR .ini .
+The default extension can be changed by a setting
+of the environment variable
+.BR BIBCLEANEXT .
+That scheme permits system-wide, user-wide,
+session-wide, and file-specific initialization
+files to be supported.
+.PP
+When input is taken from
+.IR stdin ,
+there is no file-specific initialization.
+.PP
+For precise control, the
+.B \-no-read-init-files
+option suppresses all initialization files except
+those explicitly named by
+.BI \-init-file " filename"
+options, either on the command line, or in
+requested initialization files.
+.PP
+Recursive execution of initialization files with
+nested
+.B \-init-file
+options is permitted; if the recursion is
+circular,
+.B bibclean
+finally gets a non-fatal initialization file
+open failure after opening too many files.  That
+terminates further initialization file processing.
+As the recursion unwinds, the files are all
+closed, then execution proceeds normally.
+.PP
+An initialization file may contain empty lines,
+comments from percent to end of line (just like
+\*(Te\&), option switches, and field/pattern or
+field/pattern/message assignments.  Leading and
+trailing spaces are ignored.  That is best
+illustrated by a short example:
+.PP
+.nf \fC
+% This is a small bibclean initialization file
+
+-init-file /u/math/bib/.bibcleanrc  %% departmental patterns
+
+chapter = "\e"D\e""                 %% 23
+
+pages   = "\e"D--D\e""              %% 23--27
+
+volume  = "\e"D \e\ean\e\ed D\e""       %% 11 and 12
+
+year    = \e
+   "\e"dddd, dddd, dddd\e"" \e
+   "Multiple years specified."      %% 1989, 1990, 1991
+
+-no-fix-names   %% do not modify author/editor lists
+.fi \fP
+.PP
+Long logical lines can be split into multiple
+physical lines by breaking at a backslash-newline
+pair; the backslash-newline pair is discarded.
+That processing happens while characters are being
+read, before any further interpretation of the
+input stream.
+.PP
+Each logical line must contain a complete option
+(and its value, if any), or a complete
+field/pattern pair, or a field/pattern/message
+triple.
+.PP
+Comments are stripped during the parsing of the
+field, pattern, and message values.  The comment
+start symbol is not recognized inside quoted
+strings, so it can be freely used in such strings.
+.PP
+Comments on logical lines that were input as
+multiple physical lines via the backslash-newline
+convention must appear on the
+.I last
+physical line; otherwise, the remaining physical
+lines become part of the comment.
+.PP
+Pattern strings must be enclosed in quotation
+marks; within such strings, a backslash starts an
+escape mechanism that is commonly used in UNIX
+software.  The recognized escape sequences are:
+.RS
+.TP
+.B "\ea"
+alarm bell (octal 007)
+.TP
+.B "\eb"
+backspace (octal 010)
+.TP
+.B "\ef"
+formfeed (octal 014)
+.TP
+.B "\en"
+newline (octal 012)
+.TP
+.B "\er"
+carriage return (octal 015)
+.TP
+.B "\et"
+horizontal tab (octal 011)
+.TP
+.B "\ev"
+vertical tab (octal 013)
+.TP
+.B "\eooo"
+character number octal
+.I ooo
+(e.g
+.B "\e012"
+is linefeed).  Up to 3 octal digits
+may be used.
+.TP
+.B "\e0xhh"
+character number hexadecimal
+.I hh
+(e.g.,
+.B "\e0x0a"
+is linefeed).
+.I xhh
+may be in either letter case.
+Any number of hexadecimal digits
+may be used.
+.RE
+.PP
+Backslash followed by any other character produces
+just that character.  Thus, \e% gets a literal
+percent into a string (preventing its
+interpretation as a comment), \e" produces a
+quotation mark, and \e\e produces a single
+backslash.
+.PP
+An ASCII NUL
+.I "(\e0)"
+in a string terminates it; that is a feature
+of the C programming language in which
+.B bibclean
+is implemented.
+.PP
+Field/pattern pairs can be separated by arbitrary
+space, and optionally, either an equals sign or
+colon functioning as an assignment operator.
+Thus, the following are equivalent:
+.PP
+.nf \fC
+pages="\e"D--D\e""
+pages:"\e"D--D\e""
+pages "\e"D--D\e""
+  pages = "\e"D--D\e""
+  pages : "\e"D--D\e""
+pages   "\e"D--D\e""
+.fi \fP
+.PP
+Each field name can have an arbitrary number of
+patterns associated with it; however, they must
+be specified in separate field/pattern
+assignments.
+.PP
+An empty pattern string causes previously-loaded
+patterns for that field name to be forgotten.
+That feature permits an initialization file to
+completely discard patterns from earlier
+initialization files.
+.PP
+Patterns for value strings are represented in a
+tiny special-purpose language that is both
+convenient and suitable for bibliography
+value-string syntax checking.  While not as
+powerful as the language of regular-expression
+patterns, its parsing can be portably implemented
+in less than 3% of the code in a widely-used
+regular-expression parser (the GNU
+.B regexp
+package).
+.PP
+The patterns are represented by the following
+special characters:
+.RS
+.TP \w'<space>'u+2n
+.B <space>
+one or more spaces
+.TP
+.B a
+exactly one letter
+.TP
+.B A
+one or more letters
+.TP
+.B d
+exactly one digit
+.TP
+.B D
+one or more digits
+.TP
+.B r
+exactly one Roman numeral
+.TP
+.B R
+one or more Roman numerals (i.e. a Roman number)
+.TP
+.B w
+exactly one word (one or more letters and digits)
+.TP
+.B W
+one or more space-separated words, beginning and
+ending with a word
+.TP
+.B .
+one `special' character, one of the characters
+<space>\|!\|#\|(\|)\|*\|+\|,\|-\|.\|/\|:\|;\|?\|[\|]\|~,
+a subset of punctuation characters that are
+typically used in string values
+.TP
+.B :
+one or more `special' characters
+.TP
+.B X
+one or more `special'-separated words, beginning
+and ending with a word
+.TP
+.B \ex
+exactly one x (x is any character), possibly with
+an escape sequence interpretation given earlier
+.TP
+.B x
+exactly the character x (x is anything but
+one of these pattern characters:
+a\|A\|d\|D\|r\|R\|w\|W\|.\|:\|<space>\|\e\|)
+.RE
+.PP
+The
+.B X
+pattern character is very powerful, but generally
+inadvisable, because it matches almost anything
+likely to be found in a \*(Bi\& value string.
+The reason for providing pattern matching on the
+value strings is to uncover possible errors, not
+mask them.
+.PP
+There is no provision for specifying ranges or
+repetitions of characters, but that can usually be
+done with separate patterns.  It is a good idea to
+accompany the pattern with a comment showing the
+kind of thing it is expected to match.  Here is a
+portion of an initialization file giving a few of
+the patterns used to match
+.I number
+value strings:
+.PP
+.nf \fC
+number  =       "\e"D\e""         %% 23
+number  =       "\e"A AD\e""      %% PN LPS5001
+number  =       "\e"A D(D)\e""    %% RJ 34(49)
+number  =       "\e"A D\e""       %% XNSS 288811
+number  =       "\e"A D\e\e.D\e""   %% Version 3.20
+number  =       "\e"A-A-D-D\e""   %% UMIAC-TR-89-11
+number  =       "\e"A-A-D\e""     %% CS-TR-2189
+number  =       "\e"A-A-D\e\e.D\e"" %% CS-TR-21.7
+.fi \fP
+.PP
+For a bibliography that contains only
+.I article
+entries, that list should probably be reduced to
+just the first pattern, so that anything other
+than a digit string fails the pattern-match test.
+That is easily done by keeping
+bibliography-specific patterns in a corresponding
+file with extension
+.IR .ini ,
+because that file is read automatically.
+.PP
+You should be sure to use empty pattern strings in
+the pattern file to discard patterns from earlier
+initialization files.
+.PP
+The value strings passed to the pattern matcher
+contain surrounding quotes, so the patterns should
+also.  However, you could use a pattern
+specification like "\e"D" to match an initial
+digit string followed by anything else; the
+omission of the final quotation mark \e" in the
+pattern allows the match to succeed without
+checking that the next character in the value
+string is a quotation mark.
+.PP
+Because the value strings are intended to be
+processed by \*(Te\&, the pattern matching ignores
+braces, and \*(Te\& control sequences, together
+with any space following those control sequences.
+Spaces around braces are preserved.  That
+convention allows the pattern fragment
+.I A-AD-D
+to match the value string
+.IR TN-K\eslash\ 27-70 ,
+because the value is implicitly collapsed to
+.I TN-K27-70
+during the matching operation.
+.PP
+.BR bibclean 's
+normal action when a string value fails to match
+any of the corresponding patterns is to issue a
+.I warning
+message something like this:
+\fI"Unexpected value in ``year = "192"''\fP.
+In most cases, that is sufficient to alert the
+user to a problem.  In some cases, however, it may
+be desirable to associate a different message with
+a particular pattern.  That can be done by
+supplying a message string following the pattern
+string.  Format items
+.I %%
+(single percent),
+.I %e
+(entry name),
+.I %f
+(field name),
+.I %k
+(citation key),
+and
+.I %v
+(string value)
+are available to get current values expanded in
+the messages.  Here is an example:
+.PP
+.nf \fC
+chapter = "\e"D:D\e"" "Colon found in ``%f = %v''" %% 23:2
+.fi \fP
+.PP
+To be consistent with other messages output by
+.BR bibclean ,
+the message string should
+.I not
+end with punctuation.
+.PP
+If you wish to make the message an error, rather
+than just a warning, begin it with a query (?),
+like this:
+.PP
+.nf \fC
+chapter = "\e"D:D\e"" "?Colon found in ``%f = %v''" %% 23:2
+.fi \fP
+.PP
+The query is be included in the output message.
+.PP
+Escape sequences are supported in message strings,
+just as they are in pattern strings.  You can use
+that to advantage for fancy things, such as
+terminal display mode control.  If you rewrite the
+previous example as
+.PP
+.nf \fC
+chapter = "\e"D:D\e"" \e
+          "?\e033[7mColon found in ``%f = %v''\e033[0m" %% 23:2
+.fi \fP
+.PP
+the error message appears in inverse video on
+display screens that support ANSI terminal control
+sequences.  Such practice is not normally
+recommended, because it may have undesirable
+effects on some output devices.  Nevertheless, you
+may find it useful for restricted applications.
+.PP
+For some types of bibliography fields,
+.B bibclean
+contains special-purpose code to supplement or
+replace the pattern matching:
+.RS
+.TP \w'\(bu'u+2n
+\(bu
+.IR CODEN ,
+.I ISBN
+and
+.I ISSN
+field values are handled that way because their
+validation requires evaluation of checksums that
+cannot be expressed by simple patterns; no
+patterns are even used in these three cases.
+.TP
+\(bu
+When
+.B bibclean
+is compiled with pattern-matching code support,
+.IR chapter ,
+.IR number ,
+.IR pages ,
+and
+.I volume
+values are checked only by pattern matching.
+.TP
+\(bu
+.I month
+values are first checked against the standard
+\*(Bi\& month abbreviations, and only if no match
+is found are patterns then used.
+.TP
+\(bu
+.I year
+values are first checked against patterns, then if
+no match is found, the year numbers are found and
+converted to integer values for testing against
+reasonable bounds.
+.RE
+.PP
+Values for other fields are checked only against
+patterns.  You can provide patterns for
+.I any
+field you like, even ones
+.B bibclean
+does not already know about.  New ones are simply
+added to an internal table that is searched for
+each string to be validated.
+.PP
+The special field,
+.IR key ,
+represents the bibliographic citation key.  It can
+be given patterns, like any other field.  Here is
+an initialization file pattern assignment that
+matches an author name, a colon, a four-digit
+year, a colon, and an alphabetic string, in the
+BibNet Project style:
+.PP
+.nf \fC
+key = "A:dddd:A"                     %% Knuth:1986:TB
+.fi \fP
+.PP
+Notice that no quotation marks are included in the
+pattern, because the citation keys are not quoted.
+You can use such patterns to help enforce uniform
+naming conventions for citation keys, which is
+increasingly important as your bibliography data
+base grows.
+.\"=====================================================================
+.SH "ISBN INITIALIZATION FILES"
+.B bibclean
+contains a compiled-in table of ISBN ranges and
+country/language settings that is suitable for
+most applications.
+.PP
+However, ISBN data change yearly, as new
+countries adopt ISBNs, and as publishers are
+granted new, or additional, ISBN prefixes.
+.PP
+Thus, from version 2.12,
+.B bibclean
+supports reading of run-time ISBN initialization
+files found on the
+.B PATH
+(for VAX VMS,
+.BR SYS$SYSTEM )
+and
+.B BIBINPUTS
+search paths, and then any specified by
+.BI \-ISBN-file " filename"
+options.
+.PP
+That feature makes it possible to incorporate new
+ISBN data without having to produce a new
+.B bibclean
+release and reinstall the software at end-user
+sites.
+.PP
+The format of an ISBN initialization file is
+similar to that of the
+.B bibclean
+initialization files described in the preceding
+section: comments begin with percent and continue
+to end of line, blank and empty lines are ignored,
+backslash-newline joins adjacent lines, and
+otherwise, lines are expected to contain a
+required pair of ISBN country/language-publisher
+prefixes forming a non-decreasing range,
+optionally followed by one or more words of text
+that are treated as the country/language group
+value.  The latter value plays no part in ISBN
+validation, but its presence is strongly
+recommended, in order to make the ISBN table more
+understandable for humans.
+.PP
+Here is a short example:
+.RS
+.nf \fC
+%% The Faeroes got ISBN assignments between 1993 and 1998
+99918-0         99918-3        Faeroes
+99918-40        99918-61
+99918-900       99918-938
+.fi \fP
+.RE
+It is not necessary to repeat the country names on
+succeeding entries with the same initial number
+(99918 in that example); that is handled
+internally.
+.PP
+Data from ISBN files normally augment the
+compiled-in data.  However, if the first prefix
+begins with a hyphen, then
+.B bibclean
+deletes the first entry in the table matching that
+first prefix (ignoring the leading hyphen):
+.RS
+.nf \fC
+%% Latvia got ISBN ranges between 1993 and 1998
+%% so we remove the old placeholder, then add the
+%% new ranges.
+-9984-0         9984-9         This one is no longer valid
+\&
+9984-00         9984-20        Latvia
+9984-500        9984-770
+9984-9000       9984-9984
+.fi \fP
+.RE
+.\"=====================================================================
+.SH "KEYWORD INITIALIZATION FILES"
+.B bibclean
+contains a compiled-in table of keyword mappings
+that is suitable for most applications.  The
+default settings merely adjust lettercase in
+certain keyword names, so that, for example,
+.I isbn
+is output as
+.IR ISBN .
+.PP
+From version 2.12,
+.B bibclean
+supports reading of run-time keyword
+initialization files found on the
+.B PATH
+(for VAX VMS,
+.BR SYS$SYSTEM )
+and
+.B BIBINPUTS
+search paths, and then any specified by
+.BI \-keyword-file " filename"
+options.
+.PP
+That feature makes it possible to incorporate
+special spellings of new keywords without having
+to produce a new
+.B bibclean
+release and reinstall the software at end-user
+sites.
+.PP
+The format of a keyword initialization file is
+similar to that of the other
+.B bibclean
+initialization files described in the preceding
+sections: comments begin with percent and continue
+to end of line, blank and empty lines are ignored,
+backslash-newline joins adjacent lines, and
+otherwise, lines are expected to contain a
+required pair of old and new keyword names.
+.PP
+Here is a short example:
+.RS
+.nf \fC
+%% We want special handling of MathReviews keywords
+mrclass         MRclass
+mrnumber        MRnumber
+mrreviewer      MRreviewer
+.fi \fP
+.RE
+.PP
+Data from keywords files normally augment the
+compiled-in data.  However, if the first keyword
+begins with a hyphen, then
+.B bibclean
+deletes the first entry in the table matching that
+keyword (ignoring the leading hyphen):
+.RS
+.nf \fC
+%% Remove special handling of ISBN, ISSN, and LCCN values.
+-issn           ISSN
+-isbn           ISBN
+-lccn           LCCN
+.fi \fP
+.RE
+Even though the second keyword in each deletion
+pair is not used, it still must be specified.
+.PP
+Notice that this feature can be used to regularize
+keyword names, but use it with care, in order to
+avoid producing duplicate key names in output
+\*(Bi\& entries:
+.RS
+.nf \fC
+%% Map variations of keywords into a common name:
+keys            keywords
+keywds          keywords
+keyword         keywords
+keywrd          keywords
+keywrds         keywords
+searchkey       keywords
+.fi \fP
+.RE
+.\"=====================================================================
+.SH "LEXICAL ANALYSIS"
+When
+.B \-no-prettyprint
+is specified,
+.B bibclean
+acts as a lexical analyzer instead of a
+prettyprinter, producing output in lines of the
+form
+.PP
+.RS
+.nf
+<token-number><tab><token-name><tab>"<token-value>"
+.fi
+.RE
+.PP
+Each output line contains a single complete token,
+identified by a small integer number for use by a
+computer program, a token type name for human
+readers, and a string value in quotes.
+.PP
+Special characters in the token value string are
+represented with ANSI/ISO Standard C escape
+sequences, so all characters other than NUL are
+representable, and multi-line values can be
+represented in a single line.
+.PP
+Here are the token numbers and token type names
+that can appear in the output when
+.B \-prettyprint
+is specified:
+.PP
+.RS
+.nf
+ 0   UNKNOWN
+ 1   ABBREV
+ 2   AT
+ 3   COMMA
+ 4   COMMENT
+ 5   ENTRY
+ 6   EQUALS
+ 7   FIELD
+ 8   INCLUDE
+ 9   INLINE
+10   KEY
+11   LBRACE
+12   LITERAL
+13   NEWLINE
+14   PREAMBLE
+15   RBRACE
+16   SHARP
+17   SPACE
+18   STRING
+19   VALUE
+.fi
+.RE
+.PP
+Programs that parse such output should also be
+prepared for lines beginning with the warning
+prefix, %%, or the error prefix, ??, and for
+ANSI/ISO Standard C line-number directives of the
+form
+.RS
+# line 273 "texbook1.bib"
+.RE
+that record the line number and file name
+of the current input file.
+.PP
+If a
+.BI \-max-width " nnn"
+command-line option was specified, long output
+lines are wrapped at a backslash-newline pair,
+and consequently, software that processes the
+lexical token stream should be prepared to
+collapse such wrapped lines back into single
+lines.
+.PP
+As an example of the use of
+.BR \-no-prettyprint ,
+the UNIX command pipeline
+.RS
+.nf
+\fBbibclean \-no-prettyprint\fP \fImylib.bib\fP | \e
+    \fBawk\fP '$2 == "KEY" {print $3}' | \e
+    \fBsed\fP -e 's/"//g' | \e
+    \fBsort\fP
+.fi
+.RE
+extracts a sorted list of all citation keys in
+the file
+.IR mylib.bib .
+.PP
+A certain amount of processing has been done
+on the tokens.  In particular, delimiters
+equivalent to braces have been replaced by
+braces, and braced strings have become quoted
+strings.
+.PP
+The LITERAL token type is used for arbitrary text
+that
+.B bibclean
+does not examine further, such as the contents of
+a @Preamble{.\|.\|.} or a @Comment{.\|.\|.}.
+.PP
+The UNKNOWN token type should never appear in the
+output stream.  It is used internally to
+initialize token type variables.
+.\"=====================================================================
+.SH "SCRIBE BIBLIOGRAPHY FORMAT"
+.BR bibclean 's
+support for the \*(Sc\& bibliography format is
+based on the syntax description in the \*(Sc\&
+Introductory User's Manual, 3rd Edition, May 1980.
+\*(Sc\& was originally developed by Brian Reid at
+Carnegie-Mellon University, and was marketed by
+Unilogic, Ltd., later renamed to Scribe Systems,
+and apparently now long defunct.
+.PP
+The \*(Bi\& bibliography format was strongly
+influenced by \*(Sc\&, and indeed, with care, it
+is possible to share bibliography files between
+the two systems.  Nevertheless, there are some
+differences, so here is a summary of features of
+the \*(Sc\& bibliography file format:
+.TP \w'(10)'u+2n
+(1)
+Letter case is not significant in field names and
+entry names, but case is preserved in value
+strings.
+.TP
+(2)
+In field/value pairs, the field and value may be
+separated by one of three characters: =, /, or
+space.  Space may optionally surround these
+separators.
+.TP
+(3)
+Value delimiters are any of these seven
+pairs: { }   [ ]   ( )   < >   ' '   " "   ` `
+.TP
+(4)
+Value delimiters may not be nested, even though
+with the first four delimiter pairs, nested
+balanced delimiters would be unambiguous.
+.TP
+(5)
+Delimiters can be omitted around values that
+contain only letters, digits, sharp (#), ampersand
+(&), period (.), and percent (%).
+.TP
+(6)
+Outside of delimited values, a literal at-sign
+(@) is represented by doubled at-signs (@@).
+.TP
+(7)
+Bibliography entries begin with @name, as
+for \*(Bi\&, but any of the seven \*(Sc\& value
+delimiter pairs may be used to surround the values
+in field/value pairs.  As in (4), nested
+delimiters are forbidden.
+.TP
+(8)
+Arbitrary space may separate entry names from the
+following delimiters.
+.TP
+(9)
+@Comment is a special command whose delimited
+value is discarded.  As in (4), nested delimiters
+are forbidden.
+.TP
+(10)
+The special form
+.IP
+.nf
+@Begin{comment}
+ .\|.\|.
+@End{comment}
+.fi
+.IP
+permits encapsulating arbitrary text containing
+any characters or delimiters, other than
+``@End{comment}''.  Any of the seven delimiter
+pairs may be used around the word ``comment''
+following the ``@Begin'' or ``@End''; the
+delimiters in the two cases need not be the same,
+and consequently,
+``@Begin{comment}''/``@End{comment}'' pairs may
+.I not
+be nested.
+.TP
+(11)
+The
+.I key
+field is required in each bibliography entry.
+.TP
+(12)
+A backslashed quote in a string is assumed to
+be a \*(Te\& accent, and braced appropriately.
+While such accents do not conform to \*(Sc\&
+syntax, \*(Sc\&-format bibliographies have been
+found that appear to be intended for \*(Te\&
+processing.
+.PP
+Because of that loose syntax,
+.BR bibclean 's
+normal error detection heuristics are less
+effective, and consequently, \*(Sc\& mode input is
+not the default; it must be explicitly requested.
+.\"=====================================================================
+.SH "ENVIRONMENT VARIABLES"
+.\"-----------------------------------------------
+.TP \w'BIBCLEANISBN'u+2n
+.B BIBCLEANEXT
+File extension of bibliography-specific
+initialization files.  Default:
+.IR .ini .
+.\"-----------------------------------------------
+.TP
+.B BIBCLEANINI
+Name of
+.B bibclean
+initialization files.  Default:
+.IR .bibcleanrc " (UNIX),"
+.IR bibclean.ini " (non-UNIX)."
+.\"-----------------------------------------------
+.TP
+.B BIBCLEANISBN
+Name of
+.B bibclean
+ISBN initialization files.  Default:
+.IR .bibclean.isbn " (UNIX),"
+.IR bibclean.isb " (non-UNIX)."
+.\"-----------------------------------------------
+.TP
+.B BIBCLEANKEY
+Name of
+.B bibclean
+keyword initialization files.  Default:
+.IR .bibclean.key " (UNIX),"
+.IR bibclean.key " (non-UNIX)."
+.\"-----------------------------------------------
+.TP
+.B BIBINPUTS
+Search path for
+.B bibclean
+and \*(Bi input files.  On UNIX, it is a
+colon-separated list of directories that are
+searched in order from first to last.  It is not
+an error for a specified directory to not exist.
+.IP
+On other operating systems, the directory names
+should be separated by whatever character is used
+in system search path specifications, such as a
+semicolon on IBM PC DOS.
+.\"-----------------------------------------------
+.TP
+.B PATH
+On Atari TOS, IBM PC DOS, IBM PC OS/2, Microsoft
+NT, and UNIX, search path for system executable
+files.  The system-wide
+.B bibclean
+initialization file is searched for in that path.
+.\"-----------------------------------------------
+.TP
+.B SYS$SYSTEM
+On VAX VMS, search path for system executable
+files and the system-wide
+.B bibclean
+initialization file.
+.\"=====================================================================
+.SH FILES
+.\"-----------------------------------------------
+.TP \w'\fIbibclean.ini\fP'u+3n
+.I *.bib
+\*(Bi\& and \*(Sc\& bibliography data base files.
+.\"-----------------------------------------------
+.TP
+.I *.ini
+File-specific initialization files.
+.\"-----------------------------------------------
+.TP
+.I .bibclean.isbn
+UNIX system-wide and user-specific ISBN
+initialization files.
+.\"-----------------------------------------------
+.TP
+.I .bibclean.key
+UNIX system-wide and user-specific keyword
+initialization files.
+.\"-----------------------------------------------
+.TP
+.I .bibcleanrc
+UNIX system-wide and user-specific initialization
+files.
+.\"-----------------------------------------------
+.TP
+.I bibclean.ini
+Non-UNIX system-wide and user-specific
+initialization files.
+.\"-----------------------------------------------
+.TP
+.I bibclean.isb
+Non-UNIX system-wide and user-specific ISBN
+initialization files.
+.\"-----------------------------------------------
+.TP
+.I bibclean.key
+Non-UNIX system-wide and user-specific keyword
+initialization files.
+.\"=====================================================================
+.SH "SEE ALSO"
+.BR bibcheck (1),
+.BR bibdup (1),
+.BR bibextract (1),
+.BR bibindex (1),
+.BR bibjoin (1),
+.BR biblabel (1),
+.BR biblex (1),
+.BR biblook (1),
+.BR biborder (1),
+.BR bibparse (1),
+.BR bibsearch (1),
+.BR bibsort (1),
+.BR bibtex (1),
+.BR bibunlex (1),
+.BR citefind (1),
+.BR citesub (1),
+.BR citetags (1),
+.BR latex (1),
+.BR scribe (1),
+.BR tex (1).
+.\"=====================================================================
+.SH AUTHOR
+.nf
+Nelson H. F. Beebe
+University of Utah
+Department of Mathematics, 110 LCB
+155 S 1400 E RM 233
+Salt Lake City, UT 84112-0090
+USA
+Tel: +1 801 581 5254
+FAX: +1 801 581 4148
+Email: beebe@math.utah.edu, beebe@acm.org, beebe@computer.org (Internet)
+URL: http://www.math.utah.edu/~beebe
+.fi
+.\"=====================================================================
+.SH COPYRIGHT
+.nf
+\fC########################################################################
+########################################################################
+########################################################################
+###                                                                  ###
+###     bibclean: prettyprint and syntax check BibTeX and Scribe     ###
+###                   bibliography data base files                   ###
+###                                                                  ###
+###           Copyright (C) 1990--2016 Nelson H. F. Beebe            ###
+###                                                                  ###
+### This program is covered by the GNU General Public License (GPL), ###
+### version 2 or later, available as the file COPYING in the program ###
+### source distribution, and on the Internet at                      ###
+###                                                                  ###
+###               ftp://ftp.gnu.org/gnu/GPL                          ###
+###                                                                  ###
+###               http://www.gnu.org/copyleft/gpl.html               ###
+###                                                                  ###
+### This program is free software; you can redistribute it and/or    ###
+### modify it under the terms of the GNU General Public License as   ###
+### published by the Free Software Foundation; either version 2 of   ###
+### the License, or (at your option) any later version.              ###
+###                                                                  ###
+### This program is distributed in the hope that it will be useful,  ###
+### but WITHOUT ANY WARRANTY; without even the implied warranty of   ###
+### MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    ###
+### GNU General Public License for more details.                     ###
+###                                                                  ###
+### You should have received a copy of the GNU General Public        ###
+### License along with this program; if not, write to the Free       ###
+### Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,   ###
+### MA 02111-1307 USA                                                ###
+########################################################################
+########################################################################
+########################################################################\fP
+.fi
+.\"=====================================================================
+.\" This is for GNU Emacs file-specific customization:
+.\" Local Variables:
+.\" fill-column: 50
+.\" End:

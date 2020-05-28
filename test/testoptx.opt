@@ -1,0 +1,71 @@
+'-?'					\
+-German-style				\
+-ISBN-file /dev/null			\
+-align-equals				\
+-author					\
+-brace-protect				\
+-check-values				\
+-copyleft				\
+-copyright				\
+-debug-match-failures			\
+-delete-empty-values			\
+-error-log /dev/null			\
+-file-position				\
+-fix-accents				\
+-fix-braces				\
+-fix-font-changes			\
+-fix-initials				\
+-fix-math				\
+-fix-names				\
+-help					\
+-init-file /dev/null			\
+-keep-linebreaks			\
+-keep-parbreaks				\
+-keep-preamble-spaces			\
+-keep-spaces				\
+-keep-string-spaces			\
+-keyword-file /dev/null			\
+-max-width nnn				\
+-output-file /dev/null			\
+-parbreaks				\
+-prettyprint				\
+-print-ISBN-table			\
+-print-keyword-table			\
+-print-patterns				\
+-quiet					\
+-read-init-files			\
+-remove-OPT-prefixes			\
+-scribe					\
+-version				\
+-warnings				\
+-no-German-style			\
+-no-align-equals			\
+-no-brace-protect			\
+-no-check-values			\
+-no-debug-match-failures		\
+-no-delete-empty-values			\
+-no-file-position			\
+-no-fix-accents				\
+-no-fix-braces				\
+-no-fix-font-changes			\
+-no-fix-initials			\
+-no-fix-math				\
+-no-fix-names				\
+-no-keep-linebreaks			\
+-no-keep-parbreaks			\
+-no-keep-preamble-spaces		\
+-no-keep-spaces				\
+-no-keep-string-spaces			\
+-no-parbreaks				\
+-no-prettyprint				\
+-no-print-ISBN-table			\
+-no-print-keyword-table			\
+-no-print-patterns			\
+-no-quiet				\
+-no-read-init-files			\
+-no-remove-OPT-prefixes			\
+-no-scribe				\
+-no-trace-file-opening			\
+-no-warnings
+
+

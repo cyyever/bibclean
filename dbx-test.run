@@ -1,0 +1,183 @@
+check -all
+suppress rui
+run -no-check-values test/testbib2.bib >/dev/null
+run -fix-font-change test/testbib3.bib >/dev/null
+run -fix-font-change test/testbib4.bib >/dev/null
+run -German-style test/testbib5.bib >/dev/null
+run -fix-accents -fix-braces -fix-math test/testbib7.bib >/dev/null
+run --fix-degrees test/testbib8.bib >/dev/null
+run -no-check-values test/testltx1.bib >/dev/null
+run -German-style -align-equals -check-values -delete-empty-values -file-position -fix-font-changes -fix-initials -fix-names -keep-linebreaks -keep-parbreaks -keep-preamble-spaces -keep-spaces -keep-string-spaces -parbreaks -prettyprint -read-init-files -remove-OPT-prefixes -scribe -warnings test/testopt1.bib >/dev/null
+run -G -al -c -d -fil -fix-f -fix-i -fix-n -keep-l -keep-pa -keep-pr -keep-sp -keep-st -pa -pre -rea -rem -s -w test/testopt2.bib >/dev/null
+run -no-German-style -no-align-equals -no-check-values -no-debug-match-failures -no-delete-empty-values -no-file-position -no-fix-font-changes -no-fix-initials -no-fix-names -no-keep-linebreaks -no-keep-parbreaks -no-keep-preamble-spaces -no-keep-spaces -no-keep-string-spaces -no-parbreaks -no-prettyprint -no-print-ISBN-table -no-print-keyword-table -no-print-patterns -no-read-init-files -no-remove-OPT-prefixes -no-scribe -no-warnings test/testopt3.bib >/dev/null
+run -no-G -no-a -no-c -no-deb -no-del -no-fil -no-fix-f -no-fix-i -no-fix-n -no-keep-l -no-keep-pa -no-keep-pr -no-keep-sp -no-keep-st -no-pa -no-pre -no-print-I -no-print-k -no-print-p -no-rea -no-rem -no-s -no-w test/testopt4.bib >/dev/null
+run -bogus-option test/testopt5.bib >/dev/null
+run --no-read-init-files -print-ISBN-table test/testopt6.bib >/dev/null
+run -no-print-ISBN-table test/testopt7.bib >/dev/null
+run -no-read-init-files -print-keyword-table test/testopt8.bib >/dev/null
+run -no-print-keyword-table test/testopt9.bib >/dev/null
+run -no-read-init-files -print-patterns test/testopta.bib >/dev/null
+run -no-print-patterns test/testoptb.bib >/dev/null
+run -no-read-init-files -print-I test/testoptc.bib >/dev/null
+run -no-print-I test/testoptd.bib >/dev/null
+run -no-read-init-files -print-k test/testopte.bib >/dev/null
+run -no-print-k test/testoptf.bib >/dev/null
+run -no-read-init-files -print-p test/testoptg.bib >/dev/null
+run -no-print-p test/testopth.bib >/dev/null
+run --author test/testopti.bib >/dev/null
+run --help test/testoptj.bib >/dev/null
+run --version test/testoptk.bib >/dev/null
+run -fix-math test/testopto.bib >/dev/null
+run -fix-accents test/testoptq.bib >/dev/null
+run -fix-braces test/testoptr.bib >/dev/null
+run -fix-accents -fix-braces -max-width 60 test/testopts.bib >/dev/null
+run -fix-braces test/testoptt.bib >/dev/null
+run -fix-math -max-width 0 test/testoptu.bib >/dev/null
+run -fix-braces test/testoptv.bib >/dev/null
+run -fix-math test/testoptw.bib >/dev/null
+run -scribe -no-check test/testscr1.bib >/dev/null
+run -scribe -file -no-check test/testscr2.bib >/dev/null
+run -scribe -no-check test/testscr3.bib >/dev/null
+run -scribe -file -no-check -no-par test/testscr4.bib >/dev/null
+run -? test/topt101.bib >/dev/null
+run -German-style test/topt102.bib >/dev/null
+run -ISBN-file /dev/null test/topt103.bib >/dev/null
+run -align-equals test/topt104.bib >/dev/null
+run -author test/topt105.bib >/dev/null
+run -brace-protect test/topt106.bib >/dev/null
+run -check-values test/topt107.bib >/dev/null
+run -copyleft test/topt108.bib >/dev/null
+run -copyright test/topt109.bib >/dev/null
+run -debug-match-failures test/topt110.bib >/dev/null
+run -delete-empty-values test/topt111.bib >/dev/null
+run -error-log /dev/null test/topt112.bib >/dev/null
+run -file-position test/topt113.bib >/dev/null
+run -fix-accents test/topt114.bib >/dev/null
+run -fix-braces test/topt115.bib >/dev/null
+run -fix-font-changes test/topt116.bib >/dev/null
+run -fix-initials test/topt117.bib >/dev/null
+run -fix-math test/topt118.bib >/dev/null
+run -fix-names test/topt119.bib >/dev/null
+run -help test/topt120.bib >/dev/null
+run -init-file /dev/null test/topt121.bib >/dev/null
+run -keep-linebreaks test/topt122.bib >/dev/null
+run -keep-parbreaks test/topt123.bib >/dev/null
+run -keep-preamble-spaces test/topt124.bib >/dev/null
+run -keep-spaces test/topt125.bib >/dev/null
+run -keep-string-spaces test/topt126.bib >/dev/null
+run -keyword-file /dev/null test/topt127.bib >/dev/null
+run -max-width nnn test/topt128.bib >/dev/null
+run -no-German-style test/topt129.bib >/dev/null
+run -no-align-equals test/topt130.bib >/dev/null
+run -no-brace-protect test/topt131.bib >/dev/null
+run -no-check-values test/topt132.bib >/dev/null
+run -no-debug-match-failures test/topt133.bib >/dev/null
+run -no-delete-empty-values test/topt134.bib >/dev/null
+run -no-file-position test/topt135.bib >/dev/null
+run -no-fix-accents test/topt136.bib >/dev/null
+run -no-fix-braces test/topt137.bib >/dev/null
+run -no-fix-font-changes test/topt138.bib >/dev/null
+run -no-fix-initials test/topt139.bib >/dev/null
+run -no-fix-math test/topt140.bib >/dev/null
+run -no-fix-names test/topt141.bib >/dev/null
+run -no-keep-linebreaks test/topt142.bib >/dev/null
+run -no-keep-parbreaks test/topt143.bib >/dev/null
+run -no-keep-preamble-spaces test/topt144.bib >/dev/null
+run -no-keep-spaces test/topt145.bib >/dev/null
+run -no-keep-string-spaces test/topt146.bib >/dev/null
+run -no-parbreaks test/topt147.bib >/dev/null
+run -no-prettyprint test/topt148.bib >/dev/null
+run -no-print-ISBN-table test/topt149.bib >/dev/null
+run -no-print-keyword-table test/topt150.bib >/dev/null
+run -no-print-patterns test/topt151.bib >/dev/null
+run -no-quiet test/topt152.bib >/dev/null
+run -no-read-init-files test/topt153.bib >/dev/null
+run -no-remove-OPT-prefixes test/topt154.bib >/dev/null
+run -no-scribe test/topt155.bib >/dev/null
+run -no-trace-file-opening test/topt156.bib >/dev/null
+run -no-warnings test/topt157.bib >/dev/null
+run -output-file /dev/null test/topt158.bib >/dev/null
+run -parbreaks test/topt159.bib >/dev/null
+run -prettyprint test/topt160.bib >/dev/null
+run -no-read-init-files -print-ISBN-table test/topt161.bib >/dev/null
+run -no-read-init-files -print-keyword-table test/topt162.bib >/dev/null
+run -no-read-init-files -print-patterns test/topt163.bib >/dev/null
+run -quiet test/topt164.bib >/dev/null
+run -read-init-files test/topt165.bib >/dev/null
+run -remove-OPT-prefixes test/topt166.bib >/dev/null
+run -scribe test/topt167.bib >/dev/null
+run -version test/topt168.bib >/dev/null
+run -warnings test/topt169.bib >/dev/null
+run -fix-degrees test/topt170.bib >/dev/null
+run -no-fix-degrees test/topt171.bib >/dev/null
+run --? test/topt301.bib >/dev/null
+run --German-style test/topt302.bib >/dev/null
+run --ISBN-file /dev/null test/topt303.bib >/dev/null
+run --align-equals test/topt304.bib >/dev/null
+run --author test/topt305.bib >/dev/null
+run --brace-protect test/topt306.bib >/dev/null
+run --check-values test/topt307.bib >/dev/null
+run --copyleft test/topt308.bib >/dev/null
+run --copyright test/topt309.bib >/dev/null
+run --debug-match-failures test/topt310.bib >/dev/null
+run --delete-empty-values test/topt311.bib >/dev/null
+run --error-log /dev/null test/topt312.bib >/dev/null
+run --file-position test/topt313.bib >/dev/null
+run --fix-accents test/topt314.bib >/dev/null
+run --fix-braces test/topt315.bib >/dev/null
+run --fix-font-changes test/topt316.bib >/dev/null
+run --fix-initials test/topt317.bib >/dev/null
+run --fix-math test/topt318.bib >/dev/null
+run --fix-names test/topt319.bib >/dev/null
+run --help test/topt320.bib >/dev/null
+run --init-file /dev/null test/topt321.bib >/dev/null
+run --keep-linebreaks test/topt322.bib >/dev/null
+run --keep-parbreaks test/topt323.bib >/dev/null
+run --keep-preamble-spaces test/topt324.bib >/dev/null
+run --keep-spaces test/topt325.bib >/dev/null
+run --keep-string-spaces test/topt326.bib >/dev/null
+run --keyword-file /dev/null test/topt327.bib >/dev/null
+run --max-width nnn test/topt328.bib >/dev/null
+run --no-German-style test/topt329.bib >/dev/null
+run --no-align-equals test/topt330.bib >/dev/null
+run --no-brace-protect test/topt331.bib >/dev/null
+run --no-check-values test/topt332.bib >/dev/null
+run --no-debug-match-failures test/topt333.bib >/dev/null
+run --no-delete-empty-values test/topt334.bib >/dev/null
+run --no-file-position test/topt335.bib >/dev/null
+run --no-fix-accents test/topt336.bib >/dev/null
+run --no-fix-braces test/topt337.bib >/dev/null
+run --no-fix-font-changes test/topt338.bib >/dev/null
+run --no-fix-initials test/topt339.bib >/dev/null
+run --no-fix-math test/topt340.bib >/dev/null
+run --no-fix-names test/topt341.bib >/dev/null
+run --no-keep-linebreaks test/topt342.bib >/dev/null
+run --no-keep-parbreaks test/topt343.bib >/dev/null
+run --no-keep-preamble-spaces test/topt344.bib >/dev/null
+run --no-keep-spaces test/topt345.bib >/dev/null
+run --no-keep-string-spaces test/topt346.bib >/dev/null
+run --no-parbreaks test/topt347.bib >/dev/null
+run --no-prettyprint test/topt348.bib >/dev/null
+run --no-print-ISBN-table test/topt349.bib >/dev/null
+run --no-print-keyword-table test/topt350.bib >/dev/null
+run --no-print-patterns test/topt351.bib >/dev/null
+run --no-quiet test/topt352.bib >/dev/null
+run --no-read-init-files test/topt353.bib >/dev/null
+run --no-remove-OPT-prefixes test/topt354.bib >/dev/null
+run --no-scribe test/topt355.bib >/dev/null
+run --no-trace-file-opening test/topt356.bib >/dev/null
+run --no-warnings test/topt357.bib >/dev/null
+run --output-file /dev/null test/topt358.bib >/dev/null
+run --parbreaks test/topt359.bib >/dev/null
+run --prettyprint test/topt360.bib >/dev/null
+run --no-read-init-files --print-ISBN-table test/topt361.bib >/dev/null
+run --no-read-init-files --print-keyword-table test/topt362.bib >/dev/null
+run --no-read-init-files --print-patterns test/topt363.bib >/dev/null
+run --quiet test/topt364.bib >/dev/null
+run --read-init-files test/topt365.bib >/dev/null
+run --remove-OPT-prefixes test/topt366.bib >/dev/null
+run --scribe test/topt367.bib >/dev/null
+run --version test/topt368.bib >/dev/null
+run --warnings test/topt369.bib >/dev/null
+run --fix-degrees test/topt370.bib >/dev/null
+run --no-fix-degrees test/topt371.bib >/dev/null
